@@ -1,0 +1,311 @@
+\ProvidesPackage{HPE_Lecture}
+
+% XeLaTeX
+	%\usepackage{fontspec}
+	%\setmainfont[Scale=0.75]{Calibri}
+	%\usepackage{polyglossia}
+	%\setdefaultlanguage{german}
+	%\AtBeginDocument{\rmfamily} 
+
+%PDF_LaTeX
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.8]{helvet}  
+
+% Setzen der Fonts
+\usefonttheme[onlymath]{serif}
+\usepackage{mathptmx}  
+\linespread {0.88}\selectfont 
+\DeclareMathSizes{8}{7}{6}{5} % Kann zum Vergrössern der Matheteile verwendet werden
+
+\usepackage{amsmath}
+\usepackage{mathtools} 
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{bm} % Make bold math fonts
+	%\usepackage{trfsigns} % For type­set­ting trans­for­ma­tion signs for Laplace, Fourier trans­forms 
+\usepackage{esint}
+\usepackage{units} % Altes Packet für Einheiten / definiert auch \nicefrac!!! Neu: 
+	% Alternative zu unit-package  %\usepackage{nicefrac} %\usepackage{siunitx}
+\usepackage{dcolumn} % Zum Ausrichten von Zahlen in Tabellen am Dezimalpunkt
+\usepackage{tabularx}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% http://www.sascha-frank.com/Faq/tables_six.html
+
+\usepackage{adjustbox} % Einbinden von Grafiken in einer Tabelle
+
+\usepackage{extarrows} % Lange Pfeile und Gleichheitszeichen
+
+% Feineinstellung zur Formatierung
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype} % http://www.khirevich.com/latex/microtype/
+
+% Farbiger Text in Formel
+\usepackage{xcolor}
+	\makeatletter
+	\def\mathcolor#1#{\@mathcolor{#1}} % Definition des Befehls mathcolor
+	\def\@mathcolor#1#2#3{				% https://tex.stackexchange.com/questions/21598/how-to-color-math-symbols
+	  \protect\leavevmode
+	  \begingroup
+	    \color#1{#2}#3%
+	  \endgroup }
+
+% Formatierung der Aufzählungen
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+
+% Blauer Hintergrund für Gleichungen
+\usepackage{empheq}
+	\definecolor{myblue}{rgb}{.83, .92, 1} \newcommand*\mybluebox[1]{%
+	\colorbox{myblue}{\hspace{0.2em}#1\hspace{0.2em}}}
+
+	\definecolor{blueText}{rgb}{.26, .34, .65}
+	\newcommand\hl[1]{\textcolor{blueText}{#1}}
+	\newcommand\hlr[1]{\textcolor{red}{#1}}
+
+% Farbige Tabelle
+\usepackage{colortbl}
+% Boxen um den Text herum
+\usepackage{xcolor}  % Test \fcolorbox{white}{myblue}{\parbox{0.1\textwidth}{ \color{black} Text 2 }}
+	\newcommand\farbbox[1]{ \fcolorbox{white}{myblue}{\color{black}  {#1} }}
+
+% Zeigerdarstellung
+	%\newcommand\zeiger[1]{$\underline{\hat{#1}}$}
+\newcommand\mzeiger[1]{\underline{\hat{#1}}}
+\newcommand\bzeiger[1]{\underline{\hat{\bm{#1}}}}
+\newcommand\sfont[1]{ \small\selectfont {#1}  \normalsize\selectfont }
+
+
+\usepackage{subcaption} % Fuer Subfigures
+
+% TikZ - Bilder in LaTeX
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta} %Für Zeigerdiagramm mit For-Schleife
+\pgfplotsset{compat=1.16} % Kompatibilität zu PFGplots1.15
+	\usepgfplotslibrary{external}
+    \tikzexternalize % activate externalization! 
+	\tikzsetexternalprefix{LaTeXfigs/} % Ordner für TikZ Bilder
+	%\tikzset{external/force remake} % Forciert erneutes Zeichnen der Bilder
+
+
+% Hintergrundbild
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{HPE_background}}
+\beamertemplatenavigationsymbolsempty
+
+% Titelpage der Präsentation
+\renewcommand\titlepage{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{HPE_background_Deckblatt}}
+	\begin{frame}
+		\vspace{-1.2cm}
+		\begin{centering}
+			\color{gray}\Huge\selectfont
+			Netzwerke und Schaltungen II
+			\par
+			\begin{centering}
+				\vspace{-1.45em}\hspace{-0.1em}\color{black}\Huge\selectfont
+				Netzwerke und Schaltungen II
+				\par
+			\end{centering}
+			\vspace{0.15cm}
+	\end{centering}
+
+	\vspace{\baselineskip}
+	\vspace{\baselineskip}
+	\begin{centering}
+		\color{gray}\huge\selectfont
+		J. Biela
+		\par
+		\begin{centering}
+			\vspace{-1.45em}\hspace{-0.1em}\color{black}\huge\selectfont
+			J. Biela
+			\par
+		\end{centering}
+	\end{centering}
+	\end{frame}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{HPE_background}}}
+
+% Titelslide mit aktueller section und subsection
+\newcommand\tss{
+\begin{frame}
+	\begin{centering}
+		\color{gray}\Huge\selectfont
+		-\space\insertsection\space-
+		\par
+		\begin{centering}
+			\vspace{-1.45em}\hspace{-0.1em}\color{black}\Huge\selectfont
+			-\space\insertsection\space-
+			\par
+		\end{centering}
+	\end{centering}
+	\vspace{\baselineskip}
+	\vspace{\baselineskip}
+	\begin{centering}
+		\color{gray}\huge\selectfont
+		\insertsubsection
+		\par
+		\begin{centering}
+			\vspace{-1.45em}\hspace{-0.1em}\color{black}\huge\selectfont
+			\insertsubsection
+			\par
+		\end{centering}
+	\end{centering}
+\end{frame}}
+
+% Titelslide mit aktueller subsection
+\newcommand\ts{
+	\begin{frame}
+	\begin{centering}
+		\color{gray}\huge\selectfont
+		\insertsubsection
+		\par
+		\begin{centering}
+			\vspace{-1.45em}\hspace{-0.1em}\color{black}\huge\selectfont
+			\insertsubsection
+			\par
+		\end{centering}
+		\end{centering}
+\end{frame}}
+
+% Formatierung des Folientitels
+\setbeamertemplate{frametitle}{
+	\begin{centering}
+		\vspace{-0.0cm}\color{gray}\Huge\selectfont
+		\insertframetitle
+		\par
+		\begin{centering}
+			\vspace{-0.715cm}\hspace{-0.05cm}\color{black}\Huge\selectfont
+			\insertframetitle
+			\par
+		\end{centering}
+	\end{centering}}
+
+% Slidenumber auf der Folie
+\setbeamertemplate{footline}
+	{\leavevmode
+	\hbox{
+	\begin{beamercolorbox}[wd=12.8cm,ht=2.5ex,dp=1.125ex,center]{}
+		\normalsize\selectfont\color{gray}\insertframenumber%/\inserttotalframenumber
+	\end{beamercolorbox}}
+	\vskip6pt}
+
+
+% Inhaltsverzeichnis mit Framenumber
+% Kopiert aus: Skript_ET_I_Script.tex
+	% Quelle: https://tex.stackexchange.com/questions/66164/beamer-tableofcontents-with-page-numbers
+	\newcounter{sectionpage}
+	\makeatletter
+	\long\def\beamer@section[#1]#2{%
+	  \beamer@savemode%
+	  \mode<all>%
+	  \ifbeamer@inlecture
+	    \refstepcounter{section}%
+	    \beamer@ifempty{#2}%
+	    {\long\def\secname{#1}\long\def\lastsection{#1}}%
+	    {\global\advance\beamer@tocsectionnumber by 1\relax%
+    	  \long\def\secname{#2}%
+	      \long\def\lastsection{#1}%
+	    \setcounter{sectionpage}{\insertframenumber}\stepcounter{sectionpage}%
+	      \addtocontents{toc}{\protect\beamer@sectionintoc{\the\c@section}{\small\selectfont#2%\hfill\thesectionpage % Hier Schrittgrösse Section / Section Seitennummer
+}{\the\c@page}{\the\c@part}%
+	        {\the\beamer@tocsectionnumber}}}%
+	    {\let\\=\relax\xdef\sectionlink{{Navigation\the\c@page}{\noexpand\secname}}}%
+	    \beamer@tempcount=\c@page\advance\beamer@tempcount by -1%
+	    \beamer@ifempty{#1}{}{%
+	      \addtocontents{nav}{\protect\headcommand{\protect\sectionentry{\the\c@section}{#1}{\the\c@page}{\secname}{\the\c@part}}}%
+	      \addtocontents{nav}{\protect\headcommand{\protect\beamer@sectionpages{\the\beamer@sectionstartpage}{\the\beamer@tempcount}}}%
+	      \addtocontents{nav}{\protect\headcommand{\protect\beamer@subsectionpages{\the\beamer@subsectionstartpage}{\the\beamer@tempcount}}}%
+	    }%
+	    \beamer@sectionstartpage=\c@page%
+	    \beamer@subsectionstartpage=\c@page%
+	    \def\insertsection{\expandafter\hyperlink\sectionlink}%
+	    \def\insertsubsection{}%
+	    \def\insertsubsubsection{}%
+	    \def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}%
+	    \def\insertsubsectionhead{}%
+	    \def\insertsubsubsectionhead{}%
+	    \def\lastsubsection{}%
+	    \Hy@writebookmark{\the\c@section}{\secname}{Outline\the\c@part.\the\c@section}{2}{toc}%
+	    \hyper@anchorstart{Outline\the\c@part.\the\c@section}\hyper@anchorend%
+	    \beamer@ifempty{#2}{\beamer@atbeginsections}{\beamer@atbeginsection}%
+	  \fi%
+	  \beamer@resumemode}%
+	\def\beamer@subsection[#1]#2{%
+	  \beamer@savemode%
+	  \mode<all>%
+	  \ifbeamer@inlecture%
+	    \refstepcounter{subsection}%
+	    \beamer@ifempty{#2}{\long\def\subsecname{#1}\long\def\lastsubsection{#1}}
+	    {%
+	      \long\def\subsecname{#2}%
+	      \long\def\lastsubsection{#1}%
+	    \setcounter{sectionpage}{\insertframenumber}\stepcounter{sectionpage}%
+	      \addtocontents{toc}{\protect\beamer@subsectionintoc{\the\c@section}{\the\c@subsection}{\footnotesize\selectfont#2\hfill\footnotesize\selectfont\thesectionpage}{\the\c@page}{\the\c@part} % Hier Schrittgrösse Subsection
+			{\the\beamer@tocsectionnumber}}%
+	    }%
+	    \beamer@tempcount=\c@page\advance\beamer@tempcount by -1%
+	    \addtocontents{nav}{%
+	      \protect\headcommand{\protect\beamer@subsectionentry{\the\c@part}{\the\c@section}{\the\c@subsection}{\the\c@page}{\lastsubsection}}%
+	      \protect\headcommand{\protect\beamer@subsectionpages{\the\beamer@subsectionstartpage}{\the\beamer@tempcount}}%
+	    }%
+	    \beamer@subsectionstartpage=\c@page%
+	    \edef\subsectionlink{{Navigation\the\c@page}{\noexpand\subsecname}}%
+	    \def\insertsubsection{\expandafter\hyperlink\subsectionlink}%
+	    \def\insertsubsubsection{}%
+	    \def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}%
+	    \def\insertsubsubsectionhead{}%
+	    \Hy@writebookmark{\the\c@subsection}{#2}{Outline\the\c@part.\the\c@section.\the\c@subsection.\the\c@page}{3}{toc}%
+	    \hyper@anchorstart{Outline\the\c@part.\the\c@section.\the\c@subsection.\the\c@page}\hyper@anchorend%
+	    \beamer@ifempty{#2}{\beamer@atbeginsubsections}{\beamer@atbeginsubsection}%
+	  \fi%
+	  \beamer@resumemode}
+	\makeatother
+
+
+% Laplace-Transformation
+\newcommand{\Laplace}[1]{\ensuremath{\mathcal{L}{\left[#1\right]}}}
+
+% Position des Testes und der Bilder
+\usepackage[absolute,overlay]{textpos}
+\usepackage{everypage}
+\newcommand\MyFig[1]{
+  \begin{textblock*}{4.8cm}(7.75cm,0.85cm)% Artboard: 9.5cm breit / 15cm hoch
+    #1
+  \end{textblock*}}
+\newcommand\MyFigg[1]{
+  \begin{textblock*}{6.5cm}(4.6cm,0.85cm)% % Artboard: 9.5cm breit / 15cm hoch
+    #1
+  \end{textblock*}}
+\newcommand\MyFiggross[1]{
+  \begin{textblock*}{12.4cm}(0.4cm,0.8cm)% Zentriertes Bild
+    #1
+  \end{textblock*}}
+
+\newcommand\MyText[1]{
+  \begin{textblock*}{12.44cm}(0.15cm,1.25cm)% alter Wert: 0.18cm, 1.25cm
+    #1
+  \end{textblock*}}
+	%\newcommand\MyExample[1]{
+	%  \begin{textblock*}{4cm}(7.75cm,1.25cm)%
+	%    #1
+	%  \end{textblock*}}
+	%\newcommand\MyTextZ[1]{
+	%  \begin{textblock*}{12.44cm}(0.5cm,1.25cm)%
+	%    #1
+	%  \end{textblock*}}
+\newcommand\MyTextR[1]{
+  \begin{textblock*}{12.44cm}(5.1cm,1.25cm)%
+    #1
+  \end{textblock*}}
+\newcommand\MyFigL[1]{
+  \begin{textblock*}{4.8cm}(0.25cm,0.85cm)%
+    #1
+\end{textblock*}}
+
+
+% Notizen
+\usepackage{pgfpages}
+
+
+

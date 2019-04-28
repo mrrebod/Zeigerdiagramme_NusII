@@ -1,0 +1,83 @@
+\documentclass[8pt, aspectratio=43]{beamer}
+
+\usepackage{HPE_Lecture}
+%\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
+\usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+%Dokument mit allen Ziegerdiagrammen, die im Skript für NuS II enthalten sind. 
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{document}
+	
+%definieren von styles
+%\tikzset{FarbeStrom/.style=red}
+%\tikzset{FarbeSpannung/.style=blue}
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Zeigerdiagramm I}
+
+%		\tikzsetnextfilename{Zeigerdiagramm_I_a}
+%		\begin{tikzpicture}
+%		
+%		\end{tikzpicture}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Zeigerdiagramm II}
+
+
+
+%		\tikzsetnextfilename{Zeigerdiagramm_RLC_Serie_funter_Schleife}
+%		\begin{tikzpicture}
+%	
+%		\end{tikzpicture}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Zeigerdiagramm III}
+
+	\tikzsetnextfilename{Zeigerdiagramm_III_a}
+	\begin{tikzpicture}
+		\coordinate (A) at (-30:3cm);
+		\coordinate (B) at (0:0cm);
+		\coordinate (C) at (0:4cm);
+		
+		\draw[->] (B) -- (C);
+		\draw[->] (B) -- (A);
+		\path (A) -- (B) -- (C) pic[draw,->,pic text = $\phi$, angle radius = 9mm, angle eccentricity=1.2] {angle};
+		
+		
+	\end{tikzpicture}
+%	
+%	\tikzsetnextfilename{Zeigerdiagramm_III_b}
+%	\begin{tikzpicture}
+%	
+%	\end{tikzpicture}
+%	
+%	\tikzsetnextfilename{Zeigerdiagramm_III_c}§
+%	\begin{tikzpicture}
+%	
+%	\end{tikzpicture}
+%	
+%	\tikzsetnextfilename{Zeigerdiagramm_III_d}
+%	\begin{tikzpicture}
+%	
+%	\end{tikzpicture}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
