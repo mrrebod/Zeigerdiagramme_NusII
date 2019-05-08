@@ -15,8 +15,8 @@
 \begin{document}
 	
 %definieren von styles
-%\tikzset{FarbeStrom/.style=red}
-%\tikzset{FarbeSpannung/.style=blue}
+%\tikzset{Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue}}
+%\tikzset{Strompfeil/.style={-{Latex[length=2mm]},thick, red}}
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -49,13 +49,21 @@
 
 	\tikzsetnextfilename{Zeigerdiagramm_III_a}
 	\begin{tikzpicture}
-		\coordinate (A) at (-30:3cm);
-		\coordinate (B) at (0:0cm);
-		\coordinate (C) at (0:4cm);
+		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},
+		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},
+		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 10mm, angle eccentricity=0.8}
+		]
+
+		\def\Leins{2cm};
+		\def\Lzwei{3cm};
 		
-		\draw[->] (B) -- (C);
-		\draw[->] (B) -- (A);
-		\path (A) -- (B) -- (C) pic[draw,->,pic text = $\phi$, angle radius = 9mm, angle eccentricity=1.2] {angle};
+		\coordinate (A) at (-30:\Leins);
+		\coordinate (B) at (0:0cm);
+		\coordinate (C) at (0:\Lzwei);
+		
+		\draw[Spannungspfeil] (B) -- (C);
+		\draw[Strompfeil] (B) -- (A);
+		\path (A) -- (B) -- (C) pic[Winkelpfeil] {angle};
 		
 		
 	\end{tikzpicture}
