@@ -4,7 +4,7 @@
 %\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
 \usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
 \usepackage{tikz}
-\usetikzlibrary{angles,quotes}
+\usetikzlibrary{angles,quotes, calc, positioning}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
@@ -57,37 +57,39 @@
 		\def\USpitze{1.5cm};
 		\def\ISpitze{1cm};
 		\def\Winkel{30}
+		\def\Xstep{0.3}
 		
-		\coordinate (A) at (-\Winkel:\ISpitze);
-		\coordinate (B) at (0:0cm);
-		\coordinate (C) at (0:\USpitze);
+		\coordinate (Aa) at (-\Winkel:\ISpitze);
+		\coordinate (Ba) at (0:0cm);
+		\coordinate (Ca) at (0:\USpitze);
+		%\coordinate (Bb) at ($(Ca) + \Xstep*(0:1cm)$);
 		
-		\draw[Spannungspfeil] (B) -- (C) node[midway, above] {$\mzeiger{u}$};
-		\draw[Strompfeil] (B) -- (A) node[midway, below] {$\mzeiger{i}$};
-		\path (A) -- (B) -- (C) pic[Winkelpfeil] {angle};
+		\draw[Spannungspfeil] (Ba) -- (Ca) node[midway, above] {$\mzeiger{u}$};
+		\draw[Strompfeil] (Ba) -- (Aa) node[midway, below] {$\mzeiger{i}$};
+		\path (Aa) -- (Ba) -- (Ca) pic[Winkelpfeil] {angle = Aa--Ba--Ca};
 			
 	\end{tikzpicture}
 	
-	\tikzsetnextfilename{Zeigerdiagramm_III_b}
-	\begin{tikzpicture}
-		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},
-		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},
-		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2}
-		]
-				
-		\def\USpitze{1.5cm};
-		\def\ISpitze{1cm};
-		\def\Winkel{30}
-		
-		\coordinate (A) at (0:\ISpitze);
-		\coordinate (B) at (0:0cm);
-		\coordinate (C) at (\Winkel:\USpitze);
-	
-		\draw[Strompfeil] (B) -- (A) node[midway, below] {$\mzeiger{i}$};
-		\draw[Spannungspfeil] (B) -- (C) node[midway, above] {$\mzeiger{u}$};
-		\path (A) -- (B) -- (C) pic[Winkelpfeil] {angle};
-	
-	\end{tikzpicture}
+%	\tikzsetnextfilename{Zeigerdiagramm_III_b}
+%	\begin{tikzpicture}
+%		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},
+%		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},
+%		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2}
+%		]
+%				
+%		\def\USpitze{1.5cm};
+%		\def\ISpitze{1cm};
+%		\def\Winkel{30}
+%		
+%		\coordinate (A) at (0:\ISpitze);
+%		\coordinate (B) at (0:0cm);
+%		\coordinate (C) at (\Winkel:\USpitze);
+%	
+%		\draw[Strompfeil] (B) -- (A) node[midway, below] {$\mzeiger{i}$};
+%		\draw[Spannungspfeil] (B) -- (C) node[midway, above] {$\mzeiger{u}$};
+%		\path (A) -- (B) -- (C) pic[Winkelpfeil] {angle};
+%	
+%	\end{tikzpicture}
 %	
 %	\tikzsetnextfilename{Zeigerdiagramm_III_c}§
 %	\begin{tikzpicture}
