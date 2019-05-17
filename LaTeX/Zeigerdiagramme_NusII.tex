@@ -4,7 +4,7 @@
 %\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
 \usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
 \usepackage{tikz}
-\usetikzlibrary{angles,quotes, calc, positioning}
+\usetikzlibrary{angles, calc}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
@@ -14,10 +14,6 @@
 
 \begin{document}
 	
-%definieren von styles
-%\tikzset{Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue}}
-%\tikzset{Strompfeil/.style={-{Latex[length=2mm]},thick, red}}
-		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Zeigerdiagramm I}
@@ -47,7 +43,7 @@
 
 \begin{frame}\frametitle{Zeigerdiagramm III}
 
-	\tikzsetnextfilename{Zeigerdiagramm_III_a}
+	\tikzsetnextfilename{Zeigerdiagramm_III_a_b_c_d}
 	\begin{tikzpicture}
 		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},
 		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},
@@ -57,50 +53,45 @@
 		\def\USpitze{1.5cm};
 		\def\ISpitze{1cm};
 		\def\Winkel{30}
-		\def\Xstep{0.3}
+		\def\Xstep{0.3cm}
 		
+		% ---------------------------------------------------------------------- % 
+		%% Diagramm a) %%
+		% Koordinaten a) %
 		\coordinate (Aa) at (-\Winkel:\ISpitze);
 		\coordinate (Ba) at (0:0cm);
 		\coordinate (Ca) at (0:\USpitze);
-		%\coordinate (Bb) at ($(Ca) + \Xstep*(0:1cm)$);
-		
+		% Pfeile a) % 
 		\draw[Spannungspfeil] (Ba) -- (Ca) node[midway, above] {$\mzeiger{u}$};
 		\draw[Strompfeil] (Ba) -- (Aa) node[midway, below] {$\mzeiger{i}$};
 		\path (Aa) -- (Ba) -- (Ca) pic[Winkelpfeil] {angle = Aa--Ba--Ca};
-			
+		% ---------------------------------------------------------------------- % 
+		%% Diagramm b) %% 
+		% Koordinaten b) % 
+		\coordinate (Bb) at ($(Ca) + (0:\Xstep)$); 
+		\coordinate (Ab) at ($(Bb) + (0:\ISpitze)$);
+		\coordinate (Cb) at ($(Bb) + (\Winkel:\USpitze)$);
+		% Pfeile b) %
+		\draw[Spannungspfeil] (Bb) -- (Cb) node[midway, above] {$\mzeiger{u}$};
+		\draw[Strompfeil] (Bb) -- (Ab) node[midway, below] {$\mzeiger{i}$};
+		\path (Ab) -- (Bb) -- (Cb) pic[Winkelpfeil] {angle = Ab--Bb--Cb};
+		% ---------------------------------------------------------------------- % 
+		%% Diagramm c) %%
+		% Koordinaten c) %
+		\coordinate (Bc) at ($(Ab) + (0:\Xstep)$);
+		\coordinate (Ac) at ($(Bc) + (0:\ISpitze)$);
+		\coordinate (Cc) at ($(Ac) + (180+\Winkel:\USpitze)$);
+		% Pfeile c) %
+		\draw[Spannungspfeil] (Cc) -- (Ac) node[midway, below] {$\mzeiger{u}$};
+		\draw[Strompfeil] (Bc) -- (Ac) node[midway, above] {$\mzeiger{i}$};
+		\path (Bc) -- (Ac) -- (Cc) pic[Winkelpfeil] {angle = Bc--Ac--Cc};
+		% ---------------------------------------------------------------------- % 
+		%% Diagramm d) %%
+		% Koordinaten d) %
+		% Pfeile d) %
+	
 	\end{tikzpicture}
 	
-%	\tikzsetnextfilename{Zeigerdiagramm_III_b}
-%	\begin{tikzpicture}
-%		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},
-%		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},
-%		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2}
-%		]
-%				
-%		\def\USpitze{1.5cm};
-%		\def\ISpitze{1cm};
-%		\def\Winkel{30}
-%		
-%		\coordinate (A) at (0:\ISpitze);
-%		\coordinate (B) at (0:0cm);
-%		\coordinate (C) at (\Winkel:\USpitze);
-%	
-%		\draw[Strompfeil] (B) -- (A) node[midway, below] {$\mzeiger{i}$};
-%		\draw[Spannungspfeil] (B) -- (C) node[midway, above] {$\mzeiger{u}$};
-%		\path (A) -- (B) -- (C) pic[Winkelpfeil] {angle};
-%	
-%	\end{tikzpicture}
-%	
-%	\tikzsetnextfilename{Zeigerdiagramm_III_c}§
-%	\begin{tikzpicture}
-%	
-%	\end{tikzpicture}
-%	
-%	\tikzsetnextfilename{Zeigerdiagramm_III_d}
-%	\begin{tikzpicture}
-%	
-%	\end{tikzpicture}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
