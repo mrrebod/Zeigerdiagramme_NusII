@@ -47,13 +47,16 @@
 	\begin{tikzpicture}
 		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},
 		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},
-		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2}
+		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2},
+		 Winkelpfeil2/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 4mm, angle eccentricity=1.4},
+		 Beschriftung/.style={anchor=north, gray}
 		]
 
 		\def\USpitze{1.5cm};
 		\def\ISpitze{1cm};
-		\def\Winkel{30}
-		\def\Xstep{0.3cm}
+		\def\Winkel{35};
+		\def\Xstep{0.3cm};
+		\def\BeschSpace{4};
 		
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm a) %%
@@ -65,6 +68,8 @@
 		\draw[Spannungspfeil] (Ba) -- (Ca) node[midway, above] {$\mzeiger{u}$};
 		\draw[Strompfeil] (Ba) -- (Aa) node[midway, below] {$\mzeiger{i}$};
 		\path (Aa) -- (Ba) -- (Ca) pic[Winkelpfeil] {angle = Aa--Ba--Ca};
+		% Beschriftung a) %
+		\node[Beschriftung] at (-90:{\ISpitze / \BeschSpace}) {a)};
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm b) %% 
 		% Koordinaten b) % 
@@ -75,6 +80,8 @@
 		\draw[Spannungspfeil] (Bb) -- (Cb) node[midway, above] {$\mzeiger{u}$};
 		\draw[Strompfeil] (Bb) -- (Ab) node[midway, below] {$\mzeiger{i}$};
 		\path (Ab) -- (Bb) -- (Cb) pic[Winkelpfeil] {angle = Ab--Bb--Cb};
+		% Beschriftung b) %
+		\node[Beschriftung] at ($(Bb) + (-90:{\ISpitze / \BeschSpace})$) {b)};
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm c) %%
 		% Koordinaten c) %
@@ -85,12 +92,30 @@
 		\draw[Spannungspfeil] (Cc) -- (Ac) node[midway, below] {$\mzeiger{u}$};
 		\draw[Strompfeil] (Bc) -- (Ac) node[midway, above] {$\mzeiger{i}$};
 		\path (Bc) -- (Ac) -- (Cc) pic[Winkelpfeil] {angle = Bc--Ac--Cc};
+		% Beschriftung c) %
+		\node[Beschriftung] at ($(Bc) + (-90:{\ISpitze / \BeschSpace})$) {c)};
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm d) %%
 		% Koordinaten d) %
+		\coordinate (Bd) at (-90:\ISpitze);
+		\coordinate (Ad) at ($(Bd) + (-\Winkel:{\ISpitze/sqrt(2)})$);
+		\coordinate (Cd) at ($(Bd) + (0:{\USpitze/sqrt(2)})$);
 		% Pfeile d) %
+		\draw[Spannungspfeil] (Bd) -- (Cd) node[near end, above] {$\underline{U}$};
+		\draw[Strompfeil] (Bd) -- (Ad) node[midway, below] {$\underline{I}$};
+		\path (Ad) -- (Bd) -- (Cd) pic[Winkelpfeil2] {angle = Ad--Bd--Cd};
+		% Beschriftung d) %
+		\node[Beschriftung] at ($(Bd) + (-90:{\ISpitze / \BeschSpace})$) {d)};
+		% ---------------------------------------------------------------------- % 
+				
+	\end{tikzpicture}
+	
+	\tikzsetnextfilename{Zeigerdiagramm_III_e}
+	\begin{tikzpicture}
+	%Bild e)....
 	
 	\end{tikzpicture}
+	
 	
 \end{frame}
 

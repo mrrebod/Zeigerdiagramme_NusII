@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.25)  17 MAY 2019 13:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.25)  17 MAY 2019 19:31
 entering extended mode
 **\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagramme_NusII}
 (Zeigerdiagramme_NusII.tex ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\t
@@ -1343,7 +1343,7 @@ File: tikzlibraryangles.code.tex 2013/08/28 v3.0.1a (rcs-revision 1.1)
 r\tikz\libraries\tikzlibrarycalc.code.tex"
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
 )
-No file LaTeXfigs/Zeigerdiagramm_III_a.aux.
+No file LaTeXfigs/Zeigerdiagramme_NusII-figure0.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -1557,7 +1557,7 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
-No file LaTeXfigs/Zeigerdiagramm_III_a.nav.
+No file LaTeXfigs/Zeigerdiagramme_NusII-figure0.nav.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 4.00002pt on input line 15.
 
@@ -1587,12 +1587,17 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-\openout5 = `LaTeXfigs/Zeigerdiagramm_III_a.dpth'.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+\openout5 = `LaTeXfigs/Zeigerdiagramme_NusII-figure0.dpth'.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 12
-2.
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 18
+0.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd
 "
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -1601,20 +1606,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 12
-2.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 18
+0.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd
 "
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 12
-2.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 18
+0.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd
 "
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 12
-2.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 18
+0.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd
 "
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
@@ -1627,33 +1632,33 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 122.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 180.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 180.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-ptm.c
 fg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 180.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 122.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 180.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 180.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 122.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 180.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <6> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 122.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 180.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 122.
-LaTeX Font Info:    Try loading font information for U+esint on input line 122.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 180.
+LaTeX Font Info:    Try loading font information for U+esint on input line 180.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\esint\uesint.fd"
 File: uesint.fd 
@@ -1668,27 +1673,29 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 126.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 184.
  ) 
 Here is how much of TeX's memory you used:
- 36713 strings out of 492973
- 865640 string characters out of 3126692
- 1099861 words of memory out of 3000000
- 39763 multiletter control sequences out of 15000+200000
- 51669 words of font info for 86 fonts, out of 3000000 for 9000
+ 36760 strings out of 492973
+ 866506 string characters out of 3126692
+ 1101870 words of memory out of 3000000
+ 39805 multiletter control sequences out of 15000+200000
+ 52949 words of font info for 89 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,15n,131p,902b,924s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 83i,15n,131p,902b,940s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
-}<C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.
-pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utm
-r8a.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on LaTeXfigs/Zeigerdiagramm_III_a.pdf (1 page, 16328 bytes).
+}<C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhv
+r8a.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbo
+l/usyr.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmr8a.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on LaTeXfigs/Zeigerdiagramme_NusII-figure0.pdf (1 page, 20789 by
+tes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 33 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28715 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 30763 words of extra memory for PDF output out of 35830 (max. 10000000)
 
