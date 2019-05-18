@@ -1,3 +1,61 @@
-Liste mit nützlichen Befehlen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Liste mit nützlichen Befehlen für Zeigerdiagramme mit tikz
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
------
+---------------------------------------------------------------------------------------------
+Die Hauptquelle der in diesem Dokument verwendeten Funktionen ist das offizielle
+Manual Version 3.1.3: http://www.pirbot.com/mirrors/ctan/graphics/pgf/base/doc/pgfmanual.pdf
+---------------------------------------------------------------------------------------------
+
+################################################################
+Nützliche libraries:
+------------------------
+
+----------------------------------------------------------------
+\usetikzlibrary{angles}
+							
+Diese Library ermöglicht es, das pic {angle} zu verwenden. 
+Mit diesem pic können einfach Winkel zwischen zwei Pfeilen 
+beschriftet werden (siehe unten). 
+----------------------------------------------------------------
+
+----------------------------------------------------------------	
+\usetikzlibrary{calc}
+
+Mit dieser Library können Berechnungen mit Koordinaten 
+vorgenommen werden. Dies kann sehr nützlich sein, wenn
+Koordinaten relativ zueinander positioniert werden sollen.
+----------------------------------------------------------------
+
+################################################################
+
+################################################################
+Nützliche Befehle:
+-------------------------
+
+----------------------------------------------------------------
+Beschrifte den Winkel zwischen zwei Pfeilen:
+----------------------------------------------------------------
+\path (A) -- (B) -- (C) pic[<Sytle des Pfeiles>] {angle = A--B--C};
+
+Die drei Koordinaten des path definieren den Winkel, welcher 
+beschriftet werden soll. Beim pic muss angegen werden, 
+dass es sich um ein angle handelt. Die Koordinaten müssen
+ebenfalls nochmals übergen werden. Die grösse des Bogens,
+Art des Bogens, Beschriftung, Position der Beschriftung, etc.
+wird alles im [<Sytle>] definiert.
+
+Quelle: pgfmanual.pdf; Kapitel: 2.22; Seite: 48
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+
+
+
+
+
+ 

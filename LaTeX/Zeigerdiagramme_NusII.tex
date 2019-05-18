@@ -45,55 +45,57 @@
 
 	\tikzsetnextfilename{Zeigerdiagramm_III_a_b_c_d}
 	\begin{tikzpicture}
-		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},
-		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},
-		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2},
-		 Winkelpfeil2/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 4mm, angle eccentricity=1.4},
-		 Beschriftung/.style={anchor=north, gray}
+		%In der folgenden eckigen Klammer können verschiedene Styles definiert werden,
+		%welche dann in diesem tikzpicture verwendet werden können. 
+		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},	%Definiert den Style der Sannungspfeile
+		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},		%Definiert den Sytle der Strompfeile
+		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2},										   %Sytle der  Winkelpfeile
+		 Winkelpfeil2/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 4mm, angle eccentricity=1.4},										   %Style des kleineren Winkelpfeils von Diagramm d) 
+		 Beschriftung/.style={anchor=north, gray}					%Style der Diagrammbeschriftungen a), b), ...
 		]
-
-		\def\USpitze{1.5cm};
-		\def\ISpitze{1cm};
-		\def\Winkel{35};
-		\def\Xstep{0.3cm};
-		\def\BeschSpace{4};
 		
+		%% Definitionen wie Zeigerlänge und Abstand der Grafiken %%  
+		\def\USpitze{1.5cm};	%Länge des Spannungspfiles
+		\def\ISpitze{1cm};		%Länge des Strompfeiles
+		\def\Winkel{35};		%Winkel zwischen Strom und Spannung
+		\def\Xstep{0.3cm};		%Horizontaler Abstand der Grafiken
+		\def\BeschSpace{0.25cm};%Vertikalen Abstand der Beschriftung zum waagerechten Pfeil. 
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm a) %%
 		% Koordinaten a) %
-		\coordinate (Aa) at (-\Winkel:\ISpitze);
-		\coordinate (Ba) at (0:0cm);
-		\coordinate (Ca) at (0:\USpitze);
+		\coordinate (Aa) at (-\Winkel:\ISpitze);	%Koordinaten Definition in Polarform (Winkel:Länge)
+		\coordinate (Ba) at (0:0cm);				% Ax ist Spitze des Strompfeils, Bx ist Beginn des Strompfeils
+		\coordinate (Ca) at (0:\USpitze);			%Cx ist Spitz des Spannungspfeiles
 		% Pfeile a) % 
-		\draw[Spannungspfeil] (Ba) -- (Ca) node[midway, above] {$\mzeiger{u}$};
-		\draw[Strompfeil] (Ba) -- (Aa) node[midway, below] {$\mzeiger{i}$};
-		\path (Aa) -- (Ba) -- (Ca) pic[Winkelpfeil] {angle = Aa--Ba--Ca};
+		\draw[Spannungspfeil] (Ba) -- (Ca) node[midway, above] {$\mzeiger{u}$}; %Spannungspfeil von Bx nach Cx, inkl. Beschriftung
+		\draw[Strompfeil] (Ba) -- (Aa) node[midway, below] {$\mzeiger{i}$};		%Strompfeil von Bx nach Ax, inkl. Beschriftung
+		\path (Aa) -- (Ba) -- (Ca) pic[Winkelpfeil] {angle = Aa--Ba--Ca};		%Zeichnet den Winkel ein mit Hilfe von pic
 		% Beschriftung a) %
-		\node[Beschriftung] at (-90:{\ISpitze / \BeschSpace}) {a)};
+		\node[Beschriftung] at (-90:\BeschSpace) {a)};	%Fügt dem Diagramm Beschriftung a) zu. 
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm b) %% 
 		% Koordinaten b) % 
-		\coordinate (Bb) at ($(Ca) + (0:\Xstep)$); 
-		\coordinate (Ab) at ($(Bb) + (0:\ISpitze)$);
+		\coordinate (Bb) at ($(Ca) + (0:\Xstep)$);			%Dank calc library können Koordinaten berechnet werden. 
+		\coordinate (Ab) at ($(Bb) + (0:\ISpitze)$);		%Somit können Koordinaten alle relativ berechnet werden
 		\coordinate (Cb) at ($(Bb) + (\Winkel:\USpitze)$);
 		% Pfeile b) %
 		\draw[Spannungspfeil] (Bb) -- (Cb) node[midway, above] {$\mzeiger{u}$};
 		\draw[Strompfeil] (Bb) -- (Ab) node[midway, below] {$\mzeiger{i}$};
 		\path (Ab) -- (Bb) -- (Cb) pic[Winkelpfeil] {angle = Ab--Bb--Cb};
 		% Beschriftung b) %
-		\node[Beschriftung] at ($(Bb) + (-90:{\ISpitze / \BeschSpace})$) {b)};
+		\node[Beschriftung] at ($(Bb) + (-90:\BeschSpace)$) {b)};
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm c) %%
 		% Koordinaten c) %
 		\coordinate (Bc) at ($(Ab) + (0:\Xstep)$);
 		\coordinate (Ac) at ($(Bc) + (0:\ISpitze)$);
-		\coordinate (Cc) at ($(Ac) + (180+\Winkel:\USpitze)$);
+		\coordinate (Cc) at ($(Ac) + (180+\Winkel:\USpitze)$); %Cc ist hier der Beginn des Spannungspfeiles
 		% Pfeile c) %
 		\draw[Spannungspfeil] (Cc) -- (Ac) node[midway, below] {$\mzeiger{u}$};
 		\draw[Strompfeil] (Bc) -- (Ac) node[midway, above] {$\mzeiger{i}$};
 		\path (Bc) -- (Ac) -- (Cc) pic[Winkelpfeil] {angle = Bc--Ac--Cc};
 		% Beschriftung c) %
-		\node[Beschriftung] at ($(Bc) + (-90:{\ISpitze / \BeschSpace})$) {c)};
+		\node[Beschriftung] at ($(Bc) + (-90:\BeschSpace)$) {c)};
 		% ---------------------------------------------------------------------- % 
 		%% Diagramm d) %%
 		% Koordinaten d) %
@@ -105,14 +107,19 @@
 		\draw[Strompfeil] (Bd) -- (Ad) node[midway, below] {$\underline{I}$};
 		\path (Ad) -- (Bd) -- (Cd) pic[Winkelpfeil2] {angle = Ad--Bd--Cd};
 		% Beschriftung d) %
-		\node[Beschriftung] at ($(Bd) + (-90:{\ISpitze / \BeschSpace})$) {d)};
+		\node[Beschriftung] at ($(Bd) + (-90:\BeschSpace)$) {d)};
 		% ---------------------------------------------------------------------- % 
 				
 	\end{tikzpicture}
 	
 	\tikzsetnextfilename{Zeigerdiagramm_III_e}
 	\begin{tikzpicture}
-	%Bild e)....
+	[domain=0:4,
+	samples=100]
+	
+	\draw[color=blue] plot (\x,{0.5*sin(2*\x r)}) node[right] {$f(x) = \sin x$};
+	\draw[->] (0:0) -- (90:1cm);
+
 	
 	\end{tikzpicture}
 	
