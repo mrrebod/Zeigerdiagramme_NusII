@@ -41,7 +41,7 @@ Beschrifte den Winkel zwischen zwei Pfeilen:
 Die drei Koordinaten des path definieren den Winkel, welcher 
 beschriftet werden soll. Beim pic muss angegen werden, 
 dass es sich um ein angle handelt. Die Koordinaten müssen
-ebenfalls nochmals übergen werden. Die grösse des Bogens,
+ebenfalls nochmals übergeben werden. Die grösse des Bogens,
 Art des Bogens, Beschriftung, Position der Beschriftung, etc.
 wird alles im [<Sytle>] definiert.
 
