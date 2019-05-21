@@ -114,11 +114,16 @@
 	
 	\tikzsetnextfilename{Zeigerdiagramm_III_e}
 	\begin{tikzpicture}
-	[domain=0:4,
-	samples=100]
+	[domain=-45:420,samples=100,variable=\t]
 	
-	\draw[color=blue] plot (\x,{0.5*sin(2*\x r)}) node[right] {$f(x) = \sin x$};
+	%\draw[domain=0:6.28,samples=100] plot (\x,{sin(2*\x r)}) node[right] {$f(x) = \sin x$};
+	%\draw[scale=0.5,domain=-3.141:3.141,smooth,variable=\t] plot ({\t*sin(\t r)},{\t*cos(\t r)});
+	\draw plot (\t/120,{sin(\t)});
+	\draw plot (\t/120,{1.2*sin(\t+30)});
+	\draw[color=blue] plot (\t/120,{sin(\t)+1.2*sin(\t+30)});
+
 	\draw[->] (0:0) -- (90:1cm);
+	\draw[->] (0:0) -- (0:4cm);
 
 	
 	\end{tikzpicture}
