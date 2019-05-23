@@ -42,6 +42,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Zeigerdiagramm III}
+\begin{flushright}
+	
 
 	\tikzsetnextfilename{Zeigerdiagramm_III_a_b_c_d}
 	\begin{tikzpicture}
@@ -49,15 +51,15 @@
 		%welche dann in diesem tikzpicture verwendet werden können. 
 		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},	%Definiert den Style der Sannungspfeile
 		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},		%Definiert den Sytle der Strompfeile
-		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2},										   %Sytle der  Winkelpfeile
-		 Winkelpfeil2/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 4mm, angle eccentricity=1.4},										   %Style des kleineren Winkelpfeils von Diagramm d) 
+		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.3},										   %Sytle der  Winkelpfeile
+		 Winkelpfeil2/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 3mm, angle eccentricity=1.5},										   %Style des kleineren Winkelpfeils von Diagramm d) 
 		 Beschriftung/.style={anchor=north, gray}					%Style der Diagrammbeschriftungen a), b), ...
-		]
+		 ]
 		
 		%% Definitionen wie Zeigerlänge und Abstand der Grafiken %%  
-		\def\USpitze{1.5cm};	%Länge des Spannungspfiles
-		\def\ISpitze{1cm};		%Länge des Strompfeiles
-		\def\Winkel{35};		%Winkel zwischen Strom und Spannung
+		\def\USpitze{1.3cm};	%Länge des Spannungspfiles
+		\def\ISpitze{0.8cm};		%Länge des Strompfeiles
+		\def\Winkel{40};		%Winkel zwischen Strom und Spannung
 		\def\Xstep{0.3cm};		%Horizontaler Abstand der Grafiken
 		\def\BeschSpace{0.25cm};%Vertikalen Abstand der Beschriftung zum waagerechten Pfeil. 
 		% ---------------------------------------------------------------------- % 
@@ -114,21 +116,29 @@
 	
 	\tikzsetnextfilename{Zeigerdiagramm_III_e}
 	\begin{tikzpicture}
-	[domain=-45:420,samples=100,variable=\t]
+	[SinusPlot/.style={domain=-80:360, samples=100, variable=\t, thick},			%Options for sinus plot
+	 AxisArrow/.style={->}
+	]
 	
-	%\draw[domain=0:6.28,samples=100] plot (\x,{sin(2*\x r)}) node[right] {$f(x) = \sin x$};
-	%\draw[scale=0.5,domain=-3.141:3.141,smooth,variable=\t] plot ({\t*sin(\t r)},{\t*cos(\t r)});
-	\draw plot (\t/120,{sin(\t)});
-	\draw plot (\t/120,{1.2*sin(\t+30)});
-	\draw[color=blue] plot (\t/120,{sin(\t)+1.2*sin(\t+30)});
+	\def\LenSca{140};		%The length of the t-Axis will be: (max_domain - min_domain) / LenSca; in [cm]
+	\def\Ueins{0.8cm};		%Amplitude der Spannung U1
+	\def\Uzwei{0.5cm};		%Amplitude der Spannung U2
+	\def\PhiE{30};			%Phasenverschiebung von U1
+	\def\PhiZ{80};			%Phasenverschiebung von U2
+	
+	\draw[SinusPlot, color=blue] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});	%Plot u1 = sin(wt+phi1)
+	\draw[SinusPlot, color=red] plot (\t/\LenSca,{\Uzwei*sin(\t+\PhiZ)});	%PLot u2 = sin(wt+phi2)
+	\draw[SinusPlot] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)+\Uzwei*sin(\t+\PhiZ)});	%Plot addition u1+u2
 
-	\draw[->] (0:0) -- (90:1cm);
-	\draw[->] (0:0) -- (0:4cm);
+	\draw[AxisArrow] (0cm,-0.9cm) -- (0cm,\Ueins+\Uzwei) node[at end, left]{$u$};	%Plot y-axis
+	\draw[AxisArrow] (-0.6cm,0) -- (2.7,0cm) node[at end, below]{$\omega$t};		%Plot x-axis
+	
+	
 
 	
 	\end{tikzpicture}
 	
-	
+\end{flushright}	
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
