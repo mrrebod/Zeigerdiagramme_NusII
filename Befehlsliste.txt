@@ -27,6 +27,22 @@ vorgenommen werden. Dies kann sehr nützlich sein, wenn
 Koordinaten relativ zueinander positioniert werden sollen.
 ----------------------------------------------------------------
 
+----------------------------------------------------------------	
+\usetikzlibrary{positioning}
+
+Ermöglicht das Benutzen von relativen Positionsangaben wie
+z.Bsp.: right=of <node_name>
+		below=of <node_name>
+		etc.
+----------------------------------------------------------------
+
+----------------------------------------------------------------	
+\usetikzlibrary{intersections}
+
+Ermöglicht das Bestimmen von Schnittpunkten zweier Linien/Pfade!
+Speichert die Koordinaten aller Schnittpunkte
+----------------------------------------------------------------
+
 ################################################################
 
 ################################################################
@@ -45,7 +61,34 @@ ebenfalls nochmals übergeben werden. Die grösse des Bogens,
 Art des Bogens, Beschriftung, Position der Beschriftung, etc.
 wird alles im [<Sytle>] definiert.
 
+Benötigte uspackage: \usetikzlibrary{angles}
 Quelle: pgfmanual.pdf; Kapitel: 2.22; Seite: 48
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+Bestimme Schnittpunkte zweier Linien: 
+----------------------------------------------------------------
+Folgend ein Beispiel mit einer Sinusfunktion und der X-Achse:
+
+\begin{tikzpicture}
+	[SinusPlot/.style={domain=-80:360, samples=100, variable=\t, thick},
+	 every node/.style={opacity=1, black, above left}
+	]
+	
+	\draw[SinusPlot, color=blue, name path=u1] plot (\t/120,{sin(\t)});
+	\draw[->, name path=xAchse] (-0.6cm,0) -- (3.5,0cm) node[at end, below]{$\omega$t};
+	\fill [red, opacity=0.5, name intersections={of=u1 and xAchse}]
+		(intersection-1) circle (2pt) node {1}
+		(intersection-2) circle (2pt) node {2};
+\end{tikzpicture}
+
+1. Gib dem Pfad einen Namen mit: [name path=<name>]
+2. Bestimme die Schnittpunkte mit: [name intersections={of=<name1>and<name2>}]
+3. Die Schnittpunkte werden automatisch mit intersection-x benannt (kann auch
+   geänder werden.)
+   
+Benötigte uspackage: \usetikzlibrary{intersections}
+Quelle: pgfmanual.pdf; Kapitel: 13.3.2; Seite: 141
 ----------------------------------------------------------------
 
 ----------------------------------------------------------------

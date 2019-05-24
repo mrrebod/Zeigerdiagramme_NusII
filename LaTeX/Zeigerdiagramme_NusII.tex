@@ -4,7 +4,7 @@
 %\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
 \usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
 \usepackage{tikz}
-\usetikzlibrary{angles, calc}
+\usetikzlibrary{angles, calc, positioning, intersections}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
@@ -116,26 +116,57 @@
 	
 	\tikzsetnextfilename{Zeigerdiagramm_III_e}
 	\begin{tikzpicture}
-	[SinusPlot/.style={domain=-80:360, samples=100, variable=\t, thick},			%Options for sinus plot
-	 AxisArrow/.style={->}
+	%Verschiedene Styles definieren:
+	[SinusPlot/.style={domain=-80:360, samples=100, variable=\t, thick},	  %Options for sinus plot
+	 AxisArrow/.style={->},													  %Style des Achsenpfeils
+	 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node am Ende der Hilfslinie
+	 PhaseArrow/.style={-{Latex[length=0.7mm]}, very thin}					  %Style des Phasenpfeils
 	]
-	
+	% Verschiedene Variabeln definieren:
 	\def\LenSca{140};		%The length of the t-Axis will be: (max_domain - min_domain) / LenSca; in [cm]
 	\def\Ueins{0.8cm};		%Amplitude der Spannung U1
 	\def\Uzwei{0.5cm};		%Amplitude der Spannung U2
-	\def\PhiE{30};			%Phasenverschiebung von U1
-	\def\PhiZ{80};			%Phasenverschiebung von U2
+	\def\PhiE{30};			%Phasenverschiebung von U1 
+	\def\PhiZ{80};			%Phasenverschiebung von U2 
+	\def\Helpa{0.25cm};		%Länge einer Hilfsline
+	\def\Helpb{0.6cm};		%Länge einer Hilfsline
+	\def\Helpc{0.9cm};		%Länge einer Hilfsline
+	\def\ArrowOff{0.5mm}	%Offset des Winkelpfiels zum Ende der Hilfslinie
+	%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Harmonishce Funktionen plotten:
+	\draw[SinusPlot, color=blue, name path=u1] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});		%Plot u1 = sin(wt+phi1)
+	\draw[SinusPlot, color=red, name path=u2] plot (\t/\LenSca,{\Uzwei*sin(\t+\PhiZ)});			%PLot u2 = sin(wt+phi2)
+	\draw[SinusPlot, name path=u] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)+\Uzwei*sin(\t+\PhiZ)});%Plot addition u1+u2
+	% Achsen Plotten:
+	\draw[AxisArrow] (0cm,-0.9cm) -- (0cm,\Ueins+\Uzwei) node (YachseBesch) [at end, left]{$u$};%Plot y-axis
+	\draw[AxisArrow, name path=xAchse] (-0.6cm,0) -- (2.7,0cm) node[at end, below]{$\omega$t};  %Plot x-axis
+	% Legende einfügen:
+	\node (Uwt) [node distance=2mm, right=of YachseBesch] {$u(\omega t)$};					%Beschriftung für u(wt)
+	\node (U1wt) [on grid, color=blue, node distance=7mm, right=of Uwt] {$u_1(\omega t)$};	%Beschriftung für u1(wt)
+	\node (U2wt) [on grid, color=red, node distance=7.5mm, right=of U1wt] {$u_2(\omega t)$};%Beschriftung für u2(wt)
+	%% Winkel Beschriftung: %%
+	% Phi_1: 
+	\draw [name intersections={of=u1 and xAchse}, very thin]
+	(intersection-1) -- ++(-90:\Helpa) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
+	\draw[PhaseArrow] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpa)+(0,\ArrowOff)$)
+	node[below, near start, color=blue]{$\varphi_1$};			%Plotted Pfeil mit Beschriftung
+	% Phi_u:
+	\draw [name intersections={of=u and xAchse}, very thin]
+	(intersection-1) -- ++(-90:\Helpb) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
+	\draw[PhaseArrow] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpb)+(0,\ArrowOff)$)
+	node[below, midway]{$\varphi_u$};						 	%Plotted Pfeil mit Beschriftung
+	% Phi_2:
+	\draw [name intersections={of=u2 and xAchse}, very thin]
+	(intersection-1) -- ++(-90:\Helpc) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
+	\draw[PhaseArrow] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpc)+(0,\ArrowOff)$)
+	node[below, midway, color=red]{$\varphi_2$};				%Plotted Pfeil mit Beschriftung
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\draw[AxisArrow, name path=xAchse] (-0.6cm,-3cm) -- (2.7,-3cm);  %Plot x-axis
 	
-	\draw[SinusPlot, color=blue] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});	%Plot u1 = sin(wt+phi1)
-	\draw[SinusPlot, color=red] plot (\t/\LenSca,{\Uzwei*sin(\t+\PhiZ)});	%PLot u2 = sin(wt+phi2)
-	\draw[SinusPlot] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)+\Uzwei*sin(\t+\PhiZ)});	%Plot addition u1+u2
-
-	\draw[AxisArrow] (0cm,-0.9cm) -- (0cm,\Ueins+\Uzwei) node[at end, left]{$u$};	%Plot y-axis
-	\draw[AxisArrow] (-0.6cm,0) -- (2.7,0cm) node[at end, below]{$\omega$t};		%Plot x-axis
 	
 	
-
-	
+		
 	\end{tikzpicture}
 	
 \end{flushright}	
