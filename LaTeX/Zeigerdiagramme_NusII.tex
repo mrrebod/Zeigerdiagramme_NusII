@@ -44,21 +44,21 @@
 \begin{frame}\frametitle{Zeigerdiagramm III}
 \begin{flushright}
 	
-
+	%-----------------------------------------------------------------------------------------------------------------%
 	\tikzsetnextfilename{Zeigerdiagramm_III_a_b_c_d}
 	\begin{tikzpicture}
 		%In der folgenden eckigen Klammer können verschiedene Styles definiert werden,
 		%welche dann in diesem tikzpicture verwendet werden können. 
 		[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},	%Definiert den Style der Sannungspfeile
 		 Strompfeil/.style={-{Latex[length=2mm]},thick, red},		%Definiert den Sytle der Strompfeile
-		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.3},										   %Sytle der  Winkelpfeile
+		 Winkelpfeil/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.3},										   %Style der  Winkelpfeile
 		 Winkelpfeil2/.style={pic text=$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 3mm, angle eccentricity=1.5},										   %Style des kleineren Winkelpfeils von Diagramm d) 
 		 Beschriftung/.style={anchor=north, gray}					%Style der Diagrammbeschriftungen a), b), ...
 		 ]
 		
 		%% Definitionen wie Zeigerlänge und Abstand der Grafiken %%  
 		\def\USpitze{1.3cm};	%Länge des Spannungspfiles
-		\def\ISpitze{0.8cm};		%Länge des Strompfeiles
+		\def\ISpitze{0.8cm};	%Länge des Strompfeiles
 		\def\Winkel{40};		%Winkel zwischen Strom und Spannung
 		\def\Xstep{0.3cm};		%Horizontaler Abstand der Grafiken
 		\def\BeschSpace{0.25cm};%Vertikalen Abstand der Beschriftung zum waagerechten Pfeil. 
@@ -105,70 +105,129 @@
 		\coordinate (Ad) at ($(Bd) + (-\Winkel:{\ISpitze/sqrt(2)})$);
 		\coordinate (Cd) at ($(Bd) + (0:{\USpitze/sqrt(2)})$);
 		% Pfeile d) %
-		\draw[Spannungspfeil] (Bd) -- (Cd) node[near end, above] {$\underline{U}$};
-		\draw[Strompfeil] (Bd) -- (Ad) node[midway, below] {$\underline{I}$};
+		\draw[Spannungspfeil] (Bd) -- (Cd) node[at end, pos=1.1] {$\underline{U}$};
+		\draw[Strompfeil] (Bd) -- (Ad) node[at end, pos=1.1] {$\underline{I}$};
 		\path (Ad) -- (Bd) -- (Cd) pic[Winkelpfeil2] {angle = Ad--Bd--Cd};
 		% Beschriftung d) %
 		\node[Beschriftung] at ($(Bd) + (-90:\BeschSpace)$) {d)};
-		% ---------------------------------------------------------------------- % 
-				
+		% ---------------------------------------------------------------------- % 			
 	\end{tikzpicture}
+	%-----------------------------------------------------------------------------------------------------------------%	
 	
+	%-----------------------------------------------------------------------------------------------------------------%	
 	\tikzsetnextfilename{Zeigerdiagramm_III_e}
 	\begin{tikzpicture}
-	%Verschiedene Styles definieren:
-	[SinusPlot/.style={domain=-80:360, samples=100, variable=\t, thick},	  %Options for sinus plot
-	 AxisArrow/.style={->},													  %Style des Achsenpfeils
-	 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node am Ende der Hilfslinie
-	 PhaseArrow/.style={-{Latex[length=0.7mm]}, very thin}					  %Style des Phasenpfeils
-	]
-	% Verschiedene Variabeln definieren:
-	\def\LenSca{140};		%The length of the t-Axis will be: (max_domain - min_domain) / LenSca; in [cm]
-	\def\Ueins{0.8cm};		%Amplitude der Spannung U1
-	\def\Uzwei{0.5cm};		%Amplitude der Spannung U2
-	\def\PhiE{30};			%Phasenverschiebung von U1 
-	\def\PhiZ{80};			%Phasenverschiebung von U2 
-	\def\Helpa{0.25cm};		%Länge einer Hilfsline
-	\def\Helpb{0.6cm};		%Länge einer Hilfsline
-	\def\Helpc{0.9cm};		%Länge einer Hilfsline
-	\def\ArrowOff{0.5mm}	%Offset des Winkelpfiels zum Ende der Hilfslinie
-	%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% Harmonishce Funktionen plotten:
-	\draw[SinusPlot, color=blue, name path=u1] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});		%Plot u1 = sin(wt+phi1)
-	\draw[SinusPlot, color=red, name path=u2] plot (\t/\LenSca,{\Uzwei*sin(\t+\PhiZ)});			%PLot u2 = sin(wt+phi2)
-	\draw[SinusPlot, name path=u] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)+\Uzwei*sin(\t+\PhiZ)});%Plot addition u1+u2
-	% Achsen Plotten:
-	\draw[AxisArrow] (0cm,-0.9cm) -- (0cm,\Ueins+\Uzwei) node (YachseBesch) [at end, left]{$u$};%Plot y-axis
-	\draw[AxisArrow, name path=xAchse] (-0.6cm,0) -- (2.7,0cm) node[at end, below]{$\omega$t};  %Plot x-axis
-	% Legende einfügen:
-	\node (Uwt) [node distance=2mm, right=of YachseBesch] {$u(\omega t)$};					%Beschriftung für u(wt)
-	\node (U1wt) [on grid, color=blue, node distance=7mm, right=of Uwt] {$u_1(\omega t)$};	%Beschriftung für u1(wt)
-	\node (U2wt) [on grid, color=red, node distance=7.5mm, right=of U1wt] {$u_2(\omega t)$};%Beschriftung für u2(wt)
-	%% Winkel Beschriftung: %%
-	% Phi_1: 
-	\draw [name intersections={of=u1 and xAchse}, very thin]
-	(intersection-1) -- ++(-90:\Helpa) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
-	\draw[PhaseArrow] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpa)+(0,\ArrowOff)$)
-	node[below, near start, color=blue]{$\varphi_1$};			%Plotted Pfeil mit Beschriftung
-	% Phi_u:
-	\draw [name intersections={of=u and xAchse}, very thin]
-	(intersection-1) -- ++(-90:\Helpb) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
-	\draw[PhaseArrow] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpb)+(0,\ArrowOff)$)
-	node[below, midway]{$\varphi_u$};						 	%Plotted Pfeil mit Beschriftung
-	% Phi_2:
-	\draw [name intersections={of=u2 and xAchse}, very thin]
-	(intersection-1) -- ++(-90:\Helpc) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
-	\draw[PhaseArrow] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpc)+(0,\ArrowOff)$)
-	node[below, midway, color=red]{$\varphi_2$};				%Plotted Pfeil mit Beschriftung
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\draw[AxisArrow, name path=xAchse] (-0.6cm,-3cm) -- (2.7,-3cm);  %Plot x-axis
-	
-	
-	
-		
+		%Verschiedene Styles definieren:
+		[SinusPlot/.style={domain=-80:360, samples=100, variable=\t, thick},	  %Options for sinus plot
+		 Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+		 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node am Ende der Hilfslinie
+		 Phasenpfeil/.style={-{Latex[length=0.7mm]}, very thin},				  %Style des Phasenpfeils (Zeitbereich)
+		 Spannungspfeil/.style={-{Latex[length=2mm]}, thick},					  %Style der Spannungspfeile
+		 Winkelpfeil/.style={draw, -{Latex[length=1mm]}},						  %Style der Winkelpfeile (Zeigerdiagramm)
+		 Hilfspfeil/.style={-{Latex[length=1mm]}}								  
+		]
+		% Verschiedene Variabeln definieren:
+		\def\LenSca{140};		%The length of the t-Axis will be: (max_domain - min_domain) / LenSca; in [cm]
+		\def\Ueins{1cm};		%Amplitude der Spannung U1	
+		\def\Uzwei{0.7cm};		%Amplitude der Spannung U2	
+		\def\PhiE{25};			%Phasenverschiebung von U1  
+		\def\PhiZ{70};			%Phasenverschiebung von U2  
+		\def\Helpa{0.25cm};		%Länge einer Hilfsline (Sinusplot)
+		\def\Helpb{0.6cm};		%Länge einer Hilfsline (Sinusplot)
+		\def\Helpc{0.9cm};		%Länge einer Hilfsline (Sinusplot)
+		\def\ArrowOff{0.5mm};	%Offset des Winkelpfiels zum Ende der Hilfslinie
+		\def\yStep{3cm}; 		%Vertikaler Abstand des Sinus- und Zeiger-plots
+		\def\xStep{1cm};		%x-Koordinate der y-Achse (Zeigerdiagramm)
+		% Definieren von verschiedenen Koordinaten
+		\coordinate (xStart) at (-0.6cm,0);		  %Startpunkt der x-Achse (wt-Achse)
+		\coordinate (xEnd) at (2.7cm,0); 	 	  %Endpunkt der x-Achse (wt-Achse)
+		\coordinate (yStart) at (0cm,-0.9cm); 	  %Startpunkt der y-Achse
+		\coordinate (yEnd) at (0cm,\Ueins+\Uzwei);%Endpunkt der y-Achse 
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Harmonishce Funktionen plotten:
+		\draw[SinusPlot, color=blue, name path=u1] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});		%Plot u1 = sin(wt+phi1)
+		\draw[SinusPlot, color=red, name path=u2] plot (\t/\LenSca,{\Uzwei*sin(\t+\PhiZ)});			%PLot u2 = sin(wt+phi2)
+		\draw[SinusPlot, name path=u] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)+\Uzwei*sin(\t+\PhiZ)});%Plot addition u1+u2
+		% Achsen Plotten:
+		\draw[Achsenpfeil] (yStart) -- (yEnd) node (YachseBesch) [at end, left]{$u$};			 %Plot y-axis
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};%Plot x-axis
+		% Legende einfügen:
+		\node (U3wt) [node distance=2mm, right=of YachseBesch] {$u_3(\omega t)$};				%Beschriftung für u(wt)
+		\node (U1wt) [on grid, color=blue, node distance=7mm, right=of U3wt] {$u_1(\omega t)$};	%Beschriftung für u1(wt)
+		\node (U2wt) [on grid, color=red, node distance=7.5mm, right=of U1wt] {$u_2(\omega t)$};%Beschriftung für u2(wt)
+		%% Winkel Beschriftung: %%
+		% Phi_1: 
+		\draw [name intersections={of=u1 and xAchse}, very thin]
+			(intersection-1) -- ++(-90:\Helpa) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
+		\draw[Phasenpfeil] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpa)+(0,\ArrowOff)$)
+			node[below, near start, color=blue]{$\varphi_1$};			%Plotted Pfeil mit Beschriftung
+		% Phi_u:
+		\draw [name intersections={of=u and xAchse}, very thin]
+			(intersection-1) -- ++(-90:\Helpb) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
+		\draw[Phasenpfeil] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpb)+(0,\ArrowOff)$)
+			node[below, midway]{$\varphi_3$};						 	%Plotted Pfeil mit Beschriftung
+		% Phi_2:
+		\draw [name intersections={of=u2 and xAchse}, very thin]
+			(intersection-1) -- ++(-90:\Helpc) node(tmp)[HelpNode]{};	%Plotted Hilfslinie
+		\draw[Phasenpfeil] ($(0,\ArrowOff)+(tmp)$) -- ($(0,-\Helpc)+(0,\ArrowOff)$)
+			node[below, midway, color=red]{$\varphi_2$};				%Plotted Pfeil mit Beschriftung
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%Definieren verschiedener Koordinaten:
+		\coordinate (xStart2) at ($(xStart) - (0,\yStep)$); 	%Startpunkt der x-Achse 
+		\coordinate (xEnd2) at ($(xEnd) - (0,\yStep)$);			%Endpunkt der x-Achse
+		\coordinate (yStart2) at (\xStep,-\yStep-0.2cm);		%Startpunkt der y-Achse
+		\coordinate (yEnd2) at (\xStep,-\yStep+\Ueins+\Uzwei);	%Endpunkt der y-Achse
+		% Plotten der Achsen
+		\draw[Achsenpfeil, name path=xAchse2] (xStart2) -- (2.7cm,-\yStep);  %Plot x-axis
+		\draw[Achsenpfeil, name path=yAchse2] (yStart2) -- (yEnd2); 		 %Plot y-axis
+		% Bestimmen des Ursprungs 
+		\draw [name intersections={of=xAchse2 and yAchse2, by=Ursprung}] (Ursprung) circle (0pt); %Ursprung bestimmen
+		% Plotten der Pfeile 
+		\draw[Spannungspfeil, color=blue] (Ursprung) --++ (\PhiE:\Ueins)
+			 node[at end, pos=1.2, below, color=blue] {$\underline{\hat{u}}_1$}
+			 node(tmp1) [HelpNode]{}; %Spannungspfeil 1 mit Beschriftung und Hilfskoordinate	
+		\draw[Spannungspfeil, color=red] (Ursprung) --++ (\PhiZ:\Uzwei)
+			node[at end, above, color=red] {$\underline{\hat{u}}_2$}
+			node(tmp2) [HelpNode]{}; %Spannungspfeil 2 mit Beschriftung und Hilfskoordinate
+		\draw[Spannungspfeil] (Ursprung) --++($(\PhiE:\Ueins) + (\PhiZ:\Uzwei)$)
+			node[at end, pos=1.2, below] {$\underline{\hat{u}}_3$}
+			node(tmp3) [HelpNode]{}; %Spannungspfeil 3 mit Beschriftung und Hilfskoordinate
+		% Plotten der Winkelpfeile
+		\path (xEnd2) -- (Ursprung) -- (tmp1)
+			 pic[Winkelpfeil, angle radius = 7mm, color=blue]
+			 {angle = xEnd2--Ursprung--tmp1};	%Winkelpfiel der Spannung U1
+		\node [color=blue] at ($(Ursprung) + (8mm,-1.1mm)$) {$\varphi_1$}; %Beschriftung Phi_1
+		\path (xEnd2) -- (Ursprung) -- (tmp3)
+			pic[Winkelpfeil, angle radius = 5mm]
+			{angle = xEnd2--Ursprung--tmp3};	%Winkelpfiel der Spannung U3	
+		\node at ($(Ursprung) + (5.3mm,-1.1mm)$) {$\varphi_3$}; %Beschriftung Phi_3
+		\path (xEnd2) -- (Ursprung) -- (tmp2)
+			pic[Winkelpfeil, angle radius = 2.5mm, color=red]
+			{angle = xEnd2--Ursprung--tmp2}; 	%Winkelpfiel der Spannung U2
+		\node [color=red] at ($(Ursprung) + (2.5mm,-1.1mm)$) {$\varphi_2$}; %Beschriftung Phi_2
+		% Plotten der Hilfslinien
+		\draw[thin, densely dotted]	(tmp1) --++ (\PhiZ:\Uzwei); %Ergänzung zum Parallelogramm
+		\draw[thin, densely dotted]	(tmp2) --++ (\PhiE:\Ueins); %Ergänzung zum Parallelogramm
+		\draw[color=gray, densely dash dot, thin, name path=h1] (tmp1) --++ (-1.3cm,0cm);	
+		\draw[color=gray, densely dash dot, thin, name path=h2] (tmp2) --++ (-1.1cm,0cm);	
+		\draw[color=gray, densely dash dot, thin, name path=h3] (tmp3) --++ (-2.5cm,0cm);	
+		\draw [name intersections={of=h1 and yAchse2, by=h11}] (h11) circle (0pt); %Bestimmung des Schnittpkt.
+		\draw [name intersections={of=h2 and yAchse2, by=h22}] (h22) circle (0pt); %Bestimmung des Schnittpkt.
+		\draw [name intersections={of=h3 and yAchse2, by=h33}] (h33) circle (0pt); %Bestimmung des Schnittpkt.
+		\draw[Hilfspfeil] ($(Ursprung) - (0.2cm,0cm)$) -- ($(h11) - (0.2cm,0cm)$) 
+			node[midway, left, color=blue]{$u_1$}; %Hilfspfeil für U1
+		\draw[Hilfspfeil] ($(h22) - (0.2cm,0cm)$) -- ($(h33) - (0.2cm,0cm)$) 
+			node[midway, left, color=blue]{$u_1$}; %Hilfspfeil für U1
+		\draw[Hilfspfeil] ($(Ursprung) - (0.7cm,0cm)$) -- ($(h22) - (0.7cm,0cm)$) 
+			node[midway, left, color=red]{$u_2$};  %Hilfspfeil für U2
+		\draw[Hilfspfeil] ($(Ursprung) - (1.2cm,0cm)$) -- ($(h33) - (1.2cm,0cm)$) 
+			node[midway, left]{$u_3$};			   %Hilfspfeil für U3
+		% Beschiftungen
+		\node[anchor=north east, color=gray, align=left, font=\small] at (yEnd2) {Augenblicks-\\werte für $t=0$};
+		\node[anchor=north, color=gray] at (xStart2) {e)}; %Plot nummerierung	
 	\end{tikzpicture}
-	
+	%-----------------------------------------------------------------------------------------------------------------%	
 \end{flushright}	
 \end{frame}
 
