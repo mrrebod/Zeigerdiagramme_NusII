@@ -6,6 +6,15 @@
 \usepackage{tikz}
 \usetikzlibrary{angles, calc, positioning, intersections}
 
+%Booleans um nicht alles immer kompilieren zu müssen...
+\newboolean{ZeigerdiagrammI}
+\setboolean{ZeigerdiagrammI}{false}
+\newboolean{ZeigerdiagrammII}
+\setboolean{ZeigerdiagrammII}{true}
+\newboolean{ZeigerdiagrammIII}
+\setboolean{ZeigerdiagrammIII}{false}
+
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 %Dokument mit allen Ziegerdiagrammen, die im Skript für NuS II enthalten sind. 
@@ -28,20 +37,90 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Zeigerdiagramm II}
-
-
-
-%		\tikzsetnextfilename{Zeigerdiagramm_RLC_Serie_funter_Schleife}
-%		\begin{tikzpicture}
-%	
-%		\end{tikzpicture}
-
-
+\ifZeigerdiagrammII{
+\begin{flushright}	
+	\tikzsetnextfilename{Zeigerdiagramm_II_a}
+	\begin{tikzpicture}
+		%In der folgenden eckigen Klammer können verschiedene Styles definiert werden,
+		%welche dann in diesem tikzpicture verwendet werden können. 
+		[Strompfeil/.style={-{Latex[length=2mm]},thick, red},							%Definiert den Sytle der Strompfeile
+		 SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=red},	%Options for sinus plot	
+		 Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
+		 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
+		 Phasenpfeil/.style={-{Latex[length=0.7mm]}, very thin},				  		%Style des Phasenpfeils (Zeitbereich)
+		 Winkelpfeil/.style={pic text=$\varphi_2$, draw, -{Latex[length=1mm]}, angle radius = 3mm, angle eccentricity=1.5},										   					   %Style der  Winkelpfeile
+		 HelpLine/.style={densely dashed}												%Hilfslinien
+		 ]
+	
+		%% Definitionen wie Zeigerlänge und Abstand der Grafiken %%  	
+		\def\ISpitzeE{0.9cm};		%Amplitude von I1
+		\def\ISpitzeZ{0.65cm};		%Amplitude von I2
+		\def\PhiE{0};				%Phasenverschiebung von I1
+		\def\PhiZ{50};				%Phasenverschiebung von I2
+		\def\LenSca{180};			%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
+		\def\TickLen{0.05}			% Halbe Länge des Achsen-Tick
+		
+		% Definieren von verschiedenen Koordinaten
+		\coordinate (xStart) at (-0.2cm,0);		  		  %Startpunkt der x-Achse (wt-Achse)
+		\coordinate (xEnd) at (360/\LenSca+0.2,0); 	 	  %Endpunkt der x-Achse (wt-Achse)
+		\coordinate (yStart) at (0cm,-\ISpitzeE-0.2cm);   %Startpunkt der y-Achse
+		\coordinate (yEnd) at (0cm,\ISpitzeE+0.2cm);	  %Endpunkt der y-Achse 
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Harmonishce Funktionen plotten: 
+		\draw[SinusPlot, name path=i1] plot (\t/\LenSca,{\ISpitzeE*sin(\t+\PhiE)});		%Plot i1 = I1*sin(wt+phi1)
+		\draw[SinusPlot, name path=i2] plot (\t/\LenSca,{\ISpitzeZ*sin(\t+\PhiZ)});		%Plot i2 = I2*sin(wt+phi2)
+		% Achsen Plotten:
+		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, left]{};			 %Plot y-axis
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
+		%Ticks & Beschriftung (mit Rechteck, welches Breite = 0 hat)
+		\node[anchor = north east] at (0/\LenSca,0) {0};
+		\draw (90/\LenSca,\TickLen) rectangle (90/\LenSca,-\TickLen) node[below]{$\frac{\pi}{2}$};		
+		\draw (180/\LenSca,\TickLen) rectangle (180/\LenSca,-\TickLen) node[below]{$\pi$};
+		\draw (270/\LenSca,-\TickLen) rectangle (270/\LenSca,\TickLen) node[above]{$\frac{3\pi}{2}$};
+		\draw (360/\LenSca,-\TickLen) rectangle (360/\LenSca,\TickLen) node[above, fill=white]{$2\pi$};
+		% Pfeil der Phasenverschiebung 
+		\draw [name intersections={of=i1 and xAchse, name=interi1}, very thin]
+			(interi1-3) -- ++(-90:0.5cm) node(HNode1)[HelpNode]{};	%Plotted Hilfslinie und genereirt Hilfsnode am Ende
+		\draw [name intersections={of=i2 and xAchse, name=interi2}, very thin]
+			(interi2-2) -- ++(-90:0.5cm) node(HNode2)[HelpNode]{};	%Plotted Hilfslinie und genereirt Hilfsnode am End	
+		\draw[Phasenpfeil] ($(0,0.1cm)+(HNode2)$) -- ($(0,0.1cm)+(HNode1)$)
+			node[below, near end]{$\varphi_2$};						%Plotted Pfeil mit Beschriftung
+			
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Kreise 
+		\coordinate (Ursprung) at ($(0,0) - (\ISpitzeE+0.3cm,0)$);	%Definiert den Ursprung des Zeigerdiagramms
+		\draw ($(Ursprung)+(0,-\TickLen)$) rectangle  ($(Ursprung)+(0,\TickLen)$); %Plotted Mittelpunkt der Kreise
+		\draw (Ursprung) circle  (\ISpitzeE);						%Kreis mit Radius von I1
+		\draw (Ursprung) circle  (\ISpitzeZ);						%Kreis mit Radius von I2
+		% Pfeile 
+		\draw[Strompfeil] (Ursprung) -- ++(\PhiE:\ISpitzeE) node[midway, below]{$\mzeiger{i}_1$}
+				node(tmp1) [HelpNode]{}; %
+		\draw[Strompfeil] (Ursprung) -- ++(\PhiZ:\ISpitzeZ) node[midway, left]{$\mzeiger{i}_2$}
+				node(tmp2) [HelpNode]{}; %
+		\path (tmp1) -- (Ursprung) -- (tmp2) pic[Winkelpfeil] {angle = tmp1--Ursprung--tmp2};
+		% Hilfslinien
+		\draw[HelpLine] ($(Ursprung)+(0,\ISpitzeE)$) -- (90/\LenSca-\PhiE/\LenSca,\ISpitzeE) -- ++(-90:\ISpitzeE);
+		\draw[HelpLine] ($(Ursprung)+(0,\ISpitzeZ)$) -- (90/\LenSca-\PhiZ/\LenSca,\ISpitzeZ);
+		\draw[HelpLine] ($(Ursprung)-(0,\ISpitzeE)$) -- (270/\LenSca-\PhiE/\LenSca,-\ISpitzeE);
+		\draw[HelpLine] ($(Ursprung)-(0,\ISpitzeZ)$) -- (270/\LenSca-\PhiZ/\LenSca,-\ISpitzeZ);
+		\draw[name intersections={of=i2 and yAchse, name=interi2}, HelpLine] (tmp2) -- (interi2-1);	
+		% Beschriftung
+		\node (Besch1) [anchor = west] at (140/\LenSca,\ISpitzeE+2.5mm) {$\hat{i}_1\sin(\omega t)$};		 %Beschriftung I1
+		\node (Besch2) [anchor = west] at (140/\LenSca,\ISpitzeE-1mm) {$\hat{i}_2\sin(\omega t+\varphi_2)$}; %Beschriftung I2
+		\draw (Besch1.west) -- ++ (240:3mm);	%Hilfslinie
+		\draw (Besch2.west) -- ++ (240:4mm);	%Hilfslinie		
+	\end{tikzpicture}	
+\end{flushright}
+}\fi
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Zeigerdiagramm III}
+
+\ifZeigerdiagrammIII{
+
 \begin{flushright}
 	
 	%-----------------------------------------------------------------------------------------------------------------%
@@ -127,7 +206,7 @@
 		 Hilfspfeil/.style={-{Latex[length=1mm]}}								  
 		]
 		% Verschiedene Variabeln definieren:
-		\def\LenSca{140};		%The length of the t-Axis will be: (max_domain - min_domain) / LenSca; in [cm]
+		\def\LenSca{140};		%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
 		\def\Ueins{1cm};		%Amplitude der Spannung U1	
 		\def\Uzwei{0.7cm};		%Amplitude der Spannung U2	
 		\def\PhiE{25};			%Phasenverschiebung von U1  
@@ -145,12 +224,12 @@
 		\coordinate (yEnd) at (0cm,\Ueins+\Uzwei);%Endpunkt der y-Achse 
 		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		% Harmonishce Funktionen plotten:
-		\draw[SinusPlot, color=blue, name path=u1] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});		%Plot u1 = sin(wt+phi1)
-		\draw[SinusPlot, color=red, name path=u2] plot (\t/\LenSca,{\Uzwei*sin(\t+\PhiZ)});			%PLot u2 = sin(wt+phi2)
+		\draw[SinusPlot, color=blue, name path=u1] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});		%Plot u1 = U1*sin(wt+phi1)
+		\draw[SinusPlot, color=red, name path=u2] plot (\t/\LenSca,{\Uzwei*sin(\t+\PhiZ)});			%PLot u2 = U2*sin(wt+phi2)
 		\draw[SinusPlot, name path=u] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)+\Uzwei*sin(\t+\PhiZ)});%Plot addition u1+u2
 		% Achsen Plotten:
 		\draw[Achsenpfeil] (yStart) -- (yEnd) node (YachseBesch) [at end, left]{$u$};			 %Plot y-axis
-		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};%Plot x-axis
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
 		% Legende einfügen:
 		\node (U3wt) [node distance=2mm, right=of YachseBesch] {$u_3(\omega t)$};				%Beschriftung für u(wt)
 		\node (U1wt) [on grid, color=blue, node distance=7mm, right=of U3wt] {$u_1(\omega t)$};	%Beschriftung für u1(wt)
@@ -228,7 +307,10 @@
 		\node[anchor=north, color=gray] at (xStart2) {e)}; %Plot nummerierung	
 	\end{tikzpicture}
 	%-----------------------------------------------------------------------------------------------------------------%	
-\end{flushright}	
+\end{flushright}
+
+}\fi
+ 	
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
