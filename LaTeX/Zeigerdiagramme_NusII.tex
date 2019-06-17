@@ -27,11 +27,89 @@
 
 \begin{frame}\frametitle{Zeigerdiagramm I}
 
-%		\tikzsetnextfilename{Zeigerdiagramm_I_a}
-%		\begin{tikzpicture}
-%		
-%		\end{tikzpicture}
-
+\ifZeigerdiagrammI{
+	
+\begin{flushright}
+		\tikzsetnextfilename{Zeigerdiagramm_I_a}
+		\begin{tikzpicture}
+			[Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},						%Definiert den Sytle der Strompfeile
+			SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=blue},	%Options for sinus plot	
+			Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}},								%Style der  Winkelpfeile
+			HelpLine/.style={densely dashed, very thin}										%Hilfslinien
+			]	
+			
+			%% Definitionen wie Zeigerlänge etc.. %% 
+			\def\USpitze{0.8cm};			%Amplitude von U
+			\def\LenSca{200};			%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
+			\def\PhiO{0};				%Winkel wt0
+			\def\PhiE{30};				%Winkel wt1			
+			\def\PhiZ{60};				%Winkel wt2
+			\def\TickLen{0.05}			% Halbe Länge des Achsen-Tick
+			\def\BeschScale{0.8}		%Skalireung der Achsenbeschrifung
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart) at (-0.2cm,0);		  		  %Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) at (360/\LenSca+0.2,0); 	 	  %Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart) at (0cm,-0.2cm);   %Startpunkt der y-Achse
+			\coordinate (yEnd) at (0cm,\USpitze+0.2cm);	  %Endpunkt der y-Achse 
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Harmonishce Funktionen plotten: 
+			\draw[SinusPlot, name path=u] plot (\t/\LenSca,{\USpitze*sin(\t+\PhiO)});		%Plot u = U*sin(wt+phi0)
+			% Achsen Plotten:
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, right]{$u$};		 %Plot y-axis
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
+			%Ticks & Beschriftung der x-Achse
+			\node[scale = \BeschScale, anchor = north east] at (0/\LenSca,0) {$0$};
+			\draw (90/\LenSca,\TickLen) -- (90/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\frac{\pi}{2}$};		
+			\draw (180/\LenSca,\TickLen) -- (180/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\pi$};
+			\draw (270/\LenSca,\TickLen) -- (270/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\frac{3\pi}{2}$};
+			\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
+			% Bechriftung der Spannungsamplitude:
+			\draw[HelpLine] (0,\USpitze) -- (90/\LenSca-\PhiO/\LenSca,\USpitze)
+			node[at start, left, color=blue]{$\hat{u}$};
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Kreise 
+			\coordinate (Ursprung) at ($(0,0) - (\USpitze+0.5cm,0)$); 	%Definiert den Ursprung des Zeigerdiagramms
+			\draw (Ursprung) circle  (\USpitze);						%Kreis mit Radius von U
+			\node[anchor = north east] at (Ursprung) {M};				%Beschriftung des Mittelpunktes
+			% Achsen
+			\draw ($(Ursprung) - (0,\USpitze+0.2cm)$) -- ($(Ursprung) + (0,\USpitze+0.2cm)$) %Zeichnet y-achse
+				node[at start, left, scale = \BeschScale]{$\frac{3\pi}{2}$}					 % 3Pi/2 Beschr.
+				node[at end, left, scale = \BeschScale]{{$\frac{\pi}{2}$}};					 % Pi/2 Beschr.
+			\draw ($(Ursprung) - (\USpitze+0.1cm,0)$) -- ($(Ursprung) + (\USpitze+0.1cm,0)$) %Zeichnet x-achse
+				node[at start, below, scale = \BeschScale]{$\pi$}					 		 % Pi Beschr.
+				node[at end, below, scale = \BeschScale]{$0$};					 			 % 0 Beschr.
+			% Pfeile 
+			\draw[Spannungspfeil] (Ursprung) -- ++(\PhiO:\USpitze) node[near end, below]{$\mzeiger{u}$}
+				node(tmp1) [HelpNode]{}; %
+			\draw[Spannungspfeil, densely dotted] (Ursprung) -- ++(\PhiE:\USpitze) node(tmp2) [HelpNode]{}; 
+			\draw[Spannungspfeil, densely dotted] (Ursprung) -- ++(\PhiZ:\USpitze) node(tmp3) [HelpNode]{}; 
+			% Winkel einzeichenen
+			% Winkel wt1 einzeichnen:
+			\path (xStart) -- (Ursprung) -- (tmp2)
+				pic[Winkelpfeil, angle radius = 4mm, pic text=\tiny{$\omega t_1$}, angle eccentricity=1.45] {angle = xStart--Ursprung--tmp2}; 
+				% Winkel wt2 einzeichnen:
+			\path (xStart) -- (Ursprung) -- (tmp3)
+				pic[Winkelpfeil, angle radius = 2.5mm] {angle = xStart--Ursprung--tmp3};	
+			\node [anchor = north west] at (Ursprung) {\tiny{$\omega t_2$}};	
+			% Hilfslinien
+			\draw[HelpLine] (Ursprung |- tmp2) -- (\PhiE/\LenSca,0 |- tmp2) -- (\PhiE/\LenSca, -0.8*\USpitze)
+				node[at end, anchor =  east]{$\omega t_1$}; % |- Orthogonal coordinate (manual S.141 (13.3))	
+			\draw[HelpLine] (Ursprung |- tmp3) -- (\PhiZ/\LenSca,0 |- tmp3) -- (\PhiZ/\LenSca, -0.8*\USpitze)
+				node[at end, anchor =  west]{$\omega t_2$}; % |- Orthogonal coordinate (manual S.141 (13.3))
+			% Pfeil für Drehrichtung
+			\draw[Winkelpfeil] ($(Ursprung) + (0:\USpitze+0.05cm)$) 
+				arc[start angle=0, delta angle=20, x radius=\USpitze+0.05, y radius=\USpitze+0.05]
+				node[near end, right, scale = \BeschScale]{$\omega t$}; 
+			% y-Achsenbeschriftung	
+			\draw ($(Ursprung) + (0,0.7*\USpitze)$) -- ++(200:0.15cm) node[at end, anchor = east]{Z};	
+		\end{tikzpicture}
+\end{flushright}
+}\fi
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,7 +129,7 @@
 		 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
 		 Phasenpfeil/.style={-{Latex[length=0.7mm]}, very thin},				  		%Style des Phasenpfeils (Zeitbereich)
 		 Winkelpfeil/.style={pic text=$\varphi_2$, draw, -{Latex[length=1mm]}, angle radius = 3mm, angle eccentricity=1.55},										   					   %Style der  Winkelpfeile
-		 HelpLine/.style={densely dashed}												%Hilfslinien
+		 HelpLine/.style={densely dashed, very thin}									%Hilfslinien
 		 ]
 	
 		%% Definitionen wie Zeigerlänge und Abstand der Grafiken %%  	
@@ -76,12 +154,12 @@
 		% Achsen Plotten:
 		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, left]{};			 %Plot y-axis
 		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
-		%Ticks & Beschriftung (mit Rechteck, welches Breite = 0 hat)
-		\node[scale = \BeschScale, anchor = north east] at (0/\LenSca,0) {0};
-		\draw (90/\LenSca,\TickLen) rectangle (90/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\frac{\pi}{2}$};		
-		\draw (180/\LenSca,\TickLen) rectangle (180/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\pi$};
-		\draw (270/\LenSca,-\TickLen) rectangle (270/\LenSca,\TickLen) node[scale = \BeschScale, above]{$\frac{3\pi}{2}$};
-		\draw (360/\LenSca,-\TickLen) rectangle (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
+		%Ticks & Beschriftung der x-Achse
+		\node[scale = \BeschScale, anchor = north east] at (0/\LenSca,0) {$0$};
+		\draw (90/\LenSca,\TickLen) -- (90/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\frac{\pi}{2}$};		
+		\draw (180/\LenSca,\TickLen) -- (180/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\pi$};
+		\draw (270/\LenSca,-\TickLen) -- (270/\LenSca,\TickLen) node[scale = \BeschScale, above]{$\frac{3\pi}{2}$};
+		\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
 		% Pfeil der Phasenverschiebung 
 		\draw [name intersections={of=i1 and xAchse, name=interi1}, very thin]
 			(interi1-3) -- ++(-90:0.5cm) node(HNode1)[HelpNode]{};	%Plotted Hilfslinie und genereirt Hilfsnode am Ende
@@ -101,7 +179,7 @@
 				node(tmp1) [HelpNode]{}; %
 		\draw[Strompfeil] (Ursprung) -- ++(\PhiZ:\ISpitzeZ) node[midway, left]{$\mzeiger{i}_2$}
 				node(tmp2) [HelpNode]{}; %
-		\path (tmp1) -- (Ursprung) -- (tmp2) pic[Winkelpfeil] {angle = tmp1--Ursprung--tmp2};
+		\path (tmp1) -- (Ursprung) -- (tmp2) pic[Winkelpfeil] {angle = tmp1--Ursprung--tmp2}; % Winkel einzeichnen
 		% Hilfslinien
 		\draw[HelpLine] ($(Ursprung)+(0,\ISpitzeE)$) -- (90/\LenSca-\PhiE/\LenSca,\ISpitzeE) -- ++(-90:\ISpitzeE);
 		\draw[HelpLine] ($(Ursprung)+(0,\ISpitzeZ)$) -- (90/\LenSca-\PhiZ/\LenSca,\ISpitzeZ);
@@ -126,9 +204,9 @@
 		SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick},				%Options for sinus plot	
 		Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
 		HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
-		Phasenpfeil/.style={-{Latex[length=0.7mm]}, very thin},				  		%Style des Phasenpfeils (Zeitbereich)
-		Winkelpfeil/.style={draw, {Latex[length=1mm]}-, angle radius = 3mm, angle eccentricity=1.5},										   					   %Style der  Winkelpfeile
-		HelpLine/.style={densely dashed}												%Hilfslinien
+		Phasenpfeil/.style={-{Latex[length=0.7mm]}, very thin},				  			%Style des Phasenpfeils (Zeitbereich)
+		Winkelpfeil/.style={draw, {Latex[length=1mm]}-, angle radius = 3mm, angle eccentricity=1.5},										   					    %Style der  Winkelpfeile
+		HelpLine/.style={densely dashed, very thin}										%Hilfslinien
 		]
 		
 		%% Definitionen wie Zeigerlänge und Abstand der Grafiken %%  	
@@ -153,13 +231,13 @@
 		% Achsen Plotten:
 		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, left]{};			 %Plot y-axis
 		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
-		%Ticks & Beschriftung (mit Rechteck, welches Breite = 0 hat)
-		\node[scale = \BeschScale, anchor = north east] at (0/\LenSca,0) {0};
-		\draw (90/\LenSca,\TickLen) rectangle (90/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\frac{\pi}{2}$};		
-		\draw (180/\LenSca,-\TickLen) rectangle (180/\LenSca,\TickLen) node[scale = \BeschScale, above]{$\pi$};
-		\draw (270/\LenSca,-\TickLen) rectangle (270/\LenSca,\TickLen) node[scale = \BeschScale, above]{$\frac{3\pi}{2}$};
-		\draw (360/\LenSca,-\TickLen) rectangle (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
-		% Pfeile der Phasenverschiebung 
+		%Ticks & Beschriftung der x-Achse
+		\node[scale = \BeschScale, anchor = north east] at (0/\LenSca,0) {$0$};
+		\draw (90/\LenSca,\TickLen) -- (90/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\frac{\pi}{2}$};		
+		\draw (180/\LenSca,-\TickLen) -- (180/\LenSca,\TickLen) node[scale = \BeschScale, above]{$\pi$};
+		\draw (270/\LenSca,-\TickLen) -- (270/\LenSca,\TickLen) node[scale = \BeschScale, above]{$\frac{3\pi}{2}$};
+		\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
+		% Pfeile der Phasenverschiebung und Amplituden 
 		\draw [name intersections={of=i and xAchse, name=interi}, very thin]
 			(interi-1) -- ++(-90:\USpitze) node(HNode1)[HelpNode]{}		%Plotted Hilfslinie und genereirt Hilfsnode am Ende
 			(interi-2) -- ++(-90:\USpitze) node(HNode2)[HelpNode]{};	%Plotted Hilfslinie und genereirt Hilfsnode am Ende
@@ -188,7 +266,7 @@
 			node[at end, left, scale = \BeschScale]{{$\frac{\pi}{2}$}};					 % Pi/2 Beschr.
 		\draw ($(Ursprung) - (\USpitze+0.1cm,0)$) -- ($(Ursprung) + (\USpitze+0.1cm,0)$) %Zeichnet x-achse
 			node[at start, below, scale = \BeschScale]{$\pi$}					 		 % Pi Beschr.
-			node[at end, below, scale = \BeschScale]{{$0$}};					 		 % 0 Beschr.
+			node[at end, below, scale = \BeschScale]{$0$};					 		 % 0 Beschr.
 		% Pfeile
 		\draw[Spannungspfeil] (Ursprung) -- ++(\PhiU:\USpitze) node[midway, above]{$\mzeiger{u}$}
 			node(tmp1) [HelpNode]{}; 	%Spannungspfeil mit Hilfsnode am Ende des Zeigers
