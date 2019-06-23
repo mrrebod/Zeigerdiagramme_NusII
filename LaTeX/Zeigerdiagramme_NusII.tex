@@ -10,9 +10,9 @@
 \newboolean{ZeigerdiagrammI}
 \setboolean{ZeigerdiagrammI}{true}
 \newboolean{ZeigerdiagrammII}
-\setboolean{ZeigerdiagrammII}{false}
+\setboolean{ZeigerdiagrammII}{true}
 \newboolean{ZeigerdiagrammIII}
-\setboolean{ZeigerdiagrammIII}{false}
+\setboolean{ZeigerdiagrammIII}{true}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -117,7 +117,7 @@
 			SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=blue},	%Options for sinus plot	
 			Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
 			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
-			Winkelpfeil/.style={draw, -{Latex[length=1mm]}},								%Style der  Winkelpfeile
+			Winkelpfeil/.style={pic text=\tiny$\varphi$, draw, -{Latex[length=1mm]}, angle radius = 3mm, angle eccentricity=1.4},																%Style der  Winkelpfeile
 			HelpLine/.style={densely dashed, very thin}										%Hilfslinien
 			]
 			
@@ -145,7 +145,7 @@
 			% Harmonishce Funktionen plotten: 
 			\draw[SinusPlot, name path=u] plot (\t/\LenSca,{\USpitze*sin(\t+\PhiN)});		%Plot u = U*sin(wt+phi0)
 			% Achsen Plotten:
-			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, right]{$u$};		 %Plot y-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd);								 %Plot y-axis
 			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
 			%Ticks & Beschriftung der x-Achse
 			\node[scale = \BeschScale, anchor = north east] at (0/\LenSca,0) {$0$};
@@ -181,7 +181,7 @@
 			\draw[Achsenpfeil, name path=yAchse2] (yStart2) -- (yEnd2) node[at end, right]{$\omega$t}; %Plot y-axis
 			\draw[Achsenpfeil, name path=xAchse2] (xStart2) -- (xEnd2);								  %Plot x-axis
 			%Ticks & Beschriftung der y-Achse
-			\node[scale=\BeschScale, anchor=north east] at (Nullpunkt) {$0$};
+			\node[scale=\BeschScale, anchor=south east] at (Nullpunkt) {$0$};
 			\draw[shift=(Nullpunkt)] (\TickLen,-90/\LenSca) -- (-\TickLen,-90/\LenSca)
 				node[scale=\BeschScale, left, fill=white]{$\frac{\pi}{2}$};
 			\draw[shift=(Nullpunkt)] (-\TickLen,-180/\LenSca) -- (\TickLen,-180/\LenSca)
@@ -190,6 +190,7 @@
 				node[scale=\BeschScale, left, fill=white]{$\frac{3\pi}{2}$};
 			\draw[shift=(Nullpunkt)] (\TickLen,-360/\LenSca) -- (-\TickLen,-360/\LenSca)
 				node[scale=\BeschScale, left, fill=white]{$2\pi$};	
+				
 			%% Hilfslinien %%
 			% Hilfslinien für sinus
 			\draw[HelpLine] (tmp2) -- (\PhiZ/\LenSca, 0 |- tmp2) node[anchor=south, at end, scale=\BeschScale]{2} -- (\PhiZ/\LenSca, 0);
@@ -199,9 +200,32 @@
 				node[pos=1.2, below, scale=\BeschScale]{7} -- (\PhiSi/\LenSca, 0);
 			\draw[HelpLine] (tmp6) -- (\PhiS/\LenSca, 0 |- tmp6) node[at end, below, scale=\BeschScale]{6} -- (\PhiS/\LenSca, 0);
 			% Hilfslinien für cosinus
-			\draw[HelpLine] (tmp3) -- ($(tmp3 |- 0,-\PhiZ/\LenSca) + (Nullpunkt)$) node[anchor=south, at end, scale=\BeschScale]{3} -- ($(0, \PhiD/\LenSca) + (Nullpunkt)$);
+			\draw[HelpLine] (tmp3) -- (tmp3 |- {$(0,-\PhiD/\LenSca)+(Nullpunkt)$}) node[left, pos=0.98, scale=\BeschScale]{3} -- (Nullpunkt |- {$(0,-\PhiD/\LenSca)+(Nullpunkt)$}); %etwas mühsame Koordinaten Berechnungen.... |- siehe Manual S 141.
+			\draw[HelpLine] (tmp4) -- (tmp4 |- {$(0,-\PhiV/\LenSca)+(Nullpunkt)$}) node[anchor=east, at end, scale=\BeschScale]{4} -- (Nullpunkt |- {$(0,-\PhiV/\LenSca)+(Nullpunkt)$});
+			\draw[HelpLine] (tmp3 |- {$(0,-\PhiD/\LenSca)+(Nullpunkt)$}) -- (tmp3 |- {$(0,-\PhiF/\LenSca)+(Nullpunkt)$}) node[pos=0.95, anchor=north east, scale=\BeschScale]{5} -- (Nullpunkt |- {$(0,-\PhiF/\LenSca)+(Nullpunkt)$});
+			\draw[HelpLine] (tmp1) -- (tmp1 |- {$(0,-\PhiSi/\LenSca)+(Nullpunkt)$}) node[left, pos=1.03, scale=\BeschScale]{7} -- (Nullpunkt |- {$(0,-\PhiSi/\LenSca)+(Nullpunkt)$});
+			\draw[HelpLine] (tmp0) -- (tmp0 |- {$(0,\PhiN/\LenSca)+(Nullpunkt)$}) node[left, pos=0.93, scale=\BeschScale]{0} -- (tmp0 |- {$(0,-360/\LenSca)+(Nullpunkt)$}) node[left, pos=1.05, scale=\BeschScale]{0} -- (Nullpunkt |- {$(0,-360/\LenSca)+(Nullpunkt)$});
+			% Fehlende Beschriftungen von Hilfslinien
+			\node[anchor=south west, scale=\BeschScale] at ($(0,-\PhiZ/\LenSca) + (Nullpunkt)$) {2}; %cosinus-plot
+			\node[anchor=north west, scale=\BeschScale] at ($(0,-\PhiS/\LenSca) + (Nullpunkt)$) {6}; %cosinus-plot
+			\node[anchor=south west, scale=\BeschScale] at (\PhiV/\LenSca,0) {4}; %sinus-plot
+			% hellblaue Hilfspfeile
+			\draw[color=cyan,-{Latex[length=0.8mm]}, thin] (Ursprung) -- (tmp1) 
+				node[near end, left, scale = \BeschScale]{$\mzeiger{u}'$};
+			\draw[color=cyan,{Latex[length=0.8mm]}-{Latex[length=0.8mm]}, thin] (Ursprung) -- (tmp1 |- 0,0);
+			\node[anchor=north west, scale = \BeschScale, color=cyan, fill=white] at ($(Ursprung) + (0.5mm,-0.5mm)$) {$\hat{u}\cos\varphi$};
+			\draw[color=cyan,{Latex[length=0.8mm]}-{Latex[length=0.8mm]}, thin] (tmp1) -- (tmp1 |- 0,0)
+				node[midway, right, scale = \BeschScale, fill=white]{$\hat{u}\sin\varphi$};
+			\draw[color=cyan,{Latex[length=0.8mm]}-{Latex[length=0.8mm]}, thin] (\PhiE/\LenSca,0) -- (\PhiE/\LenSca,0 |- tmp1)
+				node[color=black, left, pos=1.13, scale=\BeschScale]{1};
+			\draw[color=cyan,{Latex[length=0.8mm]}-{Latex[length=0.8mm]}, thin] ($(0,-\PhiE/\LenSca) + (Nullpunkt)$) -- (tmp1 |- {$(0,-\PhiE/\LenSca) + (Nullpunkt)$}) node[anchor=south west, pos=0.7, scale=\BeschScale, color=black]{1};
+			\path (tmp0) -- (Ursprung) -- (tmp1) pic[Winkelpfeil] {angle = tmp0--Ursprung--tmp1}; % Winkel einzeichnen
 			
-				
+			%% Beschriftung der Plots %% 
+			%Sinus-Plot 
+			\node[color=blue, anchor=west](BeschSin) at (180/\LenSca,\USpitze) {$\hat{u}\sin\varphi$};
+			%Cosinus-Plot
+			\node[color=blue, anchor=west](BeschCos) at ($(\USpitze+1mm,-\PhiE/\LenSca) + (Nullpunkt)$) {$\hat{u}\cos\varphi$};	
 		\end{tikzpicture}
 		
 \end{flushright}
