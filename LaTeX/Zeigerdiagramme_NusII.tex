@@ -13,6 +13,8 @@
 \setboolean{ZeigerdiagrammII}{true}
 \newboolean{ZeigerdiagrammIII}
 \setboolean{ZeigerdiagrammIII}{true}
+\newboolean{ZeigerdiagrammIV}
+\setboolean{ZeigerdiagrammIV}{true}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -577,14 +579,14 @@
 			{angle = xEnd2--Ursprung--tmp2}; 	%Winkelpfiel der Spannung U2
 		\node [color=red] at ($(Ursprung) + (2.5mm,-1.1mm)$) {$\varphi_2$}; %Beschriftung Phi_2
 		% Plotten der Hilfslinien
-		\draw[thin, densely dotted]	(tmp1) --++ (\PhiZ:\Uzwei); %Ergänzung zum Parallelogramm
-		\draw[thin, densely dotted]	(tmp2) --++ (\PhiE:\Ueins); %Ergänzung zum Parallelogramm
+		\draw[thin, densely dotted]								(tmp1) --++ (\PhiZ:\Uzwei); %Ergänzung zum Parallelogramm
+		\draw[thin, densely dotted]								(tmp2) --++ (\PhiE:\Ueins); %Ergänzung zum Parallelogramm
 		\draw[color=gray, densely dash dot, thin, name path=h1] (tmp1) --++ (-1.3cm,0cm);	
 		\draw[color=gray, densely dash dot, thin, name path=h2] (tmp2) --++ (-1.1cm,0cm);	
 		\draw[color=gray, densely dash dot, thin, name path=h3] (tmp3) --++ (-2.5cm,0cm);	
-		\draw [name intersections={of=h1 and yAchse2, by=h11}] (h11) circle (0pt); %Bestimmung des Schnittpkt.
-		\draw [name intersections={of=h2 and yAchse2, by=h22}] (h22) circle (0pt); %Bestimmung des Schnittpkt.
-		\draw [name intersections={of=h3 and yAchse2, by=h33}] (h33) circle (0pt); %Bestimmung des Schnittpkt.
+		\draw[name intersections={of=h1 and yAchse2, by=h11}] 	(h11) circle (0pt); %Bestimmung des Schnittpkt.
+		\draw[name intersections={of=h2 and yAchse2, by=h22}] 	(h22) circle (0pt); %Bestimmung des Schnittpkt.
+		\draw[name intersections={of=h3 and yAchse2, by=h33}]   (h33) circle (0pt); %Bestimmung des Schnittpkt.
 		\draw[Hilfspfeil] ($(Ursprung) - (0.2cm,0cm)$) -- ($(h11) - (0.2cm,0cm)$) 
 			node[midway, left, color=blue]{$u_1$}; %Hilfspfeil für U1
 		\draw[Hilfspfeil] ($(h22) - (0.2cm,0cm)$) -- ($(h33) - (0.2cm,0cm)$) 
@@ -604,7 +606,182 @@
  	
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Zeigerdiagramm IV}
+
+\ifZeigerdiagrammIV{
+	
+\begin{flushright}
+	
+	\tikzsetnextfilename{Zeigerdiagramm_IV_a}
+	\begin{tikzpicture}
+		[Strompfeil/.style={-{Latex[length=2mm]},thick, red},							%Definiert den Sytle der Strompfeile
+		SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=red},	%Options for sinus plot	
+		Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
+		HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
+		Winkelpfeil/.style={pic text=$\varphi_3$, pic text options={scale=0.8}, draw,
+		-{Latex[length=1mm]}, angle radius = 6.5mm, angle eccentricity=1.3},			%Style der  Winkelpfeile
+		HelpLine/.style={densely dashed, very thin, color=red}							%Hilfslinien
+		]
+
+		%% Definitionen wie Zeigerlänge und Abstand der Grafiken - Gleiche Werte für Amplitude und Winkel wie in Bild II a) !!! %%  	
+		\def\ISpitzeE{0.9cm};		%Amplitude von I1
+		\def\ISpitzeZ{0.65cm};		%Amplitude von I2
+		\def\PhiE{0};				%Phasenverschiebung von I1
+		\def\PhiZ{50};				%Phasenverschiebung von I2
+		\def\LenSca{180};			%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
+		\def\TickLen{0.05}			% Halbe Länge des Achsen-Tick
+		\def\BeschScale{0.8}		%Skalireung der Achsenbeschrifung
+		
+		% Definieren von verschiedenen Koordinaten
+		\coordinate (xStart) at (-0.2cm,0);		  		  	  %Startpunkt der x-Achse (wt-Achse)
+		\coordinate (xEnd) at (360/\LenSca+0.2,0); 	 	 	  %Endpunkt der x-Achse (wt-Achse)
+		\coordinate (yStart) at (0cm,-\ISpitzeE-\ISpitzeZ);   %Startpunkt der y-Achse
+		\coordinate (yEnd) at (0cm,\ISpitzeE+\ISpitzeZ);	  %Endpunkt der y-Achse 
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Harmonishce Funktionen plotten: 
+		\draw[SinusPlot, name path=i1] plot (\t/\LenSca,{\ISpitzeE*sin(\t+\PhiE)});		%Plot i1 = I1*sin(wt+phi1)
+		\draw[SinusPlot, name path=i2] plot (\t/\LenSca,{\ISpitzeZ*sin(\t+\PhiZ)});		%Plot i2 = I2*sin(wt+phi2)
+		\draw[SinusPlot, name path=i3, color=black] plot (\t/\LenSca,{\ISpitzeE*sin(\t+\PhiE)+\ISpitzeZ*sin(\t+\PhiZ)});%Plot addition i1+i2
+		% Achsen Plotten:
+		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, left]{};			 %Plot y-axis
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
+		%Ticks & Beschriftung der x-Achse
+		\node[scale = \BeschScale, anchor = north east] at (0/\LenSca,0) {$0$};
+		\draw (90/\LenSca,\TickLen) -- (90/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\frac{\pi}{2}$};		
+		\draw (180/\LenSca,\TickLen) -- (180/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\pi$};
+		\draw (270/\LenSca,-\TickLen) -- (270/\LenSca,\TickLen) node[scale = \BeschScale, above]{$\frac{3\pi}{2}$};
+		\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above, fill=white]{$2\pi$};
+		% Beschriftung von i3(wt)
+		\node (Besch1) [anchor = west] at (180/\LenSca,\ISpitzeE+0.3cm) {$i_3(\omega t)$}; %Beschriftung i3(wt)
+		\draw (Besch1.west) -- ++ (200:3mm);	%Hilfslinie
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Urspurng des Zeigerdiagramms
+		\coordinate (Ursprung) at ($(0,0) - (\ISpitzeE+0.5cm,0)$);	%Definiert den Ursprung des Zeigerdiagramms
+		% Pfeile 
+		\draw[Strompfeil] (Ursprung) -- ++(\PhiE:\ISpitzeE) node[midway, below]{$\mzeiger{i}_1$}
+			node(tmp1) [HelpNode]{}; % Pfeil i1
+		\draw[Strompfeil] (Ursprung) -- ++(\PhiZ:\ISpitzeZ) node[near end, left]{$\mzeiger{i}_2$}
+			node(tmp2) [HelpNode]{}; % Pfeil i2
+		\draw[HelpLine] (tmp1) -- ++(\PhiZ:\ISpitzeZ) node(tmp3) [HelpNode]{}; % Hilfslinie von i2
+		\draw[HelpLine] (tmp2) -- ++(\PhiE:\ISpitzeE) node(tmp4) [HelpNode]{}; % Hilfslinie von i1
+		\draw[Strompfeil, color=black] (Ursprung) -- ++(tmp3) node[pos=0.93, above]{$\mzeiger{i}_3$}; %Pfeil i3
+		\path (tmp1) -- (Ursprung) -- (tmp3) pic[Winkelpfeil] {angle = tmp1--Ursprung--tmp3}; % Winkel einzeichnen
+	\end{tikzpicture}
+	%-----------------------------------------------------------------------------------------------------------------%	
+	
+	%-----------------------------------------------------------------------------------------------------------------%	
+	\tikzsetnextfilename{Zeigerdiagramm_IV_b}
+	\begin{tikzpicture}
+		[Strompfeil/.style={-{Latex[length=2mm]},thick, red},							%Definiert den Sytle der Strompfeile
+		HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
+		HelpLine/.style={densely dashed, very thin, color=red}							%Hilfslinien
+		]
+		
+		%% Definitionen wie Zeigerlänge und Winkel %%  	
+		\def\ISpitzeE{2cm};			%Amplitude von I1
+		\def\ISpitzeZ{1.2cm};		%Amplitude von I2
+		\def\PhiE{15};				%Phasenverschiebung von I1
+		\def\PhiZ{60};				%Phasenverschiebung von I2
+		\coordinate (Ursprung) at (0,0); % Definiere den Ursprung
+		
+		% Zeiger 
+		\draw[Strompfeil] (Ursprung) -- ++(\PhiE:\ISpitzeE) node[at end, below]{$\mzeiger{i}_1$}
+			node(tmp1) [HelpNode]{}; % Pfeil i1
+		\draw[Strompfeil] (Ursprung) -- ++(\PhiZ:\ISpitzeZ) node[midway, left]{$\mzeiger{i}_2$}
+			node(tmp2) [HelpNode]{}; % Pfeil i2
+		\draw (Ursprung) -- ++(0:\ISpitzeE+0.5cm) node(tmp3) [HelpNode]{}; % x-Achse
+		\draw[HelpLine] (tmp1) -- ++(\PhiZ:\ISpitzeZ) node(tmp4) [HelpNode]{}; % Hilfslinie von i2
+		\draw[HelpLine] (tmp2) -- ++(\PhiE:\ISpitzeE) node(tmp5) [HelpNode]{}; % Hilfslinie von i1
+		\draw[Strompfeil, color=black] (Ursprung) -- (tmp4) node[pos=1.05, below]{$\mzeiger{i}_3$}; %Pfeil i3
+		
+		% Winkelbeschriftungen
+		\path (tmp3) -- (Ursprung) -- (tmp1)
+		 	pic[pic text=$\varphi_1$, pic text options={scale=0.8}, draw, -{Latex[length=1mm]}, angle radius = 10mm,
+		 	angle eccentricity=1.2]
+		 	{angle = tmp3--Ursprung--tmp1}; % Winkel phi1
+		\path (tmp1) -- (Ursprung) -- (tmp2)
+			pic[pic text=$\varphi_2 - \varphi_1$, pic text options={fill=white, scale=0.7, anchor=south west}, draw, 
+			-{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.1]
+			{angle = tmp1--Ursprung--tmp2}; % Winkel phi2 - phi1
+		\path (Ursprung) -- (tmp2) -- (tmp4)
+			pic[pic text=$\alpha$, pic text options={scale=0.8}, draw, {Latex[length=1mm]}-{Latex[length=1mm]},
+			angle radius = 3mm, angle eccentricity=0.6]
+			{angle = Ursprung--tmp2--tmp4}; % Winkel alpha
+		\path (tmp4) -- (tmp1) -- (Ursprung)
+			pic[pic text=$\alpha$, pic text options={scale=0.8}, draw, {Latex[length=1mm]}-{Latex[length=1mm]},
+			angle radius = 3mm, angle eccentricity=0.6]
+			{angle = tmp4--tmp1--Ursprung}; % Winkel alpha
+		\path (tmp2) -- (tmp4) -- (tmp1)
+			pic[pic text=$\varphi_2 - \varphi_1$, pic text options={fill=white, scale=0.7, anchor=north east}, draw, {Latex[length=1mm]}-{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.1]
+			{angle = tmp2--tmp4--tmp1}; % Winkel phi2 - phi1	
+	\end{tikzpicture}
+	%-----------------------------------------------------------------------------------------------------------------%	
+	
+	%-----------------------------------------------------------------------------------------------------------------%	
+	\tikzsetnextfilename{Zeigerdiagramm_IV_c}
+	\begin{tikzpicture}
+		[Strompfeil/.style={-{Latex[length=2mm]},thick, red},							%Definiert den Sytle der Strompfeile
+		HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},		%Options für Hilfs-Node am Ende der Hilfslinie
+		HelpLine/.style={very thin},													%Hilfslinien
+		HelpArrow/.style={very thin, {Latex[length=1mm]}-{Latex[length=1mm]}}			%Hilfspfeile
+		]
+	
+		%% Definitionen wie Zeigerlänge und Winkel - ACHTUNG: Für Länge und Winkel selbe Werte wie in IV b) verwenden !! %%  	
+		\def\ISpitzeE{2cm};			%Amplitude von I1
+		\def\ISpitzeZ{1.2cm};		%Amplitude von I2
+		\def\PhiE{15};				%Phasenverschiebung von I1
+		\def\PhiZ{60};				%Phasenverschiebung von I2
+		\coordinate (Ursprung) at (0,0); % Definiere den Ursprung
+		
+		% Zeiger 
+		\draw[Strompfeil] (Ursprung) -- ++(\PhiE:\ISpitzeE) node[near end, above]{$\mzeiger{i}_1$}
+			node(end1) [HelpNode]{}; % Pfeil i1
+		\draw[Strompfeil] (end1) -- ++(\PhiZ:\ISpitzeZ) node[midway, left]{$\mzeiger{i}_2$}
+			node(end2) [HelpNode]{}; % Pfeil i2
+		\draw[Strompfeil, color=black] (Ursprung) -- (end2) node[midway, above]{$\mzeiger{i}_3$}; %Pfeil i3
+		
+		%% Hilfslinien %%
+		% Berechne Längen der Hilfslinien
+		\pgfmathsetmacro\cosE{cos(\PhiE)*\ISpitzeE}; %i1*cos(phi1)
+		\pgfmathsetmacro\cosZ{cos(\PhiZ)*\ISpitzeZ}; %i2*cos(phi2)
+		\pgfmathsetmacro\cosD{\cosE+\cosZ};			 %i3*cos(phi3)
+		\pgfmathsetmacro\sinE{sin(\PhiE)*\ISpitzeE}; %i1*sin(phi1)
+		\pgfmathsetmacro\sinZ{sin(\PhiZ)*\ISpitzeZ}; %i2*sin(phi2)
+		\pgfmathsetmacro\sinD{\sinE+\sinZ};			 %i3*sin(phi3)
+		% Definiere Offset der Linien
+		\def\OffLinG{0.5cm};
+		\def\OffLinK{0.1cm};
+		
+		\draw[HelpLine] (Ursprung) -- ++(-90:\OffLinG) node(help1) [HelpNode]{};
+		\draw[HelpLine] (end1)     -- ++(-90:\sinE+\OffLinK) node(help2) [HelpNode]{};
+		\draw[HelpLine] (end1)     -- ++(  0:\cosZ+\OffLinK) node(help3) [HelpNode]{};
+		\draw[HelpLine] (end2)     -- ++(-90:\sinD+\OffLinG) node(help4) [HelpNode]{};
+		\draw[HelpLine] (end2) 	   -- ++(  0:1cm) node(help5) [HelpNode]{};
+		
+		\draw[HelpLine] (Ursprung) -- ++(0:\cosD+1cm) node(endx) [HelpNode]{}; % x-Achse
+		
+		% Hilfspfeile 
+		\draw[HelpArrow] (help1) -- (help4);
+		%......
+		
+		
+		% Winkel
+		\path (endx) -- (Ursprung) -- (end1)
+		pic[pic text=$\varphi_1$, pic text options={scale=0.8}, draw, -{Latex[length=1mm]}, angle radius = 13mm, angle eccentricity=1.15]
+		{angle = endx--Ursprung--end1}; % Winkel phi1
+		\path (endx) -- (Ursprung) -- (end2)
+		pic[pic text=$\varphi_3$, pic text options={anchor=north, scale=0.8}, draw, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.3]
+		{angle = endx--Ursprung--end2}; % Winkel phi2
+		%..... 
+		
+	\end{tikzpicture}
+	
+\end{flushright}	
+}\fi\end{frame}
 
 \end{document}
 
