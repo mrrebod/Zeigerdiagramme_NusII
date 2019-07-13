@@ -19,6 +19,10 @@
 \setboolean{WiderstandImWechselstromkreis}{true}
 \newboolean{InduktivitaetImWechselstromkreis}
 \setboolean{InduktivitaetImWechselstromkreis}{true}
+\newboolean{KondensatorImWechselstromkreis}
+\setboolean{KondensatorImWechselstromkreis}{true}
+\newboolean{KonstruktionEinesZeigerdiagramms}
+\setboolean{KonstruktionEinesZeigerdiagramms}{true}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -840,7 +844,7 @@
 			\node[scale = \BeschScale, anchor = north] at (0/\LenSca,0) {$0$};
 			\node[scale = \BeschScale, anchor = east]  at (0/\LenSca,0) {$0$};
 			\draw (180/\LenSca,\TickLen) -- (180/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\pi$};		
-			\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above, fill=white]{$2\pi$};
+			\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
 			% Hilfslinien und Amplitudenbeschriftung
 			\draw[HelpLine] (0,\USpitze) -- (90/\LenSca,\USpitze)
 				node[at start, left, color=blue]{$\hat{u}$}  	 %Bechriftung der Spannungsamplitude
@@ -864,8 +868,8 @@
 			\def\USpitze{1cm};		%Amplitude von U
 			
 			%% Zeigerdiagramm %% 
-			\draw[Spannungspfeil] (0,0)      -- ++(0:\USpitze) node[at start, above, blue]{$\hat{\underline{u}}$}; %Spannungspfeil
-			\draw[Strompfeil]     (0,-0.1cm) -- ++(0:\ISpitze) node[at start, below, red] {$\hat{\underline{i}}$}; %Strompfeil
+			\draw[Spannungspfeil] (0,0)      -- ++(0:\USpitze) node[at start, above]{$\hat{\underline{u}}$}; %Spannungspfeil
+			\draw[Strompfeil]     (0,-0.1cm) -- ++(0:\ISpitze) node[at start, below] {$\hat{\underline{i}}$};%Strompfeil
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%	
 		
@@ -875,6 +879,7 @@
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Induktivität im Wechselstromkreis}
 
@@ -882,72 +887,247 @@
 	
 	\begin{flushright}
 		
-%		\tikzsetnextfilename{InduktivitaetImWechselstromkreis_b}
-%		\begin{tikzpicture}
-%		[
-%		SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=red},	%Options for sinus plot	
-%		Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
-%		HelpLine/.style={densely dashed, very thin}										%Hilfslinien
-%		]	
-%		
-%		%% Definitionen wie Zeigerlänge und Winkel %%  	
-%		\def\ISpitze{0.65cm};	%Amplitude von I
-%		\def\USpitze{1cm};		%Amplitude von U
-%		\def\LenSca{180};		%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
-%		\def\TickLen{0.05};		% Halbe Länge des Achsen-Tick
-%		\def\BeschScale{0.8};   %Beschriftungsgrösse Skalierungsfaktor
-%		
-%		% Definieren von verschiedenen Koordinaten
-%		\coordinate (xStart) at (0cm,0cm);		  		  	  %Startpunkt der x-Achse (wt-Achse)
-%		\coordinate (xEnd)   at (360/\LenSca+0.2,0); 	 	  %Endpunkt der x-Achse (wt-Achse)
-%		\coordinate (yStart) at (0cm,0cm);    				  %Startpunkt der y-Achse
-%		\coordinate (yEnd)   at (0cm,\USpitze+0.3cm);	      %Endpunkt der y-Achse 
-%		
-%		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		% Harmonishce Funktionen plotten: 
-%		\draw[SinusPlot, red]  plot (\t/\LenSca,{\ISpitze*sin(\t)});	%Plot i = I*sin(wt)
-%		\draw[SinusPlot, blue] plot (\t/\LenSca,{\USpitze*sin(\t)});	%Plot u = U*sin(wt)
-%		% Achsen Plotten:
-%		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, left]{\textcolor{blue}{$u$,}\textcolor{red}{$i$}};	%Plot y-axis
-%		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
-%		%Ticks & Beschriftung der x-Achse
-%		\node[scale = \BeschScale, anchor = north] at (0/\LenSca,0) {$0$};
-%		\node[scale = \BeschScale, anchor = east]  at (0/\LenSca,0) {$0$};
-%		\draw (180/\LenSca,\TickLen) -- (180/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\pi$};		
-%		\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above, fill=white]{$2\pi$};
-%		% Hilfslinien und Amplitudenbeschriftung
-%		\draw[HelpLine] (0,\USpitze) -- (90/\LenSca,\USpitze)
-%		node[at start, left, color=blue]{$\hat{u}$}  	 %Bechriftung der Spannungsamplitude
-%		node[pos=1.5, color=blue]{$u$};					 %Beschriftung der Spannungsschwingung
-%		\draw[HelpLine] (0,\ISpitze) -- (90/\LenSca,\ISpitze)
-%		node[at start, left, color=red]{$\hat{i}$}		 %Bechriftung der Stromamplitude
-%		node[anchor=west, at end, below, color=red]{$i$};%Beschriftung der Stromschwingung 		
-%		\end{tikzpicture}
-%		%-----------------------------------------------------------------------------------------------------------------%	
-%		
-%		%-----------------------------------------------------------------------------------------------------------------%	
-%		\tikzsetnextfilename{InduktivitaetImWechselstromkreis_c}
-%		\begin{tikzpicture}	
-%		[
-%		Strompfeil/.style={-{Latex[length=2mm]},thick, red},	    %Definiert den Sytle der Strompfeile
-%		Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},	%Definiert den Sytle der Spannungsfeile
-%		]
-%		
-%		%% Definitionen wie Zeigerlänge und Winkel - ACHTUNG: Für Länge selbe Werte wie in b) verwenden !! %%  	
-%		\def\ISpitze{0.65cm};	%Amplitude von I
-%		\def\USpitze{1cm};		%Amplitude von U
-%		
-%		%% Zeigerdiagramm %% 
-%		\draw[Spannungspfeil] (0,0)      -- ++(0:\USpitze) node[at start, above, blue]{$\hat{\underline{u}}$}; %Spannungspfeil
-%		\draw[Strompfeil]     (0,-0.1cm) -- ++(0:\ISpitze) node[at start, below, red] {$\hat{\underline{i}}$}; %Strompfeil
-%		\end{tikzpicture}
-%		%-----------------------------------------------------------------------------------------------------------------%	
-%		
+		\tikzsetnextfilename{InduktivitaetImWechselstromkreis_b}
+		\begin{tikzpicture}
+			[
+			SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=red},	%Options for sinus plot	
+			Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
+			HelpLine/.style={densely dashed, very thin},									%Hilfslinien
+			Phasenpfeil/.style={-{Latex[length=0.7mm]}, very thin},				  		    %Style des Phasenpfeils (Zeitbereich)
+			]	
+			
+			%% Definitionen wie Zeigerlänge und Winkel %%  	
+			\def\ISpitze{0.65cm};	%Amplitude von I
+			\def\USpitze{1cm};		%Amplitude von U
+			\def\PhiU{90};			%Phasenverschiebung
+			\def\LenSca{180};		%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
+			\def\TickLen{0.05};		% Halbe Länge des Achsen-Tick
+			\def\BeschScale{0.8};   %Beschriftungsgrösse Skalierungsfaktor
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart) at (0cm,0cm);		  		  	  %Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd)   at (360/\LenSca+0.2,0); 	 	  %Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart) at (0cm,0cm);    				  %Startpunkt der y-Achse
+			\coordinate (yEnd)   at (0cm,\USpitze+0.3cm);	      %Endpunkt der y-Achse 
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Harmonishce Funktionen plotten: 
+			\draw[SinusPlot, red, name path=i]  plot (\t/\LenSca,{\ISpitze*sin(\t)});			%Plot i = I*sin(wt)
+			\draw[SinusPlot, blue, name path=u] plot (\t/\LenSca,{\USpitze*sin(\t + \PhiU)});	%Plot u = U*sin(wt + phi)
+			% Achsen Plotten:
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, left]{\textcolor{blue}{$u$,}\textcolor{red}{$i$}};	%Plot y-axis
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
+			%Ticks & Beschriftung der x-Achse
+			\node[scale = \BeschScale, anchor = north] at (0/\LenSca,0) {$0$};
+			\node[scale = \BeschScale, anchor = east]  at (0/\LenSca,0) {$0$};
+			\draw (180/\LenSca,\TickLen) -- (180/\LenSca,-\TickLen) node[scale = \BeschScale, below]{$\pi$};		
+			\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
+			% Hilfslinien und Amplitudenbeschriftung
+			\draw[HelpLine] (0,\USpitze) -- (90/\LenSca - \PhiU/\LenSca,\USpitze)
+				node[at start, left, color=blue]{$\hat{u}$}  	 			%Bechriftung der Spannungsamplitude
+				node[at end, anchor=west, color=blue]{\hspace{0.1cm}$u$};   %Beschriftung der Spannungsschwingung
+			\draw[HelpLine] (0,\ISpitze) -- (90/\LenSca,\ISpitze)
+				node[at start, left, color=red]{$\hat{i}$}		 %Bechriftung der Stromamplitude
+				node[anchor=west, at end, below, color=red]{$i$};%Beschriftung der Stromschwingung
+			% Pfeil der Phasenverschiebung 
+			\draw [name intersections={of=i and xAchse, name=interi}, very thin]
+				(interi-3) -- ++(-90:\USpitze - 0.1cm) node(HNode1){};	%Plotted Hilfslinie und genereirt Hilfsnode am Ende
+			\draw [name intersections={of=u and xAchse, name=interu}, very thin]
+				(interu-2) -- ++(-90:\USpitze - 0.1cm) node(HNode2){};	%Plotted Hilfslinie und genereirt Hilfsnode am End	
+			\draw[Phasenpfeil] ($(0,0.1cm)+(HNode2)$) -- ($(0,0.1cm)+(HNode1)$)
+				node[below, midway]{$\varphi$};									%Plotted Pfeil mit Beschriftung 		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
+		%-----------------------------------------------------------------------------------------------------------------%	
+		\tikzsetnextfilename{InduktivitaetImWechselstromkreis_c}
+		\begin{tikzpicture}	
+			[
+			Strompfeil/.style={-{Latex[length=2mm]},thick, red},	    %Definiert den Sytle der Strompfeile
+			Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},	%Definiert den Sytle der Spannungsfeile
+			]
+			
+			%% Definitionen wie Zeigerlänge und Winkel - ACHTUNG: Für Länge selbe Werte wie in b) verwenden !! %%  	
+			\def\ISpitze{0.65cm};	%Amplitude von I
+			\def\USpitze{1cm};		%Amplitude von U
+			\def\PhiU{90};			%Phasenverschiebung
+			
+			\coordinate (Ursprung) at (0,0);
+			\coordinate (Uend) 	   at (\PhiU:\USpitze);
+			\coordinate (Iend) 	   at (0:\ISpitze);
+			
+			%% Zeigerdiagramm %% 
+			\draw[Spannungspfeil] (Ursprung) -- (Uend) node[midway, left]  {$\hat{\underline{u}}$}; %Spannungspfeil
+			\draw[Strompfeil]     (Ursprung) -- (Iend) node[midway, below] {$\hat{\underline{i}}$}; %Strompfeil
+			%Zwischenwinkel:
+			\path (Iend) -- (Ursprung) -- (Uend) 			
+				pic[pic text=$\varphi$, draw, -{Latex[length=1mm]}, 
+				angle radius = 3mm, angle eccentricity=1.4]
+				{angle= Iend--Ursprung--Uend}; % Winkel phi
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
 	\end{flushright}
 	
 }\fi
 
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Kondensator im Wechselstromkreis}
+
+\ifKondensatorImWechselstromkreis{
+	
+	\begin{flushright}
+		
+		\tikzsetnextfilename{KondensatorImWechselstromkreis_b}
+		\begin{tikzpicture}
+			[
+			SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=red},	%Options for sinus plot	
+			Achsenpfeil/.style={->},												  		%Style des Achsenpfeils
+			HelpLine/.style={densely dashed, very thin},									%Hilfslinien
+			Phasenpfeil/.style={-{Latex[length=0.7mm]}, very thin},				  		    %Style des Phasenpfeils (Zeitbereich)
+			]	
+			
+			%% Definitionen wie Zeigerlänge und Winkel %%  	
+			\def\ISpitze{0.65cm};	%Amplitude von I
+			\def\USpitze{1cm};		%Amplitude von U
+			\def\PhiI{90};			%Phasenverschiebung
+			\def\LenSca{180};		%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
+			\def\TickLen{0.05};		% Halbe Länge des Achsen-Tick
+			\def\BeschScale{0.8};   %Beschriftungsgrösse Skalierungsfaktor
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart) at (0cm,0cm);		  		  	  %Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd)   at (360/\LenSca+0.2,0); 	 	  %Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart) at (0cm,0cm);    				  %Startpunkt der y-Achse
+			\coordinate (yEnd)   at (0cm,\USpitze+0.3cm);	      %Endpunkt der y-Achse 
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeitbereich %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Harmonishce Funktionen plotten: 
+			\draw[SinusPlot, red, name path=i]  plot (\t/\LenSca,{\ISpitze*sin(\t + \PhiI)});%Plot i = I*sin(wt + phi)
+			\draw[SinusPlot, blue, name path=u] plot (\t/\LenSca,{\USpitze*sin(\t)});	     %Plot u = U*sin(wt)
+			% Achsen Plotten:
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[at end, left]{\textcolor{blue}{$u$,}\textcolor{red}{$i$}};	%Plot y-axis
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[at end, below]{$\omega$t};  %Plot x-axis
+			%Ticks & Beschriftung der x-Achse
+			\node[scale = \BeschScale, anchor = north] at (0/\LenSca,0) {$0$};
+			\node[scale = \BeschScale, anchor = east]  at (0/\LenSca,0) {$0$};
+			\draw (180/\LenSca,\TickLen) -- (180/\LenSca,-\TickLen) node[scale = \BeschScale, anchor=north east]{$\pi$};		
+			\draw (360/\LenSca,-\TickLen) -- (360/\LenSca,\TickLen) node[scale = \BeschScale, above]{$2\pi$};
+			% Hilfslinien und Amplitudenbeschriftung
+			\draw[HelpLine] (0,\USpitze) -- (90/\LenSca,\USpitze)
+				node[at start, left, color=blue]{$\hat{u}$}  	 			%Bechriftung der Spannungsamplitude
+				node[at end, anchor=west, color=blue]{\hspace{0.1cm}$u$};   %Beschriftung der Spannungsschwingung
+			\draw[HelpLine] (0,\ISpitze) -- (90/\LenSca - \PhiI/\LenSca,\ISpitze)
+				node[at start, left, color=red]{$\hat{i}$}		 	  %Bechriftung der Stromamplitude
+				node[anchor=north west, color=red]{\hspace{0.3cm}$i$};%Beschriftung der Stromschwingung
+			% Pfeil der Phasenverschiebung 
+			\draw [name intersections={of=i and xAchse, name=interi}, very thin]
+				(interi-1) -- ++(-90:\USpitze - 0.1cm) node(HNode1){};	%Plotted Hilfslinie und genereirt Hilfsnode am Ende
+			\draw [name intersections={of=u and xAchse, name=interu}, very thin]
+				(interu-2) -- ++(-90:\USpitze - 0.1cm) node(HNode2){};	%Plotted Hilfslinie und genereirt Hilfsnode am End	
+			\draw[Phasenpfeil] ($(0,0.1cm)+(HNode2)$) -- ($(0,0.1cm)+(HNode1)$)
+				node[below, midway]{$\varphi$};									%Plotted Pfeil mit Beschriftung 		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
+		%-----------------------------------------------------------------------------------------------------------------%	
+		\tikzsetnextfilename{KondensatorImWechselstromkreis_c}
+		\begin{tikzpicture}	
+			[
+			Strompfeil/.style={-{Latex[length=2mm]},thick, red},	    %Definiert den Sytle der Strompfeile
+			Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},	%Definiert den Sytle der Spannungsfeile
+			]
+			
+			%% Definitionen wie Zeigerlänge und Winkel - ACHTUNG: Für Länge selbe Werte wie in b) verwenden !! %%  	
+			\def\ISpitze{0.65cm};	%Amplitude von I
+			\def\USpitze{1cm};		%Amplitude von U
+			\def\PhiI{90};			%Phasenverschiebung
+			
+			\coordinate (Ursprung) at (0,0);
+			\coordinate (Uend) 	   at (0:\USpitze);
+			\coordinate (Iend) 	   at (\PhiI:\ISpitze);
+			
+			%% Zeigerdiagramm %% 
+			\draw[Spannungspfeil] (Ursprung) -- (Uend) node[midway, below]  {$\hat{\underline{u}}$}; %Spannungspfeil
+			\draw[Strompfeil]     (Ursprung) -- (Iend) node[midway, left]   {$\hat{\underline{i}}$}; %Strompfeil
+			%Zwischenwinkel:
+			\path (Uend) -- (Ursprung) -- (Iend) 			
+				pic[pic text=$\varphi$, draw, {Latex[length=1mm]}-, 
+				angle radius = 3mm, angle eccentricity=1.4]
+				{angle= Uend--Ursprung--Iend}; % Winkel phi
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
+	\end{flushright}
+	
+}\fi
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Beispiel - Konstruktion eines Zeigerdiagramms}
+
+\ifKonstruktionEinesZeigerdiagramms{
+	
+	
+	\begin{flushright}
+		
+		\tikzsetnextfilename{KonstruktionEinesZeigerdiagramms_b}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		\begin{tikzpicture}	
+			[
+			Strompfeil/.style={-{Latex[length=2mm]},thick, red},	    			 %Definiert den Sytle der Strompfeile
+			Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},				 %Definiert den Sytle der Spannungsfeile
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt} %Options für Hilfs-Node am Ende der Hilfslinie
+			]
+			
+			%% Definitionen wie Zeigerlänge und Winkel %%  
+			\def\IspitzeE{1.5cm}; %Amplitude von i1
+			\def\IspitzeC{1.3cm};	  %Amplitude von ic
+			\def\UspitzeE{2.3cm}; %Amplitude von u1
+			\def\UspitzeZ{1.1cm}; %Amplitude von uc
+			
+			\pgfmathsetmacro\PhiD{atan(\IspitzeC/\IspitzeE)}; %Berechne Winkel zwischen i1 und i2
+			
+			%% Definitionen von verschiedenen Koordinaten %%
+			\coordinate (Ursprung) at (0,0);
+			\coordinate (UEend)	   at (0:\UspitzeE);
+			\coordinate (IEend)	   at (0:\IspitzeE);
+			\coordinate (ICend)	   at (90:\IspitzeC);
+			\coordinate (UZend)	   at (\PhiD:\UspitzeZ);
+			
+			%% Zeigerdiagramm %%
+			\draw[Spannungspfeil] (Ursprung) -- (UEend) 	node[at end, below]  {$\mzeiger{u}_1$}; %Spannung u1
+			\draw[Strompfeil]     (Ursprung) -- (IEend) 	node[near end, below]{$\mzeiger{i}_1$}; %Strom i1
+			\draw[Strompfeil]     (IEend)  -- ++(ICend) 	node[near end, right]{$\mzeiger{i}_C$} node[HelpNode](NodeICend){}; %Strom iC
+			\draw[Strompfeil]     (Ursprung) -- (NodeICend) node[near end, above]{$\mzeiger{i}_2$}; %Strom i2
+			\draw[Spannungspfeil] (Ursprung) -- (UZend) 	node[midway, above]  {$\mzeiger{u}_2$}; %Spannung u2
+			\draw[Spannungspfeil] (UEend)  -- ++(UZend) 	node[near end, below]{$\mzeiger{u}_2$} node[HelpNode](NodeUZend){}; %Spannung u2
+			\draw[Spannungspfeil, color=black] (Ursprung) -- (NodeUZend) node[near end, above]{$\mzeiger{u}$}; %Quellspannung
+			
+			% Winkelbeschriftungen %
+			\path (UEend) -- (Ursprung) -- (NodeUZend) 			
+				pic[pic text=$\varphi_1$, draw, -{Latex[length=1mm]}, 
+				angle radius = 17mm, angle eccentricity=1.13]
+				{angle= UEend--Ursprung--NodeUZend}; % Winkel phi1
+			\path (NodeUZend) -- (Ursprung) -- (NodeICend) 			
+				pic[pic text=$\varphi_2$, draw, -{Latex[length=1mm]}, 
+				angle radius = 6.5mm, angle eccentricity=1.3]
+				{angle= NodeUZend--Ursprung--NodeICend}; % Winkel phi2	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		 	
+	\end{flushright}
+
+}\fi
+
+
+\end{frame}
+
 
 
 \end{document}
