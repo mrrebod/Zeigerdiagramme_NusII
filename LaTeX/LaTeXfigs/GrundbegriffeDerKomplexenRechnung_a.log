@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.25)  20 JUL 2019 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.25)  20 JUL 2019 16:26
 entering extended mode
-**./Zeigerdiagramme_NusII.tex
-(Zeigerdiagramme_NusII.tex
-LaTeX2e <2018-04-01> patch level 5
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamer.cls"
+**\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagramme_NusII}
+(Zeigerdiagramme_NusII.tex ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\t
+ex\latex\beamer\beamer.cls"
 Document Class: beamer 2018/12/02 v3.55 A class for typesetting presentations
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasem
@@ -121,7 +120,6 @@ Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
 sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
@@ -153,7 +151,6 @@ futil-common-lists.tex"))
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
 futil-latex.def"
 \pgfutil@abb=\box34
-
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -215,8 +212,8 @@ File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
 pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.s
+ty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color
@@ -470,7 +467,7 @@ Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
 Package hyperref Info: Bookmarks ON on input line 4762.
 \c@Hy@tempcnt=\count123
- ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -489,7 +486,6 @@ Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
 \Hy@abspage=\count125
-
 
 Package hyperref Message: Stopped early.
 
@@ -644,26 +640,22 @@ heorems.sty"
 y"
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip51
-
 For additional information on amsmath, use the `?' option.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
 y"
 Package: amstext 2000/06/29 v2.01 AMS text
-
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks32
 \ex@=\dimen176
-))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
-"
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.
+sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen177
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
-"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.s
+ty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count142
@@ -703,8 +695,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks36
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amscls\amsthm.st
+y"
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks37
 \thm@bodyfont=\toks38
@@ -734,7 +726,6 @@ themedefault.sty"
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerouter
 themedefault.sty"))) (HPE_Lecture.sty
 Package: HPE_Lecture 
-
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2018/06/05 3.22 The Babel package
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.def
@@ -757,7 +748,6 @@ phy)
 anb.ldf"
 Language: ngermanb 2018/03/29 v2.10 German support for babel (post-1996 orthogr
 aphy)
-
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2018/06/05 3.22 Babel common definitions
 \babel@savecnt=\count155
@@ -769,15 +759,15 @@ LaTeX Info: Redefining \textlatin on input line 1915.
 \bbl@dirlevel=\count156
 )
 Package babel Info: Making " an active character on input line 121.
-)))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+))) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.
+sty"
 Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks43
 \inpenc@posthook=\toks44
 ) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
 "
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
- ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\helvet.s
@@ -826,7 +816,6 @@ LaTeX Info: Redefining \hbar on input line 50.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\mathtools\mathtool
 s.sty"
 Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
-
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count157
@@ -857,8 +846,8 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen194
 \l_MT_above_shortintertext_sep=\dimen195
 \l_MT_below_shortintertext_sep=\dimen196
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amscd.sty"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amscd.st
+y"
 Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \athelp@=\toks45
 \minaw@=\dimen197
@@ -869,29 +858,25 @@ Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
 ut line 28.
- ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty"
 Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldpureletters=\mathgroup9
 LaTeX Info: Redefining \bm on input line 207.
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\esint\esint.sty"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\esint\esint.sty"
 Package: esint 
 \symlargesymbolsA=\mathgroup10
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\units.sty"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\units.sty"
 Package: units 1998/08/04 v0.9b Typesetting units
-
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\nicefrac.sty
-"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\nicefrac.s
+ty"
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseDisplaystyle=\skip61
 \L@UnitsRaiseTextstyle=\skip62
 \L@UnitsRaiseScriptstyle=\skip63
-))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\dcolumn.sty"
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\dcolumn.s
+ty"
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
@@ -1307,14 +1292,17 @@ File: pgfcoreexternal.code.tex 2015/08/29  (rcs-revision 1.22)
 ompatib\pgfplotsoldpgfsupp_tikzlibraryexternal.code.tex"
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
 ompatib\pgfplotsoldpgfsupp_tikzexternalshared.code.tex")))
-\openout3 = `Zeigerdiagramme_NusII.auxlock'.
+No auxiliary output files.
+
+\w@pgfexternal@auxout=\write5
+Package TikZ externalization: calling \geometry{driver=none} during externaliza
+tion.
 
 \c@sectionpage=\count192
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\textpos\textpos.st
 y"
 Package: textpos 2016/06/07 v1.8
-
 Package: textpos 2016/06/07 1.8, absolute positioning of text on the page
 \TP@textbox=\box67
 \TP@holdbox=\box68
@@ -1364,35 +1352,31 @@ r\tikz\libraries\tikzlibraryintersections.code.tex"
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
 flibraryintersections.code.tex"
 \pgf@intersect@solutions=\count199
-)) (Zeigerdiagramme_NusII.aux)
-\openout1 = `Zeigerdiagramme_NusII.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 40.
-
+))
+No file LaTeXfigs/GrundbegriffeDerKomplexenRechnung_a.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 37.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.40002pt on input line 40.
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+(Font)              scaled to size 6.40002pt on input line 37.
+*geometry* detected driver: <none>
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: \Gm@driver 
 * paper: custom
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1455,7 +1439,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box71
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -1467,78 +1451,74 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count272
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
- (Zeigerdiagramme_NusII.out) (Zeigerdiagramme_NusII.out)
-\@outlinefile=\write5
-\openout5 = `Zeigerdiagramme_NusII.out'.
-
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 \symnumbers=\mathgroup11
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 40.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 37.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 40
+(Font)              `pureletters' in the math version `normal' on input line 37
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> T1/ptm/m/it on input line 40.
+(Font)                  OT1/mathkerncmss/m/sl --> T1/ptm/m/it on input line 37.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 40.
+(Font)              `pureletters' in the math version `bold' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/m/it on input line 40
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/m/it on input line 37
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/ztmcm/m/n --> T1/ptm/m/n on input line 40.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 40.
+(Font)                  OT1/ztmcm/m/n --> T1/ptm/m/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 40.
+(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 40.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 40.
+(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 40.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 40.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 40.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 40.
+(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 40.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 40.
+(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 40.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 40.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 40.
+(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 40.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/ztmcm/m/n --> T1/ptm/bx/n on input line 40.
+(Font)                  OT1/ztmcm/m/n --> T1/ptm/bx/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 40.
+(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 40.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 40.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 40.
-LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 40.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 37.
+LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 37.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `normal' on input lin
-e 40.
+e 37.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `norma
 l'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 4
-0.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 3
+7.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `bold' on input line 
-40.
+37.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `bold'
 
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 4
-0.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 3
+7.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
 tor-basic-dictionary-English.dict"
@@ -1564,7 +1544,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tor-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 40.
+LaTeX Info: Redefining \microtypecontext on input line 37.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -1584,234 +1564,220 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
-(Zeigerdiagramme_NusII.nav)
+No file LaTeXfigs/GrundbegriffeDerKomplexenRechnung_a.nav.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.00002pt on input line 40.
+(Font)              scaled to size 4.00002pt on input line 37.
 
-Overfull \hbox (1.11195pt too wide) in paragraph at lines 40--40
+Overfull \hbox (1.11195pt too wide) in paragraph at lines 37--37
 [][]  
  []
 
-===== Image 'LaTeXfigs/Zeigerdiagramm_I_a' is up-to-date. ======
-===== Image 'LaTeXfigs/Zeigerdiagramm_I_b' is up-to-date. ======
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
+(Font)              scaled to size 6.40002pt on input line 246.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.76003pt on input line 249.
+(Font)              scaled to size 8.76003pt on input line 246.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.82405pt on input line 249.
-<HPE_background.pdf, id=14, 364.19562pt x 273.14546pt>
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 249.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+(Font)              scaled to size 13.82405pt on input line 246.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 3.20001pt on input line 249.
+(Font)              scaled to size 3.20001pt on input line 246.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[1
-
-{C:/Users/Marco/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./HPE_backg
-round.pdf> <./LaTeXfigs/Zeigerdiagramm_I_a.pdf> <./LaTeXfigs/Zeigerdiagramm_I_b
-.pdf>]
-===== Image 'LaTeXfigs/Zeigerdiagramm_II_a' is up-to-date. ======
-===== Image 'LaTeXfigs/Zeigerdiagramm_II_b' is up-to-date. ======
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 423.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[2
-
- <./LaTeXfigs/Zeigerdiagramm_II_a.pdf> <./LaTeXfigs/Zeigerdiagramm_II_b.pdf>]
-===== Image 'LaTeXfigs/Zeigerdiagramm_III_a_b_c_d' is up-to-date. ======
-===== Image 'LaTeXfigs/Zeigerdiagramm_III_e' is up-to-date. ======
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 621.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[3
-
- <./LaTeXfigs/Zeigerdiagramm_III_a_b_c_d.pdf> <./LaTeXfigs/Zeigerdiagramm_III_e
-.pdf>]
-===== Image 'LaTeXfigs/Zeigerdiagramm_IV_a' is up-to-date. ======
-===== Image 'LaTeXfigs/Zeigerdiagramm_IV_b' is up-to-date. ======
-===== Image 'LaTeXfigs/Zeigerdiagramm_IV_c' is up-to-date. ======
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 811.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[4
-
- <./LaTeXfigs/Zeigerdiagramm_IV_a.pdf> <./LaTeXfigs/Zeigerdiagramm_IV_b.pdf> <.
-/LaTeXfigs/Zeigerdiagramm_IV_c.pdf>]
-===== Image 'LaTeXfigs/WiderstandImWechselstromkreis_b' is up-to-date. ======
-===== Image 'LaTeXfigs/WiderstandImWechselstromkreis_c' is up-to-date. ======
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 886.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[5
-
- <./LaTeXfigs/WiderstandImWechselstromkreis_b.pdf> <./LaTeXfigs/WiderstandImWec
-hselstromkreis_c.pdf>]
-===== Image 'LaTeXfigs/InduktivitaetImWechselstromkreis_b' is up-to-date. =====
-=
-===== Image 'LaTeXfigs/InduktivitaetImWechselstromkreis_c' is up-to-date. =====
-=
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 980.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[6
-
- <./LaTeXfigs/InduktivitaetImWechselstromkreis_b.pdf> <./LaTeXfigs/Induktivitae
-tImWechselstromkreis_c.pdf>]
-===== Image 'LaTeXfigs/KondensatorImWechselstromkreis_b' is up-to-date. ======
-===== Image 'LaTeXfigs/KondensatorImWechselstromkreis_c' is up-to-date. ======
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1074.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[7
-
- <./LaTeXfigs/KondensatorImWechselstromkreis_b.pdf> <./LaTeXfigs/KondensatorImW
-echselstromkreis_c.pdf>]
-===== Image 'LaTeXfigs/KonstruktionEinesZeigerdiagramms_b' is up-to-date. =====
-=
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1132.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[8
+\openout5 = `LaTeXfigs/GrundbegriffeDerKomplexenRechnung_a.dpth'.
 
- <./LaTeXfigs/KonstruktionEinesZeigerdiagramms_b.pdf>]
-===== Image 'LaTeXfigs/GrundbegriffeDerKomplexenRechnung_a' is up-to-date. ====
-==
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1200.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 11
+97.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd
+"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `ztmcm' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 11
+97.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd
+"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 11
+97.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd
+"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 11
+97.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd
+"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-msa.c
+fg"
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-msb.c
+fg"
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1197
+.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1197.
+
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-ptm.c
+fg"
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1197.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1197.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 1197.
+
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 1197.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <6> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 1197.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 1197.
+LaTeX Font Info:    Try loading font information for U+esint on input line 1197
+.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\esint\uesint.fd"
+File: uesint.fd 
+) [9
+
+\providecommand \oddpage@label [2]{}
+{C:/Users/Marco/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-[9
-
- <./LaTeXfigs/GrundbegriffeDerKomplexenRechnung_a.pdf>]
-===== Image 'LaTeXfigs/RechenOperationenMitKomplexenZahlen_a' is up-to-date. ==
-====
-===== Image 'LaTeXfigs/RechenOperationenMitKomplexenZahlen_b' is up-to-date. ==
-====
-===== Image 'LaTeXfigs/RechenOperationenMitKomplexenZahlen_c' is up-to-date. ==
-====
-\openout3 = `LaTeXfigs/RechenOperationenMitKomplexenZahlen_d.md5'.
-
-\openout3 = `Zeigerdiagramme_NusII.auxlock'.
-
-===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
-n-error -interaction=batchmode -jobname "LaTeXfigs/RechenOperationenMitKomplexe
-nZahlen_d" "\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagram
-me_NusII}"' ========
-runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
- "LaTeXfigs/RechenOperationenMitKomplexenZahlen_d" "\def\tikzexternalrealjob{Ze
-igerdiagramme_NusII}\input{Zeigerdiagramme_NusII}")...executed.
-
-\openout3 = `Zeigerdiagramme_NusII.auxlock'.
-
-File: HPE_background.pdf Graphic file (type pdf)
-<use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1433.
-(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
-
-Overfull \hbox (1.11195pt too wide) has occurred while \output is active
-[][] 
- []
-
-[10
-
- <./LaTeXfigs/RechenOperationenMitKomplexenZahlen_a.pdf> <./LaTeXfigs/RechenOpe
-rationenMitKomplexenZahlen_b.pdf> <./LaTeXfigs/RechenOperationenMitKomplexenZah
-len_c.pdf> <./LaTeXfigs/RechenOperationenMitKomplexenZahlen_d.pdf>]
-\tf@nav=\write6
-\openout6 = `Zeigerdiagramme_NusII.nav'.
-
-\tf@toc=\write7
-\openout7 = `Zeigerdiagramme_NusII.toc'.
-
-\tf@snm=\write8
-\openout8 = `Zeigerdiagramme_NusII.snm'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1437.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1437.
-
-(Zeigerdiagramme_NusII.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1437.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1437.
-
-Package rerunfilecheck Info: File `Zeigerdiagramme_NusII.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1199.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1199.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1199.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1199.
  ) 
 Here is how much of TeX's memory you used:
- 36521 strings out of 492973
- 862578 string characters out of 3126692
- 1130276 words of memory out of 3000000
- 39589 multiletter control sequences out of 15000+200000
- 16236 words of font info for 28 fonts, out of 3000000 for 9000
+ 37004 strings out of 492973
+ 873037 string characters out of 3126692
+ 1105988 words of memory out of 3000000
+ 40030 multiletter control sequences out of 15000+200000
+ 55333 words of font info for 97 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 82i,15n,131p,853b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 83i,15n,131p,902b,1001s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marco/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Marco/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marco/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Marco/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Zeigerdiagramme_NusII.pdf (10 pages, 412286 bytes).
+cm/cmr10.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marco/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Marco/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on LaTeXfigs/GrundbegriffeDerKomplexenRechnung_a.pdf (1 page, 40
+292 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
- 6297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 32811 words of extra memory for PDF output out of 35830 (max. 10000000)
 

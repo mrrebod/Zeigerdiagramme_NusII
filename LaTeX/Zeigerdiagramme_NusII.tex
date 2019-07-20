@@ -23,6 +23,12 @@
 \setboolean{KondensatorImWechselstromkreis}{true}
 \newboolean{KonstruktionEinesZeigerdiagramms}
 \setboolean{KonstruktionEinesZeigerdiagramms}{true}
+\newboolean{GrundbegriffeDerKomplexenRechnung}
+\setboolean{GrundbegriffeDerKomplexenRechnung}{true}
+\newboolean{RechenOperationenMitKomplexenZahlen}
+\setboolean{RechenOperationenMitKomplexenZahlen}{true}
+
+
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -1075,9 +1081,8 @@
 	
 	
 	\begin{flushright}
-		
-		\tikzsetnextfilename{KonstruktionEinesZeigerdiagramms_b}
 		%-----------------------------------------------------------------------------------------------------------------%	
+		\tikzsetnextfilename{KonstruktionEinesZeigerdiagramms_b}
 		\begin{tikzpicture}	
 			[
 			Strompfeil/.style={-{Latex[length=2mm]},thick, red},	    			 %Definiert den Sytle der Strompfeile
@@ -1119,12 +1124,311 @@
 				angle radius = 6.5mm, angle eccentricity=1.3]
 				{angle= NodeUZend--Ursprung--NodeICend}; % Winkel phi2	
 		\end{tikzpicture}
-		%-----------------------------------------------------------------------------------------------------------------%	
-		 	
+		%-----------------------------------------------------------------------------------------------------------------%		 	
 	\end{flushright}
 
 }\fi
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Grundbegriffe der komplexen Rechnung}
+
+\ifGrundbegriffeDerKomplexenRechnung{
+		
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{GrundbegriffeDerKomplexenRechnung_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			 Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+		     HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			 Zeiger/.style={-{Latex[length=2mm]}, thick, blue},					      %Style der komplexen Zeiger
+		     Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+		     HelpLine/.style={densely dashed, very thin},							  %Hilfslinien 								  
+			]
+			% Verschiedene Variabeln definieren:
+			\def\Zlen{1.5cm}; 	%Länge des komplexen Zeigers
+			\def\Zphi{45};		%Winkel des komplexen Zeigers
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.6cm,0);		   %Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (\Zlen+0.8cm,0); 	   %Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-\Zlen);  %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,\Zlen+0.2cm);   %Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+		
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Graue Box
+			\fill[gray!25] (-1.3,-1.7) --++ (3.9,0) --++ (0,3.7) --++ (-3.9,0) -- cycle;
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$X$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$jY$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 								%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger 
+			\draw[Zeiger] (Ursprung) --++ (\Zphi:\Zlen)
+				node[near end, left] {$\lvert\underline{Z}\rvert\textcolor{black}{=Z}$}
+				node(tmp1) [HelpNode]{}; %Komplexer Zeiger nach oben
+			\draw[Zeiger] (Ursprung) --++ (-\Zphi:\Zlen)
+				node[midway, left, black, anchor=north east] {$Z$}
+				node(tmp2) [HelpNode]{}; %Komplexer Zeiger nach unten
+			% Winkel-Beschriftung
+			\path (tmp2) -- (Ursprung) -- (xEnd) 
+				pic[Winkelpfeil, pic text=$\varphi$ ] {angle = xEnd--Ursprung--tmp1};%Winkelpfiel
+			\path (xEnd) -- (Ursprung) -- (tmp1) 
+				pic[Winkelpfeil, pic text=-$\varphi$, {Latex[length=1mm]}-] {angle = tmp2--Ursprung--xEnd};%Winkelpfie	
+			% Hilfslinien
+			\draw[HelpLine] (Ursprung |- tmp1) -- (tmp1) node[at start, anchor=east, scale=0.8] {$Y=\operatorname{Im}\{\underline{Z}\}$};
+			\draw[HelpLine] (Ursprung |- tmp2) -- (tmp2) node[at start, anchor=east, scale=0.8] {$Y=-\operatorname{Im}\{\underline{Z}\}$};	
+			\draw[HelpLine] (tmp1) 			   -- (tmp2) node[midway, anchor=south west, scale=0.8] {$X=\operatorname{Re}\{\underline{Z}\}$};
+			% Beschriftungen
+			\node[anchor=south west, scale=0.8, draw] (Algebra)  at (tmp1) {$\textcolor{blue}{\underline{Z}}=X+jY$};
+			\node[anchor=north west, scale=0.8, draw] 			 at (tmp2) {$\textcolor{blue}{\underline{Z}^*}=X-jY$};
+			\node[above = 0.8cm of Algebra, align=left]    (AlgebraText) {Algebraische\\ Darstellung}; 			  %Beschrifuntg Algebra
+			\node[left = 0.6cm of AlgebraText, align=left] (EbeneText)   {Komplexe\\ (Gauss'sche)\\ Zahlenebene}; %Beschrigtung Gauss
+			\draw (Algebra) 		-- (AlgebraText);	%Strich für Algebraische Darstellung
+			\draw (EbeneText.south) --++(230:0.4);		%Strich für Gauss-Ebene	
+		\end{tikzpicture}
+		%------------------------------------------------------------------------------	-----------------------------------%	
+
+	\end{flushright}
+	
+}\fi
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Rechenoperationen mit komplexen Zahlen}
+
+\ifRechenOperationenMitKomplexenZahlen{
+	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{RechenOperationenMitKomplexenZahlen_a}
+		\begin{tikzpicture}
+		%Verschiedene Styles definieren:
+		[
+		 Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+		 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+		 Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+		 Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 								  
+		]
+		% Verschiedene Variabeln definieren:
+		\def\Zeins{1.5cm}; 	  %Länge von Z1
+		\def\Zzwei{0.5cm};	  %Länge von Z2
+		\def\PhiE{30};		  %Winkel Phi1 von Z1
+		\def\PhiZ{150};		  %Winkel Phi2 von Z2
+		\def\BeschScale{0.8}; %Skalierungsfaktor für Beschriftung
+		
+		% Definieren von verschiedenen Koordinaten
+		\coordinate (xStart)   at (-0.5cm,0);		   %Startpunkt der x-Achse (wt-Achse)
+		\coordinate (xEnd) 	   at (2cm,0);   %Endpunkt der x-Achse (wt-Achse)
+		\coordinate (yStart)   at (0cm,-0.1cm);  	   %Startpunkt der y-Achse
+		\coordinate (yEnd) 	   at (0cm,1.5cm); 	   %Endpunkt der y-Achse 
+		\coordinate (Ursprung) at (0,0);
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Plotten der Achsen
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$X$};  	%Plot x-axis
+		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$jY$}; 	%Plot y-axis
+		\node[anchor=north east] at (Ursprung) {$0$}; 								%Beschriftnug des Urpsrungs 
+		% Plotten der Zeiger 
+		\draw[Zeiger] (Ursprung) --++ (\PhiE:\Zeins)
+			node[pos=0.65, above, scale=\BeschScale] {$\underline{Z}_1$}
+			node(tmp1) [HelpNode]{}; %Komplexer Zeiger Z1
+		\draw[Zeiger] (Ursprung) --++ (\PhiZ:\Zzwei)
+			node[near end, above, scale=\BeschScale] {$\underline{Z}_2$}
+			node(tmp2) [HelpNode]{}; %Komplexer Zeiger Z2
+		\draw[Zeiger, blue, densely dashed] (tmp1) --++ (\PhiZ+180:\Zzwei)
+			node[near end, above, anchor= south west, scale=\BeschScale] {-$\underline{Z}_2$}
+			node(tmp3) [HelpNode]{}; % -Z2 an Z1
+		\draw[Zeiger, blue, densely dashed] (tmp1) --++ (\PhiZ:\Zzwei)
+			node[midway, above, anchor=south west, scale=\BeschScale] {$\underline{Z}_2$}
+			node(tmp4) [HelpNode]{}; % +Z2 an Z1
+		\draw[Zeiger, blue] (Ursprung) --++ (tmp3)
+			node[near end, right, anchor=north west, scale=\BeschScale] {$\underline{Z}_1-\underline{Z}_2$}; % Z1 - Z2
+		\draw[Zeiger, blue] (Ursprung) --++ (tmp4)
+			node[pos=0.9, left, anchor=south east, scale=\BeschScale] {$\underline{Z}_1+\underline{Z}_2$}; % Z1 + Z2
+		% Beschriftung
+		\node[anchor=north west, align=left, scale=\BeschScale] at (xEnd |- yEnd)
+			{$\underline{Z}_1=X_1+jY_1$\\ $\underline{Z}_2=X_2+jY_2$};
+		\end{tikzpicture}
+		%------------------------------------------------------------------------------	-----------------------------------%
+			
+		%------------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{RechenOperationenMitKomplexenZahlen_b}
+		\begin{tikzpicture}
+		%Verschiedene Styles definieren:
+		[
+		 Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+		 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+		 Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+		 Winkelpfeil/.style={draw, -{Latex[length=1mm]}},	  					  %Style der Winkelpfeil 								  
+		]
+		% Verschiedene Variabeln definieren:
+		\def\Zeins{1.1}; 	  %Länge von Z1 [cm]
+		\def\Zzwei{1.3};	  %Länge von Z2 [cm]
+		\def\PhiE{30};		  %Winkel Phi1 von Z1 [°]
+		\def\PhiZ{100};		  %Winkel Phi2 von Z2 [°]
+		\def\BeschScale{0.8}; %Skalierungsfaktor für Beschriftung
+		
+		% Definieren von verschiedenen Koordinaten
+		\coordinate (xStart)   at (-0.5cm,0);   %Startpunkt der x-Achse (wt-Achse)
+		\coordinate (xEnd) 	   at (2cm,0);      %Endpunkt der x-Achse (wt-Achse)
+		\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+		\coordinate (yEnd) 	   at (0cm,1.5cm); 	%Endpunkt der y-Achse 
+		\coordinate (Ursprung) at (0,0);
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Plotten der Achsen
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$X$};  	%Plot x-axis
+		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$jY$}; 	%Plot y-axis
+		\node[anchor=north east] at (Ursprung) {$0$}; 								%Beschriftnug des Urpsrungs 
+		% Plotten der Zeiger 
+		\draw[Zeiger] (Ursprung) --++ (\PhiE:\Zeins)
+			node[at end, right, scale=\BeschScale] {$\underline{Z}_1$}
+			node(tmp1) [HelpNode]{}; % Zeiger Z1
+		\draw[Zeiger] (Ursprung) --++ (\PhiZ:\Zzwei)
+			node[near end, left, scale=\BeschScale] {$\underline{Z}_2$}
+			node(tmp2) [HelpNode]{};  % Zeiger Z2
+		\draw[Zeiger, blue] (Ursprung) --++ (\PhiE+\PhiZ:\Zeins*\Zzwei)
+			node[at end, above, scale=\BeschScale] {$\underline{Z}_1\underline{Z}_2$}
+			node(tmp3) [HelpNode]{}; % Z1*Z2
+		% Winkel-Beschriftung
+		\path (xEnd) -- (Ursprung) -- (tmp1)
+			pic[Winkelpfeil, pic text options={scale=\BeschScale}, pic text=$\varphi_1$, -{Latex[length=1mm]}, angle radius = 7mm, angle eccentricity=1.2]
+			{angle = xEnd--Ursprung--tmp1}; %phi1
+		\path (xEnd) -- (Ursprung) -- (tmp2)
+			pic[Winkelpfeil, pic text options={scale=\BeschScale}, pic text=$\varphi_2$, -{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.3]
+			{angle = xEnd--Ursprung--tmp2}; %phi2
+		\path (xEnd) -- (Ursprung) -- (tmp3)
+			pic[Winkelpfeil, -{Latex[length=1mm]}, angle radius = 3mm, blue]
+			{angle = xEnd--Ursprung--tmp3}; %phi3 = phi1 + phi2	
+		\node[anchor=south east, blue, scale=\BeschScale] (phi3) at (-0.1,0) {$\varphi_1+\varphi_2$};
+		% Beschriftung
+		\node[anchor=north west, align=left, scale=\BeschScale] at (xEnd |- yEnd)
+			{$\underline{Z}_1=Z_1\mathrm{e}^{\mathrm{j}\varphi_1}$\\ $\underline{Z}_2=Z_2\mathrm{e}^{\mathrm{j}\varphi_2}$};	
+		\end{tikzpicture}
+		%------------------------------------------------------------------------------	-----------------------------------%
+		
+		%------------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{RechenOperationenMitKomplexenZahlen_c}
+		\begin{tikzpicture}
+		%Verschiedene Styles definieren:
+		[
+		 Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+		 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+		 Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+		 Winkelpfeil/.style={draw, -{Latex[length=1mm]}},	  					  %Style der Winkelpfeil 								  
+		]
+		% Verschiedene Variabeln definieren: ACHTUNG: Länge/Winkel von Z1 hängen von den Werten aus b) ab!!!
+		\def\Zeins{1.1*1.3};  %Länge von Z1 [cm]
+		\def\Zzwei{1.3};	  %Länge von Z2 [cm]
+		\def\PhiE{130};		  %Winkel Phi1 von Z1 [°]
+		\def\PhiZ{100};		  %Winkel Phi2 von Z2 [°]
+		\def\BeschScale{0.8}; %Skalierungsfaktor für Beschriftung
+		
+		% Definieren von verschiedenen Koordinaten
+		\coordinate (xStart)   at (-0.5cm,0);   %Startpunkt der x-Achse (wt-Achse)
+		\coordinate (xEnd) 	   at (2cm,0);      %Endpunkt der x-Achse (wt-Achse)
+		\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+		\coordinate (yEnd) 	   at (0cm,1.5cm); 	%Endpunkt der y-Achse 
+		\coordinate (Ursprung) at (0,0);
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Plotten der Achsen
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$X$};  	%Plot x-axis
+		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$jY$}; 	%Plot y-axis
+		\node[anchor=north east] at (Ursprung) {$0$}; 								%Beschriftnug des Urpsrungs 
+		% Plotten der Zeiger 
+		\draw[Zeiger] (Ursprung) --++ (\PhiE:\Zeins)
+			node[at end, above, scale=\BeschScale] {$\underline{Z}_1$}
+			node(tmp1) [HelpNode]{}; % Zeiger Z1
+		\draw[Zeiger] (Ursprung) --++ (\PhiZ:\Zzwei)
+			node[near end, left, scale=\BeschScale] {$\underline{Z}_2$}
+			node(tmp2) [HelpNode]{};  % Zeiger Z2
+		\draw[Zeiger, blue] (Ursprung) --++ (\PhiE-\PhiZ:\Zeins/\Zzwei)
+			node[at end, above, scale=\BeschScale] {$\underline{Z}_1/\underline{Z}_2$}
+			node(tmp3) [HelpNode]{}; % Z1*Z2
+		% Winkel-Beschriftung
+		\path (xEnd) -- (Ursprung) -- (tmp1)
+			pic[Winkelpfeil, -{Latex[length=1mm]}, angle radius = 3mm]
+			{angle = xEnd--Ursprung--tmp1}; %phi1
+		\node[anchor=south east, scale=\BeschScale] (phi1) at (-0.1,0) {$\varphi_1$}; %Beschriftung Phi1
+		\path (xEnd) -- (Ursprung) -- (tmp2)
+			pic[Winkelpfeil, pic text options={scale=\BeschScale}, pic text=$\varphi_2$, -{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.3]
+			{angle = xEnd--Ursprung--tmp2}; %phi2
+		\path (xEnd) -- (Ursprung) -- (tmp3)
+			pic[Winkelpfeil, pic text options={scale=\BeschScale}, pic text=$\varphi_1-\varphi_2$, -{Latex[length=1mm]}, angle radius = 3mm, blue, angle radius = 7mm, angle eccentricity=1, anchor=west]
+			{angle = xEnd--Ursprung--tmp3}; %phi3 = phi1 + phi2	
+		% Beschriftung
+		\node[anchor=north west, align=left, scale=\BeschScale] at (xEnd |- yEnd)
+			{$\underline{Z}_1=Z_1\mathrm{e}^{\mathrm{j}\varphi_1}$\\ $\underline{Z}_2=Z_2\mathrm{e}^{\mathrm{j}\varphi_2}$};	
+		\end{tikzpicture}
+		%------------------------------------------------------------------------------	-----------------------------------%
+		
+		%------------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{RechenOperationenMitKomplexenZahlen_d}
+		\begin{tikzpicture}
+		%Verschiedene Styles definieren:
+		[
+		 Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+		 HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+		 Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+	 	 Winkelpfeil/.style={draw, -{Latex[length=1mm]}},	  					  %Style der Winkelpfeil 								  
+		]
+		% Verschiedene Variabeln definieren: ACHTUNG: Länge/Winkel von Z1 hängen von den Werten aus b) ab!!!
+		\def\Zeins{1.1*1.3};  %Länge von Z1 [cm]
+		\def\Zzwei{1.3};	  %Länge von Z2 [cm]
+		\def\PhiE{130};		  %Winkel Phi1 von Z1 [°]
+		\def\PhiZ{100};		  %Winkel Phi2 von Z2 [°]
+		\def\BeschScale{0.8}; %Skalierungsfaktor für Beschriftung
+		
+		% Definieren von verschiedenen Koordinaten
+		\coordinate (xStart)   at (-0.5cm,0);   %Startpunkt der x-Achse (wt-Achse)
+		\coordinate (xEnd) 	   at (1.2cm,0);      %Endpunkt der x-Achse (wt-Achse)
+		\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+		\coordinate (yEnd) 	   at (0cm,0.8cm); 	%Endpunkt der y-Achse 
+		\coordinate (Ursprung) at (0,0);
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Plotten der Achsen
+		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$X$};  	%Plot x-axis
+		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$jY$}; 	%Plot y-axis
+		\node[anchor=north east] at (Ursprung) {$0$}; 								%Beschriftnug des Urpsrungs 
+%		% Plotten der Zeiger 
+%		\draw[Zeiger] (Ursprung) --++ (\PhiE:\Zeins)
+%		node[at end, above, scale=\BeschScale] {$\underline{Z}_1$}
+%		node(tmp1) [HelpNode]{}; % Zeiger Z1
+%		\draw[Zeiger] (Ursprung) --++ (\PhiZ:\Zzwei)
+%		node[near end, left, scale=\BeschScale] {$\underline{Z}_2$}
+%		node(tmp2) [HelpNode]{};  % Zeiger Z2
+%		\draw[Zeiger, blue] (Ursprung) --++ (\PhiE-\PhiZ:\Zeins/\Zzwei)
+%		node[at end, above, scale=\BeschScale] {$\underline{Z}_1/\underline{Z}_2$}
+%		node(tmp3) [HelpNode]{}; % Z1*Z2
+%		% Winkel-Beschriftung
+%		\path (xEnd) -- (Ursprung) -- (tmp1)
+%		pic[Winkelpfeil, -{Latex[length=1mm]}, angle radius = 3mm]
+%		{angle = xEnd--Ursprung--tmp1}; %phi1
+%		\node[anchor=south east, scale=\BeschScale] (phi1) at (-0.1,0) {$\varphi_1$}; %Beschriftung Phi1
+%		\path (xEnd) -- (Ursprung) -- (tmp2)
+%		pic[Winkelpfeil, pic text options={scale=\BeschScale}, pic text=$\varphi_2$, -{Latex[length=1mm]}, angle radius = 5mm, angle eccentricity=1.3]
+%		{angle = xEnd--Ursprung--tmp2}; %phi2
+%		\path (xEnd) -- (Ursprung) -- (tmp3)
+%		pic[Winkelpfeil, pic text options={scale=\BeschScale}, pic text=$\varphi_1-\varphi_2$, -{Latex[length=1mm]}, angle radius = 3mm, blue, angle radius = 7mm, angle eccentricity=1, anchor=west]
+%		{angle = xEnd--Ursprung--tmp3}; %phi3 = phi1 + phi2	
+%		% Beschriftung
+%		\node[anchor=north west, align=left, scale=\BeschScale] at (xEnd |- yEnd)
+%		{$\underline{Z}_1=Z_1\mathrm{e}^{\mathrm{j}\varphi_1}$\\ $\underline{Z}_2=Z_2\mathrm{e}^{\mathrm{j}\varphi_2}$};	
+		\end{tikzpicture}
+		%------------------------------------------------------------------------------	-----------------------------------%
+			
+	\end{flushright}
+	
+}\fi
 
 \end{frame}
 
