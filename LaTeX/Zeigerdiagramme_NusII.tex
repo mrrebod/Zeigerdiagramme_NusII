@@ -33,6 +33,12 @@
 \setboolean{ZeigerFuerKomplexeWechselstromrechnung}{true}
 \newboolean{StromSpannungsbeziehungInduktivitaeten}
 \setboolean{StromSpannungsbeziehungInduktivitaeten}{true}
+\newboolean{StromSpannungsbeziehungImBildbereich}
+\setboolean{StromSpannungsbeziehungImBildbereich}{true}
+\newboolean{KomplexeWechselstromrechnungBeispielII}
+\setboolean{KomplexeWechselstromrechnungBeispielII}{true}
+\newboolean{StromSpannungsUndWiderstandsDiagramm}
+\setboolean{StromSpannungsUndWiderstandsDiagramm}{true}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -1701,65 +1707,377 @@
 \ifStromSpannungsbeziehungInduktivitaeten{	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
-	\tikzsetnextfilename{StromSpannungsbeziehungInduktivitaet_a}
-	\begin{tikzpicture}
-		%Verschiedene Styles definieren:
-		[
-		Achsenpfeil/.style={->},												  %Style des Achsenpfeils
-		HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
-		Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
-		Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
-		HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
-		]
-		% Verschiedene Variabeln definieren:
-		\def\ISpitze{1.2cm};  %Länge von Stromzeiger
-		\def\USpitze{1.8cm};  %Länge von Spannungszeiger
-		\def\PhiI{20};		  %Winkel des Stroms
-
-		% Definieren von verschiedenen Koordinaten
-		\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
-		\coordinate (xEnd) 	   at (2cm,0);   	%Endpunkt der x-Achse (wt-Achse)
-		\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
-		\coordinate (yEnd) 	   at (0cm,2.3cm); 	%Endpunkt der y-Achse 
-		\coordinate (Ursprung) at (0,0);
-		
-		%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		% Plotten der Achsen
-		\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
-		\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
-		\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
-		% Plotten der Zeiger
-		%Stromzeiger: 
-		\draw[Zeiger, red] (Ursprung) --++ (\PhiI:\ISpitze)
-			node[pos=1.1] (StromBesch) {$\underline{\hat{i}}$}
-			node(tmp1) [HelpNode]{}; 
-		%Spannungszeiger:
-		\draw[Zeiger, blue] (Ursprung) --++ (\PhiI+90:\USpitze)
-			node[at end, left] {$\underline{\hat{u}}$}
-			node(tmp2) [HelpNode]{}; 	
-		% Winkel Beschriftung
-		% Phi i:
-		\path (xEnd) -- (Ursprung) -- (tmp1)
-			pic[Winkelpfeil, angle radius = 7mm, pic text=$\varphi_i$, angle eccentricity=1.3] {angle = xEnd--Ursprung--tmp1};
-		% +pi/2:
-		\path (tmp1) -- (Ursprung) -- (tmp2)
-			pic[Winkelpfeil, angle radius = 7mm, pic text=$+\frac{\pi}{2}$, angle eccentricity=1.3] {angle = tmp1--Ursprung--tmp2};	
-		% Rechter Winkel einzeichnen	 
-		\path (tmp1) -- (Ursprung) -- (tmp2)
-			pic[draw, angle radius = 2mm] {right angle=tmp1--Ursprung--tmp2};
-		%Drehrichtungspfeil
-		\draw[-{Latex[length=2mm]}, densely dashed] (75:\ISpitze) 
-			arc[start angle=75, delta angle=50, x radius=\ISpitze, y radius=\ISpitze]
-			node[at end, anchor=north]{$\omega$};
-		%Hilfslinien:
-		\draw[HelpLine, red] (tmp1 |- 0,0.7cm) -- (tmp1 |- 0,-0.1cm) 
-			node[at end, anchor=north] {$i(t=0)$};
-		\draw[HelpLine, red] (StromBesch) -- (\PhiI:\ISpitze+0.5cm) node[at end, anchor=west] {$t=0$};	
-	\end{tikzpicture}
-	%------------------------------------------------------------------------------	-----------------------------------%		
-		
-		
+		\tikzsetnextfilename{StromSpannungsbeziehungInduktivitaet_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{1.2cm};  %Länge von Stromzeiger
+			\def\USpitze{1.8cm};  %Länge von Spannungszeiger
+			\def\PhiI{20};		  %Winkel des Stroms
 	
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,2.3cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north] at (yStart) {$0$}; 														%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (\PhiI:\ISpitze)
+				node[pos=1.1] (StromBesch) {$\underline{\hat{i}}$}
+				node(tmp1) [HelpNode]{}; 
+			%Spannungszeiger:
+			\draw[Zeiger, blue] (Ursprung) --++ (\PhiI+90:\USpitze)
+				node[at end, left] {$\underline{\hat{u}}$}
+				node(tmp2) [HelpNode]{}; 	
+			% Winkel Beschriftung
+			% Phi i:
+			\path (xEnd) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius = 7mm, pic text=$\varphi_i$, angle eccentricity=1.3] {angle = xEnd--Ursprung--tmp1};
+			% +pi/2:
+			\path (tmp1) -- (Ursprung) -- (tmp2)
+				pic[Winkelpfeil, angle radius = 7mm, pic text=$+\frac{\pi}{2}$, angle eccentricity=1.3] {angle = tmp1--Ursprung--tmp2};	
+			% Rechter Winkel einzeichnen	 
+			\path (tmp1) -- (Ursprung) -- (tmp2)
+				pic[draw, angle radius = 2mm] {right angle=tmp1--Ursprung--tmp2};
+			%Drehrichtungspfeil
+			\draw[-{Latex[length=2mm]}, densely dashed] (75:\ISpitze) 
+				arc[start angle=75, delta angle=50, x radius=\ISpitze, y radius=\ISpitze]
+				node[at end, anchor=north]{$\omega$};
+			%Hilfslinien:
+			\draw[HelpLine, red] (tmp1 |- 0,0.7cm) -- (tmp1 |- 0,-0.1cm) 
+				node[at end, anchor=north] {$i(t=0)$};
+			\draw[HelpLine, red] (StromBesch) -- (\PhiI:\ISpitze+0.5cm) node[at end, anchor=west] {$t=0$};	
+		\end{tikzpicture}
+		%------------------------------------------------------------------------------	-----------------------------------%		
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{StromSpannungsbeziehungInduktivitaet_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren - ACHTUNG: gleiche Werte wie bei a):
+			\def\ISpitze{1.2cm};  %Länge von Stromzeiger
+			\def\USpitze{1.8cm};  %Länge von Spannungszeiger
+			\def\PhiI{20};		  %Winkel des Stroms
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.8cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,2.3cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[right] {$j\operatorname{Im}$}; %Plot y-axis
+			\node[anchor=north] at (yStart) {$0$}; 														%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (\PhiI:\ISpitze)
+				node[pos=1.1] {$\underline{\hat{i}}$}
+				node(tmp1) [HelpNode]{}; 
+			%Spannungszeiger:
+			\draw[Zeiger, blue] (Ursprung) --++ (\PhiI+90:\USpitze)
+				node[at end, left] {$\underline{\hat{u}}$}
+				node(tmp2) [HelpNode]{}; 	
+			% Winkel Beschriftung
+			% Phi u:
+			\path (xEnd) -- (Ursprung) -- (tmp2)
+				pic[Winkelpfeil, angle radius = 5mm] {angle = xEnd--Ursprung--tmp2};
+			\node[anchor=north] at (0:5mm) {$\varphi_u$};
+			% -pi/2:
+			\path (tmp1) -- (Ursprung) -- (tmp2)
+				pic[draw, {Latex[length=1mm]}-, angle radius = 7mm, pic text=$-\frac{\pi}{2}$, angle eccentricity=1.3]
+				{angle = tmp1--Ursprung--tmp2};	
+			% Rechter Winkel einzeichnen	 
+			\path (tmp1) -- (Ursprung) -- (tmp2)
+				pic[draw, angle radius = 2mm] {right angle=tmp1--Ursprung--tmp2};
+			%Hilfslinien:
+			\draw[HelpLine, blue] (tmp2) -- (tmp2 |- 0,-0.1cm) 
+				node[at end, anchor=north] {$u(t=0)$};
+			\draw[HelpLine, blue] (tmp2) --++ (70:0.3cm) node[at end, anchor=south] {$t=0$};
+			%Drehrichtungspfeil
+			\draw[-{Latex[length=2mm]}, densely dashed] (75:\ISpitze) 
+				arc[start angle=75, delta angle=50, x radius=\ISpitze, y radius=\ISpitze]
+				node[at end, anchor=north, fill=white]{$\omega$};	
+		\end{tikzpicture}	
+	\end{flushright}	
+}\fi
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Strom-Spannungsbeziehung im Bildbereich}
+
+\ifStromSpannungsbeziehungImBildbereich{	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{StromSpannungsbeziehungImBildbereich_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					         %Style der komplexen Zeiger
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius=5mm, pic text=$\varphi$}, %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{0.9cm};  %Länge von Stromzeiger
+			\def\USpitze{1.0cm};  %Länge von Spannungszeiger
+			
+			% Definieren von verschiedenen Koordinaten 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (0:\ISpitze)
+				node[at end, anchor=south] {$\underline{\hat{i}}_L$}
+				node(tmp1) [HelpNode]{}; 
+			%Spannungszeiger:
+			\draw[Zeiger, blue] (Ursprung) --++ (90:\USpitze)
+				node[at end, left] {$\underline{\hat{u}}_L$}
+				node(tmp2) [HelpNode]{}; 	
+			% Winkel Beschriftung
+			% +pi:
+			\path (tmp1) -- (Ursprung) -- (tmp2)
+				pic[Winkelpfeil] {angle = tmp1--Ursprung--tmp2};		
+		\end{tikzpicture}
+		%------------------------------------------------------------------------------	-----------------------------------%		
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{StromSpannungsbeziehungImBildbereich_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					         %Style der komplexen Zeiger
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius=5mm, pic text=$\varphi$},%Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{0.9cm};  %Länge von Stromzeiger
+			\def\USpitze{1.0cm};  %Länge von Spannungszeiger
+			
+			% Definieren von verschiedenen Koordinaten 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (90:\ISpitze)
+				node[at end, left] {$\underline{\hat{i}}_C$}
+				node(tmp1) [HelpNode]{}; 
+			%Spannungszeiger:
+			\draw[Zeiger, blue] (Ursprung) --++ (0:\USpitze)
+				node[at end, anchor=south] {$\underline{\hat{u}}_C$}
+				node(tmp2) [HelpNode]{}; 	
+			% Winkel Beschriftung
+			% +pi:
+			\path (tmp2) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, {Latex[length=1mm]}-] {angle = tmp2--Ursprung--tmp1};	
+		\end{tikzpicture}	
+	\end{flushright}	
+}\fi
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Komplexe Wechselstromrechnung - Beispiel II}
+
+\ifKomplexeWechselstromrechnungBeispielII{	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{KomplexeWechselstromrechnungBeispielII}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{1.0cm};  %Länge von Stromzeiger
+			\def\USpitze{1.8cm};  %Länge von Spannungszeiger
+			\def\Phi{20};		  %Winkel 
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.1cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.2cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (0:\ISpitze)
+				node[midway, below] (StromBesch) {$\underline{\hat{i}}=\hat{i}$}
+				node(tmp1) [HelpNode]{}; 
+			%Spannungszeiger u:
+			\draw[Zeiger, blue] (Ursprung) --++ (\Phi:\USpitze)
+				node[near end, below] {$\underline{\hat{u}}$}
+				node(tmp2) [HelpNode]{};
+			%Spannungszeiger uR: 
+			\draw[Zeiger, blue] (tmp1) -- (tmp2 |- 0,0)
+				node[midway, below] {$\underline{\hat{u}}_R$}
+				node(tmp3) [HelpNode]{};
+			%Spannungszeiger uL: 
+			\draw[Zeiger, blue] (Ursprung) -- (tmp2 -| 0,0)
+				node[midway, left] {$\underline{\hat{u}}_L$}
+				node(tmp4) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi i:
+			\path (tmp1) -- (Ursprung) -- (tmp2)
+				pic[Winkelpfeil, angle radius = 7.5mm, pic text=$\varphi$, angle eccentricity=1.2] {angle = tmp1--Ursprung--tmp2};
+			% Hilfslinien:
+			\draw[HelpLine] (tmp3) -- (tmp2) -- (tmp4); 
+			% Beschriftung:
+			\node[anchor=west, align=left] at ($(yEnd) + (0.3cm,0)$) {zufällig:\\ $\varphi = \varphi_u \rightarrow \varphi_i = 0$};	
+		\end{tikzpicture}	
+	\end{flushright}	
+}\fi
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Strom-Spannungs- und WiderstandsDiagramm}
+
+\ifStromSpannungsUndWiderstandsDiagramm{	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{StromSpannungsUndWiderstandsDiagramm_b}
+		%% ACHTUNG: Kopie von Komplexe Wechselstromrechnung - Beispiel II, ohne Beschriftung !! %%  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{1.0cm};  %Länge von Stromzeiger
+			\def\USpitze{1.8cm};  %Länge von Spannungszeiger
+			\def\Phi{20};		  %Winkel
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.1cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.2cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (0:\ISpitze)
+				node[midway, below] (StromBesch) {$\underline{\hat{i}}=\hat{i}$}
+				node(tmp1) [HelpNode]{}; 
+			%Spannungszeiger u:
+			\draw[Zeiger, blue] (Ursprung) --++ (\Phi:\USpitze)
+				node[near end, below] {$\underline{\hat{u}}$}
+				node(tmp2) [HelpNode]{};
+			%Spannungszeiger uR: 
+			\draw[Zeiger, blue] (tmp1) -- (tmp2 |- 0,0)
+				node[midway, below] {$\underline{\hat{u}}_R$}
+				node(tmp3) [HelpNode]{};
+			%Spannungszeiger uL: 
+			\draw[Zeiger, blue] (Ursprung) -- (tmp2 -| 0,0)
+				node[midway, left] {$\underline{\hat{u}}_L$}
+				node(tmp4) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi i:
+			\path (tmp1) -- (Ursprung) -- (tmp2)
+				pic[Winkelpfeil, angle radius = 7.5mm, pic text=$\varphi$, angle eccentricity=1.2] {angle = tmp1--Ursprung--tmp2};
+			% Hilfslinien:
+			\draw[HelpLine] (tmp3) -- (tmp2) -- (tmp4); 
+			% Beschriftung:
+			%\node[anchor=west, align=left] at ($(yEnd) + (0.3cm,0)$) {zufällig:\\ $\varphi = \varphi_u \rightarrow \varphi_i = 0$};	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{StromSpannungsUndWiderstandsDiagramm_c}
+		%% ACHTUNG: Kopie b), mit kleinen Änderungen !! %%  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ZSpitze{1.8cm};  %Länge von Spannungszeiger
+			\def\Phi{20};		  %Winkel 
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.1cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.2cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Zeiger Z:
+			\draw[Zeiger] (Ursprung) --++ (\Phi:\ZSpitze)
+				node[near end, above] {$\underline{Z}$}
+				node(tmp1) [HelpNode]{};
+			%Zeiger Z_R: 
+			\draw[Zeiger] (Ursprung) -- (tmp1 |- 0,0)
+				node[pos=0.85, below] {$\underline{Z}_R$}
+				node[midway, below, red] {$\underline{\hat{i}}=\hat{i}$}
+				node(tmp2) [HelpNode]{};
+			%Zeiger Z_L: 
+			\draw[Zeiger] (tmp2) -- (tmp1)
+				node[midway, right] {$\underline{Z}_L$}
+				node(tmp3) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi i:
+			\path (tmp2) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius = 7.5mm, pic text=$\varphi$, angle eccentricity=1.2] {angle = tmp2--Ursprung--tmp1};
+			% Hilfslinien:
+			%\draw[HelpLine] (tmp3) -- (tmp2) -- (tmp4); 
+			% Beschriftung:
+			%\node[anchor=west, align=left] at ($(yEnd) + (0.3cm,0)$) {zufällig:\\ $\varphi = \varphi_u \rightarrow \varphi_i = 0$};	
+		\end{tikzpicture}	
 	\end{flushright}	
 }\fi
 \end{frame}
