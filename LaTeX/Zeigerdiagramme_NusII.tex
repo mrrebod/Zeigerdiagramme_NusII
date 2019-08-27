@@ -39,6 +39,8 @@
 \setboolean{KomplexeWechselstromrechnungBeispielII}{true}
 \newboolean{StromSpannungsUndWiderstandsDiagramm}
 \setboolean{StromSpannungsUndWiderstandsDiagramm}{true}
+\newboolean{RLCSerienschwingkreis}
+\setboolean{RLCSerienschwingkreis}{true}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -1966,7 +1968,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}\frametitle{Strom-Spannungs- und WiderstandsDiagramm}
+\begin{frame}\frametitle{Strom-Spannungs- und Widerstands Diagramm}
 
 \ifStromSpannungsUndWiderstandsDiagramm{	
 	\begin{flushright}
@@ -2082,6 +2084,338 @@
 }\fi
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{RLC-Serienschwingkreis}
+
+\ifRLCSerienschwingkreis{	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{RLCSerienschwingkreis_b}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 6mm,
+				 pic text=$\varphi$, angle eccentricity=1.2},						  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{1.6cm};  %Länge von Stromzeiger
+			\def\UR{1.0cm};  	  %Länge von U_R
+			\def\UL{1.2cm};		  %Länge von U_L
+			\def\UC{0.7cm};		  %Länge von U_C
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.4cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (0:\ISpitze)
+				node[at end, below] {$\underline{\hat{i}}$}
+				node(tmpI) [HelpNode]{}; 
+			%Spannungszeiger uR:
+			\draw[Zeiger, blue] (Ursprung) --++ (0:\UR)
+				node[near end, below] {$\underline{\hat{u}}_R$}
+				node(tmpUR) [HelpNode]{};
+			%Spannungszeiger uL: 
+			\draw[Zeiger, blue] (tmpUR) --++ (90:\UL)
+				node[near end, left] {$\underline{\hat{u}}_L$}
+				node(tmpUL) [HelpNode]{};
+			%Spannungszeiger uC: 
+			\draw[Zeiger, blue] ($(tmpUL) + (0.1cm,0)$) --++ (-90:\UC)
+				node[midway, right] {$\underline{\hat{u}}_C$}
+				node(tmpUC) [HelpNode]{};
+			%Spannungszeiger u:	
+			\draw[Zeiger, blue] (Ursprung) -- (tmpUC)
+				node[midway, above] {$\underline{\hat{u}}$}
+				node(tmpU) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi:
+			\path (tmpUR) -- (Ursprung) -- (tmpU)
+				pic[Winkelpfeil] {angle = tmpUR--Ursprung--tmpU};	
+			\end{tikzpicture}
+			%-----------------------------------------------------------------------------------------------------------------%
+			
+			%-----------------------------------------------------------------------------------------------------------------%
+			\tikzsetnextfilename{RLCSerienschwingkreis_c}
+			%% ACHTUNG: Kopie von b) %%  
+			\begin{tikzpicture}
+				%Verschiedene Styles definieren:
+				[
+				Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+				HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+				Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+				Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 6mm,
+					pic text=$\varphi$, angle eccentricity=1.2},						  %Style der Winkelpfeil 
+				]
+				% Verschiedene Variabeln definieren:
+				\def\ZR{1.0cm};  	  %Länge von Z_R
+				\def\ZL{1.2cm};		  %Länge von Z_L
+				\def\ZC{0.7cm};		  %Länge von Z_C
+				
+				% Definieren von verschiedenen Koordinaten
+				\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+				\coordinate (xEnd) 	   at (2.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+				\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+				\coordinate (yEnd) 	   at (0cm,1.4cm); 	%Endpunkt der y-Achse 
+				\coordinate (Ursprung) at (0,0);
+				
+				%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				% Plotten der Achsen
+				\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+				\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+				\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+				% Plotten der Zeiger
+				%Impedanz ZR:
+				\draw[Zeiger] (Ursprung) --++ (0:\ZR)
+					node[near end, below] {$\underline{Z}_R$}
+					node(tmpZR) [HelpNode]{};
+				%Impedanz ZL: 
+				\draw[Zeiger] (tmpZR) --++ (90:\ZL)
+					node[near end, left] {$\underline{Z}_L$}
+					node(tmpZL) [HelpNode]{};
+				%Impedanz ZC: 
+				\draw[Zeiger] ($(tmpZL) + (0.1cm,0)$) --++ (-90:\ZC)
+					node[midway, right] {$\underline{Z}_C$}
+					node(tmpZC) [HelpNode]{};
+				%Impedanz Z:	
+				\draw[Zeiger] (Ursprung) -- (tmpZC)
+					node[midway, above] {$\underline{Z}$}
+					node(tmpZ) [HelpNode]{};				
+				% Winkel Beschriftung
+				%Phi:
+				\path (tmpZR) -- (Ursprung) -- (tmpZ)
+					pic[Winkelpfeil] {angle = tmpZR--Ursprung--tmpZ};	
+			\end{tikzpicture}
+			%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+}\fi
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Serienschwingkreis - Bauelementespannungen I}
+
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{SerienschwingkreisBauelementenspannungenI_b)}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 6mm,
+				pic text=$\varphi$, angle eccentricity=1.2},						  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{1.4cm};  %Länge von Stromzeiger
+			\def\UR{1.1cm};  	  %Länge von U_R
+			\def\UL{1.6cm};		  %Länge von U_L
+			\def\UC{1.6cm};		  %Länge von U_C
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) --++ (0:\ISpitze)
+				node[at end, below] {$\underline{\hat{i}}$}
+				node(tmpI) [HelpNode]{}; 
+			%Spannungszeiger uR:
+			\draw[Zeiger, blue] ($(Ursprung) + (0,0.1cm)$) --++ (0:\UR)
+				node[pos=0.4, above] {$\underline{\hat{u}}=\underline{\hat{u}}_R$}
+				node(tmpUR) [HelpNode]{};
+			%Spannungszeiger uL: 
+			\draw[Zeiger, blue] (tmpUR) --++ (90:\UL)
+				node[near end, right] {$\underline{\hat{u}}_L$}
+				node(tmpUL) [HelpNode]{};
+			%Spannungszeiger uC: 
+			\draw[Zeiger, blue] ($(tmpUL) + (-0.1cm,0)$) --++ (-90:\UC)
+				node[near start, left] {$\underline{\hat{u}}_C$}
+				node(tmpUC) [HelpNode]{};	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}
+	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Parallelschwingkreis}
+	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Parallelschwingkreis_b}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 6mm,
+				pic text=$\Psi$, angle eccentricity=1.25},						  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.6cm};  %Länge von Spannungszeiger
+			\def\IR{1.0cm};  	  %Länge von I_R
+			\def\IC{1.2cm};		  %Länge von I_C
+			\def\IL{0.7cm};		  %Länge von I_L
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.4cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, blue] (Ursprung) --++ (0:\USpitze)
+			node[at end, below] {$\underline{\hat{u}}$}
+			node(tmpU) [HelpNode]{}; 
+			%Spannungszeiger uR:
+			\draw[Zeiger, red] (Ursprung) --++ (0:\IR)
+			node[near end, below] {$\underline{\hat{i}}_R$}
+			node(tmpIR) [HelpNode]{};
+			%Spannungszeiger uL: 
+			\draw[Zeiger, red] (tmpIR) --++ (90:\IC)
+			node[near end, left] {$\underline{\hat{i}}_C$}
+			node(tmpIC) [HelpNode]{};
+			%Spannungszeiger uC: 
+			\draw[Zeiger, red] ($(tmpIC) + (0.1cm,0)$) --++ (-90:\IL)
+			node[midway, right] {$\underline{\hat{i}}_L$}
+			node(tmpIL) [HelpNode]{};
+			%Spannungszeiger u:	
+			\draw[Zeiger, red] (Ursprung) -- (tmpIL)
+			node[midway, above] {$\underline{\hat{i}}$}
+			node(tmpI) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi:
+			\path (tmpIR) -- (Ursprung) -- (tmpI)
+			pic[Winkelpfeil] {angle = tmpIR--Ursprung--tmpI};	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Parallelschwingkreis_c}
+		%% ACHTUNG: Kopie von b) %%  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 6mm,
+				pic text=$\Psi$, angle eccentricity=1.25},						  	  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\YR{1.0cm};  	  %Länge von Y_R
+			\def\YC{1.2cm};		  %Länge von Y_C
+			\def\YL{0.7cm};		  %Länge von Y_L
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.4cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%Impedanz YR:
+			\draw[Zeiger] (Ursprung) --++ (0:\YR)
+				node[near end, below] {$\underline{Y}_R$}
+				node(tmpYR) [HelpNode]{};
+			%Impedanz YL: 
+			\draw[Zeiger] (tmpYR) --++ (90:\YC)
+				node[near end, left] {$\underline{Y}_C$}
+				node(tmpYC) [HelpNode]{};
+			%Impedanz YC: 
+			\draw[Zeiger] ($(tmpYC) + (0.1cm,0)$) --++ (-90:\YL)
+				node[midway, right] {$\underline{Y}_L$}
+				node(tmpYL) [HelpNode]{};
+			%Impedanz Y:	
+			\draw[Zeiger] (Ursprung) -- (tmpYL)
+				node[midway, above] {$\underline{Y}$}
+				node(tmpY) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi:
+			\path (tmpYR) -- (Ursprung) -- (tmpY)
+				pic[Winkelpfeil] {angle = tmpYR--Ursprung--tmpY};	
+			\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Parallelschwingkreis - Bauelementeströme I}
+
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{ParallelschwingkreisBauelementestroemeI_c)}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 6mm,
+				pic text=$\varphi$, angle eccentricity=1.2},						  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.4cm};  %Länge von Spannungzeiger
+			\def\IR{0.5cm};  	  %Länge von I_R
+			\def\IL{1.6cm};		  %Länge von I_L
+			\def\IC{1.6cm};		  %Länge von I_C
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Spannungszeiger: 
+			\draw[Zeiger, blue] (Ursprung) --++ (0:\USpitze)
+				node[at end, below] {$\underline{\hat{u}}$}
+				node(tmpU) [HelpNode]{}; 
+			%Stromzeiger iR:
+			\draw[Zeiger, red] ($(Ursprung) + (0,0.1cm)$) --++ (0:\IR)
+				node[at start, above] {$\underline{\hat{i}}=\underline{\hat{i}}_R$}
+				node(tmpIR) [HelpNode]{};
+			%Stromszeiger iC: 
+			\draw[Zeiger, red] (tmpIR) --++ (90:\IC)
+				node[near end, right] {$\underline{\hat{i}}_C$}
+				node(tmpIC) [HelpNode]{};
+			%Stromzeiger iL: 
+			\draw[Zeiger, red] ($(tmpIC) + (-0.1cm,0)$) --++ (-90:\IL)
+				node[near start, left] {$\underline{\hat{i}}_L$}
+				node(tmpIL) [HelpNode]{};	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}
+
+\end{frame}
 
 
 \end{document}
