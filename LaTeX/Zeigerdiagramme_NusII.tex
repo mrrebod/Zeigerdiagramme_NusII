@@ -2860,6 +2860,259 @@
 
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Admittanz $RL$-Reihenschaltung -- $R$ \& $\omega$ variabel}
+
+\noindent
+\begin{minipage}[l]{0.48\textwidth}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Admittanz_RL_Reihenschaltung_RundW_variabel_b}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Ortskurve/.style={cyan, thick}, 										  %Style der Ortskurvenlinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\wL{0.8cm};  %Länge von wL
+			\def\Re{0.6cm};  %Länge von R1
+			\def\Rz{1.0cm};	 %Länge von R2
+			\def\Rd{1.5cm};	 %Länge von R3
+			\def\TickLen{0.05cm}; % Halbe Länge des Achsen-Tick
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.3cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%jwL: 
+			\draw[Zeiger] (Ursprung) -- (0,\wL)
+				node[at end, left] {$j\omega L$}
+				node(tmpwL) [HelpNode]{}; 
+			%Z(R1):
+			\draw[Zeiger] (Ursprung) -- (\Re,\wL)
+				node[at end, above] {$R_1$}
+				node(tmpRe) [HelpNode]{};
+			%Z(R2): 
+			\draw[Zeiger] (Ursprung) -- (\Rz,\wL)
+				node[at end, above] {$R_2$}
+				node(tmpRz) [HelpNode]{};
+			%Z(R3): 
+			\draw[Zeiger] (Ursprung) -- (\Rd,\wL)
+				node[at end, above] {$R_3$}
+				node[pos=0.6, anchor=north west] {$\underline{Z}(R)$}
+				node(tmpRd) [HelpNode]{};				
+			% Ortskurve
+			\draw[Ortskurve] (tmpwL) -- ($(xEnd) + (0,\wL)$);
+			%Ticks auf der Ortskurve 
+			\draw (\Re,\wL+\TickLen) -- (\Re,\wL-\TickLen);  %R1
+			\draw (\Rz,\wL+\TickLen) -- (\Rz,\wL-\TickLen);  %R2
+			\draw (\Rd,\wL+\TickLen) -- (\Rd,\wL-\TickLen);	%R3			
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Admittanz_RL_Reihenschaltung_RundW_variabel_c}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Ortskurve/.style={cyan, thick}, 										  %Style der Ortskurvenlinie
+			HelpLine/.style={gray, thin, densely dashed},							  %Style der Hilfslinie					
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: Werte hängen von b) ab !! 
+			\def\wL{0.8};  		%Länge von wL
+			\def\Re{0.6};  		%Länge von R1
+			\def\Rz{1.0};	 	%Länge von R2
+			\def\Rd{1.5};	 	%Länge von R3
+			\def\TickLen{0.05}; % Halbe Länge des Achsen-Tick
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (2.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-1.5cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,0.5cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=east] at (xStart) {$0$}; 														%Beschriftnug des Urpsrungs 
+			% Einzeichnen der Admittanzen:
+			\draw (1/\Re,\TickLen) -- (1/\Re,-\TickLen) node[above]{$\frac{1}{R_1}$}; %1/R1
+			\draw (1/\Rz,\TickLen) -- (1/\Rz,-\TickLen) node[above]{$\frac{1}{R_2}$}; %1/R2
+			\draw (1/\Rd,\TickLen) -- (1/\Rd,-\TickLen) node[above]{$\frac{1}{R_3}$}; %1/R3
+			% Ortskurve
+			\draw[Ortskurve, name path=ortskurve] (0,-1/\wL) 
+				arc[start angle=-90, delta angle=180, x radius=1/\wL/2, y radius=1/\wL/2];
+			%Richtungspfeil der Ortskurve
+			\draw[Ortskurve, -{stealth[length=2mm]}] (0,-1/\wL) 
+				arc[start angle=-90, delta angle=45, x radius=1/\wL/2, y radius=1/\wL/2];
+			%Hilfslinien
+			\draw[HelpLine, name path=R1] (0,-1/\wL) -- (1/\Re,0);
+			\draw[HelpLine, name path=R2] (0,-1/\wL) -- (1/\Rz,0);
+			\draw[HelpLine, name path=R3] (0,-1/\wL) -- (1/\Rd,0);
+			% Plotten der Zeiger
+			%1/jwL: 
+			\draw[Zeiger] (Ursprung) -- (0,-1/\wL)
+				node[at end, left] {$\frac{1}{j\omega L}$}
+				node(tmpwL) [HelpNode]{}; 
+			%Y(R1):
+			\draw[Zeiger, name intersections={of=R1 and ortskurve}] (Ursprung) -- (intersection-2)
+				node[at end, anchor=north west] {$\underline{Y}(R)$}
+			    node(tmpYe) [HelpNode]{};
+			%Y(R2): 
+			\draw[Zeiger, name intersections={of=R2 and ortskurve}] (Ursprung) -- (intersection-2)
+				node(tmpYz) [HelpNode]{};
+			%Y(R3): 
+			\draw[Zeiger, name intersections={of=R3 and ortskurve}] (Ursprung) -- (intersection-2)
+				node(tmpYd) [HelpNode]{};				
+			%zusätzliche Beschriftung
+			\draw[thin, gray] (tmpwL) 	 -- ++(-50:0.3cm) node[anchor=west]		 {$R=0$};
+			\draw[thin, gray] (Ursprung) -- ++( 60:0.5cm) node[anchor=south west]{$R=\infty$};		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+
+\end{minipage}
+\hfill
+\begin{minipage}[r]{0.48\textwidth}
+	
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Admittanz_RL_Reihenschaltung_RundW_variabel_e}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Ortskurve/.style={cyan, thick}, 										  %Style der Ortskurvenlinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\R{1.0cm};   %Länge von R
+			\def\wLe{0.6cm}; %Länge von w1L
+			\def\wLz{1.0cm}; %Länge von w2L
+			\def\wLd{1.5cm}; %Länge von w3L
+			\def\TickLen{0.05cm}; % Halbe Länge des Achsen-Tick
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (1.7cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.6cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Plotten der Zeiger
+			%R: 
+			\draw[Zeiger] (Ursprung) -- (\R,0)
+				node[at end, below] {$R$}
+				node(tmpR) [HelpNode]{}; 
+			%Z(L1):
+			\draw[Zeiger] (Ursprung) -- (\R,\wLe)
+				node[at end, right] {$j\omega_1L$}
+				node(tmpwLe) [HelpNode]{};
+			%Z(L2): 
+			\draw[Zeiger] (Ursprung) -- (\R,\wLz)
+				node[at end, right] {$j\omega_2L$}
+				node(tmpwLz) [HelpNode]{};
+			%Z(L3): 
+			\draw[Zeiger] (Ursprung) -- (\R,\wLd)
+				node[at end, right] {$j\omega_3L$}
+				node[pos=0.7, anchor=south east] {$\underline{Z}(\omega)$}
+				node(tmpwLd) [HelpNode]{};				
+			% Ortskurve
+			\draw[Ortskurve] (tmpR) -- ($(yEnd) + (\R,0)$);
+			%Ticks auf der Ortskurve 
+			\draw (\R+\TickLen,\wLe) -- (\R-\TickLen,\wLe); %wL1
+			\draw (\R+\TickLen,\wLz) -- (\R-\TickLen,\wLz); %wL2
+			\draw (\R+\TickLen,\wLd) -- (\R-\TickLen,\wLd);	%wL3
+			\draw (\R,-\TickLen)     -- (\R,\TickLen);		%R
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Admittanz_RL_Reihenschaltung_RundW_variabel_f}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Ortskurve/.style={cyan, thick}, 										  %Style der Ortskurvenlinie
+			HelpLine/.style={gray, thin, densely dashed},							  %Style der Hilfslinie					
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: Werte hängen von e) ab !! 
+			\def\R{1.0};   %Länge von R
+			\def\wLe{0.6}; %Länge von w1L
+			\def\wLz{1.0}; %Länge von w2L
+			\def\wLd{1.5}; %Länge von w3L
+			\def\TickLen{0.05}; % Halbe Länge des Achsen-Tick
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (1.7cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-1.9cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,0.5cm); 	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=east] at (xStart) {$0$}; 														%Beschriftnug des Urpsrungs 
+			% Einzeichnen der Admittanzen:
+			\draw (\TickLen,-1/\wLe) -- (-\TickLen,-1/\wLe) node[scale=0.8,left]{$\frac{1}{j\omega_1L}$}; %1/jw1L
+			\draw (\TickLen,-1/\wLz) -- (-\TickLen,-1/\wLz) node[scale=0.8,left]{$\frac{1}{j\omega_2L}$}; %1/jw2L
+			\draw (\TickLen,-1/\wLd) -- (-\TickLen,-1/\wLd) node[scale=0.8,left]{$\frac{1}{j\omega_3L}$}; %1/jw3L
+			\draw (1/\R,\TickLen)   -- (1/\R,-\TickLen)     node[scale=0.8, above]{$G=1/R$}; %1/R
+			% Ortskurve
+			\draw[Ortskurve, name path=ortskurve] (1/\R,0) 
+				arc[start angle=0, delta angle=-180, x radius=1/\R/2, y radius=1/\R/2];
+			%Richtungspfeil der Ortskurve
+			\draw[Ortskurve, -{stealth[length=2mm]}] (1/\R,0) 
+				arc[start angle=0, delta angle=-45, x radius=1/\R/2, y radius=1/\R/2];
+			%Hilfslinien
+			\draw[HelpLine, name path=w1] (1/\R,0) -- (0,-1/\wLe);
+			\draw[HelpLine, name path=w2] (1/\R,0) -- (0,-1/\wLz);
+			\draw[HelpLine, name path=w3] (1/\R,0) -- (0,-1/\wLd);
+			% Plotten der Zeiger
+			%Y(w1):
+			\draw[Zeiger, name intersections={of=w1 and ortskurve}] (Ursprung) -- (intersection-2)
+				node[at end, anchor=north west] {$\underline{Y}(\omega)$}
+				node(tmpYe) [HelpNode]{};
+			%Y(w2): 
+			\draw[Zeiger, name intersections={of=w2 and ortskurve}] (Ursprung) -- (intersection-2)
+				node(tmpYz) [HelpNode]{};
+			%Y(w3): 
+			\draw[Zeiger, name intersections={of=w3 and ortskurve}] (Ursprung) -- (intersection-2)
+				node(tmpYd) [HelpNode]{};				
+			%zusätzliche Beschriftung
+			\draw[thin, gray] (1/\R,0) 	 -- ++(-50:0.5cm) node[anchor=west]		 {$\omega=0$};
+			\draw[thin, gray] (Ursprung) -- ++( 50:0.3cm) node[pos=0.7,anchor=south west]{$\omega=\infty$};		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+			
+\end{minipage}
+					
+\end{frame}
 
 
 
