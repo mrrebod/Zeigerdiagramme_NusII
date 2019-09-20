@@ -4,7 +4,7 @@
 %\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
 \usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
 \usepackage{tikz}
-\usetikzlibrary{angles, calc, positioning, intersections}
+\usetikzlibrary{angles, calc, positioning, intersections, topaths, decorations.markings}
 
 %Booleans um nicht alles immer kompilieren zu müssen...
 \newboolean{ZeigerdiagrammI}
@@ -3105,7 +3105,7 @@
 			\draw[Zeiger, name intersections={of=w3 and ortskurve}] (Ursprung) -- (intersection-2)
 				node(tmpYd) [HelpNode]{};				
 			%zusätzliche Beschriftung
-			\draw[thin, gray] (1/\R,0) 	 -- ++(-50:0.5cm) node[anchor=west]		 {$\omega=0$};
+			\draw[thin, gray] (1/\R,0) 	 -- ++(-50:0.5cm) node[anchor=west]				 {$\omega=0$};
 			\draw[thin, gray] (Ursprung) -- ++( 50:0.3cm) node[pos=0.7,anchor=south west]{$\omega=\infty$};		
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%	
@@ -3113,6 +3113,107 @@
 \end{minipage}
 					
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Ortskurven von komplitzierten Netzwerken I}
+
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{OrtskurvenVonKompliziertenNetzwerkenI_b}  
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Ortskurve/.style={cyan, thick}, 										  %Style der Ortskurvenlinie
+			HelpLine/.style={gray, thin, densely dashed},							  %Style der Hilfslinie					
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: Werte hängen von e) ab !! 
+			\def\R{1.0};   %Länge von R
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1cm,0);  	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (1.5cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,1.3cm);  %Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Ortskurve 1/(R+jwL) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Achsen
+			\draw[Achsenpfeil, name path=xAchse] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  	%Plot x-axis
+			\draw[Achsenpfeil, name path=yAchse] (yStart) -- (yEnd) node[left] {$j\operatorname{Im}$}; 	%Plot y-axis
+			\node[anchor=north east] at (Ursprung) {$0$}; 												%Beschriftnug des Urpsrungs 
+			% Ortskurve
+			\draw[Ortskurve, name path=ortskurve] (1/\R,0)
+				node[above, black] {$1/R$}
+				arc[start angle=0, delta angle=-180, x radius=1/\R/2, y radius=1/\R/2]; %Ortskurve (Halbkreis)
+			% Richtungspfeil der Ortskurve
+			\draw[Ortskurve, -{stealth[length=2mm]}] (1/\R,0) 
+				arc[start angle=0, delta angle=-45, x radius=1/\R/2, y radius=1/\R/2]	%Pfeil für "Drehrichtung
+				node[black, anchor=east, pos=0.7] {$\omega$};							%Beschriftung w
+			% Beschriftung von w=0:
+			\draw[thin, gray] (1/\R,0) -- ++(-60:0.5cm) node[anchor=north] {$\omega = 0$};
+			% Beschrifntung von 1/(R+jwL) + jwC
+			\draw ($0.9*(xEnd) + 0.6*(yEnd)$) node {$\dfrac{1}{R+j\omega L} \quad + \quad  j\omega C$};
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%    Ortskurve jwC    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Definiere neuen ursprung für 2. ortskurve 
+			\coordinate (Ursprung2) at ($(Ursprung) + 1.7*(xEnd)$);
+			% Shiften des Plottes zum Ursprung2
+			\begin{scope}[shift=(Ursprung2)]
+				% Koordinaten müssen nochmals definiert werden, sonst werden sie nicht geshifted... 
+				\coordinate (xStart)   at (-0.1cm,0);  	%Startpunkt der x-Achse (wt-Achse)
+				\coordinate (xEnd) 	   at (1.5cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+				\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+				\coordinate (yEnd) 	   at (0cm,1.3cm);  %Endpunkt der y-Achse 
+				% Plotten der Achsen
+				\draw[Achsenpfeil] (xStart) -- ($0.3*(xEnd)$) node[below]{$\operatorname{Re}$};  %Plot x-axis
+				\draw[Achsenpfeil] (yStart) -- (yEnd) 		  node[left] {$j\operatorname{Im}$}; %Plot y-axis
+				% Ortskurve
+				\draw[Ortskurve] (Ursprung2) -- ($(yEnd) - (0,0.2cm)$);
+				% Richtungspfeil der Ortskurve
+				\draw[Ortskurve, -{stealth[length=2mm]}] (Ursprung2) -- ($(yEnd) - (0,0.5cm)$)
+					node[black, right, pos=0.9] {$\omega$}; 		
+			\end{scope}
+			% Beschriftung von Ursprung2 
+			\node[anchor=north east] at (Ursprung2) {$0$};
+			% Beschriftung von w=0:
+			\draw[thin, gray] (Ursprung2) -- ++(-60:0.5cm) node[anchor=north] {$\omega = 0$};
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%%    Ortskurve gesamten Netzwerk    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Definiere neuen ursprung für 3. ortskurve 
+			\coordinate (Ursprung3) at ($(Ursprung) + (1.3cm,0) + (0,-2.5cm)$);
+			% Shiften des Plottes zum Ursprung3
+			\begin{scope}[shift=(Ursprung3)]
+				% Koordinaten müssen nochmals definiert werden, sonst werden sie nicht geshifted... 
+				\coordinate (xStart)   at (-0.1cm,0);  	%Startpunkt der x-Achse (wt-Achse)
+				\coordinate (xEnd) 	   at (1.5cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+				\coordinate (yStart)   at (0cm,-0.1cm); %Startpunkt der y-Achse
+				\coordinate (yEnd) 	   at (0cm,1.3cm);  %Endpunkt der y-Achse 
+				% Plotten der Achsen
+				\draw[Achsenpfeil, name path=xAchse3] (xStart) -- (xEnd) node[below]{$\operatorname{Re}$};  %Plot x-axis
+				\draw[Achsenpfeil, name path=yAchse3] (yStart) -- (yEnd)
+					node[left] {$j\operatorname{Im}$}
+					node[left, midway] {$=\quad\underline{Y}(\omega)$}; %Plot y-axis
+				% Ortskurve	
+				\draw[Ortskurve, name path=ortskurve3] (1/\R,0) to [out=-110, in=-80, looseness=1.5] (0.1cm,1.2cm);
+				\draw[Ortskurve, -{stealth[length=2mm]}] (1/\R,0) -- ++(-110:0.2cm) node[right, black] {$\omega$}; %Richtungs-Beschriftung
+				% Beschriftung Ortskurve 
+				\draw[thin, gray] (1/\R,0) -- ++(60:0.4cm) node[anchor=south] {$\omega = 0$}; % w=0
+				\draw[thin, gray, name intersections={of=ortskurve3 and xAchse3}] (intersection-1) -- ++(60:0.2cm)
+					 node[anchor=south] {$\omega_0$}; % w0
+			\end{scope}
+			% Beschriftung von Ursprung3 
+			\node[anchor=north east] at (Ursprung3) {$0$};		
+			
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+			
+	\end{flushright}	
+\end{frame}
+
+
 
 
 
