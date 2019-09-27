@@ -1,32 +1,33 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.25)  13 JUL 2019 15:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  27 SEP 2019 16:34
 entering extended mode
 **\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagramme_NusII}
 (Zeigerdiagramme_NusII.tex ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\t
-ex\latex\beamer\beamer.cls"
-Document Class: beamer 2018/12/02 v3.55 A class for typesetting presentations
+ex/latex/beamer\beamer.cls"
+Document Class: beamer 2019/07/23 v3.56 A class for typesetting presentations
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasem
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasem
 odes.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.
 sty"
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count80
 )
-\beamer@tempbox=\box26
+\beamer@tempbox=\box27
 \beamer@tempcount=\count81
 \c@beamerpauses=\count82
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbased
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbased
 ecode.sty"
 \beamer@slideinframe=\count83
 \beamer@minimum=\count84
+\beamer@decode@box=\box28
 )
-\beamer@commentbox=\box27
+\beamer@commentbox=\box29
 \beamer@modecount=\count85
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.s
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.s
 ty"
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 \headdp=\dimen102
 \footheight=\dimen103
@@ -45,12 +46,12 @@ Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 \beamer@descdefault=\dimen116
 \beamer@descriptionwidth=\dimen117
 \beamer@lastskip=\skip41
-\beamer@areabox=\box28
-\beamer@animcurrent=\box29
-\beamer@animshowbox=\box30
-\beamer@sectionbox=\box31
-\beamer@logobox=\box32
-\beamer@linebox=\box33
+\beamer@areabox=\box30
+\beamer@animcurrent=\box31
+\beamer@animshowbox=\box32
+\beamer@sectionbox=\box33
+\beamer@logobox=\box34
+\beamer@linebox=\box35
 \beamer@sectioncount=\count86
 \beamer@subsubsectionmax=\count87
 \beamer@subsectionmax=\count88
@@ -71,9 +72,9 @@ Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 \beamer@sectionadjust=\count103
 \beamer@tocsectionnumber=\count104
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaseo
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaseo
 ptions.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
 y"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
@@ -81,16 +82,16 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \beamer@paperwidth=\skip42
 \beamer@paperheight=\skip43
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
 sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.
 sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.
 sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
@@ -107,67 +108,69 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen125
 \Gm@dimlist=\toks15
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
-cfg")) (C:\Users\Marco\AppData\Roaming\MiKTeX\2.9\tex\latex\extsizes\size8.clo
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+cfg")) (C:\Users\Marco\AppData\Roaming\MiKTeX\2.9\tex/latex/extsizes\size8.clo
 File: size8.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf
 core.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
 sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
 sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graph
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
 ics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdfte
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
 x.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\systemlayer\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/systemlayer\pg
 fsys.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgfr
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfr
 cs.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 futil-common.tex"
 \pgfutil@everybye=\toks16
 \pgfutil@tempdima=\dimen128
 \pgfutil@tempdimb=\dimen129
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 futil-common-lists.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 futil-latex.def"
-\pgfutil@abb=\box34
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+\pgfutil@abb=\box36
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 frcs.code.tex"
-Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf\pgf.revision
+.tex")
+Package: pgfrcs 2019/08/03 v3.1.4b (3.1.4b)
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgfsys.code.tex"
-Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+Package: pgfsys 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 fkeys.code.tex"
 \pgfkeys@pathtoks=\toks17
 \pgfkeys@temptoks=\toks18
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 fkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks19
 ))
@@ -179,6 +182,8 @@ fkeysfiltered.code.tex"
 \pgf@yb=\dimen135
 \pgf@xc=\dimen136
 \pgf@yc=\dimen137
+\pgf@xd=\dimen138
+\pgf@yd=\dimen139
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
 \c@pgf@counta=\count108
@@ -188,35 +193,36 @@ fkeysfiltered.code.tex"
 \t@pgf@toka=\toks20
 \t@pgf@tokb=\toks21
 \t@pgf@tokc=\toks22
+\pgf@sys@id@count=\count112
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgf.cfg"
-File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+File: pgf.cfg 2019/08/03 v3.1.4b (3.1.4b)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgfsys-pdftex.def"
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+File: pgfsys-pdftex.def 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgfsys-common-pdf.def"
-File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+File: pgfsys-common-pdf.def 2019/08/03 v3.1.4b (3.1.4b)
 )))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgfsyssoftpath.code.tex"
-File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count112
-\pgfsyssoftpath@bigbuffer@items=\count113
+File: pgfsyssoftpath.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfsyssoftpath@smallbuffer@items=\count113
+\pgfsyssoftpath@bigbuffer@items=\count114
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
 pgfsysprotocol.code.tex"
-File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.s
+File: pgfsysprotocol.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.s
 ty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color
 .cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
@@ -231,169 +237,176 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcore.code.tex"
-Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+Package: pgfcore 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 .code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 calc.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 util.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 parser.code.tex"
-\pgfmath@dimen=\dimen138
-\pgfmath@count=\count114
-\pgfmath@box=\box35
+\pgfmath@dimen=\dimen140
+\pgfmath@count=\count115
+\pgfmath@box=\box37
 \pgfmath@toks=\toks23
 \pgfmath@stack@operand=\toks24
 \pgfmath@stack@operation=\toks25
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.basic.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.trigonometric.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.random.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.comparison.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.base.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.round.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.misc.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 functions.integerarithmetics.code.tex")))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 float.code.tex"
-\c@pgfmathroundto@lastzeros=\count115
+\c@pgfmathroundto@lastzeros=\count116
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint.
+code.tex")
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepoints.code.tex"
-File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen139
-\pgf@picmaxx=\dimen140
-\pgf@picminy=\dimen141
-\pgf@picmaxy=\dimen142
-\pgf@pathminx=\dimen143
-\pgf@pathmaxx=\dimen144
-\pgf@pathminy=\dimen145
-\pgf@pathmaxy=\dimen146
-\pgf@xx=\dimen147
-\pgf@xy=\dimen148
-\pgf@yx=\dimen149
-\pgf@yy=\dimen150
-\pgf@zx=\dimen151
-\pgf@zy=\dimen152
+File: pgfcorepoints.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@picminx=\dimen141
+\pgf@picmaxx=\dimen142
+\pgf@picminy=\dimen143
+\pgf@picmaxy=\dimen144
+\pgf@pathminx=\dimen145
+\pgf@pathmaxx=\dimen146
+\pgf@pathminy=\dimen147
+\pgf@pathmaxy=\dimen148
+\pgf@xx=\dimen149
+\pgf@xy=\dimen150
+\pgf@yx=\dimen151
+\pgf@yy=\dimen152
+\pgf@zx=\dimen153
+\pgf@zy=\dimen154
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepathconstruct.code.tex"
-File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen153
-\pgf@path@lasty=\dimen154
+File: pgfcorepathconstruct.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@path@lastx=\dimen155
+\pgf@path@lasty=\dimen156
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepathusage.code.tex"
-File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen155
-\pgf@shorten@start@additional=\dimen156
+File: pgfcorepathusage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@shorten@end@additional=\dimen157
+\pgf@shorten@start@additional=\dimen158
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorescopes.code.tex"
-File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
-\pgfpic=\box36
-\pgf@hbox=\box37
-\pgf@layerbox@main=\box38
-\pgf@picture@serial@count=\count116
+File: pgfcorescopes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfpic=\box38
+\pgf@hbox=\box39
+\pgf@layerbox@main=\box40
+\pgf@picture@serial@count=\count117
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoregraphicstate.code.tex"
-File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen157
+File: pgfcoregraphicstate.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgflinewidth=\dimen159
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoretransformations.code.tex"
-File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen158
-\pgf@pt@y=\dimen159
-\pgf@pt@temp=\dimen160
+File: pgfcoretransformations.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@pt@x=\dimen160
+\pgf@pt@y=\dimen161
+\pgf@pt@temp=\dimen162
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorequick.code.tex"
-File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+File: pgfcorequick.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoreobjects.code.tex"
-File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+File: pgfcoreobjects.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepathprocessing.code.tex"
-File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+File: pgfcorepathprocessing.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorearrows.code.tex"
-File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen161
+File: pgfcorearrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfarrowsep=\dimen163
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoreshade.code.tex"
-File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen162
-\pgf@sys@shading@range@num=\count117
+File: pgfcoreshade.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@max=\dimen164
+\pgf@sys@shading@range@num=\count118
+\pgf@shadingcount=\count119
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoreimage.code.tex"
-File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+File: pgfcoreimage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoreexternal.code.tex"
-File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
-\pgfexternal@startupbox=\box39
+File: pgfcoreexternal.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfexternal@startupbox=\box41
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorelayers.code.tex"
-File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+File: pgfcorelayers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcoretransparency.code.tex"
-File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+File: pgfcoretransparency.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer\p
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
 gfcorepatterns.code.tex"
-File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+File: pgfcorepatterns.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorerdf.code.tex"
+File: pgfcorerdf.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\xxco
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\xxco
 lor.sty"
 Package: xxcolor 2003/10/24 ver 0.1
-\XC@nummixins=\count118
-\XC@countmixins=\count119
+\XC@nummixins=\count120
+\XC@countmixins=\count121
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\atbegsh
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\atbegsh
 i.sty"
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infware
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infware
 rr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds
 .sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperref.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.
 sty"
-Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+Package: hyperref 2019/06/12 v6.88h Hypertext links for LaTeX
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub-
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobsub-
 hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub-
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobsub-
 generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
@@ -405,13 +418,9 @@ Package hobsub Info: Skipping package `ifvtex' (already loaded).
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -432,89 +441,89 @@ Package hobsub Info: Skipping package `atbegshi' (already loaded).
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook.s
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\auxhook.s
 ty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptions
 .sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen163
-\Hy@linkcounter=\count120
-\Hy@pagecounter=\count121
+\@linkdim=\dimen165
+\Hy@linkcounter=\count122
+\Hy@pagecounter=\count123
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.de
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.de
 f"
-File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2019/06/12 v6.88h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count122
+\Hy@SavedSpaceFactor=\count124
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperref.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/00miktex\hyperref.
 cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `bookmarks' set `true' on input line 4383.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 4383.
-Package hyperref Info: Option `implicit' set `false' on input line 4383.
-Package hyperref Info: Hyper figures OFF on input line 4509.
-Package hyperref Info: Link nesting OFF on input line 4514.
-Package hyperref Info: Hyper index ON on input line 4517.
-Package hyperref Info: Plain pages OFF on input line 4524.
-Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Option `bookmarks' set `true' on input line 4424.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4424.
+Package hyperref Info: Option `implicit' set `false' on input line 4424.
+Package hyperref Info: Hyper figures OFF on input line 4550.
+Package hyperref Info: Link nesting OFF on input line 4555.
+Package hyperref Info: Hyper index ON on input line 4558.
+Package hyperref Info: Plain pages OFF on input line 4565.
+Package hyperref Info: Backreferencing OFF on input line 4570.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
-Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count123
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+Package hyperref Info: Bookmarks ON on input line 4803.
+\c@Hy@tempcnt=\count125
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen164
-\Fld@menulength=\count124
-\Field@Width=\dimen165
-\Fld@charsize=\dimen166
-Package hyperref Info: Hyper figures OFF on input line 6369.
-Package hyperref Info: Link nesting OFF on input line 6374.
-Package hyperref Info: Hyper index ON on input line 6377.
-Package hyperref Info: backreferencing OFF on input line 6384.
-Package hyperref Info: Link coloring OFF on input line 6389.
-Package hyperref Info: Link coloring with OCG OFF on input line 6394.
-Package hyperref Info: PDF/A mode OFF on input line 6399.
-LaTeX Info: Redefining \ref on input line 6439.
-LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count125
+LaTeX Info: Redefining \url on input line 5156.
+\XeTeXLinkMargin=\dimen166
+\Fld@menulength=\count126
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
+Package hyperref Info: Hyper figures OFF on input line 6411.
+Package hyperref Info: Link nesting OFF on input line 6416.
+Package hyperref Info: Hyper index ON on input line 6419.
+Package hyperref Info: backreferencing OFF on input line 6426.
+Package hyperref Info: Link coloring OFF on input line 6431.
+Package hyperref Info: Link coloring with OCG OFF on input line 6436.
+Package hyperref Info: PDF/A mode OFF on input line 6441.
+LaTeX Info: Redefining \ref on input line 6481.
+LaTeX Info: Redefining \pageref on input line 6485.
+\Hy@abspage=\count127
 
 Package hyperref Message: Stopped early.
 
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex.d
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex.d
 ef"
-File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count126
-\c@bookmark@seq@number=\count127
+File: hpdftex.def 2019/06/12 v6.88h Hyperref driver for pdfTeX
+\Fld@listcount=\count128
+\c@bookmark@seq@number=\count129
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfile
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\rerunfile
 check.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaser
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaser
 equires.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasec
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasec
 ompatibility.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasef
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasef
 ont.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.s
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.s
 ty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.
 sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks26
@@ -523,179 +532,183 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\sansmathaccent\san
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/sansmathaccent\san
 smathaccent.sty"
 Package: sansmathaccent 2013/03/28
+\sympureletters=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
+ut line 89.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\filehook\filehook.
-sty"
-Package: filehook 2011/10/12 v0.5d Hooks for input files
-)))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaset
-ranslator.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
-tor.sty"
-Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+Package sansmathaccent Warning: Could not find 'filehooks' package: one mathgro
+up may be wasted on input line 89.
+
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasem
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
+ranslator.sty"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
+tor.sty"
+Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
+))
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasem
 isc.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaset
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
 woscreens.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaseo
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaseo
 verlay.sty"
-\beamer@argscount=\count128
+\beamer@argscount=\count130
 \beamer@lastskipcover=\skip44
-\beamer@trivlistdepth=\count129
+\beamer@trivlistdepth=\count131
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaset
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
 itle.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbases
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbases
 ection.sty"
-\c@lecture=\count130
-\c@part=\count131
-\c@section=\count132
-\c@subsection=\count133
-\c@subsubsection=\count134
+\c@lecture=\count132
+\c@part=\count133
+\c@section=\count134
+\c@subsection=\count135
+\c@subsubsection=\count136
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasef
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasef
 rame.sty"
-\beamer@framebox=\box40
-\beamer@frametitlebox=\box41
-\beamer@zoombox=\box42
-\beamer@zoomcount=\count135
-\beamer@zoomframecount=\count136
-\beamer@frametextheight=\dimen167
-\c@subsectionslide=\count137
+\beamer@framebox=\box42
+\beamer@frametitlebox=\box43
+\beamer@zoombox=\box44
+\beamer@zoomcount=\count137
+\beamer@zoomframecount=\count138
+\beamer@frametextheight=\dimen169
+\c@subsectionslide=\count139
 \beamer@frametopskip=\skip45
 \beamer@framebottomskip=\skip46
 \beamer@frametopskipautobreak=\skip47
 \beamer@framebottomskipautobreak=\skip48
 \beamer@envbody=\toks27
-\framewidth=\dimen168
-\c@framenumber=\count138
+\framewidth=\dimen170
+\c@framenumber=\count140
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasev
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasev
 erbatim.sty"
 \beamer@verbatimfileout=\write4
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasef
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasef
 ramesize.sty"
-\beamer@splitbox=\box43
-\beamer@autobreakcount=\count139
-\beamer@autobreaklastheight=\dimen169
+\beamer@splitbox=\box45
+\beamer@autobreakcount=\count141
+\beamer@autobreaklastheight=\dimen171
 \beamer@frametitletoks=\toks28
 \beamer@framesubtitletoks=\toks29
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasef
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasef
 ramecomponents.sty"
-\beamer@footins=\box44
+\beamer@footins=\box46
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasec
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasec
 olor.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasen
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasen
 otes.sty"
-\beamer@frameboxcopy=\box45
+\beamer@frameboxcopy=\box47
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaset
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
 oc.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaset
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
 emplates.sty"
 \beamer@sbttoks=\toks30
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasea
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasea
 uxtemplates.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaseb
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaseb
 oxes.sty"
-\bmb@box=\box46
-\bmb@colorbox=\box47
-\bmb@boxshadow=\box48
-\bmb@boxshadowball=\box49
-\bmb@boxshadowballlarge=\box50
-\bmb@temp=\dimen170
-\bmb@dima=\dimen171
-\bmb@dimb=\dimen172
-\bmb@prevheight=\dimen173
+\bmb@box=\box48
+\bmb@colorbox=\box49
+\bmb@boxshadow=\box50
+\bmb@boxshadowball=\box51
+\bmb@boxshadowballlarge=\box52
+\bmb@temp=\dimen172
+\bmb@dima=\dimen173
+\bmb@dimb=\dimen174
+\bmb@prevheight=\dimen175
 )
-\beamer@blockheadheight=\dimen174
+\beamer@blockheadheight=\dimen176
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasel
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasel
 ocalstructure.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\enumerate.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\enumerate.st
 y"
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks31
 )
-\c@figure=\count140
-\c@table=\count141
+\c@figure=\count142
+\c@table=\count143
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbasen
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbasen
 avigation.sty"
-\beamer@section@min@dim=\dimen175
+\beamer@section@min@dim=\dimen177
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaset
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
 heorems.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
 y"
-Package: amsmath 2017/09/02 v2.17a AMS math features
+Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip51
 For additional information on amsmath, use the `?' option.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.st
 y"
 Package: amstext 2000/06/29 v2.01 AMS text
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks32
-\ex@=\dimen176
-)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.
+\ex@=\dimen178
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.
 sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen177
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.s
+\pmbraise@=\dimen179
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.s
 ty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count142
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count143
-\leftroot@=\count144
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count145
-\DOTSCASE@=\count146
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box51
-\strutbox@=\box52
-\big@size=\dimen178
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count147
-\c@MaxMatrixCols=\count148
+\inf@bad=\count144
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count145
+\leftroot@=\count146
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count147
+\DOTSCASE@=\count148
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+\big@size=\dimen180
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count149
+\c@MaxMatrixCols=\count150
 \dotsspace@=\muskip11
-\c@parentequation=\count149
-\dspbrk@lvl=\count150
+\c@parentequation=\count151
+\dspbrk@lvl=\count152
 \tag@help=\toks33
-\row@=\count151
-\column@=\count152
-\maxfields@=\count153
+\row@=\count153
+\column@=\count154
+\maxfields@=\count155
 \andhelp@=\toks34
-\eqnshift@=\dimen179
-\alignsep@=\dimen180
-\tagshift@=\dimen181
-\tagwidth@=\dimen182
-\totwidth@=\dimen183
-\lineht@=\dimen184
+\eqnshift@=\dimen181
+\alignsep@=\dimen182
+\tagshift@=\dimen183
+\tagwidth@=\dimen184
+\totwidth@=\dimen185
+\lineht@=\dimen186
 \@envbody=\toks35
 \multlinegap=\skip52
 \multlinetaggap=\skip53
 \mathdisplay@stack=\toks36
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amscls\amsthm.st
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.st
 y"
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks37
@@ -708,75 +721,75 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip56
 \dth@everypar=\toks42
 )
-\c@theorem=\count154
+\c@theorem=\count156
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerbaset
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
 hemes.sty"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamertheme
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamertheme
 default.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerfontt
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerfontt
 hemedefault.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamercolor
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamercolor
 themedefault.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerinner
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerinner
 themedefault.sty"
-\beamer@dima=\dimen185
-\beamer@dimb=\dimen186
+\beamer@dima=\dimen187
+\beamer@dimb=\dimen188
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerouter
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerouter
 themedefault.sty"))) (HPE_Lecture.sty
 Package: HPE_Lecture 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2018/06/05 3.22 The Babel package
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.def
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty"
+Package: babel 2019/07/19 3.33 The Babel package
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def
 "
-File: switch.def 2018/06/05 3.22 Babel switching mechanism
+File: switch.def 2019/07/19 3.33 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-german\ngerm
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\ngerm
 an.ldf"
-Language: ngerman 2018/03/29 v2.10 German support for babel (post-1996 orthogra
+Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
 phy)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-german\ngerm
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\ngerm
 anb.ldf"
-Language: ngermanb 2018/03/29 v2.10 German support for babel (post-1996 orthogr
+Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
 aphy)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2018/06/05 3.22 Babel common definitions
-\babel@savecnt=\count155
-\U@D=\dimen187
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2019/07/19 3.33 Babel common definitions
+\babel@savecnt=\count157
+\U@D=\dimen189
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel.d
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.d
 ef")
-LaTeX Info: Redefining \textlatin on input line 1915.
-\bbl@dirlevel=\count156
+LaTeX Info: Redefining \textlatin on input line 2115.
+\bbl@dirlevel=\count158
 )
 Package babel Info: Making " an active character on input line 121.
-))) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.
+))) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.
 sty"
-Package: inputenc 2018/04/06 v1.3b Input encoding file
+Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks43
 \inpenc@posthook=\toks44
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty
 "
-Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
-File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\t1enc.def"
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\helvet.s
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\helvet.s
 ty"
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\beamer\beamerfontt
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerfontt
 hemeserif.sty")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\mathptmx.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\mathptmx.st
 y"
 Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
@@ -799,8 +812,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
-\symbold=\mathgroup6
-\symitalic=\mathgroup7
+\symbold=\mathgroup7
+\symitalic=\mathgroup8
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
@@ -813,23 +826,23 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\mathtools\mathtool
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\mathtool
 s.sty"
-Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: mathtools 2019/07/31 v1.22 mathematical typesetting tools
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count157
-\calc@Bcount=\count158
-\calc@Adimen=\dimen188
-\calc@Bdimen=\dimen189
+\calc@Acount=\count159
+\calc@Bcount=\count160
+\calc@Adimen=\dimen190
+\calc@Bdimen=\dimen191
 \calc@Askip=\skip57
 \calc@Bskip=\skip58
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count159
+\calc@Ccount=\count161
 \calc@Cskip=\skip59
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\mathtools\mhsetup.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\mhsetup.
 sty"
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
@@ -837,146 +850,141 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count160
-\l_MT_multwidth_dim=\dimen190
+\g_MT_multlinerow_int=\count162
+\l_MT_multwidth_dim=\dimen192
 \origjot=\skip60
-\l_MT_shortvdotswithinadjustabove_dim=\dimen191
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen192
-\l_MT_above_intertext_sep=\dimen193
-\l_MT_below_intertext_sep=\dimen194
-\l_MT_above_shortintertext_sep=\dimen195
-\l_MT_below_shortintertext_sep=\dimen196
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amscd.st
+\l_MT_shortvdotswithinadjustabove_dim=\dimen193
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen194
+\l_MT_above_intertext_sep=\dimen195
+\l_MT_below_intertext_sep=\dimen196
+\l_MT_above_shortintertext_sep=\dimen197
+\l_MT_below_shortintertext_sep=\dimen198
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amscd.st
 y"
 Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \athelp@=\toks45
-\minaw@=\dimen197
-\bigaw@=\dimen198
-\minCDarrowwidth=\dimen199
-)
-\sympureletters=\mathgroup8
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 28.
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty"
+\minaw@=\dimen199
+\bigaw@=\dimen256
+\minCDarrowwidth=\dimen257
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.sty"
 Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldpureletters=\mathgroup9
 LaTeX Info: Redefining \bm on input line 207.
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\esint\esint.sty"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\esint.sty"
 Package: esint 
 \symlargesymbolsA=\mathgroup10
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\units.sty"
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/units\units.sty"
 Package: units 1998/08/04 v0.9b Typesetting units
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\units\nicefrac.s
+) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/units\nicefrac.s
 ty"
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseDisplaystyle=\skip61
 \L@UnitsRaiseTextstyle=\skip62
 \L@UnitsRaiseScriptstyle=\skip63
-)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\dcolumn.s
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\dcolumn.s
 ty"
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
-\col@sep=\dimen256
-\ar@mcellbox=\box53
-\extrarowheight=\dimen257
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\array.sty"
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen258
+\ar@mcellbox=\box55
+\extrarowheight=\dimen259
 \NC@list=\toks46
 \extratabsurround=\skip64
 \backup@length=\skip65
-\ar@cellbox=\box54
-)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\tabularx.
+\ar@cellbox=\box56
+)) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\tabularx.
 sty"
 Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
-\TX@col@width=\dimen258
-\TX@old@table=\dimen259
-\TX@old@col=\dimen260
-\TX@target=\dimen261
-\TX@delta=\dimen262
-\TX@cols=\count161
+\TX@col@width=\dimen260
+\TX@old@table=\dimen261
+\TX@old@col=\dimen262
+\TX@target=\dimen263
+\TX@delta=\dimen264
+\TX@cols=\count163
 \TX@ftn=\toks47
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjustbo
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjustbo
 x.sty"
 Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.st
 y"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.
 tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvutils
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils
 .tex"
 \XKV@toks=\toks48
 \XKV@tempa@toks=\toks49
 )
-\XKV@depth=\count162
+\XKV@depth=\count164
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\adjcalc.
 sty"
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\trimclip
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\trimclip
 .sty"
 Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\collectbox\collect
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/collectbox\collect
 box.sty"
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box55
+\collectedbox=\box57
 )
-\tc@llx=\dimen263
-\tc@lly=\dimen264
-\tc@urx=\dimen265
-\tc@ury=\dimen266
+\tc@llx=\dimen265
+\tc@lly=\dimen266
+\tc@urx=\dimen267
+\tc@ury=\dimen268
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\tc-pdfte
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/adjustbox\tc-pdfte
 x.def"
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen267
-\adjbox@Height=\dimen268
-\adjbox@Depth=\dimen269
-\adjbox@Totalheight=\dimen270
-\adjbox@pwidth=\dimen271
-\adjbox@pheight=\dimen272
-\adjbox@pdepth=\dimen273
-\adjbox@ptotalheight=\dimen274
+\adjbox@Width=\dimen269
+\adjbox@Height=\dimen270
+\adjbox@Depth=\dimen271
+\adjbox@Totalheight=\dimen272
+\adjbox@pwidth=\dimen273
+\adjbox@pheight=\dimen274
+\adjbox@pdepth=\dimen275
+\adjbox@ptotalheight=\dimen276
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpag
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\ifoddpag
 e.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count163
+\c@checkoddpage=\count165
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\varwidth\varwidth.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/varwidth\varwidth.
 sty"
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box56
-\sift@deathcycles=\count164
-\@vwid@loff=\dimen275
-\@vwid@roff=\dimen276
+\@vwid@box=\box58
+\sift@deathcycles=\count166
+\@vwid@loff=\dimen277
+\@vwid@roff=\dimen278
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\extarrows\extarrow
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/extarrows\extarrow
 s.sty"
 Package: extarrows 2008/05/15 v1.0b Some extensible arrows
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microtyp
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\microtyp
 e.sty"
 Package: microtype 2019/02/28 v2.7b Micro-typographical refinements (RS)
 \MT@toks=\toks50
-\MT@count=\count165
+\MT@count=\count167
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen277
+\MT@outer@kern=\dimen279
 LaTeX Info: Redefining \textmicrotypecontext on input line 1336.
-\MT@listname@count=\count166
+\MT@listname@count=\count168
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microtyp
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\microtyp
 e-pdftex.def"
 File: microtype-pdftex.def 2019/02/28 v2.7b Definitions specific to pdftex (RS)
 
@@ -986,394 +994,380 @@ LaTeX Info: Redefining \lslig on input line 914.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\microtyp
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\microtyp
 e.cfg"
 File: microtype.cfg 2019/02/28 v2.7b microtype main configuration file (RS)
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\enumitem\enumitem.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/enumitem\enumitem.
 sty"
-Package: enumitem 2011/09/28 v3.5.2 Customized lists
+Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip67
-\enit@outerparindent=\dimen278
+\enit@outerparindent=\dimen280
 \enit@toks=\toks51
-\enit@inbox=\box57
-\enitdp@description=\count167
+\enit@inbox=\box59
+\enit@count@id=\count169
+\enitdp@description=\count170
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\mathtools\empheq.s
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mathtools\empheq.s
 ty"
 Package: empheq 2017/03/31 v2.15 Emphasizing equations
-\l_EQ_equationtype_int=\count168
-\l_EQ_alignmentmode_int=\count169
-\l_EQ_totalwidth_dim=\dimen279
-\l_EQ_displaywidth_dim=\dimen280
-\l_EQ_temp_linewidth_dim=\dimen281
-\EmphEqdelimitershortfall=\dimen282
-\EmphEqdelimiterfactor=\count170
-\g_EQ_toptag_height_dim=\dimen283
-\g_EQ_bottomtag_depth_dim=\dimen284
-\g_EQ_toprow_height_dim=\dimen285
-\g_EQ_bottomrow_depth_dim=\dimen286
-\g_EQ_widesttag_dim=\dimen287
-\EQ_mathdisplay_box=\box58
-\EQ_tag_box=\box59
-\g_EQ_temprow_int=\count171
+\l_EQ_equationtype_int=\count171
+\l_EQ_alignmentmode_int=\count172
+\l_EQ_totalwidth_dim=\dimen281
+\l_EQ_displaywidth_dim=\dimen282
+\l_EQ_temp_linewidth_dim=\dimen283
+\EmphEqdelimitershortfall=\dimen284
+\EmphEqdelimiterfactor=\count173
+\g_EQ_toptag_height_dim=\dimen285
+\g_EQ_bottomtag_depth_dim=\dimen286
+\g_EQ_toprow_height_dim=\dimen287
+\g_EQ_bottomrow_depth_dim=\dimen288
+\g_EQ_widesttag_dim=\dimen289
+\EQ_mathdisplay_box=\box60
+\EQ_tag_box=\box61
+\g_EQ_temprow_int=\count174
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\colortbl\colortbl.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colortbl\colortbl.
 sty"
 Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
 \everycr=\toks52
 \minrowclearance=\skip68
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\subcaption
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaption
 .sty"
 Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.st
 y"
-Package: caption 2018/05/01 v3.3-147 Customizing captions (AR)
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3.s
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.s
 ty"
-Package: caption3 2018/05/27 v1.8a caption3 kernel (AR)
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen288
-\captionmargin@=\dimen289
-\captionwidth=\dimen290
-\caption@tempdima=\dimen291
-\caption@indent=\dimen292
-\caption@parindent=\dimen293
-\caption@hangindent=\dimen294
+\captionmargin=\dimen290
+\captionmargin@=\dimen291
+\captionwidth=\dimen292
+\caption@tempdima=\dimen293
+\caption@indent=\dimen294
+\caption@parindent=\dimen295
+\caption@hangindent=\dimen296
 )
-\c@ContinuedFloat=\count172
+\c@caption@flags=\count175
+\c@ContinuedFloat=\count176
 Package caption Info: beamer document class.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 )
-\c@subfigure=\count173
-\c@subtable=\count174
+\c@subfigure=\count177
+\c@subtable=\count178
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgfplots\pgfplots.
 sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 s.revision.tex")
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlayer\
 tikz.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf
 .sty"
-Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+Package: pgf 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfm
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 oduleshapes.code.tex"
-File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box60
+File: pgfmoduleshapes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfnodeparttextbox=\box62
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfm
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 oduleplot.code.tex"
-File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+File: pgfmoduleplot.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibility\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
 pgfcomp-version-0-65.sty"
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen295
-\pgf@nodesepend=\dimen296
+Package: pgfcomp-version-0-65 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@nodesepstart=\dimen297
+\pgf@nodesepend=\dimen298
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibility\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
 pgfcomp-version-1-18.sty"
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+Package: pgfcomp-version-1-18 2019/08/03 v3.1.4b (3.1.4b)
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgff
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgff
 or.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgfk
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfk
 eys.sty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 fkeys.code.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.s
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/math\pgfmath.s
 ty"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 .code.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
 ffor.code.tex"
-Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+Package: pgffor 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfmath
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
 .code.tex")
-\pgffor@iter=\dimen297
-\pgffor@skip=\dimen298
+\pgffor@iter=\dimen299
+\pgffor@skip=\dimen300
 \pgffor@stack=\toks53
 \pgffor@toks=\toks54
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\tikz.code.tex"
-Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz\tikz.code.tex"
+Package: tikz 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
 flibraryplothandlers.code.tex"
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count175
-\pgfplotmarksize=\dimen299
+File: pgflibraryplothandlers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgf@plot@mark@count=\count179
+\pgfplotmarksize=\dimen301
 )
-\tikz@lastx=\dimen300
-\tikz@lasty=\dimen301
-\tikz@lastxsaved=\dimen302
-\tikz@lastysaved=\dimen303
-\tikzleveldistance=\dimen304
-\tikzsiblingdistance=\dimen305
-\tikz@figbox=\box61
-\tikz@figbox@bg=\box62
-\tikz@tempbox=\box63
-\tikz@tempbox@bg=\box64
-\tikztreelevel=\count176
-\tikznumberofchildren=\count177
-\tikznumberofcurrentchild=\count178
-\tikz@fig@count=\count179
+\tikz@lastx=\dimen302
+\tikz@lasty=\dimen303
+\tikz@lastxsaved=\dimen304
+\tikz@lastysaved=\dimen305
+\tikz@lastmovetox=\dimen306
+\tikz@lastmovetoy=\dimen307
+\tikzleveldistance=\dimen308
+\tikzsiblingdistance=\dimen309
+\tikz@figbox=\box63
+\tikz@figbox@bg=\box64
+\tikz@tempbox=\box65
+\tikz@tempbox@bg=\box66
+\tikztreelevel=\count180
+\tikznumberofchildren=\count181
+\tikznumberofcurrentchild=\count182
+\tikz@fig@count=\count183
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfm
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 odulematrix.code.tex"
-File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count180
-\pgfmatrixcurrentcolumn=\count181
-\pgf@matrix@numberofcolumns=\count182
+File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfmatrixcurrentrow=\count184
+\pgfmatrixcurrentcolumn=\count185
+\pgf@matrix@numberofcolumns=\count186
 )
-\tikz@expandcount=\count183
+\tikz@expandcount=\count187
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibrarytopaths.code.tex"
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 s.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 score.code.tex"
 \t@pgfplots@toka=\toks55
 \t@pgfplots@tokb=\toks56
 \t@pgfplots@tokc=\toks57
-\pgfplots@tmpa=\dimen306
-\c@pgfplots@coordindex=\count184
-\c@pgfplots@scanlineindex=\count185
+\pgfplots@tmpa=\dimen310
+\c@pgfplots@coordindex=\count188
+\c@pgfplots@scanlineindex=\count189
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgf
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pgf
 plotssysgeneric.code.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\pg
 fplotslibrary.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/oldpgfc
 ompatib\pgfplotsoldpgfsupp_loader.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
-flibraryfpu.code.tex")
-Package pgfplots: loading complementary arithmetics for your pgf version...
-
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
-ompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
-ompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count186
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
-ompatib\pgfplotsoldpgfsupp_leq.code.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
+flibraryfpu.code.tex"))
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
 fplotsutil.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
 ucture\pgfplotsliststructure.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
 ucture\pgfplotsliststructureext.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
 ucture\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count187
+\c@pgfplotsarray@tmp=\count190
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
 ucture\pgfplotsmatrix.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\numtabl
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/numtabl
 e\pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count188
+\c@pgfplotstable@counta=\count191
 \t@pgfplotstable@a=\toks58
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\liststr
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
 ucture\pgfplotsdeque.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
 fplotsbinary.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
 fplotsbinary.data.code.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
 fplotsutil.verb.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\pg
 flibrarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count189
+\c@pgfplotslibrarysurf@no=\count192
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\pgf
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pgf
 librarypgfplots.surfshading.pgfsys-pdftex.def")))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
 fplotscolormap.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\util\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
 fplotscolor.code.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 sstackedplots.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 splothandlers.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 smeshplothandler.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 smeshplotimage.code.tex")))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 s.scaling.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 scoordprocessing.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 s.errorbars.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 s.markers.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 sticks.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\pgfplot
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
 s.paths.code.tex")
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibrarydecorations.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pgfm
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.code.tex"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
 oduledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen307
-\pgfdecoratedremainingdistance=\dimen308
-\pgfdecoratedinputsegmentcompleteddistance=\dimen309
-\pgfdecoratedinputsegmentremainingdistance=\dimen310
-\pgf@decorate@distancetomove=\dimen311
-\pgf@decorate@repeatstate=\count190
-\pgfdecorationsegmentamplitude=\dimen312
-\pgfdecorationsegmentlength=\dimen313
+\pgfdecoratedcompleteddistance=\dimen311
+\pgfdecoratedremainingdistance=\dimen312
+\pgfdecoratedinputsegmentcompleteddistance=\dimen313
+\pgfdecoratedinputsegmentremainingdistance=\dimen314
+\pgf@decorate@distancetomove=\dimen315
+\pgf@decorate@repeatstate=\count193
+\pgfdecorationsegmentamplitude=\dimen316
+\pgfdecorationsegmentlength=\dimen317
 )
-\tikz@lib@dec@box=\box65
+\tikz@lib@dec@box=\box67
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\de
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/de
 corations\pgflibrarydecorations.pathmorphing.code.tex"))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\de
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/de
 corations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count191
-\pgfplots@xmin@reg=\dimen314
-\pgfplots@xmax@reg=\dimen315
-\pgfplots@ymin@reg=\dimen316
-\pgfplots@ymax@reg=\dimen317
-\pgfplots@zmin@reg=\dimen318
-\pgfplots@zmax@reg=\dimen319
+\pgfplots@numplots=\count194
+\pgfplots@xmin@reg=\dimen318
+\pgfplots@xmax@reg=\dimen319
+\pgfplots@ymin@reg=\dimen320
+\pgfplots@ymax@reg=\dimen321
+\pgfplots@zmin@reg=\dimen322
+\pgfplots@zmax@reg=\dimen323
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibraryplotmarks.code.tex"
-File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibraryplotmarks.code.tex"
+File: tikzlibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
 flibraryplotmarks.code.tex"
-File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+File: pgflibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
 flibraryarrows.meta.code.tex"
-File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
-\pgfarrowinset=\dimen320
-\pgfarrowlength=\dimen321
-\pgfarrowwidth=\dimen322
-\pgfarrowlinewidth=\dimen323
+File: pgflibraryarrows.meta.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfarrowinset=\dimen324
+\pgfarrowlength=\dimen325
+\pgfarrowwidth=\dimen326
+\pgfarrowlinewidth=\dimen327
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs\ti
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\ti
 kzlibrarypgfplots.external.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlayer\
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlayer/
 libraries\tikzlibraryexternal.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzexternalshared.code.tex"))
-Package pgfplots external lib: loading complementary code for your PGF version.
-..
-
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
-ompatib\pgfplotsoldpgfsupp_pgfcoreexternal.code.tex"
-File: pgfcoreexternal.code.tex 2015/08/29  (rcs-revision 1.22)
-\pgfexternal@startupbox=\box66
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
-ompatib\pgfplotsoldpgfsupp_tikzlibraryexternal.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldpgfc
-ompatib\pgfplotsoldpgfsupp_tikzexternalshared.code.tex")))
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzexternalshared.code.tex")))
 No auxiliary output files.
 
 \w@pgfexternal@auxout=\write5
 Package TikZ externalization: calling \geometry{driver=none} during externaliza
 tion.
 
-\c@sectionpage=\count192
+\c@sectionpage=\count195
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\textpos\textpos.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/textpos\textpos.st
 y"
-Package: textpos 2016/06/07 v1.8
-Package: textpos 2016/06/07 1.8, absolute positioning of text on the page
-\TP@textbox=\box67
-\TP@holdbox=\box68
-\TPHorizModule=\dimen324
-\TPVertModule=\dimen325
-\TP@margin=\dimen326
-\TP@absmargin=\dimen327
+Package: textpos 2019/04/15 v1.9.1
+Package: textpos 2019/04/15 1.9.1, absolute positioning of text on the page
+\TP@textbox=\box68
+\TP@holdbox=\box69
+\TPHorizModule=\dimen328
+\TPVertModule=\dimen329
+\TP@margin=\dimen330
+\TP@absmargin=\dimen331
 Grid set 16 x 16 = 22.7622pt x 17.07166pt
-\TPboxrulesize=\dimen328
-\TP@ox=\dimen329
-\TP@oy=\dimen330
+\TPboxrulesize=\dimen332
+\TP@ox=\dimen333
+\TP@oy=\dimen334
 \TP@tbargs=\toks59
-\TP@prevdepth=\dimen331
+\TP@prevdepth=\dimen335
 TextBlockOrigin set to 0pt x 0pt
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\everypage\everypag
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/everypage\everypag
 e.sty"
 Package: everypage 2007/06/20 1.1 Hooks to run on every page
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pgfp
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfp
 ages.sty"
 Package: pgfpages 2011/01/05 ver 0.02
-\pgf@logicalpages=\count193
-\pgf@firstshipout=\count194
-\pgf@lastshipout=\count195
-\pgf@currentshipout=\count196
-\pgf@cpn=\count197
-\pgf@shipoutnextto=\count198
-\pgfphysicalheight=\dimen332
-\pgfphysicalwidth=\dimen333
-\pgfpages@shipoutbox=\box69
+\pgf@logicalpages=\count196
+\pgf@firstshipout=\count197
+\pgf@lastshipout=\count198
+\pgf@currentshipout=\count199
+\pgf@cpn=\count266
+\pgf@shipoutnextto=\count267
+\pgfphysicalheight=\dimen336
+\pgfphysicalwidth=\dimen337
+\pgfpages@shipoutbox=\box70
 ))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibraryangles.code.tex"
-File: tikzlibraryangles.code.tex 2013/08/28 v3.0.1a (rcs-revision 1.1)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibraryangles.code.tex"
+File: tikzlibraryangles.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibrarycalc.code.tex"
-File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarycalc.code.tex"
+File: tikzlibrarycalc.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibrarypositioning.code.tex"
-File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendlaye
-r\tikz\libraries\tikzlibraryintersections.code.tex"
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\pg
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibraryintersections.code.tex"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
 flibraryintersections.code.tex"
-\pgf@intersect@solutions=\count199
+\pgf@intersect@solutions=\count268
 ))
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.markings.code.tex"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/de
+corations\pgflibrarydecorations.markings.code.tex"))
 No file LaTeXfigs/InduktivitaetImWechselstromkreis_c.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 30.
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 52.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.40002pt on input line 30.
+(Font)              scaled to size 6.40002pt on input line 52.
 *geometry* detected driver: <none>
 *geometry* verbose mode - [ preamble ] result:
 * driver: \Gm@driver 
@@ -1408,26 +1402,26 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
-ii"
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
+df.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count266
-\scratchdimen=\dimen334
-\scratchbox=\box70
-\nofMPsegments=\count267
-\nofMParguments=\count268
+\scratchcounter=\count269
+\scratchdimen=\dimen338
+\scratchbox=\box71
+\nofMPsegments=\count270
+\nofMParguments=\count271
 \everyMPshowfont=\toks60
-\MPscratchCnt=\count269
-\MPscratchDim=\dimen335
-\MPnumerator=\count270
-\makeMPintoPDFobject=\count271
+\MPscratchCnt=\count272
+\MPscratchDim=\dimen339
+\MPnumerator=\count273
+\makeMPintoPDFobject=\count274
 \everyMPtoPDFconversion=\toks61
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
 base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.st
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.st
 y"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
@@ -1438,113 +1432,113 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box71
-Package hyperref Info: Link coloring OFF on input line 30.
+\AtBeginShipoutBox=\box72
+Package hyperref Info: Link coloring OFF on input line 52.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\gettitl
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\gettitl
 estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count272
+\c@section@level=\count275
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
+LaTeX Info: Redefining \ref on input line 52.
+LaTeX Info: Redefining \pageref on input line 52.
+LaTeX Info: Redefining \nameref on input line 52.
 \symnumbers=\mathgroup11
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 52.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 30
+(Font)              `pureletters' in the math version `normal' on input line 52
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> T1/ptm/m/it on input line 30.
+(Font)                  OT1/mathkerncmss/m/sl --> T1/ptm/m/it on input line 52.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 30.
+(Font)              `pureletters' in the math version `bold' on input line 52.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/m/it on input line 30
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/m/it on input line 52
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/ztmcm/m/n --> T1/ptm/m/n on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 30.
+(Font)                  OT1/ztmcm/m/n --> T1/ptm/m/n on input line 52.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 30.
+(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 30.
+(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 52.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 30.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 30.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 52.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 30.
+(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 30.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 30.
+(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 52.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 30.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 30.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 52.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 30.
+(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 52.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 30.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/ztmcm/m/n --> T1/ptm/bx/n on input line 30.
+(Font)                  OT1/ztmcm/m/n --> T1/ptm/bx/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 30.
+(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 30.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 30.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 30.
-LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 30.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 52.
+LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 52.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `normal' on input lin
-e 30.
+e 52.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `norma
 l'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 3
-0.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 5
+2.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `bold' on input line 
-30.
+52.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `bold'
 
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 3
-0.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 5
+2.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-basic-dictionary-English.dict"
 Dictionary: translator-basic-dictionary, Language: English 
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-bibliography-dictionary-English.dict"
 Dictionary: translator-bibliography-dictionary, Language: English 
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-environment-dictionary-English.dict"
 Dictionary: translator-environment-dictionary, Language: English 
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-months-dictionary-English.dict"
 Dictionary: translator-months-dictionary, Language: English 
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-numbers-dictionary-English.dict"
 Dictionary: translator-numbers-dictionary, Language: English 
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\translator\transla
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 30.
+LaTeX Info: Redefining \microtypecontext on input line 52.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -1569,26 +1563,26 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 No file LaTeXfigs/InduktivitaetImWechselstromkreis_c.nav.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.00002pt on input line 30.
+(Font)              scaled to size 4.00002pt on input line 52.
 
-Overfull \hbox (1.11195pt too wide) in paragraph at lines 30--30
+Overfull \hbox (1.11195pt too wide) in paragraph at lines 52--52
 [][]  
  []
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
-(Font)              scaled to size 6.40002pt on input line 239.
+(Font)              scaled to size 6.40002pt on input line 271.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.76003pt on input line 239.
+(Font)              scaled to size 8.76003pt on input line 271.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.82405pt on input line 239.
+(Font)              scaled to size 13.82405pt on input line 271.
 The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
 timized away. Use '/tikz/external/optimize=false' to disable this.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 3.20001pt on input line 239.
+(Font)              scaled to size 3.20001pt on input line 271.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
@@ -1647,9 +1641,9 @@ isable this.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 96
-9.
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 10
+02.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ztmcm.fd
 "
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -1657,61 +1651,61 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 96
-9.
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 10
+02.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlztmcm.fd
 "
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 96
-9.
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 10
+02.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omsztmcm.fd
 "
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 96
-9.
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 10
+02.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxztmcm.fd
 "
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-msa.c
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-msa.c
 fg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-msb.c
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-msb.c
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 969.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 1002.
 
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 969.
-
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\microtype\mt-ptm.c
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-ptm.c
 fg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 969.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 969.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 969.
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1002
+.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1002.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1002.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1002.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 969.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 1002.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <6> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 969.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 1002.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 969.
-LaTeX Font Info:    Try loading font information for U+esint on input line 969.
-
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex\latex\esint\uesint.fd"
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 1002.
+LaTeX Font Info:    Try loading font information for U+esint on input line 1002
+.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\uesint.fd"
 File: uesint.fd 
 ) [6
 
@@ -1724,28 +1718,290 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 972.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 972.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 972.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 972.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2734.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2734.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2734.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2734.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2734.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2734.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3572.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3572.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3572.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3572.
  ) 
 Here is how much of TeX's memory you used:
- 36876 strings out of 492973
- 870525 string characters out of 3126692
- 1102955 words of memory out of 3000000
- 39917 multiletter control sequences out of 15000+200000
- 51669 words of font info for 86 fonts, out of 3000000 for 9000
+ 37577 strings out of 492895
+ 883872 string characters out of 3123735
+ 1119532 words of memory out of 3000000
+ 40652 multiletter control sequences out of 15000+200000
+ 76977 words of font info for 130 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,15n,131p,902b,977s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,15n,129p,902b,1038s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.
 pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on LaTeXfigs/InduktivitaetImWechselstromkreis_c.pdf (1 page, 158
-56 bytes).
+Output written on LaTeXfigs/InduktivitaetImWechselstromkreis_c.pdf (1 page, 161
+45 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28715 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 42539 words of extra memory for PDF output out of 42996 (max. 10000000)
 

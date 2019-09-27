@@ -1909,7 +1909,7 @@
 \ifKomplexeWechselstromrechnungBeispielII{	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
-		\tikzsetnextfilename{KomplexeWechselstromrechnungBeispielII}
+		\tikzsetnextfilename{KomplexeWechselstromrechnungBeispiel_II}
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
@@ -2211,7 +2211,7 @@
 
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
-		\tikzsetnextfilename{SerienschwingkreisBauelementenspannungenI_b)}  
+		\tikzsetnextfilename{SerienschwingkreisBauelementenspannungen_I_b}  
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
@@ -2376,7 +2376,7 @@
 
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
-		\tikzsetnextfilename{ParallelschwingkreisBauelementestroemeI_c)}  
+		\tikzsetnextfilename{ParallelschwingkreisBauelementestroeme_I_c}  
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
@@ -3119,7 +3119,7 @@
 
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
-		\tikzsetnextfilename{OrtskurvenVonKompliziertenNetzwerkenI_b}  
+		\tikzsetnextfilename{OrtskurvenVonKompliziertenNetzwerken_I_b}  
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
@@ -3213,7 +3213,358 @@
 	\end{flushright}	
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}\frametitle{Leistung im Wechselstromkreis - $RL$-Schaltung I}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{LeistungImWechselstromkreisRLSchaltung_I_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{1.7};    %Länge von Stromzeiger
+			\def\USpitze{1.9};	  %Länge von Spannungszeiger
+			\def\PhiI{20};		  %Winkel von I
+			\def\PhiU{75};		  %Winkel von U
+			
+			%Berechnen der U-Komponenten
+			\pgfmathsetmacro\Ucos{cos(\PhiU-\PhiI)*\USpitze}; %u*cos(phi)
+			\pgfmathsetmacro\Usin{sin(\PhiU-\PhiI)*\USpitze}; %u*sin(phi)
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Hilfslinie
+			\draw[HelpLine] (Ursprung) -- ++(0:\ISpitze) node[HelpNode] (xEnd){};
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) -- ++(\PhiI:\ISpitze)
+				node[at end, below] {$\underline{\hat{i}}$}
+				node(tmp1) [HelpNode]{}; 
+			%Spannungszeiger u*cos(phi):
+			\draw[Zeiger, blue] (Ursprung) -- ++(\PhiI:\Ucos)
+				node(tmp2) [HelpNode]{};
+			%Spannungszeiger u*sin(phi): 
+			\draw[Zeiger, blue] (tmp2) -- ++(\PhiI+90:\Usin)
+				node[midway, right] {$\hat{u}\sin\varphi$}
+				node(tmp3) [HelpNode]{};
+			%Spannungszeiger u: 
+			\draw[Zeiger, blue] (Ursprung) -- (tmp3)
+				node[midway, left] {$\underline{\hat{u}}$}
+				node(tmp4) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi i:
+			\path (xEnd) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius=8.0mm, pic text=$\varphi_i$, angle eccentricity=1.2] {angle=xEnd--Ursprung--tmp1};
+			%Phi u:
+ 			\path (xEnd) -- (Ursprung) -- (tmp4)
+ 				pic[Winkelpfeil, angle radius=3.0mm, pic text=$\varphi_u$, angle eccentricity=1.5] {angle=xEnd--Ursprung--tmp4};
+ 			%Phi:
+ 			\path (tmp1) -- (Ursprung) -- (tmp4)
+ 				pic[Winkelpfeil, angle radius=7.0mm, pic text=$\varphi$, angle eccentricity=1.2] {angle=tmp1--Ursprung--tmp4};
+			% Beschriftung:
+			\node[anchor=west, gray, scale=0.8] at ($(tmp4) + (0.2cm,0)$) {$\varphi=\varphi_u-\varphi_i$};	
+			\node[anchor=north west, blue] (BeschUcos) at ($(Ursprung) + (0.5cm,0)$) {$\hat{u}\cos\varphi$};
+			\draw[thin, blue] (BeschUcos.west) -- ++(90:0.35cm);
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Leistung im Wechselstromkreis - $RL$-Schaltung II}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{LeistungImWechselstromkreisRLSchaltung_II_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: Werte sind identisch wie aus Leistung im Wechselstromkreis I b) !!:
+			\def\ISpitze{1.7};    %Länge von Stromzeiger
+			\def\USpitze{1.9};	  %Länge von Spannungszeiger
+			\def\PhiI{20};		  %Winkel von I
+			\def\PhiU{75};		  %Winkel von U
+			
+			%Berechnen der I-Komponenten
+			\pgfmathsetmacro\Icos{cos(\PhiU-\PhiI)*\ISpitze}; %I*cos(phi)
+			\pgfmathsetmacro\Isin{sin(\PhiU-\PhiI)*\ISpitze}; %I*sin(phi)
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Hilfslinie
+			\draw[HelpLine] (Ursprung) -- ++(0:\ISpitze) node[HelpNode] (xEnd){};
+			% Plotten der Zeiger
+			%Spannungszeiger: 
+			\draw[Zeiger, blue] (Ursprung) -- ++(\PhiU:\USpitze)
+				node[near end, left] {$\underline{\hat{u}}$}
+				node(tmp1) [HelpNode]{}; 
+			%Stromzeiger i*cos(phi):
+			\draw[Zeiger, red] (Ursprung) -- ++(\PhiU:\Icos)
+				node[midway, left] {$\hat{i}\cos\varphi$}
+				node(tmp2) [HelpNode]{};
+			%Stromzeiger i*sin(phi): 
+			\draw[Zeiger, red] (tmp2) -- ++(\PhiU-90:\Isin)
+				node[midway, above] {$\hat{i}\sin\varphi$}
+				node(tmp3) [HelpNode]{};
+			%Stromzeiger i: 
+			\draw[Zeiger, red] (Ursprung) -- (tmp3)
+				node[pos=0.85, below] {$\underline{\hat{i}}$}
+				node(tmp4) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi i:
+			\path (xEnd) -- (Ursprung) -- (tmp4)
+				pic[Winkelpfeil, angle radius=8.0mm, pic text=$\varphi_i$, angle eccentricity=1.2] {angle=xEnd--Ursprung--tmp4};
+			%Phi u:
+			\path (xEnd) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius=3.0mm, pic text=$\varphi_u$, angle eccentricity=1.5] {angle=xEnd--Ursprung--tmp1};
+			%Phi:
+			\path (tmp4) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius=7.0mm, pic text=$\varphi$, angle eccentricity=1.2] {angle=tmp4--Ursprung--tmp1};
+			% Beschriftung:
+			\node[anchor=west, gray, scale=0.8] at ($(tmp1) + (0.2cm,0)$) {$\varphi=\varphi_u-\varphi_i$};	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Scheinleistung}	
+	\begin{flushright}
+		
+				%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Scheinleistung_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: Werte sind identisch wie aus Leistung im Wechselstromkreis I b) !!:
+			\def\ISpitze{1.7};    %Länge von Stromzeiger
+			\def\SSpitze{1.9};	  %Länge von Scheinleistungszeiger
+			\def\PhiI{20};		  %Winkel von I
+			\def\PhiU{75};		  %Winkel von U
+			
+			%Berechnen der S-Komponenten
+			\pgfmathsetmacro\P{cos(\PhiU-\PhiI)*\SSpitze}; %S*cos(phi)
+			\pgfmathsetmacro\Q{sin(\PhiU-\PhiI)*\SSpitze}; %S*sin(phi)
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Hilfslinie
+			\draw[HelpLine] (Ursprung) -- ++(0:\ISpitze) node[HelpNode] (xEnd){};
+			% Plotten der Zeiger
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) -- ++(\PhiI:\ISpitze)
+				node[at end, below] {$\underline{\hat{i}}$}
+				node(tmp1) [HelpNode]{}; 
+			%P-Zeiger S*cos(phi):
+			\draw[Zeiger, blue] (Ursprung) -- ++(\PhiI:\P)
+				node[midway, above, scale=0.8, align=left, black] {$P_R=P$\\}
+				node(tmp2) [HelpNode]{};
+			%Q-Zeiger S*sin(phi): 
+			\draw[Zeiger, blue] (tmp2) -- ++(\PhiI+90:\Q)
+				node[midway, right, black] {$P_L=Q$}
+				node(tmp3) [HelpNode]{};
+			%S-zeiger: 
+			\draw[Zeiger, blue] (Ursprung) -- (tmp3)
+				node[midway, left, black] {$S$}
+				node(tmp4) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi i:
+			\path (xEnd) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius=8.0mm, pic text=$\varphi_i$, angle eccentricity=1.2] {angle=xEnd--Ursprung--tmp1};
+			%Phi u:
+			\path (xEnd) -- (Ursprung) -- (tmp4)
+				pic[Winkelpfeil, angle radius=3.0mm, pic text=$\varphi_u$, angle eccentricity=1.5] {angle=xEnd--Ursprung--tmp4};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Scheinleistung_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: Werte sind identisch wie aus Leistung im Wechselstromkreis I b) !!:
+			\def\SSpitze{1.7};    %Länge von Stromzeiger
+			\def\USpitze{1.9};	  %Länge von Spannungszeiger
+			\def\PhiI{20};		  %Winkel von I
+			\def\PhiU{75};		  %Winkel von U
+			
+			%Berechnen der S-Komponenten
+			\pgfmathsetmacro\P{cos(\PhiU-\PhiI)*\SSpitze}; %S*cos(phi)
+			\pgfmathsetmacro\Q{sin(\PhiU-\PhiI)*\SSpitze}; %S*sin(phi)
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Hilfslinie
+			\draw[HelpLine] (Ursprung) -- ++(0:\SSpitze) node[HelpNode] (xEnd){};
+			% Plotten der Zeiger
+			%Spannungszeiger: 
+			\draw[Zeiger, blue] (Ursprung) -- ++(\PhiU:\USpitze)
+				node[near end, left] {$\underline{\hat{u}}$}
+				node(tmp1) [HelpNode]{}; 
+			%P-Zeiger S*cos(phi):
+			\draw[Zeiger, red] (Ursprung) -- ++(\PhiU:\P)
+				node[midway, left, black, scale=0.8] {$P_R=P$}
+				node(tmp2) [HelpNode]{};
+			%Stromzeiger i*sin(phi): 
+			\draw[Zeiger, red] (tmp2) -- ++(\PhiU-90:\Q)
+				node[midway, above, black] {$P_L=Q$}
+				node(tmp3) [HelpNode]{};
+			%Stromzeiger i: 
+			\draw[Zeiger, red] (Ursprung) -- (tmp3)
+				node[pos=0.85, below, black] {$S$}
+				node(tmp4) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi i:
+			\path (xEnd) -- (Ursprung) -- (tmp4)
+				pic[Winkelpfeil, angle radius=8.0mm, pic text=$\varphi_i$, angle eccentricity=1.2] {angle=xEnd--Ursprung--tmp4};
+			%Phi u:
+			\path (xEnd) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius=3.0mm, pic text=$\varphi_u$, angle eccentricity=1.5] {angle=xEnd--Ursprung--tmp1};
+			%Phi:
+			\path (tmp4) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil, angle radius=7.0mm, pic text=$\varphi$, angle eccentricity=1.2] {angle=tmp4--Ursprung--tmp1};
+			\node[anchor=north west, gray, scale=0.8] at ($(tmp1) + (0.2cm,0)$) {$\varphi=\varphi_u-\varphi_i$}; 	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Blindstrom-/leistungskompensation I}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{BlindstromLeistungskompensation_I_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ISpitze{1.6};    %Länge von Stromzeiger (i_N)
+			\def\USpitze{1.3};	  %Länge von Spannungszeiger
+			\def\Phi{-60};		  %Winkel zwischen u und i
+			
+			% Berechnen der I-Komponenten
+			\pgfmathsetmacro\Iwirk{cos(\Phi)*\ISpitze};  %Wirkstrom
+			\pgfmathsetmacro\Iblind{sin(\Phi)*\ISpitze}; %Blindstrom
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Spannungszeiger: 
+			\draw[Zeiger, blue] (Ursprung) -- (0:\USpitze)
+				node[at end, right] {$\underline{\hat{u}}_q=\hat{u}_q$}
+				node(tmp1) [HelpNode]{};
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) -- ++(\Phi:\ISpitze)
+				node[near end, left] {$\underline{\hat{i}}_N=\underline{\hat{i}}$}
+				node(tmp2) [HelpNode]{}; 
+			%Wirkstrom:
+			\draw[Zeiger, red] (Ursprung) -- ++(0:\Iwirk)
+				node[midway, above] {$\underline{\hat{i}}_W$}
+				node(tmp3) [HelpNode]{};
+			%Blindstrom: 
+			\draw[Zeiger, red] (tmp3) -- ++(90:\Iblind)
+				node[midway, right] {$\underline{\hat{i}}_B$}
+				node(tmp4) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi :
+			\path (tmp2) -- (Ursprung) -- (tmp1)
+				pic[draw, angle radius=5.0mm, pic text=$\varphi$] {angle=tmp2--Ursprung--tmp1};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{BlindstromLeistungskompensation_I_d}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: Selbe Werte wie aus b) verwenden !!:
+			\def\ISpitze{1.6};    %Länge von Stromzeiger (i_N)
+			\def\USpitze{1.3};	  %Länge von Spannungszeiger
+			\def\Phi{-60};		  %Winkel zwischen u und i
+			\def\IKomp{0.8};	  %Kompensationsstrom
+			
+			% Berechnen der I-Komponenten
+			\pgfmathsetmacro\Iwirk{cos(\Phi)*\ISpitze};  %Wirkstrom
+			\pgfmathsetmacro\Iblind{sin(\Phi)*\ISpitze}; %Blindstrom
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Spannungszeiger: 
+			\draw[Zeiger, blue] (Ursprung) -- (0:\USpitze)
+				node[at end, right] {$\underline{\hat{u}}_q$}
+				node(tmp1) [HelpNode]{};
+			%Stromzeiger: 
+			\draw[Zeiger, red] (Ursprung) -- ++(\Phi:\ISpitze)
+				node[midway, anchor=north east] {$\underline{\hat{i}}$}
+				node(tmp2) [HelpNode]{}; 
+			%Kompensationsstrom:
+			\draw[Zeiger, red] (tmp2) -- ++(90:\IKomp)
+				node[midway, right] {$\underline{\hat{i}}_C$}
+				node(tmp3) [HelpNode]{};
+			%Netzstrom
+			\draw[Zeiger, red] (Ursprung) -- (tmp3)
+				node[near end, below, scale=0.8] {$\underline{\hat{i}}'_{N}$}
+				node(tmp4) [HelpNode]{};
+			%Wirkstrom
+			\draw[Zeiger, gray] (Ursprung) -- (0:\Iwirk)
+				node[midway, above] {$\underline{\hat{i}}_W$}
+				node(tmp5) [HelpNode]{};
+			%Blindstrom: 
+			\draw[Zeiger, gray] (tmp5) -- (tmp3)
+				node[pos=0.4, right] {$\underline{\hat{i}}'_{B}$}
+				node(tmp6) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi :
+			\path (tmp4) -- (Ursprung) -- (tmp1)
+				pic[draw, angle radius=5.5mm, pic text options={scale=0.8},pic text=$\varphi'$, angle eccentricity=0.8] {angle=tmp3--Ursprung--tmp1};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
 
 
 
