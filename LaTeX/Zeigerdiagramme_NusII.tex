@@ -4,7 +4,7 @@
 %\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
 \usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
 \usepackage{tikz}
-\usetikzlibrary{angles, calc, positioning, intersections, topaths, decorations.markings}
+\usetikzlibrary{angles, calc, positioning, intersections, topaths, decorations}
 
 %Booleans um nicht alles immer kompilieren zu müssen...
 \newboolean{ZeigerdiagrammI}
@@ -3470,7 +3470,6 @@
 			[
 			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
 			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
-			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
 			]
 			% Verschiedene Variabeln definieren:
 			\def\ISpitze{1.6};    %Länge von Stromzeiger (i_N)
@@ -3516,7 +3515,6 @@
 			[
 			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
 			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
-			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
 			]
 			% Verschiedene Variabeln definieren !! ACHTUNG: Selbe Werte wie aus b) verwenden !!:
 			\def\ISpitze{1.6};    %Länge von Stromzeiger (i_N)
@@ -3563,6 +3561,468 @@
 				pic[draw, angle radius=5.5mm, pic text options={scale=0.8},pic text=$\varphi'$, angle eccentricity=0.8] {angle=tmp3--Ursprung--tmp1};
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Dreiphasensystem -- Sternschaltung I}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{DreiphasensystemSternschaltun_I_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, {Latex[length=1mm]}-{Latex[length=1mm]},
+				 				angle radius = 4mm, angle eccentricity=1.5, pic text=$\frac{2\pi}{3}$}, %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.0};	  %Länge von Spannungszeiger
+			\def\PhiE{-90};		  %Winkel von u1
+						
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Sternpunkt 
+			\fill (Ursprung) circle (1.5pt);  
+			% Plotten der Zeiger
+			%Spannungszeiger U1: 
+			\draw[Zeiger] (Ursprung) -- (\PhiE:\USpitze)
+				node[pos=0.85, left, blue] {$\underline{\hat{u}}_1$}
+				node(tmp1) [HelpNode]{};
+			%Spannungszeiger U2:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-120:\USpitze)
+				node[pos=0.9, anchor=south east, blue] {$\underline{\hat{u}}_2$}
+				node(tmp2) [HelpNode]{}; 
+			%Spannungszeiger U3:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-240:\USpitze)
+				node[pos=0.9, anchor=south west, blue] {$\underline{\hat{u}}_3$}
+				node(tmp3) [HelpNode]{}; 					
+			% Winkel Beschriftung
+			%Phi 1:
+			\path (tmp1) -- (Ursprung) -- (tmp3)
+				pic[Winkelpfeil] {angle=tmp1--Ursprung--tmp3};
+			%Phi 2:
+			\path (tmp3) -- (Ursprung) -- (tmp2)
+				pic[Winkelpfeil] {angle=tmp3--Ursprung--tmp2};
+			%Phi 3:
+			\path (tmp2) -- (Ursprung) -- (tmp1)
+				pic[Winkelpfeil] {angle=tmp2--Ursprung--tmp1};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Dreiphasensystem -- Sternschaltung II}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{DreiphasensystemSternschaltun_II_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={{Latex[length=2mm]}-, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius = 5mm, pic text options={scale=0.8},
+				 				angle eccentricity=1.3, pic text=$\frac{\pi}{6}$},	  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.0};	  %Länge von Spannungszeiger
+			\def\PhiE{90};		  %Winkel von u1
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Sternpunkt 
+			\fill (Ursprung) circle (1.5pt) node[anchor=south west, scale=0.8]{N};  
+			% Plotten der Zeiger
+			%Spannungszeiger U1: 
+			\draw[Zeiger] (Ursprung) -- (\PhiE:\USpitze)
+				node[pos=0.4, right, blue] {$\underline{\hat{u}}_1$}
+				node[above] {1}
+				node(tmp1) [HelpNode]{};
+			%Spannungszeiger U2:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-120:\USpitze)
+				node[pos=0.25, below, blue] {$\underline{\hat{u}}_2$}
+				node[anchor=north west] {2}
+				node(tmp2) [HelpNode]{}; 
+			%Spannungszeiger U3:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-240:\USpitze)
+				node[pos=0.4, above, blue] {$\underline{\hat{u}}_3$}
+				node[anchor=north east] {3}
+				node(tmp3) [HelpNode]{}; 
+			%Spannungszeiger U12:  
+			\draw[Zeiger] (tmp2) -- (tmp1)
+				node[midway, right, blue] {$\underline{\hat{u}}_{12}$}
+				node(tmp12) [HelpNode]{};
+			%Spannungszeiger U23:  
+			\draw[Zeiger] (tmp3) -- (tmp2)
+				node[midway, below, blue] {$\underline{\hat{u}}_{23}$}
+				node(tmp23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger] (tmp1) -- (tmp3)
+				node[midway, left, blue] {$\underline{\hat{u}}_{31}$}
+				node(tmp31) [HelpNode]{}; 					
+			% Winkel Beschriftung
+			%Phi:
+			\path (tmp2) -- (tmp3) -- (Ursprung)
+				pic[Winkelpfeil] {angle=tmp2--tmp3--Ursprung};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Leistungsberechnung im Drehstromsystem}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{LeistungsberechnungImDrehstromsystem_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, angle radius = 4mm, pic text options={scale=0.8},
+				angle eccentricity=1.3, pic text=$\alpha$},	  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.0};	  %Länge von Spannungszeiger
+			\def\PhiE{-90};		  %Winkel von u1
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Sternpunkt 
+			\fill (Ursprung) circle (1.5pt);  
+			% Plotten der Zeiger
+			%Spannungszeiger U1: 
+			\draw[Zeiger] (Ursprung) -- (\PhiE:\USpitze)
+				node[pos=0.3, right, blue] {$\underline{\hat{u}}_1$}
+				node(tmp1) [HelpNode]{};
+			%Spannungszeiger U2:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-120:\USpitze)
+				node[pos=0.25, above, blue] {$\underline{\hat{u}}_2$}
+				node(tmp2) [HelpNode]{}; 
+			%Spannungszeiger U3:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-240:\USpitze)
+				node[pos=0.25, above, blue] {$\underline{\hat{u}}_3$}
+				node(tmp3) [HelpNode]{}; 
+			%Spannungszeiger U12:  
+			\draw[Zeiger, blue] (tmp2) -- (tmp1)
+				node[pos=0.8, left, scale=0.8] {$\underline{\hat{u}}_{12}=\underline{\hat{u}}_1-\underline{\hat{u}}_2$}
+				node(tmp12) [HelpNode]{};
+			%Spannungszeiger U23:  
+			\draw[Zeiger, blue] (tmp3) -- (tmp2)
+				node[midway, above, scale=0.8] {$\underline{\hat{u}}_{23}=\underline{\hat{u}}_2-\underline{\hat{u}}_3$}
+				node(tmp23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (tmp1) -- (tmp3)
+				node[pos=0.2, right, scale=0.8] {$\underline{\hat{u}}_{31}=\underline{\hat{u}}_3-\underline{\hat{u}}_1$}
+				node(tmp31) [HelpNode]{}; 					
+			% Winkel Beschriftung
+			%Phi:
+			\path (tmp1) -- (tmp2) -- (Ursprung)
+				pic[Winkelpfeil] {angle=tmp1--tmp2--Ursprung};
+			%pi/6
+			\draw[gray] (tmp2) -- ++(-90:0.7cm) node(help) [HelpNode] {};			
+			\path (help) -- (tmp2) -- (tmp1)
+				pic[Winkelpfeil, gray, pic text={$\frac{\pi}{6}$}, angle radius = 6mm ] {angle=help--tmp2--tmp1};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{LeistungsberechnungImDrehstromsystem_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={{Latex[length=2mm]}-, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius = 4mm, pic text options={scale=0.6},
+				angle eccentricity=1.3,},	  										  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.0};	  %Länge von Spannungszeiger
+			\def\PhiE{90};		  %Winkel von u1
+			\def\ISpitzeE{0.8cm}; %Länge von I1
+			\def\ISpitzeZ{0.7cm}; %Länge von I2
+			\def\ISpitzeD{0.5cm}; %Länge von I3
+			\def\PhiIE{20};		  %Winkel von u1 i1
+			\def\PhiIZ{20};		  %Winkel von u2 i2
+			\def\PhiID{40};		  %Winkel von u3 i3
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Sternpunkt 
+			\fill (Ursprung) circle (1.5pt);  
+			% Plotten der Zeiger
+			%Spannungszeiger U1: 
+			\draw[Zeiger] (Ursprung) -- (\PhiE:\USpitze)
+				node[pos=0.4, right, blue, scale=0.8] {$\underline{\hat{u}}_1$}
+				node(tmpU1) [HelpNode]{};
+			%Spannungszeiger U2:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-120:\USpitze)
+				node[pos=0.25, below, blue, scale=0.8] {$\underline{\hat{u}}_2$}
+				node(tmpU2) [HelpNode]{}; 
+			%Spannungszeiger U3:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-240:\USpitze)
+				node[pos=0.4, above, blue, scale=0.8] {$\underline{\hat{u}}_3$}
+				node(tmpU3) [HelpNode]{}; 
+			%Spannungszeiger U12:  
+			\draw[Zeiger, blue] (tmpU2) -- (tmpU1)
+				node[midway, right] {$\underline{\hat{u}}_{12}$}
+				node(tmpU12) [HelpNode]{};
+			%Spannungszeiger U23:  
+			\draw[Zeiger, blue] (tmpU3) -- (tmpU2)
+				node[pos=0.7, below] {$\underline{\hat{u}}_{23}$}
+				node(tmpU23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (tmpU1) -- (tmpU3)
+				node[midway, left] {$\underline{\hat{u}}_{31}$}
+				node(tmpU31) [HelpNode]{}; 	
+			%Stromzeiger I1:
+			\draw[-{Latex[length=2mm]}, thick, red] (tmpU1) -- ++(-\PhiE-\PhiIE:\ISpitzeE)
+				node[pos=1.1, right, scale=0.8] {$\underline{\hat{i}}_1$}
+				node(tmpI1) [HelpNode]{};
+			%Stromzeiger I2:
+			\draw[-{Latex[length=2mm]}, thick, red] (tmpU2) -- ++(-\PhiE-120-\PhiIZ:\ISpitzeZ)
+				node[pos=0.8, anchor=south east, scale=0.8] {$\underline{\hat{i}}_2$}
+				node(tmpI2) [HelpNode]{};
+			%Stromzeiger I3:
+			\draw[-{Latex[length=2mm]}, thick, red] (tmpU3) -- ++(-\PhiE-240-\PhiID:\ISpitzeD)
+				node[pos=0.9, anchor=north west, scale=0.8] {$\underline{\hat{i}}_3$}
+				node(tmpI3) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi 1:
+			\path (tmpI1) -- (tmpU1) -- (Ursprung)
+				pic[Winkelpfeil, pic text=$\varphi_1$] {angle=tmpI1--tmpU1--Ursprung};
+			%Phi 2:
+			\path (tmpI2) -- (tmpU2) -- (Ursprung)
+				pic[Winkelpfeil, pic text=$\varphi_2$, angle radius=4.5mm, angle eccentricity=1.4] {angle=tmpI2--tmpU2--Ursprung}; 
+			%Phi 3:
+			\path (tmpI3) -- (tmpU3) -- (Ursprung)
+				pic[Winkelpfeil, pic text=$\varphi_3$, angle radius=2.5mm, angle eccentricity=1.5]
+			 	{angle=tmpI3--tmpU3--Ursprung};  
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{LeistungsberechnungImDrehstromsystem_d}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick, red},					      %Style der komplexen Zeiger
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: selbe Werte wie in c) verwenden !!:
+			\def\PhiE{90};		  %Winkel von u1
+			\def\ISpitzeE{0.8cm}; %Länge von I1
+			\def\ISpitzeZ{0.7cm}; %Länge von I2
+			\def\ISpitzeD{0.5cm}; %Länge von I3
+			\def\PhiIE{20};		  %Winkel von u1 i1
+			\def\PhiIZ{20};		  %Winkel von u2 i2
+			\def\PhiID{40};		  %Winkel von u3 i3
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+			% Plotten der Zeiger
+			%Stromzeiger I1:
+			\draw[Zeiger] (Ursprung) -- ++(-\PhiE-\PhiIE:\ISpitzeE)
+				node[midway, right] {$\underline{\hat{i}}_1$}
+				node(tmpI1) [HelpNode]{};
+			%Stromzeiger I2:
+			\draw[Zeiger] (tmpI1) -- ++(-\PhiE-120-\PhiIZ:\ISpitzeZ)
+				node[midway, left] {$\underline{\hat{i}}_2$}
+				node(tmpI2) [HelpNode]{};
+			%Stromzeiger I2:
+			\draw[Zeiger] (tmpI2) -- ++(-\PhiE-240-\PhiID:\ISpitzeD)
+				node[midway, above] {$\underline{\hat{i}}_3$}
+				node(tmpI3) [HelpNode]{};	
+			%Neutralleiterstrom
+			\draw[Zeiger, black] (Ursprung) -- (tmpI3)
+				node[midway, above] {$\underline{\hat{i}}_N$};				  
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Sternschaltung mit / ohne Sternpunkt}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{SternschaltungMitOhneSternpunkt_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={{Latex[length=2mm]}-, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius = 4mm, pic text options={scale=0.6},
+				angle eccentricity=1.3,},	  										  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.0};	  %Länge von Spannungszeiger
+			\def\PhiE{90};		  %Winkel von u1
+			\def\ISpitzeE{0.8cm}; %Länge von I1
+			\def\ISpitzeZ{0.7cm}; %Länge von I2
+			\def\ISpitzeD{0.5cm}; %Länge von I3
+			\def\PhiIE{20};		  %Winkel von u1 i1
+			\def\PhiIZ{20};		  %Winkel von u2 i2
+			\def\PhiID{40};		  %Winkel von u3 i3
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Sternpunkt 
+			\fill (Ursprung) circle (1.5pt);  
+			% Plotten der Zeiger
+			%Spannungszeiger U1: 
+			\draw[Zeiger] (Ursprung) -- (\PhiE:\USpitze)
+				node[pos=0.4, right, blue, scale=0.8] {$\underline{\hat{u}}_{Z1}$}
+				node(tmpU1) [HelpNode]{};
+			%Spannungszeiger U2:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-120:\USpitze)
+				node[pos=0.25, below, blue, scale=0.8] {$\underline{\hat{u}}_{Z2}$}
+				node(tmpU2) [HelpNode]{}; 
+			%Spannungszeiger U3:  
+			\draw[Zeiger] (Ursprung) -- (\PhiE-240:\USpitze)
+				node[pos=0.4, above, blue, scale=0.8] {$\underline{\hat{u}}_{Z3}$}
+				node(tmpU3) [HelpNode]{}; 
+			%Spannungszeiger U12:  
+			\draw[Zeiger, blue] (tmpU2) -- (tmpU1)
+				node[midway, right] {$\underline{\hat{u}}_{12}$}
+				node(tmpU12) [HelpNode]{};
+			%Spannungszeiger U23:  
+			\draw[Zeiger, blue] (tmpU3) -- (tmpU2)
+				node[pos=0.45, below] {$\underline{\hat{u}}_{23}$}
+				node(help)	 [HelpNode, pos=0.5]{}
+				node(tmpU23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (tmpU1) -- (tmpU3)
+				node[midway, left] {$\underline{\hat{u}}_{31}$}
+				node(tmpU31) [HelpNode]{}; 	
+			%Stromzeiger I1:
+			\draw[-{Latex[length=2mm]}, thick, red] (tmpU1) -- ++(-\PhiE-\PhiIE:\ISpitzeE)
+				node[pos=1.1, right, scale=0.8] {$\underline{\hat{i}}_1$}
+				node(tmpI1) [HelpNode]{};
+			%Stromzeiger I2:
+			\draw[-{Latex[length=2mm]}, thick, red] (tmpU2) -- ++(-\PhiE-120-\PhiIZ:\ISpitzeZ)
+				node[pos=0.8, anchor=south east, scale=0.8] {$\underline{\hat{i}}_2$}
+				node(tmpI2) [HelpNode]{};
+			%Stromzeiger I3:
+			\draw[-{Latex[length=2mm]}, thick, red] (tmpU3) -- ++(-\PhiE-240-\PhiID:\ISpitzeD)
+				node[pos=0.9, anchor=north, scale=0.8] {$\underline{\hat{i}}_3$}
+				node(tmpI3) [HelpNode]{};				
+			% Winkel Beschriftung
+			%Phi 1:
+			\path (tmpI1) -- (tmpU1) -- (Ursprung)
+				pic[Winkelpfeil, pic text=$\varphi_1$] {angle=tmpI1--tmpU1--Ursprung};
+			%Phi 2:
+			\path (tmpI2) -- (tmpU2) -- (Ursprung)
+				pic[Winkelpfeil, pic text=$\varphi_2$, angle radius=4.5mm, angle eccentricity=1.4] {angle=tmpI2--tmpU2--Ursprung}; 
+			%Phi 3:
+			\path (tmpI3) -- (tmpU3) -- (Ursprung)
+				pic[Winkelpfeil, pic text=$\varphi_3$, angle radius=2.5mm, angle eccentricity=1.5]
+				{angle=tmpI3--tmpU3--Ursprung}; 
+			%Hilfslinie
+			\draw[densely dashed, thin] (Ursprung) -- (help);
+			% Kalmmer
+			\draw[decorate, decoration={brace}] (tmpU2) -- (help) node[midway, scale=0.8, yshift=-0.35cm]{$\frac{\sqrt{3}}{2}\hat{u}_Z$}; 
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{SternschaltungMitOhneSternpunkt_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius = 4mm, pic text options={scale=0.6},
+				angle eccentricity=1.3,},	  										  %Style der Winkelpfeil 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.732cm};%Länge von Aussenleiterspannung (sqrt(3)*1cm)
+%			\def\PhiE{90};		  %Winkel von u1
+%			\def\ISpitzeE{0.8cm}; %Länge von I1
+%			\def\ISpitzeZ{0.7cm}; %Länge von I2
+%			\def\ISpitzeD{0.5cm}; %Länge von I3
+%			\def\PhiIE{20};		  %Winkel von u1 i1
+%			\def\PhiIZ{20};		  %Winkel von u2 i2
+%			\def\PhiID{40};		  %Winkel von u3 i3
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+			% Plotten der Zeiger
+			%Spannungszeiger U23:  
+			\draw[Zeiger, blue] (0:\USpitze) -- (Ursprung)
+				node[midway, below] {$\underline{\hat{u}}_{23}$}
+				node(tmpU23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (Ursprung) -- (60:\USpitze) 
+				node[midway, left] {$\underline{\hat{u}}_{31}$}
+				node(tmpU31) [HelpNode]{};
+			%Spannungszeiger U12:  
+			\draw[Zeiger, blue] (tmpU31) -- (0:\USpitze)
+				node[pos=0.3, right] {$\underline{\hat{u}}_{12}$}
+				node(tmpU12) [HelpNode]{};
+			%Spannungszeiger U3:  
+			\draw[Zeiger, black] (Ursprung) -- (40:0.8cm)
+				node[pos=0.8, anchor=north west, blue, scale=0.8] {$\underline{\hat{u}}_{Z3}$}
+				node(tmpU3) [HelpNode]{};  
+			%Spannungszeiger U1: 
+			\draw[Zeiger] (tmpU31) -- (tmpU3)
+				node[pos=0.8, right, blue, scale=0.8] {$\underline{\hat{u}}_{Z1}$}
+				node(tmpU1) [HelpNode]{};
+			%Spannungszeiger U2:  
+			\draw[Zeiger] (tmpU12) -- (tmpU3)
+				node[pos=0.6, below, blue, scale=0.8] {$\underline{\hat{u}}_{Z2}$}
+				node(tmpU2) [HelpNode]{}; 
+			%Stromzeiger I2:
+			\draw[Zeiger, red] (tmpU12) -- ++(135:0.8cm)
+				node[pos=1.1, below, scale=0.8] {$\underline{\hat{i}}_2$}
+				node(tmpI2) [HelpNode]{};
+			%Stromzeiger I3:
+			\draw[Zeiger, red, densely dashed, thin] (tmpI2) -- ++(10:0.6cm)
+				node(tmpI3help) [HelpNode]{};
+			\draw[Zeiger, red] (Ursprung) -- ++(10:0.6cm)
+				node(tmpI3) [HelpNode]{};
+			%Stromzeiger I1:
+			\draw[Zeiger, red, densely dashed, thin] (tmpI3help) -- ++(tmpU12);
+			
+
+
+				
+%			% Winkel Beschriftung
+%			%Phi 1:
+%			\path (tmpI1) -- (tmpU1) -- (Ursprung)
+%				pic[Winkelpfeil, pic text=$\varphi_1$] {angle=tmpI1--tmpU1--Ursprung};
+%			%Phi 2:
+%			\path (tmpI2) -- (tmpU2) -- (Ursprung)
+%				pic[Winkelpfeil, pic text=$\varphi_2$, angle radius=4.5mm, angle eccentricity=1.4] {angle=tmpI2--tmpU2--Ursprung}; 
+%			%Phi 3:
+%			\path (tmpI3) -- (tmpU3) -- (Ursprung)
+%				pic[Winkelpfeil, pic text=$\varphi_3$, angle radius=2.5mm, angle eccentricity=1.5]
+%				{angle=tmpI3--tmpU3--Ursprung}; 
+%			%Hilfslinie
+%			\draw[densely dashed, thin] (Ursprung) -- (help);
+%			% Kalmmer
+%			\draw[decorate, decoration={brace}] (tmpU2) -- (help) node[midway, scale=0.8, yshift=-0.35cm]{$\frac{\sqrt{3}}{2}\hat{u}_Z$}; 
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%		
 	\end{flushright}	
 \end{frame}
 

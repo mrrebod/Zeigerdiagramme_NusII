@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  27 SEP 2019 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  6 OCT 2019 11:31
 entering extended mode
 **\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagramme_NusII}
 (Zeigerdiagramme_NusII.tex ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\t
@@ -9,7 +9,7 @@ Document Class: beamer 2019/07/23 v3.56 A class for typesetting presentations
 odes.sty"
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.
 sty"
-Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count80
 )
 \beamer@tempbox=\box27
@@ -399,7 +399,7 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 ))
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.
 sty"
-Package: hyperref 2019/06/12 v6.88h Hypertext links for LaTeX
+Package: hyperref 2019/09/12 v6.88i Hypertext links for LaTeX
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\hobsub-
 hyperref.sty"
@@ -455,7 +455,7 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.de
 f"
-File: pd1enc.def 2019/06/12 v6.88h Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2019/09/12 v6.88i Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -503,7 +503,7 @@ Package hyperref Info: Driver (autodetected): hpdftex.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex.d
 ef"
-File: hpdftex.def 2019/06/12 v6.88h Hyperref driver for pdfTeX
+File: hpdftex.def 2019/09/12 v6.88i Hyperref driver for pdfTeX
 \Fld@listcount=\count128
 \c@bookmark@seq@number=\count129
 
@@ -535,15 +535,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/sansmathaccent\san
 smathaccent.sty"
 Package: sansmathaccent 2013/03/28
-\sympureletters=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 89.
 
-Package sansmathaccent Warning: Could not find 'filehooks' package: one mathgro
-up may be wasted on input line 89.
-
-))
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/filehook\filehook.
+sty"
+Package: filehook 2019/08/19 v0.5e Hooks for input files
+)))
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/beamer\beamerbaset
 ranslator.sty"
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
@@ -812,8 +808,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
-\symbold=\mathgroup7
-\symitalic=\mathgroup8
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
@@ -866,7 +862,12 @@ Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \minaw@=\dimen199
 \bigaw@=\dimen256
 \minCDarrowwidth=\dimen257
-) ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.sty"
+)
+\sympureletters=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
+ut line 28.
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.sty"
 Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldpureletters=\mathgroup9
 LaTeX Info: Redefining \bm on input line 207.
@@ -1035,15 +1036,15 @@ Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
 )
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaption
 .sty"
-Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+Package: subcaption 2019/09/01 v1.3a Sub-captions (AR)
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.st
 y"
-Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+Package: caption 2019/09/01 v3.3d Customizing captions (AR)
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.s
 ty"
-Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen290
 \captionmargin@=\dimen291
@@ -1437,7 +1438,7 @@ Package hyperref Info: Link coloring OFF on input line 52.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+Package: nameref 2019/09/12 v2.45 Cross-referencing by name of section
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\gettitl
 estring.sty"
@@ -1849,15 +1850,6 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 2734.
-
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-ptm.c
-fg"
-File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
-)
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 2734
 .
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
@@ -1865,10 +1857,20 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2734.
+
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-ptm.c
+fg"
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2734.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2734.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 2734.
+
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 2734.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
@@ -1983,19 +1985,28 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3572.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3572.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3572.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3572.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+The command '\includegraphics [width=\paperwidth ]{HPE_background}' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3613.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3613.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3613.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3613.
  ) 
 Here is how much of TeX's memory you used:
- 37628 strings out of 492895
- 884808 string characters out of 3123735
- 1119535 words of memory out of 3000000
- 40698 multiletter control sequences out of 15000+200000
+ 37728 strings out of 492895
+ 886945 string characters out of 3123735
+ 1120950 words of memory out of 3000000
+ 40795 multiletter control sequences out of 15000+200000
  78345 words of font info for 133 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,15n,129p,902b,984s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 83i,15n,131p,902b,982s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmr10.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/
@@ -2003,7 +2014,7 @@ symbol/usyr.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/u
 rw/times/utmr8a.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/urw/times/utmri8a.pfb>
 Output written on LaTeXfigs/BlindstromLeistungskompensation_I_b.pdf (1 page, 25
-212 bytes).
+224 bytes).
 PDF statistics:
  33 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
