@@ -3569,7 +3569,7 @@
 \begin{frame}\frametitle{Dreiphasensystem -- Sternschaltung I}	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
-		\tikzsetnextfilename{DreiphasensystemSternschaltun_I_b}
+		\tikzsetnextfilename{DreiphasensystemSternschaltung_I_b}
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
@@ -3621,7 +3621,7 @@
 \begin{frame}\frametitle{Dreiphasensystem -- Sternschaltung II}	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
-		\tikzsetnextfilename{DreiphasensystemSternschaltun_II_a}
+		\tikzsetnextfilename{DreiphasensystemSternschaltung_II_a}
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
@@ -3950,18 +3950,11 @@
 			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
 			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
 			Winkelpfeil/.style={draw, gray, angle radius = 4mm, pic text options={scale=0.6},
-				angle eccentricity=1.3,},	  										  %Style der Winkelpfeil 
+				angle eccentricity=1.3},	  										  %Style der Winkelpfeil 
 			]
 			% Verschiedene Variabeln definieren:
 			\def\USpitze{1.732cm};%Länge von Aussenleiterspannung (sqrt(3)*1cm)
-%			\def\PhiE{90};		  %Winkel von u1
-%			\def\ISpitzeE{0.8cm}; %Länge von I1
-%			\def\ISpitzeZ{0.7cm}; %Länge von I2
-%			\def\ISpitzeD{0.5cm}; %Länge von I3
-%			\def\PhiIE{20};		  %Winkel von u1 i1
-%			\def\PhiIZ{20};		  %Winkel von u2 i2
-%			\def\PhiID{40};		  %Winkel von u3 i3
-			
+						
 			% Definieren von verschiedenen Koordinaten
 			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
 			
@@ -3970,6 +3963,7 @@
 			%Spannungszeiger U23:  
 			\draw[Zeiger, blue] (0:\USpitze) -- (Ursprung)
 				node[midway, below] {$\underline{\hat{u}}_{23}$}
+				node[pos=0.75, anchor=north, scale=0.8, red] {$\underline{\hat{i}}_3$} %Beschriftung von i3 
 				node(tmpU23) [HelpNode]{};
 			%Spannungszeiger U31:  
 			\draw[Zeiger, blue] (Ursprung) -- (60:\USpitze) 
@@ -3999,32 +3993,288 @@
 			\draw[Zeiger, red, densely dashed, thin] (tmpI2) -- ++(10:0.6cm)
 				node(tmpI3help) [HelpNode]{};
 			\draw[Zeiger, red] (Ursprung) -- ++(10:0.6cm)
+				%node[pos=0.8, anchor=north, scale=0.8] {$\underline{\hat{i}}_3$}
 				node(tmpI3) [HelpNode]{};
 			%Stromzeiger I1:
 			\draw[Zeiger, red, densely dashed, thin] (tmpI3help) -- ++(tmpU12);
-			
-
-
-				
-%			% Winkel Beschriftung
-%			%Phi 1:
-%			\path (tmpI1) -- (tmpU1) -- (Ursprung)
-%				pic[Winkelpfeil, pic text=$\varphi_1$] {angle=tmpI1--tmpU1--Ursprung};
-%			%Phi 2:
-%			\path (tmpI2) -- (tmpU2) -- (Ursprung)
-%				pic[Winkelpfeil, pic text=$\varphi_2$, angle radius=4.5mm, angle eccentricity=1.4] {angle=tmpI2--tmpU2--Ursprung}; 
-%			%Phi 3:
-%			\path (tmpI3) -- (tmpU3) -- (Ursprung)
-%				pic[Winkelpfeil, pic text=$\varphi_3$, angle radius=2.5mm, angle eccentricity=1.5]
-%				{angle=tmpI3--tmpU3--Ursprung}; 
-%			%Hilfslinie
-%			\draw[densely dashed, thin] (Ursprung) -- (help);
-%			% Kalmmer
-%			\draw[decorate, decoration={brace}] (tmpU2) -- (help) node[midway, scale=0.8, yshift=-0.35cm]{$\frac{\sqrt{3}}{2}\hat{u}_Z$}; 
+			\draw[Zeiger, red] (tmpU31) -- ++($(tmpU12) - (tmpI3help)$)
+				node[pos=0.9, right, scale=0.8] {$\underline{\hat{i}}_1$}
+				node(tmpI1) [HelpNode]{};
+	
+			% Winkel Beschriftung
+			%Phi 1:
+			\path (tmpU1) -- (tmpU31) -- (tmpI1)
+				pic[Winkelpfeil, pic text=$\varphi_1$, pic text options={scale=0.6, anchor=west}, angle eccentricity=1.0] {angle=tmpU1--tmpU31--tmpI1};
+			%Phi 2:
+			\path (tmpI2) -- (tmpU12) -- (tmpU2)
+				pic[Winkelpfeil, pic text=$\varphi_2$] {angle=tmpI2--tmpU12--tmpU2}; 
+			%Phi 3:
+			\path (tmpI3) -- (tmpU23) -- (tmpU3)
+				pic[Winkelpfeil, pic text=$\varphi_3$, angle radius=3.5mm]
+				{angle=tmpI3--tmpU23--tmpU3}; 
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%		
 	\end{flushright}	
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Drei-/Vierleitersystem - Beispiel I}	
+	\begin{flushright}
+			%-----------------------------------------------------------------------------------------------------------------%
+			\tikzsetnextfilename{DreiVierleitersystemBeispiel_I_a}
+			\begin{tikzpicture}
+				%Verschiedene Styles definieren:
+				[
+				HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+				Zeiger/.style={{Latex[length=2mm]}-, thick},					          %Style der komplexen Zeiger 
+				]
+				% Verschiedene Variabeln definieren:
+				\def\USpitze{1.0};	  %Länge von Spannungszeiger
+				\def\PhiE{90};		  %Winkel von u1
+				
+				% Definieren von verschiedenen Koordinaten
+				\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+				
+				%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				%Sternpunkt 
+				\fill (Ursprung) circle (1.5pt);  
+				% Plotten der Zeiger
+				%Spannungszeiger U1: 
+				\draw[Zeiger] (Ursprung) -- (\PhiE:\USpitze)
+					node[pos=0.3, right, blue, scale=0.8] {$\underline{\hat{u}}_{Z1}$}
+					node(tmp1) [HelpNode]{};
+				%Spannungszeiger U2:  
+				\draw[Zeiger] (Ursprung) -- (\PhiE-120:\USpitze)
+					node[pos=0.25, below, blue, scale=0.8] {$\underline{\hat{u}}_{Z2}$}
+					node(tmp2) [HelpNode]{}; 
+				%Spannungszeiger U3:  
+				\draw[Zeiger] (Ursprung) -- (\PhiE-240:\USpitze)
+					node[pos=0.4, above, blue, scale=0.8] {$\underline{\hat{u}}_{Z3}$}
+					node(tmp3) [HelpNode]{}; 
+				%Spannungszeiger U12:  
+				\draw[Zeiger, blue] (tmp2) -- (tmp1)
+					node[midway, right, blue] {$\underline{\hat{u}}_{12}$}
+					node(tmp12) [HelpNode]{};
+				%Spannungszeiger U23:  
+				\draw[Zeiger, blue] (tmp3) -- (tmp2)
+					node[midway, below, blue] {$\underline{\hat{u}}_{23}$}
+					node(tmp23) [HelpNode]{};
+				%Spannungszeiger U31:  
+				\draw[Zeiger, blue] (tmp1) -- (tmp3)
+					node[midway, left, blue] {$\underline{\hat{u}}_{31}$}
+					node(tmp31) [HelpNode]{}; 				
+			\end{tikzpicture}
+			%-----------------------------------------------------------------------------------------------------------------%
+			
+			%-----------------------------------------------------------------------------------------------------------------%
+			\tikzsetnextfilename{DreiVierleitersystemBeispiel_I_b}
+			\begin{tikzpicture}
+				%Verschiedene Styles definieren:
+				[
+				HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+				Zeiger/.style={-{Latex[length=2mm]}, thick, red},					      %Style der komplexen Zeiger 
+				]
+				% Verschiedene Variabeln definieren:
+				\def\ISpitzeE{0.325}; %Länge von I1
+				\def\ISpitzeZ{0.434}; %Länge von I2
+				\def\ISpitzeD{0.651}; %Länge von I3
+				\def\PhiE{-90};		  %Winkel von I1
+				\def\scaleleng{3};	  %Scale factor of the vector lengths
+				% Definieren von verschiedenen Koordinaten
+				\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+				
+				%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+				% Plotten der Zeiger
+				%Stromzeiger I1: 
+				\draw[Zeiger] (Ursprung) -- (\PhiE:\scaleleng*\ISpitzeE)
+					node[midway, right] {$\underline{\hat{i}}_{1}$\textcolor{black}{=325 mA}}
+					node(tmp1) [HelpNode]{};
+				%Stromzeiger I2:  
+				\draw[Zeiger] (tmp1) -- ++(\PhiE-120:\scaleleng*\ISpitzeZ)
+					node[midway, anchor=north east] {$\underline{\hat{i}}_{2}$\textcolor{black}{=434 mA}}
+					node(tmp2) [HelpNode]{}; 
+				%Stromzeiger I3:  
+				\draw[Zeiger] (tmp2) -- ++(\PhiE-240:\scaleleng*\ISpitzeD)
+					node[midway, anchor=south east] {$\underline{\hat{i}}_{3}$\textcolor{black}{=651 mA}}
+					node(tmp3) [HelpNode]{}; 
+				%Stromzeiger IN:  
+				\draw[Zeiger, black] (Ursprung) -- (tmp3)
+					node[pos=0.6, anchor=north west, red] {$\underline{\hat{i}}_{N}$\textcolor{black}{=287 mA}};	
+			\end{tikzpicture}
+			%-----------------------------------------------------------------------------------------------------------------%
+			
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Drei-/Vierleitersystem - Beispiel II}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{DreiVierleitersystemBeispiel_II_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger 
+			]
+			% Verschiedene Variabeln definieren:
+				% Aus Folie:
+				% U_M = (43.3 + j50)V 
+				% abs(U_M) = 66.14V ---> entspricht 0.288cm
+				% angle(U_M) = 49.1
+			\def\UMabs{0.288};
+			\def\UMangle{49.1};
+			\def\USpitze{1.732};  %Länge von Spannungszeiger (Verkettet)
+			\def\PhiE{90};		  %Winkel von u1
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			\coordinate (Stern)	   at ($(Ursprung) + (30:1cm) + (\UMangle-180:\UMabs)$); %Sternpunkt
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Spannungszeiger U23: 
+			\draw[Zeiger, blue] (0:\USpitze) -- (Ursprung)
+				node[midway, below] {$\underline{\hat{u}}_{23}$}
+				node(tmpU23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (Ursprung) -- (60:\USpitze)
+				node[midway, left] {$\underline{\hat{u}}_{31}$}
+				node(tmpU31) [HelpNode]{}; 
+			%Spannungszeiger U12:  
+			\draw[Zeiger, blue] (tmpU31) -- (0:\USpitze)
+				node[midway, right] {$\underline{\hat{u}}_{12}$}
+				node(tmpU12) [HelpNode]{}; 
+			%Spannungszeiger UZ3:  
+			\draw[Zeiger] (tmpU23) -- (Stern)
+				node[pos=0.75, above, blue, scale=0.8] {$\underline{\hat{u}}_{Z3}$}
+				node(tmpU3) [HelpNode]{};
+			%Spannungszeiger UZ1:  
+			\draw[Zeiger] (tmpU31) --(Stern)
+				node[pos=0.7, right, blue, scale=0.8] {$\underline{\hat{u}}_{Z1}$}
+				node(tmpU1) [HelpNode]{};
+			%Spannungszeiger UZ2:  
+			\draw[Zeiger] (tmpU12) -- (Stern)
+				node[midway, above, blue, scale=0.8] {$\underline{\hat{u}}_{Z2}$}
+				node(tmpU2) [HelpNode]{}; 				
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{DreiVierleitersystemBeispiel_II_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger 
+			]
+			% Verschiedene Variabeln definieren:
+			% Aus Folie:
+			% U_M = (43.3 + j50)V 
+			% abs(U_M) = 66.14V ---> entspricht 0.288cm
+			% angle(U_M) = 49.1
+			\def\UMabs{0.288};
+			\def\UMangle{49.1};
+			\def\USpitze{1.732};  %Länge von Spannungszeiger (Verkettet)
+			\def\PhiE{90};		  %Winkel von u1
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			\coordinate (Stern)	   at ($(Ursprung) + (30:1cm) + (\UMangle-180:\UMabs)$); %Sternpunkt
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Spannungszeiger U23: 
+			\draw[Zeiger, blue] (0:\USpitze) -- (Ursprung)
+				node(tmpU23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (Ursprung) -- (60:\USpitze)
+				node[pos=0.6, align=left, black, scale=0.8, anchor=south east] (Verbraucher) {Verbaucher-\\spannungen}%Beschriftung für Verbraucherspannung
+				node(tmpU31) [HelpNode]{}; 
+			%Spannungszeiger U12:  
+			\draw[Zeiger, blue] (tmpU31) -- (0:\USpitze)
+				node[pos=0.4, align=left, black, scale=0.8, anchor=south west] (Generator) {Generator-\\spannungen}%Beschriftung für Generatorspannung
+				node(tmpU12) [HelpNode]{};
+			%Spannungszeiger U_M:  
+			\draw[Zeiger, blue] (Stern) -- (30:1cm)
+				node[pos=0.6, anchor=south west] {$\underline{\hat{u}}_{M}$}
+				node(tmpUM) [HelpNode]{};
+					
+			% Plotten der Hilfslinien 
+			%Spannungszeiger UZ3:  
+			\draw[] (tmpU23) -- (Stern)
+				node(tmpU3) [HelpNode, pos=0.5]{};
+			%Spannungszeiger UZ1:  
+			\draw[] (tmpU31) --(Stern)
+				node(tmpU1) [HelpNode, pos=0.5]{};
+			%Spannungszeiger UZ2:  
+			\draw[] (tmpU12) -- (Stern)
+				node (tmpU2) [HelpNode, pos=0.5]{};
+			% Dashed Hilslinien
+			\draw[densely dashed] (Ursprung) -- ++(30:1cm);
+			\draw[densely dashed] (tmpU31)   -- ++(-90:1cm) node(tmpU1dashed) [HelpNode, pos=0.6]{};
+			\draw[densely dashed] (tmpU12)   -- ++(150:1cm); 
+			
+			% Beschriftungslinien 
+			%Generatorspannung: 
+			\draw[gray] (Generator.west)   -- (tmpU1dashed);
+			\draw[gray] (Verbraucher.east) -- (tmpU1);				
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{DreiVierleitersystemBeispiel_II_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger 
+			]
+			% Verschiedene Variabeln definieren:
+			% Aus Folie:
+			% U_M = (43.3 + j50)V 
+			% abs(U_M) = 66.14V ---> entspricht 0.288cm
+			% angle(U_M) = 49.1
+			\def\UMabs{0.288};
+			\def\UMangle{49.1};
+			\def\ISpitzeE{0.378}; %Länge von I1
+			\def\ISpitzeZ{0.459}; %Länge von I2
+			\def\ISpitzeD{0.527}; %Länge von I3
+			\def\PhiE{-90};		  %Winkel von I1
+			\def\scaleleng{3};	  %Scale factor of the vector lengths
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);	%Definieren des Ursprungs
+			\coordinate (Stern)	   at ($(Ursprung) + (30:1cm) + (\UMangle-180:\UMabs)$); %Sternpunkt
+			
+			%Rotationswinkel bestimmen:
+			\pgfmathsetmacro\Alpha{asin(\UMabs*sin(\UMangle)/\ISpitzeE)};  %Rotationswinkel
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Spannungszeiger U23: 
+			\draw[Zeiger, blue] (Ursprung) -- ++(-90-\Alpha:\scaleleng*\ISpitzeE)
+				node(tmpI1) [HelpNode]{};
+%			%Spannungszeiger U31:  
+%			\draw[Zeiger, blue] (Ursprung) -- (60:\USpitze)
+%				node[pos=0.6, align=left, black, scale=0.8, anchor=south east] (Verbraucher) {Verbaucher-\\spannungen}%Beschriftung für Verbraucherspannung
+%			node(tmpU31) [HelpNode]{}; 
+%			%Spannungszeiger U12:  
+%			\draw[Zeiger, blue] (tmpU31) -- (0:\USpitze)
+%			node[pos=0.4, align=left, black, scale=0.8, anchor=south west] (Generator) {Generator-\\spannungen}%Beschriftung für Generatorspannung
+%			node(tmpU12) [HelpNode]{};
+%			%Spannungszeiger U_M:  
+%			\draw[Zeiger, blue] (Stern) -- (30:1cm)
+%			node[pos=0.6, anchor=south west] {$\underline{\hat{u}}_{M}$}
+%			node(tmpUM) [HelpNode]{};
+							
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+	\end{flushright}	
+\end{frame}
+
 
 
 

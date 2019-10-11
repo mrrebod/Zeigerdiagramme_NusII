@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  6 OCT 2019 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  11 OCT 2019 17:13
 entering extended mode
 **./Zeigerdiagramme_NusII.tex
 (Zeigerdiagramme_NusII.tex
@@ -2149,8 +2149,8 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 
  <./LaTeXfigs/BlindstromLeistungskompensation_I_b.pdf> <./LaTeXfigs/BlindstromL
 eistungskompensation_I_d.pdf>]
-===== Image 'LaTeXfigs/DreiphasensystemSternschaltun_I_b' is up-to-date. ======
-
+===== Image 'LaTeXfigs/DreiphasensystemSternschaltung_I_b' is up-to-date. =====
+=
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
 Package pdftex.def Info: HPE_background.pdf  used on input line 3617.
@@ -2162,9 +2162,9 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 
 [31
 
- <./LaTeXfigs/DreiphasensystemSternschaltun_I_b.pdf>]
-===== Image 'LaTeXfigs/DreiphasensystemSternschaltun_II_a' is up-to-date. =====
-=
+ <./LaTeXfigs/DreiphasensystemSternschaltung_I_b.pdf>]
+===== Image 'LaTeXfigs/DreiphasensystemSternschaltung_II_a' is up-to-date. ====
+==
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
 Package pdftex.def Info: HPE_background.pdf  used on input line 3678.
@@ -2176,7 +2176,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 
 [32
 
- <./LaTeXfigs/DreiphasensystemSternschaltun_II_a.pdf>]
+ <./LaTeXfigs/DreiphasensystemSternschaltung_II_a.pdf>]
 ===== Image 'LaTeXfigs/LeistungsberechnungImDrehstromsystem_b' is up-to-date. =
 =====
 ===== Image 'LaTeXfigs/LeistungsberechnungImDrehstromsystem_c' is up-to-date. =
@@ -2199,23 +2199,11 @@ sberechnungImDrehstromsystem_c.pdf> <./LaTeXfigs/LeistungsberechnungImDrehstrom
 system_d.pdf>]
 ===== Image 'LaTeXfigs/SternschaltungMitOhneSternpunkt_a' is up-to-date. ======
 
-\openout3 = `LaTeXfigs/SternschaltungMitOhneSternpunkt_b.md5'.
-
-\openout3 = `Zeigerdiagramme_NusII.auxlock'.
-
-===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
-n-error -interaction=batchmode -jobname "LaTeXfigs/SternschaltungMitOhneSternpu
-nkt_b" "\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagramme_N
-usII}"' ========
-runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
- "LaTeXfigs/SternschaltungMitOhneSternpunkt_b" "\def\tikzexternalrealjob{Zeiger
-diagramme_NusII}\input{Zeigerdiagramme_NusII}")...executed.
-
-\openout3 = `Zeigerdiagramme_NusII.auxlock'.
+===== Image 'LaTeXfigs/SternschaltungMitOhneSternpunkt_b' is up-to-date. ======
 
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4027.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4018.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2226,6 +2214,52 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 
  <./LaTeXfigs/SternschaltungMitOhneSternpunkt_a.pdf> <./LaTeXfigs/Sternschaltun
 gMitOhneSternpunkt_b.pdf>]
+===== Image 'LaTeXfigs/DreiVierleitersystemBeispiel_I_a' is up-to-date. ======
+===== Image 'LaTeXfigs/DreiVierleitersystemBeispiel_I_b' is up-to-date. ======
+File: HPE_background.pdf Graphic file (type pdf)
+<use HPE_background.pdf>
+Package pdftex.def Info: HPE_background.pdf  used on input line 4108.
+(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[35
+
+ <./LaTeXfigs/DreiVierleitersystemBeispiel_I_a.pdf> <./LaTeXfigs/DreiVierleiter
+systemBeispiel_I_b.pdf>]
+===== Image 'LaTeXfigs/DreiVierleitersystemBeispiel_II_a' is up-to-date. ======
+
+===== Image 'LaTeXfigs/DreiVierleitersystemBeispiel_II_b' is up-to-date. ======
+
+\openout3 = `LaTeXfigs/DreiVierleitersystemBeispiel_II_c.md5'.
+
+\openout3 = `Zeigerdiagramme_NusII.auxlock'.
+
+===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
+n-error -interaction=batchmode -jobname "LaTeXfigs/DreiVierleitersystemBeispiel
+_II_c" "\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagramme_N
+usII}"' ========
+runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
+ "LaTeXfigs/DreiVierleitersystemBeispiel_II_c" "\def\tikzexternalrealjob{Zeiger
+diagramme_NusII}\input{Zeigerdiagramme_NusII}")...executed.
+
+\openout3 = `Zeigerdiagramme_NusII.auxlock'.
+
+File: HPE_background.pdf Graphic file (type pdf)
+<use HPE_background.pdf>
+Package pdftex.def Info: HPE_background.pdf  used on input line 4276.
+(pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
+
+Overfull \hbox (1.11195pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[36
+
+ <./LaTeXfigs/DreiVierleitersystemBeispiel_II_a.pdf> <./LaTeXfigs/DreiVierleite
+rsystemBeispiel_II_b.pdf> <./LaTeXfigs/DreiVierleitersystemBeispiel_II_c.pdf>]
 \tf@nav=\write6
 \openout6 = `Zeigerdiagramme_NusII.nav'.
 
@@ -2235,20 +2269,20 @@ gMitOhneSternpunkt_b.pdf>]
 \tf@snm=\write8
 \openout8 = `Zeigerdiagramme_NusII.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4032.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4032.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4282.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4282.
  (Zeigerdiagramme_NusII.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4032.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4032.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4282.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4282.
 
 Package rerunfilecheck Info: File `Zeigerdiagramme_NusII.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37626 strings out of 492895
- 881666 string characters out of 3123735
- 1147070 words of memory out of 3000000
- 40576 multiletter control sequences out of 15000+200000
+ 37642 strings out of 492895
+ 881922 string characters out of 3123735
+ 1147142 words of memory out of 3000000
+ 40583 multiletter control sequences out of 15000+200000
  68926 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  82i,15n,131p,853b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2263,9 +2297,9 @@ ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marco/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marc
 o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/
 Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Zeigerdiagramme_NusII.pdf (34 pages, 688289 bytes).
+Output written on Zeigerdiagramme_NusII.pdf (36 pages, 713853 bytes).
 PDF statistics:
- 1137 PDF objects out of 1200 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 38753 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 1192 PDF objects out of 1200 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 38778 words of extra memory for PDF output out of 42996 (max. 10000000)
 
