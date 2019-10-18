@@ -4223,21 +4223,31 @@
 			\draw[gray] (Verbraucher.east) -- (tmpU1);				
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%
+		
 		%-----------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{DreiVierleitersystemBeispiel_II_c}
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
 			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
-			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger 
+			Zeiger/.style={-{Latex[length=2mm]}, thick, red},					      %Style der komplexen Zeiger 
 			]
 			% Verschiedene Variabeln definieren:
 			% Aus Folie:
 			% U_M = (43.3 + j50)V 
 			% abs(U_M) = 66.14V ---> entspricht 0.288cm
-			% angle(U_M) = 49.1
 			\def\UMabs{0.288};
+			% angle(U_M) = 49.1
 			\def\UMangle{49.1};
+			% abs(U_Z1) = 267.1 V ---> entspricht 1.1613cm
+			\def\UZEabs{1.1613};
+			% abs(U_Z2) = 243.2 V ---> entspricht 1.0574cm
+			\def\UZZabs{1.0574};
+			% abs(U_Z1) = 186.4 V ---> entspricht 0.8104cm
+			\def\UZDabs{0.8104};
+			% Länge verketteter Spannung 400V ---> 1.732cm
+			\def\Uverk{1.732};
+			
 			\def\ISpitzeE{0.378}; %Länge von I1
 			\def\ISpitzeZ{0.459}; %Länge von I2
 			\def\ISpitzeD{0.527}; %Länge von I3
@@ -4249,26 +4259,28 @@
 			\coordinate (Stern)	   at ($(Ursprung) + (30:1cm) + (\UMangle-180:\UMabs)$); %Sternpunkt
 			
 			%Rotationswinkel bestimmen:
-			\pgfmathsetmacro\Alpha{asin(\UMabs*sin(\UMangle)/\ISpitzeE)};  %Rotationswinkel
+			% Bestimme Winkel von I1 mit Hilfe des Sinus-Satzes und Spannungswerten aus b)
+			\pgfmathsetmacro\Gamma{asin(\UMabs*sin(180-(90-\UMangle))/\UZEabs};  % -90-gamma = winkel I3
+			% Bestimme Winkel von I2 mit Hilfe des Cosinus-Satzes und Spannungswerten aus b)
+			\pgfmathsetmacro\Beta{acos((\UZZabs^2+\Uverk^2-\UZDabs^2)/(2*\Uverk*\UZZabs))};  % 180-alpha = winkel I2
+			% Bestimme Winkel von I3 mit Hilfe des Cosinus-Satzes und Spannungswerten aus b)
+			\pgfmathsetmacro\Alpha{acos((\UZDabs^2+\Uverk^2-\UZZabs^2)/(2*\Uverk*\UZDabs))};  % 180-alpha = winkel I2
+			
 			
 			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			% Plotten der Zeiger
-			%Spannungszeiger U23: 
-			\draw[Zeiger, blue] (Ursprung) -- ++(-90-\Alpha:\scaleleng*\ISpitzeE)
+			%Stromzeiger I1: 
+			\draw[Zeiger] (Ursprung) -- ++(-90-\Gamma:\scaleleng*\ISpitzeE)
+				node[pos=0.6, anchor=west] {$\hat{\underline{i}}_1\textcolor{black}{=378 mA}$}
 				node(tmpI1) [HelpNode]{};
-%			%Spannungszeiger U31:  
-%			\draw[Zeiger, blue] (Ursprung) -- (60:\USpitze)
-%				node[pos=0.6, align=left, black, scale=0.8, anchor=south east] (Verbraucher) {Verbaucher-\\spannungen}%Beschriftung für Verbraucherspannung
-%			node(tmpU31) [HelpNode]{}; 
-%			%Spannungszeiger U12:  
-%			\draw[Zeiger, blue] (tmpU31) -- (0:\USpitze)
-%			node[pos=0.4, align=left, black, scale=0.8, anchor=south west] (Generator) {Generator-\\spannungen}%Beschriftung für Generatorspannung
-%			node(tmpU12) [HelpNode]{};
-%			%Spannungszeiger U_M:  
-%			\draw[Zeiger, blue] (Stern) -- (30:1cm)
-%			node[pos=0.6, anchor=south west] {$\underline{\hat{u}}_{M}$}
-%			node(tmpUM) [HelpNode]{};
-							
+			%Stromzeiger I2: 
+			\draw[Zeiger] (tmpI1) -- ++(180-\Beta:\scaleleng*\ISpitzeZ)
+				node[pos=0.4, anchor=north east] {$\hat{\underline{i}}_2\textcolor{black}{=459 mA}$}
+				node(tmpI2) [HelpNode]{};
+			%Stromzeiger I3: 
+			\draw[Zeiger] (tmpI2) -- (Ursprung)
+				node[pos=0.6, anchor=south east] {$\hat{\underline{i}}_3\textcolor{black}{=527 mA}$}
+				node(tmpI3) [HelpNode]{};
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%
 		
