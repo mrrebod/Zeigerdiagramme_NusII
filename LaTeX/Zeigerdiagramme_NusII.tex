@@ -4282,10 +4282,250 @@
 				node[pos=0.6, anchor=south east] {$\hat{\underline{i}}_3\textcolor{black}{=527 mA}$}
 				node(tmpI3) [HelpNode]{};
 		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Ergänzung: Leistung bei Dreieckschaltung}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{ErgaenzungLeistungBeiDreieckschaltung_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick, red},					      %Style der komplexen Zeiger 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\IStern{1.0};	%Länge von Aussenleiterstrom
+			\def\PhiIE{-90};	%Winkel von I1
+			\pgfmathsetmacro\IDreieck{0.5*\IStern/cos(30)};  %Länge von Verbraucher-Wicklungsstrom
+			
+			\def\AlphaE{0}; 	   %Drehwinkel für den ersten Plot
+			\def\AlphaZ{30}; 	   %Drehwinkel für den zweiten Plot
+			\def\LenSca{1.732};	   %Längenskalierung von 2. Pplot (sqrt(3))	
+			\def\BeschScale{0.8};  %Skalierung Beschriftungsgrösse
+				
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung)  at (0,0);	%Definieren des Ursprungs 1. Plot
+			\coordinate (UrsprungZ) at (3,0);	%Definieren des Ursprungs 2. Plot
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Stromzeiger I1: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiIE+\AlphaE:\IStern)
+				node[pos=0.95, anchor=north] {$\underline{\hat{i}}_{1}$}
+				node(tmpI1) [HelpNode]{};
+			%Stromzeiger I2: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiIE+\AlphaE-120:\IStern)
+				node[pos=0.9, anchor=south east] {$\underline{\hat{i}}_{2}$}
+				node(tmpI2) [HelpNode]{}; 
+			%Stromzeiger I3: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiIE+\AlphaE+120:\IStern)
+				node[pos=0.9, anchor=south west] {$\underline{\hat{i}}_{3}$}
+				node(tmpI3) [HelpNode]{};  
+			%Hilfslinien:  
+			\draw[gray] (tmpI1) -- (tmpI2) -- (tmpI3) -- (tmpI1);
+			% Wicklungsströme 
+			% IZ3
+			\draw[Zeiger, orange] (Ursprung) -- ++(\PhiIE+\AlphaE+120+30:\IDreieck)
+				node[pos=0.6, left, scale=\BeschScale] {$\underline{\hat{i}}_{Z3}$}
+				node(tmpIZ3) [HelpNode]{};
+			% IZ2 dashed	 
+			\draw[Zeiger, orange, densely dashed] (tmpI3) -- (tmpIZ3)
+				node[midway, above, scale=\BeschScale] {$\underline{\hat{i}}_{Z2}$}
+				node(tmpIZ2dash) [HelpNode]{};
+			% IZ2
+			\draw[Zeiger, orange] (Ursprung) -- ++(\PhiIE+\AlphaE-120+30:\IDreieck)
+				node[pos=0.3, below, scale=\BeschScale] {$\underline{\hat{i}}_{Z2}$}
+				node(tmpIZ2) [HelpNode]{};
+			% IZ1 dashed	 
+			\draw[Zeiger, orange, densely dashed] (tmpI2) -- (tmpIZ2)
+				node[midway, left, scale=\BeschScale] {$\underline{\hat{i}}_{Z1}$}
+				node(tmpIZ1dash) [HelpNode]{};
+			% IZ1
+			\draw[Zeiger, orange] (Ursprung) -- ++(\PhiIE+\AlphaE+30:\IDreieck)
+				node[pos=0.2, right, scale=\BeschScale] {$\underline{\hat{i}}_{Z1}$}
+				node(tmpIZ1) [HelpNode]{};
+			% IZ3 dashed	 
+			\draw[Zeiger, orange, densely dashed] (tmpI1) -- (tmpIZ1)
+				node[pos=0.3, right, scale=\BeschScale] {$\underline{\hat{i}}_{Z3}$}
+				node(tmpIZ3dash) [HelpNode]{};
+				
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+			% Plotten der Zeiger
+			%Stromzeiger I1: 
+			\draw[Zeiger] (UrsprungZ) -- ++(\PhiIE+\AlphaZ:\LenSca*\IStern)
+				node[midway, right] {$\underline{\hat{i}}_{1}$}
+				node(tmpI1) [HelpNode]{};
+			%Stromzeiger I2: 
+			\draw[Zeiger] (UrsprungZ) -- ++(\PhiIE+\AlphaZ-120:\LenSca*\IStern)
+				node[midway, above] {$\underline{\hat{i}}_{2}$}
+				node(tmpI2) [HelpNode]{}; 
+			%Stromzeiger I3: 
+			\draw[Zeiger] (UrsprungZ) -- ++(\PhiIE+\AlphaZ+120:\LenSca*\IStern)
+				node[midway, left] {$\underline{\hat{i}}_{3}$}
+				node(tmpI3) [HelpNode]{};  
+			%Hilfslinien:  
+			\draw[gray] (tmpI1) -- (tmpI2) -- (tmpI3) -- (tmpI1);
+			% Wicklungsströme 
+			% IZ3
+			\draw[Zeiger, orange] (UrsprungZ) -- ++(\PhiIE+\AlphaZ+120+30:\LenSca*\IDreieck)
+				node[pos=0.4, left] {$\underline{\hat{i}}_{Z3}$}
+				node(tmpIZ3) [HelpNode]{};
+			% IZ2 dashed	 
+			\draw[Zeiger, orange, densely dashed] (tmpI3) -- (tmpIZ3)
+				node[midway, above] {$\underline{\hat{i}}_{Z2}$}
+				node(tmpIZ2dash) [HelpNode]{};
+			% IZ2
+			\draw[Zeiger, orange] (UrsprungZ) -- ++(\PhiIE+\AlphaZ-120+30:\LenSca*\IDreieck)
+				node[pos=0.5, anchor=north west] {$\underline{\hat{i}}_{Z2}$}
+				node(tmpIZ2) [HelpNode]{};
+			% IZ1 dashed	 
+			\draw[Zeiger, orange, densely dashed] (tmpI2) -- (tmpIZ2)
+				node[pos=0.7, left] {$\underline{\hat{i}}_{Z1}$}
+				node(tmpIZ1dash) [HelpNode]{};
+			% IZ1
+			\draw[Zeiger, orange] (UrsprungZ) -- ++(\PhiIE+\AlphaZ+30:\LenSca*\IDreieck)
+				node[pos=0.6, above] {$\underline{\hat{i}}_{Z1}$}
+				node(tmpIZ1) [HelpNode]{};
+			% IZ3 dashed	 
+			\draw[Zeiger, orange, densely dashed] (tmpI1) -- (tmpIZ1)
+				node[pos=0.5, right] {$\underline{\hat{i}}_{Z3}$}
+				node(tmpIZ3dash) [HelpNode]{};				
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Leistungsberechnung bei Dreieckschaltung II}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{LeistungsberechnungBeiDreieckschaltung_II_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					     	  %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius=4mm, angle eccentricity=1.5}, %Style des Winkelpfeils	  
+			]
+			% Verschiedene Variabeln definieren:
+			%Spannungen:
+			\def\UDreieck{1.732};	%Länge von Aussenleiterspannung
+			\def\PhiUZD{0};			%Winkel von U23
+			%Ströme:
+			\def\IVerE{0.7};		%Verbaucherstrom I1
+			\def\PhiE{40}; 	   	    %Winkel zwischen U12 und IZ1
+			\def\IVerZ{1.2};		%Verbaucherstrom I2
+			\def\PhiZ{10}; 	   	    %Winkel zwischen U23 und IZ2
+			\def\IVerD{1.0};		%Verbaucherstrom I3
+			\def\PhiD{20}; 	   	    %Winkel zwischen U31 und IZ3
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung)  at (0,0);	%Definieren des Ursprungs
+
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			%Spannungszeiger U23: 
+			\draw[Zeiger, blue] (\PhiUZD:\UDreieck) -- (Ursprung)
+				node[midway, below] {$\underline{\hat{u}}_{23}$}
+				node(tmpU23) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (tmpU23) -- ++(\PhiUZD+60:\UDreieck)
+				node[midway, left] {$\underline{\hat{u}}_{31}$}
+				node(tmpU31) [HelpNode]{};
+			%Spannungszeiger U31:  
+			\draw[Zeiger, blue] (tmpU31) -- (\PhiUZD:\UDreieck)
+				node[midway, right] {$\underline{\hat{u}}_{12}$}
+				node(tmpU12) [HelpNode]{};
+			% Wicklungsströme 
+			% IZ3
+			\draw[Zeiger, red] (tmpU23) -- (\PhiUZD+60-\PhiD:\IVerD)
+				node[pos=0.9, anchor=south west] {$\underline{\hat{i}}_{Z3}$}
+				node(tmpIZ3) [HelpNode]{};
+			% IZ2
+			\draw[Zeiger, red] (tmpU12) -- ++(180-\PhiZ:\IVerZ)
+				node[pos=0.6, above] {$\underline{\hat{i}}_{Z2}$}
+				node(tmpIZ2) [HelpNode]{};
+			% IZ3
+			\draw[Zeiger, red] (tmpU31) -- ++(-60+\PhiE:\IVerE)
+				node[at end, right] {$\underline{\hat{i}}_{Z1}$}
+				node(tmpIZ1) [HelpNode]{};
+			%Winkel 
+			%Phi 1:
+			\path (tmpU12) -- (tmpU31) -- (tmpIZ1)
+				pic[Winkelpfeil, pic text=$\varphi_1$] {angle=tmpU12--tmpU31--tmpIZ1}; 
+			%Phi 2:
+			\path (tmpIZ2) -- (tmpU12) -- (tmpU23)
+				pic[Winkelpfeil, pic text=$\varphi_2$, pic text options={anchor=north}, angle eccentricity=0.5, angle radius=6mm]
+				{angle=tmpIZ2--tmpU12--tmpU23};
+			%Phi 2:
+			\path (tmpIZ3) -- (tmpU23) -- (tmpU31)
+				pic[Winkelpfeil, pic text=$\varphi_3$, pic text options={anchor=east}, angle eccentricity=0.8, angle radius=4mm]
+				{angle=tmpIZ3--tmpU23--tmpU31};  			
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{LeistungsberechnungBeiDreieckschaltung_II_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt}, %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick, red},					      %Style der komplexen Zeiger	  
+			]
+			% Verschiedene Variabeln definieren !! ACHTUNG: selbe Werte wie aus b) verwenden !!:
+			\def\PhiUZD{0};			%Winkel von U23
+			%Ströme:
+			\def\IVerE{0.7};		%Verbaucherstrom I1
+			\def\PhiE{40}; 	   	    %Winkel zwischen U12 und IZ1
+			\def\IVerZ{1.0};		%Verbaucherstrom I2
+			\def\PhiZ{10}; 	   	    %Winkel zwischen U23 und IZ2
+			\def\IVerD{1.0};		%Verbaucherstrom I3
+			\def\PhiD{20}; 	   	    %Winkel zwischen U31 und IZ3
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung)  at (0,0);	%Definieren des Ursprungs
+			%IZ1
+			\coordinate (IzE) at (-60+\PhiE:\IVerE);
+			%IZ2
+			\coordinate (IzZ) at (180-\PhiZ:\IVerZ);
+			%IZ3
+			\coordinate (IzD) at (\PhiUZD+60-\PhiD:\IVerD);
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Plotten der Zeiger
+			% Wicklungsströme 
+			% IZ3
+			\draw[Zeiger, orange] (Ursprung) -- (IzD)
+				node[pos=0.3, right] {$\underline{\hat{i}}_{Z3}$}
+				node(tmpIZ3) [HelpNode]{};
+			% IZ2
+			\draw[Zeiger, orange] (Ursprung) -- ++(IzZ)
+				node[pos=0.6, below] {$\underline{\hat{i}}_{Z2}$}
+				node(tmpIZ2) [HelpNode]{};
+			% IZ3
+			\draw[Zeiger, orange] (Ursprung) -- ++(IzE)
+				node[at end, right] {$\underline{\hat{i}}_{Z1}$}
+				node(tmpIZ1) [HelpNode]{};	
+			% Aussenleiterströme
+			%I1 
+			\draw[Zeiger] (Ursprung) -- ++($(IzE) - (IzD)$)
+				node[pos=0.7, left] {$\underline{\hat{i}}_{1}$}
+				node(tmpI1) [HelpNode]{};
+			%Iz3 dashed 
+			\draw[Zeiger, orange, densely dashed] (tmpI1) -- ++(IzD)
+				node[pos=0.7, left] {$\underline{\hat{i}}_{Z3}$};	
+		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%
 		
 	\end{flushright}	
 \end{frame}
+
 
 
 
