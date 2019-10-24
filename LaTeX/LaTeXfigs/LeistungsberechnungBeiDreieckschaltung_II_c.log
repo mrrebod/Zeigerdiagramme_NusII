@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  20 OCT 2019 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  24 OCT 2019 16:58
 entering extended mode
 **\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagramme_NusII}
 (Zeigerdiagramme_NusII.tex ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\t
@@ -2069,16 +2069,16 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4534.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4534.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4534.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4534.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4558.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4558.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4558.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 4558.
  ) 
 Here is how much of TeX's memory you used:
- 37680 strings out of 492895
- 884717 string characters out of 3123735
- 1119946 words of memory out of 3000000
- 40750 multiletter control sequences out of 15000+200000
+ 37711 strings out of 492895
+ 885304 string characters out of 3123735
+ 1122946 words of memory out of 3000000
+ 40781 multiletter control sequences out of 15000+200000
  78827 words of font info for 134 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,15n,131p,902b,821s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2087,7 +2087,7 @@ Here is how much of TeX's memory you used:
 .pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/ut
 mri8a.pfb>
 Output written on LaTeXfigs/LeistungsberechnungBeiDreieckschaltung_II_c.pdf (1 
-page, 14938 bytes).
+page, 15558 bytes).
 PDF statistics:
  25 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -4502,30 +4502,185 @@
 			% Wicklungsströme 
 			% IZ3
 			\draw[Zeiger, orange] (Ursprung) -- (IzD)
-				node[pos=0.3, right] {$\underline{\hat{i}}_{Z3}$}
+				node[pos=0.7, anchor=south east, scale=0.8] {$\underline{\hat{i}}_{Z3}$}
 				node(tmpIZ3) [HelpNode]{};
 			% IZ2
 			\draw[Zeiger, orange] (Ursprung) -- ++(IzZ)
 				node[pos=0.6, below] {$\underline{\hat{i}}_{Z2}$}
 				node(tmpIZ2) [HelpNode]{};
-			% IZ3
+			% IZ1
 			\draw[Zeiger, orange] (Ursprung) -- ++(IzE)
-				node[at end, right] {$\underline{\hat{i}}_{Z1}$}
+				node[pos=0.8, anchor= south west, scale=0.8] {$\underline{\hat{i}}_{Z1}$}
 				node(tmpIZ1) [HelpNode]{};	
 			% Aussenleiterströme
 			%I1 
 			\draw[Zeiger] (Ursprung) -- ++($(IzE) - (IzD)$)
-				node[pos=0.7, left] {$\underline{\hat{i}}_{1}$}
+				node[pos=0.6, left] {$\underline{\hat{i}}_{1}$}
 				node(tmpI1) [HelpNode]{};
 			%Iz3 dashed 
 			\draw[Zeiger, orange, densely dashed] (tmpI1) -- ++(IzD)
-				node[pos=0.7, left] {$\underline{\hat{i}}_{Z3}$};	
+				node[pos=0.5, anchor=north west] {$\underline{\hat{i}}_{Z3}$};
+			%I2 
+			\draw[Zeiger] (Ursprung) -- ++($(IzZ) - (IzE)$)
+				node[pos=0.6, above] {$\underline{\hat{i}}_{2}$}
+				node(tmpI2) [HelpNode]{};
+			%Iz1 dashed 
+			\draw[Zeiger, orange, densely dashed] (tmpI2) -- ++(IzE)
+				node[pos=0.5, below] {$\underline{\hat{i}}_{Z1}$};
+			%I3 
+			\draw[Zeiger] (Ursprung) -- ++($(IzD) - (IzZ)$)
+				node[pos=0.8, below] {$\underline{\hat{i}}_{3}$}
+				node(tmpI3) [HelpNode]{};
+			%Iz2 dashed 
+			\draw[Zeiger, orange, densely dashed] (tmpI3) -- ++(IzZ)
+				node[pos=0.8, below, scale=0.8] {$\underline{\hat{i}}_{Z2}$};
+			%Aussenleiter dashed 
+			%I2 dashed  
+			\draw[Zeiger, densely dashed] (tmpI3) -- ++($(IzZ) - (IzE)$)
+				node[pos=0.6, above] {$\underline{\hat{i}}_{2}$}
+				node(tmpI2dashed) [HelpNode]{};
+			%I1 dashed  
+			\draw[Zeiger, densely dashed] (tmpI2dashed) -- ++($(IzE) - (IzD)$)
+				node[pos=0.4, left] {$\underline{\hat{i}}_{1}$}
+				node(tmpI1dashed) [HelpNode]{};
+				
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Erzeugung Drehfeld II}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{ErzeugungDrehfeld_II_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick, blue},					   	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius=4mm, angle eccentricity=1.5}, %Style des Winkelpfeils
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils	  
+			]
+			% Verschiedene Variabeln definieren:
+			%Spannungen:
+			\def\BSpitze{1.0};		%Länge von Zeiger
+			\def\PhiBE{0};			%Winkel von B1
+	
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-\BSpitze-0.1,0);  %Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at ( \BSpitze+0.3,0);  %Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0,-\BSpitze-0.3);  %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0, \BSpitze+0.3);  %Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);			  %Definieren des Ursprungs
+
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Achsen 
+			\draw[Achsenpfeil] (xStart) -- (xEnd); %x-Achse 
+			\draw[Achsenpfeil] (yStart) -- (yEnd); % y-Achse
+		
+			% Plotten der Zeiger
+			%Feld B1: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiBE:\BSpitze)
+				node[pos=1.0, below, black] {$\vec{B}_1$}
+				node(tmpB1) [HelpNode]{};
+			%Feld B2: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiBE-120:\BSpitze)
+				node[pos=0.85, anchor=north east, black] {$\vec{B}_2$}
+				node(tmpB2) [HelpNode]{};
+			%Feld B3: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiBE-240:\BSpitze)
+				node[pos=0.9, anchor=south east, black] {$\vec{B}_3$}
+				node(tmpB3) [HelpNode]{};
+			%Winkel 
+			%Phi:
+			\path (tmpB3) -- (Ursprung) -- (xStart)
+				pic[Winkelpfeil, pic text=$\frac{\pi}{3}$] {angle=tmpB3--Ursprung--xStart}; 		
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%
 		
 	\end{flushright}	
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Erzeugung Drehfeld III}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{ErzeugungDrehfeld_III_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick, blue},					   	   %Style der komplexen Zeiger
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils	  
+			]
+			% Verschiedene Variabeln definieren:
+			%Spannungen:
+			\def\BSpitze{0.7};		%Spitzenwert von Zeiger
+			
+			% Winkel 
+			\def\PhiE{0}			% 1. Winkel 0
+			\def\PhiZ{45}			% 2. Winkel pi/4
+			\def\PhiD{90}			% 3. Winkel pi/2
+			\def\PhiV{135}			% 4. Winkel 3pi/4
+			\def\PhiF{180}			% 5. Winkel pi
+			
+			% Geometrie der Spulen
+			\def\PhiSh{120}			%Phase shift zwischen Spulen
+			\def\PhiSE{0}			%Lage der Spule 1 (Lage des Feldes...)
+			\def\PhiSZ{240}			%Lage der Spule 2
+			\def\PhiSD{120}			%Lage der Spule 3
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-\BSpitze-0.1,0);  %Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at ( \BSpitze+0.3,0);  %Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0,-\BSpitze-0.3);  %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0, \BSpitze+0.3);  %Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);			  %Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			\foreach \Phi/\Xpos in {\PhiE/0, \PhiZ/1, \PhiD/2, \PhiV/3, \PhiF/4}
+				{
+					%Berechne Länge des jeweiligen Feldes
+					\pgfmathsetmacro\BE{\BSpitze*cos(\Phi)};  		   %Länge von B1
+					\pgfmathsetmacro\BZ{\BSpitze*cos(\Phi-\PhiSh)};    %Länge von B2
+					\pgfmathsetmacro\BD{\BSpitze*cos(\Phi-2*\PhiSh)};  %Länge von B3
+					
+					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSE:\BE);
+					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSZ:\BZ);
+					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSD:\BD); 
+				}
+			
+			%\draw[Zeiger] (Ursprung) -- ++(0:-1cm);
+%			% Achsen 
+%			\draw[Achsenpfeil] (xStart) -- (xEnd); %x-Achse 
+%			\draw[Achsenpfeil] (yStart) -- (yEnd); % y-Achse
+%			
+%			% Plotten der Zeiger
+%			%Feld B1: 
+%			\draw[Zeiger] (Ursprung) -- ++(\PhiBE:\BSpitze)
+%			node[pos=1.0, below, black] {$\vec{B}_1$}
+%			node(tmpB1) [HelpNode]{};
+%			%Feld B2: 
+%			\draw[Zeiger] (Ursprung) -- ++(\PhiBE-120:\BSpitze)
+%			node[pos=0.85, anchor=north east, black] {$\vec{B}_2$}
+%			node(tmpB2) [HelpNode]{};
+%			%Feld B3: 
+%			\draw[Zeiger] (Ursprung) -- ++(\PhiBE-240:\BSpitze)
+%			node[pos=0.9, anchor=south east, black] {$\vec{B}_3$}
+%			node(tmpB3) [HelpNode]{};
+%			%Winkel 
+%			%Phi:
+%			\path (tmpB3) -- (Ursprung) -- (xStart)
+%			pic[Winkelpfeil, pic text=$\frac{\pi}{3}$] {angle=tmpB3--Ursprung--xStart}; 		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%
+		
+	\end{flushright}	
+\end{frame}
 
 
 
