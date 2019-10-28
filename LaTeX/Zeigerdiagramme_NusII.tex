@@ -4,7 +4,7 @@
 %\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
 \usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
 \usepackage{tikz}
-\usetikzlibrary{angles, calc, positioning, intersections, topaths, decorations}
+\usetikzlibrary{angles, calc, positioning, intersections, topaths, decorations, shapes}
 
 %Booleans um nicht alles immer kompilieren zu müssen...
 \newboolean{ZeigerdiagrammI}
@@ -4614,11 +4614,12 @@
 			[
 			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
 			Zeiger/.style={-{Latex[length=2mm]}, thick, blue},					   	   %Style der komplexen Zeiger
-			Achsenpfeil/.style={->},												   %Style des Achsenpfeils	  
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils	
+			BZeiger/.style={draw, single arrow, minimum height=0.7cm, single arrow head extend=0.15cm, fill=blue} %B-Feld Zeiger 
 			]
 			% Verschiedene Variabeln definieren:
 			%Spannungen:
-			\def\BSpitze{0.7};		%Spitzenwert von Zeiger
+			\def\BSpitze{1.0};		%Spitzenwert von Zeiger
 			
 			% Winkel 
 			\def\PhiE{0}			% 1. Winkel 0
@@ -4634,54 +4635,165 @@
 			\def\PhiSD{120}			%Lage der Spule 3
 			
 			% Definieren von verschiedenen Koordinaten
-			\coordinate (xStart)   at (-\BSpitze-0.1,0);  %Startpunkt der x-Achse (wt-Achse)
-			\coordinate (xEnd) 	   at ( \BSpitze+0.3,0);  %Endpunkt der x-Achse (wt-Achse)
-			\coordinate (yStart)   at (0,-\BSpitze-0.3);  %Startpunkt der y-Achse
-			\coordinate (yEnd) 	   at (0, \BSpitze+0.3);  %Endpunkt der y-Achse 
-			\coordinate (Ursprung) at (0,0);			  %Definieren des Ursprungs
-			
-			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-			
-			\foreach \Phi/\Xpos in {\PhiE/0, \PhiZ/1, \PhiD/2, \PhiV/3, \PhiF/4}
+			\coordinate (Ursprung) at (0.5,-2);		%Definieren des Ursprungs von Zeitachse
+						
+			%% Zeiger der einzelnen Spulen %% 
+			\foreach \Phi/\Xpos/\Bool/\LabPosZ\LabPosD in {\PhiE/0/1/west/west, \PhiZ/1.5/1/north/north, \PhiD/3/0/north/north, \PhiV/4.5/1/north/north, \PhiF/6/1/east/east}
 				{
 					%Berechne Länge des jeweiligen Feldes
 					\pgfmathsetmacro\BE{\BSpitze*cos(\Phi)};  		   %Länge von B1
 					\pgfmathsetmacro\BZ{\BSpitze*cos(\Phi-\PhiSh)};    %Länge von B2
 					\pgfmathsetmacro\BD{\BSpitze*cos(\Phi-2*\PhiSh)};  %Länge von B3
 					
-					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSE:\BE);
-					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSZ:\BZ);
-					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSD:\BD); 
+					%B1 
+					\if \Bool1
+					{
+						\draw[Zeiger] (\Xpos,0) -- ++(\PhiSE:\BE) node[pos=0.9, below, black]{$\vec{B}_1$};		
+					}
+					\fi 
+					
+					%B2
+					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSZ:\BZ) node[pos=0.9, anchor=\LabPosZ, black]{$\vec{B}_2$};
+					%B3
+					\draw[Zeiger] (\Xpos,0) -- ++(\PhiSD:\BD) node[pos=0.9, anchor=\LabPosD, black]{$\vec{B}_3$};; 
 				}
+		
+			% Plot des Feldes in Zeitachse
+			\begin{scope}[shift=(Ursprung)]
 			
-			%\draw[Zeiger] (Ursprung) -- ++(0:-1cm);
-%			% Achsen 
-%			\draw[Achsenpfeil] (xStart) -- (xEnd); %x-Achse 
-%			\draw[Achsenpfeil] (yStart) -- (yEnd); % y-Achse
-%			
-%			% Plotten der Zeiger
-%			%Feld B1: 
-%			\draw[Zeiger] (Ursprung) -- ++(\PhiBE:\BSpitze)
-%			node[pos=1.0, below, black] {$\vec{B}_1$}
-%			node(tmpB1) [HelpNode]{};
-%			%Feld B2: 
-%			\draw[Zeiger] (Ursprung) -- ++(\PhiBE-120:\BSpitze)
-%			node[pos=0.85, anchor=north east, black] {$\vec{B}_2$}
-%			node(tmpB2) [HelpNode]{};
-%			%Feld B3: 
-%			\draw[Zeiger] (Ursprung) -- ++(\PhiBE-240:\BSpitze)
-%			node[pos=0.9, anchor=south east, black] {$\vec{B}_3$}
-%			node(tmpB3) [HelpNode]{};
-%			%Winkel 
-%			%Phi:
-%			\path (tmpB3) -- (Ursprung) -- (xStart)
-%			pic[Winkelpfeil, pic text=$\frac{\pi}{3}$] {angle=tmpB3--Ursprung--xStart}; 		
+				% Definieren von verschiedenen Koordinaten
+				\coordinate (xStart)   at (-0.1,0); 	%Startpunkt der x-Achse (wt-Achse)
+				\coordinate (xEnd) 	   at (5.5,0);  	%Endpunkt der x-Achse (wt-Achse)
+				\coordinate (yStart)   at (0,-0.1);  	%Startpunkt der y-Achse
+				\coordinate (yEnd) 	   at (0,1);  		%Endpunkt der y-Achse 
+				\def\TickLen{0.05cm}; 					% Halbe Länge des Achsen-Tick
+				
+				% Achsen 
+				\draw[Achsenpfeil] (xStart) -- (xEnd) node[at end, below]{$\omega t$}; %x-Achse 
+				\draw[Achsenpfeil] (yStart) -- (yEnd); 								   % y-Achse
+				
+				% Ticks auf der Achse 
+				\node[anchor=north east] at (Ursprung) {$0$};
+				\draw (1.25,\TickLen) -- (1.25,-\TickLen) node[below]{$\frac{\pi}{4}$};				
+				\draw (2.5,\TickLen)  -- (2.5,-\TickLen)  node[below]{$\frac{\pi}{2}$};
+				\draw (3.75,\TickLen) -- (3.75,-\TickLen) node[below]{$\frac{3\pi}{4}$};	
+				\draw (5.0,\TickLen) --  (5.0,-\TickLen)  node[below]{$\pi$};
+				
+				% B-Feld Zeiger total
+				\node[BZeiger, rotate=-\PhiE] at (0,0.5){};
+				\node[BZeiger, rotate=-\PhiZ] at (1.25,0.5){};
+				\node[BZeiger, rotate=-\PhiD] at (2.5,0.5){};
+				\node[BZeiger, rotate=-\PhiV] at (3.75,0.5){};
+				\node[BZeiger, rotate=-\PhiF] at (5.0,0.5){};
+				
+				% Kreis innerhalb der Zeiger 
+				\draw[fill=white] (0,0.5) 	 circle (0.03);
+				\draw[fill=white] (1.25,0.5) circle (0.03);
+				\draw[fill=white] (2.5,0.5)  circle (0.03);
+				\draw[fill=white] (3.75,0.5) circle (0.03);
+				\draw[fill=white] (5,0.5) 	 circle (0.03);				
+			\end{scope}		
 		\end{tikzpicture}
 		%-----------------------------------------------------------------------------------------------------------------%
 		
 	\end{flushright}	
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Parasitäre Effekte bei Spulen I}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{ParasitaereEffekteBeiSpulen_I_b}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					   	  	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius=5mm, angle eccentricity=0.7}, %Style des Winkelpfeils	  
+			]
+			% Verschiedene Variabeln definieren:
+			%Spannungen:
+			\def\Rcu{1.0};		%Länge von R_cu
+			\def\jwL{1.4};		%Länge von jwL
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);			  %Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			% Plotten der Zeiger
+			%R_cu: 
+			\draw[Zeiger] (Ursprung) -- ++(0:\Rcu)
+				node[midway, below] {$R_{Cu}$}
+				node(tmpR) [HelpNode]{};
+			%jwL: 
+			\draw[Zeiger] (tmpR) -- ++(90:\jwL)
+				node[midway, right] {$j\omega L$}
+				node(tmpjwL) [HelpNode]{};
+			%Z: 
+			\draw[Zeiger] (Ursprung) -- (tmpjwL)
+				node[midway, anchor=south east] {$\underline{Z}$}
+				node(tmpZ) [HelpNode]{};
+			%Winkel 
+			%Phi:
+			\path (tmpR) -- (Ursprung) -- (tmpjwL)
+				pic[Winkelpfeil, pic text=$\varphi$] {angle=tmpR--Ursprung--tmpjwL}; 
+			%Delta 
+			\path (Ursprung) -- (tmpjwL) -- (tmpR)
+				pic[Winkelpfeil, pic text=$\delta$] {angle=Ursprung--tmpjwL--tmpR};		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Parasitäre Effekte bei Kondensatoren I}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{ParasitaereEffekteBeiKondensatoren_I_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					   	  	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, gray, angle radius=5mm, angle eccentricity=0.7}, %Style des Winkelpfeils	  
+			]
+			% Verschiedene Variabeln definieren:
+			%Spannungen:
+			\def\Rp{1.0};		%Länge von 1/Rp
+			\def\jwC{1.4};		%Länge von jwC
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);			  %Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			% Plotten der Zeiger
+			%1/Rp: 
+			\draw[Zeiger] (Ursprung) -- ++(0:\Rp)
+				node[midway, below] {$\dfrac{1}{R_p}$}
+				node(tmpR) [HelpNode]{};
+			%jwC: 
+			\draw[Zeiger] (tmpR) -- ++(90:\jwC)
+				node[midway, right] {$j\omega C$}
+				node(tmpjwC) [HelpNode]{};
+			%Y: 
+			\draw[Zeiger] (Ursprung) -- (tmpjwC)
+				node[midway, anchor=south east] {$\underline{Y}$}
+				node(tmpZ) [HelpNode]{};
+			%Winkel 
+			%Phi:
+			\path (tmpR) -- (Ursprung) -- (tmpjwC)
+				pic[Winkelpfeil, pic text=$\varphi$] {angle=tmpR--Ursprung--tmpjwC}; 
+			%Delta 
+			\path (Ursprung) -- (tmpjwC) -- (tmpR)
+				pic[Winkelpfeil, pic text=$\delta$] {angle=Ursprung--tmpjwC--tmpR};		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
 
 
 
