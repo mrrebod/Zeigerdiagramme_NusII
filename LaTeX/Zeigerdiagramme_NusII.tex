@@ -4713,7 +4713,6 @@
 			Winkelpfeil/.style={draw, gray, angle radius=5mm, angle eccentricity=0.7}, %Style des Winkelpfeils	  
 			]
 			% Verschiedene Variabeln definieren:
-			%Spannungen:
 			\def\Rcu{1.0};		%Länge von R_cu
 			\def\jwL{1.4};		%Länge von jwL
 			
@@ -4761,7 +4760,6 @@
 			Winkelpfeil/.style={draw, gray, angle radius=5mm, angle eccentricity=0.7}, %Style des Winkelpfeils	  
 			]
 			% Verschiedene Variabeln definieren:
-			%Spannungen:
 			\def\Rp{1.0};		%Länge von 1/Rp
 			\def\jwC{1.4};		%Länge von jwC
 			
@@ -4795,6 +4793,139 @@
 	\end{flushright}	
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Beschaltung einer Quelle mit Last}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{BeschaltungEinerQuelleMitLast_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, blue, thick},					   	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={-{Latex[length=1mm]}, pic text=$\varphi$, draw,
+				 angle radius=4mm, angle eccentricity=1.4}, 						   %Style des Winkelpfeils	 
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\ULast{1.0};		%Länge von U_last
+			\def\UQuelle{1.2};		%Länge von U_Quelle
+			\def\PhiL{50};			%Winkel Last-Spannung
+			\def\PhiQ{15};			%Winkel Quelle-Spannung
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+			\coordinate (xStart)   at (-0.1,0); 	%Startpunkt der x-Achse (Re-Achse)
+			\coordinate (xEnd) 	   at (1.6,0);  	%Endpunkt der x-Achse (Im-Achse)
+			\coordinate (yStart)   at (0,-0.1);  	%Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0,1.4);  	%Endpunkt der y-Achse 
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			% Achsen 
+			\draw[Achsenpfeil] (xStart) -- (xEnd) node[at end, below]{$\operatorname{Re}$}; %x-Achse 
+			\draw[Achsenpfeil] (yStart) -- (yEnd) node[at end, left] {$j\operatorname{Im}$};%y-Achse
+			
+			% Plotten der Zeiger
+			%U Quelle: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiQ:\UQuelle)
+				node[at end, right] {$\underline{\hat{u}}_q$}
+				node(tmpUQ) [HelpNode]{};
+			%U Last: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiL:\ULast)
+				node[at end, right] {$\underline{\hat{u}}$}
+				node(tmpUL) [HelpNode]{};
+			%Winkel 
+			%Phi:
+			\path (tmpUQ) -- (Ursprung) -- (tmpUL)
+				pic[Winkelpfeil] {angle=tmpUQ--Ursprung--tmpUL}; 		
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Überlagerung sinusförmiger Schwingungen}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{UeberlagerungSinusfoermigerSchwingungen_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, blue, thick},					   	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={-{Latex[length=1mm]}, draw}, 						   %Style des Winkelpfeils	 
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils 
+			HelpLine/.style={densely dashed, very thin, gray}						   %Hilfslinien
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitzeE{2.0};		%Länge von U_1
+			\def\USpitzeZ{1.5};		%Länge von U_2
+			\def\PhiE{15};			%Winkel U_1
+			\def\PhiZ{70};			%Winkel U_2
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+			\coordinate (xStart)   at (0,0); 		%Startpunkt der x-Achse (Re-Achse)
+			\coordinate (xEnd) 	   at (3.0,0);  	%Endpunkt der x-Achse (Im-Achse)
+			\coordinate (yStart)   at (0,0);  		%Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0,2.3);  	%Endpunkt der y-Achse 
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			% Achsen 
+			\draw[Achsenpfeil] (xStart) -- (xEnd) node[at end, below]{$\operatorname{Re\{\textcolor{blue}{\hat{u}}\}}$}; %x-Achse 
+			\draw[Achsenpfeil] (yStart) -- (yEnd) node[at end, left] {$\operatorname{Im\{\textcolor{blue}{\hat{u}}\}}$};%y-Achse
+			
+			% Plotten der Zeiger
+			%U_1: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiE:\USpitzeE)
+				node[pos=0.9, above] {$\underline{\hat{u}}_1$}
+				node(tmpU1) [HelpNode]{};
+			%U_2: 
+			\draw[Zeiger] (Ursprung) -- ++(\PhiZ:\USpitzeZ)
+				node[pos=0.9, right] {$\underline{\hat{u}}_2$}
+				node(tmpU2) [HelpNode]{};
+			%U:
+			\draw[Zeiger] (Ursprung) -- ++($(\PhiZ:\USpitzeZ) + (\PhiE:\USpitzeE)$)
+				node[pos=1.0, above] {$\underline{\hat{u}}$}
+				node(tmpBesch) [HelpNode, pos=0.7]{} %Node für Beschriftung
+				node(tmpU) [HelpNode]{};
+				
+			%% Hilfslinien %%
+			\draw[HelpLine] (tmpU2) -- (tmpU) -- (tmpU1); %Parallelogramm für U_total
+			\pgfmathsetmacro\cosU{\USpitzeZ*cos(\PhiZ-\PhiE)}; %u2*cos(phi2-phi1)
+			\pgfmathsetmacro\sinU{\USpitzeZ*sin(\PhiZ-\PhiE)}; %u2*sin(phi2-phi1)
+			%Fortsetzung von U_1
+			\draw[HelpLine] (tmpU1) -- ++(\PhiE:\cosU)
+				node[HelpNode] (tmpCos) {};
+			%Komplettieurng von Rechtwinkligem Dreieck
+			\draw[HelpLine] (tmpCos) -- ++(\PhiE+90:\sinU);	
+			%Klammern:
+			%cos-Klammer:
+			\draw[decorate, decoration={brace}] (tmpCos) -- (tmpU1)
+				node[midway, scale=0.8, yshift=-0.3cm, anchor=west, color=blue]{$\underline{\hat{u}}_2\cos\left(\omega_2t-\omega_1t\right)$};
+			%sin-Klammer:
+			\draw[decorate, decoration={brace}] (tmpU) -- (tmpCos) 
+				node[midway, scale=0.8, xshift=0.1cm, anchor=west, color=blue]{$\underline{\hat{u}}_2\sin\left(\omega_2t-\omega_1t\right)$};
+			%Winkel 
+			%Phi1:
+			\path (xEnd) -- (Ursprung) -- (tmpU1)
+				pic[Winkelpfeil, pic text=$\omega_1 t$, angle radius=12mm, angle eccentricity=1.2] {angle=xEnd--Ursprung--tmpU1}; 
+			%Phit:
+			\path (xEnd) -- (Ursprung) -- (tmpU)
+				pic[Winkelpfeil, pic text=$\omega_t t$, angle radius=9mm, angle eccentricity=1.2, pic text options={anchor=south}] {angle=xEnd--Ursprung--tmpU}; 
+			%Phi2:
+			\path (xEnd) -- (Ursprung) -- (tmpU2)
+				pic[Winkelpfeil, pic text=$\omega_2 t$, angle radius=6mm, angle eccentricity=1.5, pic text options={anchor=south east}] {angle=xEnd--Ursprung--tmpU2};
+			%Beschriftung
+			\node[fill=white, scale=0.8] at (tmpBesch) {$\hat{u}=f(t)$};
+			\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
 
 
 
