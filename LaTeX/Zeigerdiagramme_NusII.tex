@@ -4869,7 +4869,7 @@
 			% Definieren von verschiedenen Koordinaten
 			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
 			\coordinate (xStart)   at (0,0); 		%Startpunkt der x-Achse (Re-Achse)
-			\coordinate (xEnd) 	   at (3.0,0);  	%Endpunkt der x-Achse (Im-Achse)
+			\coordinate (xEnd) 	   at (3.3,0);  	%Endpunkt der x-Achse (Im-Achse)
 			\coordinate (yStart)   at (0,0);  		%Startpunkt der y-Achse
 			\coordinate (yEnd) 	   at (0,2.3);  	%Endpunkt der y-Achse 
 			
@@ -4926,6 +4926,166 @@
 		%-----------------------------------------------------------------------------------------------------------------&
 	\end{flushright}	
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Fourierreihen - Spektralform}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{FourierreihenSpektralform_a}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, blue, thick},					   	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={-{Latex[length=1mm]}, draw, pic text=$\varphi_n$,
+				 angle radius=4mm, angle eccentricity=1.4}, 						   %Style des Winkelpfeils	 
+			HelpLine/.style={densely dashed, very thin, gray}						   %Hilfslinien
+			]
+			% Verschiedene Variabeln definieren:
+			\def\An{1.0};		%Länge von a_n
+			\def\Bn{1.2};		%Länge von b_n
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+ 			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+						
+			% Plotten der Zeiger
+			%a_n: 
+			\draw[Zeiger] (Ursprung) -- ++(0:\An)
+				node[pos=1.0, right] {$\hat{a}_n$}
+				node(tmpAn) [HelpNode]{};
+			%b_n: 
+			\draw[Zeiger] (Ursprung) -- ++(-90:\Bn)
+				node[pos=0.7, left] {$\hat{b}_n$}
+				node(tmpBn) [HelpNode]{};
+			%c_n:
+			\draw[Zeiger, black] (Ursprung) -- ++($(0:\An) + (-90:\Bn)$)
+				node[pos=0.95, anchor=north west] {$\hat{c}_n$}
+				node(tmpCn) [HelpNode]{};
+			
+			%% Hilfslinien %%
+			\draw[HelpLine] (tmpBn) -- (tmpCn) -- (tmpAn); 
+
+			%Winkel 
+			%Phi_n:
+			\path (tmpBn) -- (Ursprung) -- (tmpCn)
+				pic[Winkelpfeil] {angle=tmpBn--Ursprung--tmpCn};
+				
+			%Drehrichtungspfeil
+			\draw[-{Latex[length=1.5mm]}] (-45:\An+0.5) 
+				arc[start angle=-45, delta angle=35, x radius=\An+0.2, y radius=\An+0.2]
+				node[pos=0.2, right]{$n\omega$}; 
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Ergänzung: Periodizität der Tangens-Funktion}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{ErgaenzungPeriodizitaetDerTangensFunktion}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, blue, thick},					   	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={-{Latex[length=1mm]}, draw, pic text=$\varphi$,
+				angle radius=8mm}, 						  	   						   %Style des Winkelpfeils	 
+			HelpLine/.style={densely dashed, very thin, gray},						   %Hilfslinien
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\Zlen{1.5};		%Länge von Z
+			\def\PhiZ{45};		%Winkel von Z
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+			\coordinate (xStart)   at (-0.1,0);		%Startpunkt der x-Achse (Re-Achse)
+			\coordinate (xEnd) 	   at (2.3,0);  	%Endpunkt der x-Achse (Im-Achse)
+			\coordinate (yStart)   at (0,-0.1);  	%Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0,1.5);  	%Endpunkt der y-Achse 
+
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			% Achsen 
+			\draw[Achsenpfeil] (xStart) -- (xEnd) node[at end, below]{$X$}; %x-Achse 
+			\draw[Achsenpfeil] (yStart) -- (yEnd) node[at end, left] {$jY$};%y-Achse
+			\node[anchor=north east] at (Ursprung) {$0$}; 					%Beschriftnug des Urpsrungs 
+			
+			% Plotten der Zeiger 
+			%Z
+			\draw[Zeiger] (Ursprung) --++ (\PhiZ:\Zlen)
+				node[near end, left] {$\lvert\underline{Z}\rvert\textcolor{black}{=Z}$}
+				node[anchor=south west, scale=0.8, black] {$\textcolor{blue}{\underline{Z}}=X+jY$}
+				node(tmpZ) [HelpNode]{}; 
+			% Winkel-Beschriftung
+			\path (xEnd) -- (Ursprung) -- (tmpZ) 
+				pic[Winkelpfeil] {angle = xEnd--Ursprung--tmpZ};%Winkelpfiel	
+			% Hilfslinien
+			% waagerecht
+			\draw[HelpLine] (Ursprung |- tmpZ) -- (tmpZ)
+				node[at start, anchor=east, scale=0.8, black] {$Y=\operatorname{Im}\{\underline{Z}\}$};	
+			% senkrecht
+			\draw[HelpLine] (Ursprung -| tmpZ) -- (tmpZ)
+				node[at start, anchor=south west, scale=0.8, black] {$X=\operatorname{Re}\{\underline{Z}\}$};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{RL-Schaltung mit gleichgerichteter Spannung II}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{RLSchaltungMitGleichgerichteterSpannung_II_c}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, blue, thick},					   	   %Style der komplexen Zeiger
+			Winkelpfeil/.style={-{Latex[length=1mm]}, draw, pic text=$\varphi_{ui}$,
+				angle radius=4mm, angle eccentricity=1.6}, 						  	   %Style des Winkelpfeils	 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitzeR{0.8};		%Länge von U_r
+			\def\USpitzeL{1.2};		%Länge von U_L
+			\def\ISpitze{0.5};		%Länge von I
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			
+			% Plotten der Zeiger 
+			%U_R
+			\draw[Zeiger] (Ursprung) --++ (0:\USpitzeR)
+				node[pos=1.3, below] {$\underline{\hat{u}}_R=R\textcolor{red}{\underline{\hat{i}}}$}
+				node(tmpUR) [HelpNode]{}; 
+			%U_R
+			\draw[Zeiger] (tmpUR) --++ (90:\USpitzeL)
+				node[pos=0.5, right] {$\underline{\hat{u}}_L=j\omega L\textcolor{red}{\underline{\hat{i}}}$}
+				node(tmpUL) [HelpNode]{};
+			%U_G
+			\draw[Zeiger] (Ursprung) -- (tmpUL)
+				node[pos=0.6, anchor=south east] {$\underline{\hat{u}}_G=\underline{Z}\textcolor{red}{\underline{\hat{i}}}$}
+				node(tmpUG) [HelpNode]{}; 
+			%I
+			\draw[Zeiger, red] ($(Ursprung) - (0,0.1cm)$) --++ (0:\ISpitze)
+				node[pos=0.5, below] {$\underline{\hat{i}}$}
+				node(tmpI) [HelpNode]{}; 
+			% Winkel-Beschriftung
+			\path (tmpUR) -- (Ursprung) -- (tmpUL) 
+				pic[Winkelpfeil] {angle = tmpUR--Ursprung--tmpUL};%Winkelpfiel	
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
+
 
 
 
