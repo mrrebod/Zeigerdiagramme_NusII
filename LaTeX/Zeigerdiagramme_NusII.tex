@@ -2564,6 +2564,108 @@
 
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Serien vs. Parallelschwingkreis I}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{SerienVsParallelschwingkreis_I}
+		\begin{tikzpicture}[scale=0.6]
+			%%% Definitionen des Settings - !!! ACHTUNG: Gleich wie in Zeigerdiagramme für Serie-/Parallelschwingkreis !!! %%%
+			\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
+			\def\Alpha{0}
+			\def\FarbeSpannung{blue}
+			\def\FarbeStrom{red}
+			
+			%Bauteile (Rs,Rp,L,C) & Quellen definieren, Resonanz/Güte berechnen
+			\def\L{1e-3}
+			\def\C{1e-6} 
+			\pgfmathsetmacro{\fres}{ 1 / ( 2 * pi * sqrt( \L * \C ) ) }
+			%Serie
+			\def\Rs{12} 
+			\def\uq{1}
+			\pgfmathsetmacro{\Qs}{ 1 / \Rs * sqrt( \L / \C )  }
+			%Parallel 
+			\def\Rp{80}
+			\def\iqp{1}
+			\pgfmathsetmacro{\Qp}{  \Rp * sqrt( \C / \L )  }
+			
+			%Differenz zur Resonanzfrequenze. Selbe für Serie und Parallel 
+			\def\fre{\fres+3000}
+			
+			%Positionen der Plots definieren
+			\def\Xstep{4.5} %Schritt in x-Richtung bis zum Nächsten Plot
+			
+			\def\Xoff{0} %X-Position für Serie 
+			\def\Yoff{0} %Y-Position für Serie - gleich für Parallel
+			
+			\def\RefStep{0.06}	%Offset von Referenzpfeil zu Re-Achse
+									
+			%%%%%%%%%%%%%%%%%%%%%% Rechnen & Plotten des Serieschwingkreises %%%%%%%%%%%%%%%%%%%%%%
+			%%%% Rechnung %%%% 
+			\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
+			\pgfmathsetmacro{\w}{ 2*pi*\fre}
+			
+			\pgfmathsetmacro{\iq}{ \uq / ( sqrt( \Rs^2 + ( \w*\L - 1/(\w*\C) )^2 ) ) }
+			\pgfmathsetmacro{\uR}{\Rs*\iq }
+			\pgfmathsetmacro{\uL}{\w * \L * \iq }
+			\pgfmathsetmacro{\uC}{\iq/(\w*\C) }
+			
+			%%%% Plot %%%%
+			\pgfkeys{/pgf/fpu=false}
+			%%Referenzpfeil%%
+			%Referenzpfeil
+			\draw[-{Latex[length=2mm]}, color=\FarbeStrom,  thick]
+			(\Xoff, \Yoff-\RefStep) -- (\Xoff+1.5,\Yoff-\RefStep) node[anchor= north] {$\mzeiger{i}\;$};
+			
+			% Widerstandsspannung
+			\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick] 
+				(\Alpha:0)++(\Xoff,\Yoff) -- ++(\Alpha:\uR) node [midway, below] {$\mzeiger{u}_R\;$}
+			node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp) {};
+			% Induktivitätsspannung
+			\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick]
+				(tmp) --++({\Alpha+90}:\uL) node [midway, left] {$\mzeiger{u}_L$} node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp) {};
+			% Kondensatorspannung
+			\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick]
+				(tmp)++({0}:0.15) -- ++({\Alpha-90}:\uC)  node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp2) {} node [midway, right] {$\mzeiger{u}_C$};
+			% Eingangsspannung
+			\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick] 
+				(\Xoff,\Yoff) -- ++(tmp2) node [midway, above] {$\;\mzeiger{u}$};
+			
+			%%%%%%%%%%%%%%%%%% Rechnen & Plotten des Parallelchwingkreises %%%%%%%%%%%%%%%%%%%%%%
+			%%%% Rechnung %%%% 
+			\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
+			\pgfmathsetmacro{\w}{ 2*pi*\fre}
+			\pgfmathsetmacro{\uqp}{ \iqp / ( sqrt( (1/\Rp)^2 + ( \w*\C - 1/(\w*\L) )^2 ) ) }
+			\pgfmathsetmacro{\iR}{\uqp / \Rp }
+			\pgfmathsetmacro{\iL}{\uqp / (\w * \L) }
+			\pgfmathsetmacro{\iC}{\uqp * (\w*\C) }
+			
+			%%%% Plot %%% 
+			\pgfkeys{/pgf/fpu=false}
+			%Referenzpfeil
+			\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick]
+				(\Xoff+\Xstep, \Yoff-\RefStep) -- (\Xoff+\Xstep+1.5,\Yoff-\RefStep) node[anchor= north] {$\mzeiger{u}\;$};	
+			%  Widerstandsstrom
+			\draw[-{Latex[length=2mm]}, color=\FarbeStrom, thick] 
+			(\Alpha:0)++(\Xoff+\Xstep,\Yoff) -- ++(\Alpha:\iR) node [midway, below] {$\mzeiger{i}_R\;$}
+				node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp) {};
+			% Kondensatorstrom
+			\draw[-{Latex[length=2mm]}, color=\FarbeStrom, thick]
+				(tmp) --++({\Alpha+90}:\iC) node [midway, left] {$\mzeiger{i}_C$} node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp) {};
+			% Induktivitätsstrom
+			\draw[-{Latex[length=2mm]}, color=\FarbeStrom, thick]
+				(tmp)++({0}:0.15) -- ++({\Alpha-90}:\iL)  node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp2) {} node [midway, right] {$\mzeiger{i}_L$};
+			% Eingangsstrom
+			\draw[-{Latex[length=2mm]}, color=\FarbeStrom, thick] 
+				(\Xoff+\Xstep,\Yoff) -- ++(tmp2) node [midway, above] {$\;\mzeiger{i}$};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Impedanz RL-Reihenschaltung - R variabel}
@@ -5085,6 +5187,97 @@
 		%-----------------------------------------------------------------------------------------------------------------&
 	\end{flushright}	
 \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Clicker - RLC Serienschaltung Zeiger a,b,c}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Clicker_RLC_SerienschaltungZeiger_a_b_c}
+		\begin{tikzpicture}[scale=0.7]
+			%%% Definitionen des Settings %%%
+			\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
+			\def\Alpha{0}
+			\def\FarbeSpannung{blue}
+			\def\FarbeStrom{red}
+			
+			%Bauteile (Rs,Rp,L,C) & Quellen definieren, Resonanz/Güte berechnen
+			\def\L{1e-3}
+			\def\C{1e-6} 
+			\pgfmathsetmacro{\fres}{ 1 / ( 2 * pi * sqrt( \L * \C ) ) }
+			%Serie
+			\def\Rs{12} 
+			\def\uq{1}
+			\pgfmathsetmacro{\Qs}{ 1 / \Rs * sqrt( \L / \C )  }
+			%Parallel 
+			\def\Rp{80}
+			\def\iqp{1}
+			\pgfmathsetmacro{\Qp}{  \Rp * sqrt( \C / \L )  }
+			
+			%Differenz zur Resonanzfrequenze der 3 Fälle (a,b,c) definieren. Selbe für Serie und Parallel 
+			\def\frea{\fres-3000}
+			\def\freb{\fres}
+			\def\frec{\fres+3000}
+			
+			%Positionen der Plots definieren
+			\def\Xstep{3.5} %Schritt in x-Richtung bis zum Nächsten Plot
+			
+			\def\Xoffa{0} 							%X-Position für a
+			\pgfmathsetmacro{\Xoffb}{\Xoffa+\Xstep} %X-Position für b
+			\pgfmathsetmacro{\Xoffc}{\Xoffb+\Xstep} %X-Position für c
+			\def\Yoff{0} 							%Y-Position für a,b,c
+			
+			\def\RefStep{0.06}	%Offset von Referenzpfeil zu Re-Achse
+					
+			%%%%%%%%%%%%%%%%%%%%%% Rechnen & Plotten des Serieschwingkreises %%%%%%%%%%%%%%%%%%%%%%
+			
+			%Doku zu \foreach: pgfmanual.pdf Kapitel 87, Abschnitt "multiple variables" (Seite 974) 
+			\foreach \Xoff/\fre/\LabPosR/\LabPosQ/\Bool in
+			{\Xoffa/\frea/above/below/0, \Xoffb/\freb/above/below/1, \Xoffc/\frec/below/above/0}
+			{
+				%%%% Rechnung %%%% 
+				\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
+				\pgfmathsetmacro{\w}{ 2*pi*\fre}
+				
+				\pgfmathsetmacro{\iq}{ \uq / ( sqrt( \Rs^2 + ( \w*\L - 1/(\w*\C) )^2 ) ) }
+				\pgfmathsetmacro{\uR}{\Rs*\iq }
+				\pgfmathsetmacro{\uL}{\w * \L * \iq }
+				\pgfmathsetmacro{\uC}{\iq/(\w*\C) }
+				
+				%%%% Plot %%%%
+				\pgfkeys{/pgf/fpu=false}
+				%% Achsen, Referenzpfeil und Caption %%
+				\draw[->] (\Xoff-0.3,\Yoff) -- (\Xoff+1.8,\Yoff) node[anchor= north west] {Re}; % X-Achse
+				\draw[->] (\Xoff,\Yoff-0.5) -- (\Xoff,\Yoff+2.5) node[anchor=south east] {Im}; % Y-Achse 
+				%Referenzpfeil
+				\draw[-{Latex[length=2mm]}, color=\FarbeStrom,  thick]
+				(\Xoff, \Yoff-\RefStep) -- (\Xoff+1.5,\Yoff-\RefStep) node[anchor= north] {$\mzeiger{i}\;$};
+				
+				% Widerstandsspannung
+				\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick] 
+				(\Alpha:0)++(\Xoff,\Yoff) -- ++(\Alpha:\uR) node [midway, \LabPosR] {$\mzeiger{u}_R\;$}
+				\if\Bool1{
+					node [midway, \LabPosQ] {$\mzeiger{u}\;$}
+				}\fi
+				node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp) {};
+				% Induktivitätsspannung
+				\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick]
+				(tmp) --++({\Alpha+90}:\uL) node [midway, left] {$\mzeiger{u}_L$} node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp) {};
+				% Kondensatorspannung
+				\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick]
+				(tmp)++({0}:0.15) -- ++({\Alpha-90}:\uC)  node[at end, inner sep=0pt, outer sep=0pt, minimum size=0pt](tmp2) {} node [midway, right] {$\mzeiger{u}_C$};
+				% Eingangsspannung
+				\if\Bool0{
+					\draw[-{Latex[length=2mm]}, color=\FarbeSpannung,  thick] 
+					(\Xoff,\Yoff) -- ++(tmp2) node [midway, \LabPosQ] {$\;\mzeiger{u}$};
+				}\fi
+			}
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}
+\end{frame}
+
 
 
 
