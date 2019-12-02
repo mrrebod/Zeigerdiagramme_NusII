@@ -3317,6 +3317,81 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}\frametitle{Asynchronmaschine - Ortskurve Statorstrom}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{AsynchronmaschineOrtskurveStatorstrom}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitze{1.8};	  %Länge von Spannungszeiger
+			\def\OssRad{3.0};	  %Radius des Ossanna Kreises
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+			\coordinate (OssMitte) at (2.0cm,0.4cm);    %Mittelpunkt des Ossanna Kreises
+			\coordinate (xStart)   at (-0.1cm,0);  	%Startpunkt der x-Achse (wt-Achse)
+			\coordinate (xEnd) 	   at (4.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
+			\coordinate (yStart)   at (0cm,-1.0cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,2.0cm);  %Endpunkt der y-Achse
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%Achsen 
+			\draw[Achsenpfeil] (xStart) -- (xEnd) node[at end, below]{$\operatorname{Im}$}; %x-Achse 
+			\draw[Achsenpfeil] (yStart) -- (yEnd) node[at end, right] {$\operatorname{Re}$};%y-Achse
+			
+			%Ossanna Kreis  
+			\node[circle, draw, minimum size=\OssRad cm] (Ossanna) at (OssMitte) {};
+		
+			\draw (Ursprung) -- (Ossanna.120);
+			
+%			% Plotten der Hilfslinie
+%			\draw[HelpLine] (Ursprung) -- ++(0:\ISpitze) node[HelpNode] (xEnd){};
+%			% Plotten der Zeiger
+%			%Stromzeiger: 
+%			\draw[Zeiger, red] (Ursprung) -- ++(\PhiI:\ISpitze)
+%			node[at end, below] {$\underline{\hat{i}}$}
+%			node(tmp1) [HelpNode]{}; 
+%			%Spannungszeiger u*cos(phi):
+%			\draw[Zeiger, blue] (Ursprung) -- ++(\PhiI:\Ucos)
+%			node(tmp2) [HelpNode]{};
+%			%Spannungszeiger u*sin(phi): 
+%			\draw[Zeiger, blue] (tmp2) -- ++(\PhiI+90:\Usin)
+%			node[midway, right] {$\hat{u}\sin\varphi$}
+%			node(tmp3) [HelpNode]{};
+%			%Spannungszeiger u: 
+%			\draw[Zeiger, blue] (Ursprung) -- (tmp3)
+%			node[midway, left] {$\underline{\hat{u}}$}
+%			node(tmp4) [HelpNode]{};				
+%			% Winkel Beschriftung
+%			%Phi i:
+%			\path (xEnd) -- (Ursprung) -- (tmp1)
+%			pic[Winkelpfeil, angle radius=8.0mm, pic text=$\varphi_i$, angle eccentricity=1.2] {angle=xEnd--Ursprung--tmp1};
+%			%Phi u:
+%			\path (xEnd) -- (Ursprung) -- (tmp4)
+%			pic[Winkelpfeil, angle radius=3.0mm, pic text=$\varphi_u$, angle eccentricity=1.5] {angle=xEnd--Ursprung--tmp4};
+%			%Phi:
+%			\path (tmp1) -- (Ursprung) -- (tmp4)
+%			pic[Winkelpfeil, angle radius=7.0mm, pic text=$\varphi$, angle eccentricity=1.2] {angle=tmp1--Ursprung--tmp4};
+%			% Beschriftung:
+%			\node[anchor=west, gray, scale=0.8] at ($(tmp4) + (0.2cm,0)$) {$\varphi=\varphi_u-\varphi_i$};	
+%			\node[anchor=north west, blue] (BeschUcos) at ($(Ursprung) + (0.5cm,0)$) {$\hat{u}\cos\varphi$};
+%			\draw[thin, blue] (BeschUcos.west) -- ++(90:0.35cm);
+		\end{tikzpicture}
+		%----------------------------------------------------------------------------------------------------------------%	
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{frame}\frametitle{Leistung im Wechselstromkreis - $RL$-Schaltung I}	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
@@ -5216,12 +5291,12 @@
 			\pgfmathsetmacro{\Qp}{  \Rp * sqrt( \C / \L )  }
 			
 			%Differenz zur Resonanzfrequenze der 3 Fälle (a,b,c) definieren. Selbe für Serie und Parallel 
-			\def\frea{\fres-3000}
-			\def\freb{\fres}
-			\def\frec{\fres+3000}
+			\def\frea{\fres+3000}
+			\def\freb{\fres-3000}
+			\def\frec{\fres}
 			
 			%Positionen der Plots definieren
-			\def\Xstep{3.5} %Schritt in x-Richtung bis zum Nächsten Plot
+			\def\Xstep{4.0} %Schritt in x-Richtung bis zum Nächsten Plot
 			
 			\def\Xoffa{0} 							%X-Position für a
 			\pgfmathsetmacro{\Xoffb}{\Xoffa+\Xstep} %X-Position für b
@@ -5233,8 +5308,8 @@
 			%%%%%%%%%%%%%%%%%%%%%% Rechnen & Plotten des Serieschwingkreises %%%%%%%%%%%%%%%%%%%%%%
 			
 			%Doku zu \foreach: pgfmanual.pdf Kapitel 87, Abschnitt "multiple variables" (Seite 974) 
-			\foreach \Xoff/\fre/\LabPosR/\LabPosQ/\Bool in
-			{\Xoffa/\frea/above/below/0, \Xoffb/\freb/above/below/1, \Xoffc/\frec/below/above/0}
+			\foreach \Xoff/\fre/\LabPosR/\LabPosQ/\Bool/\Label in
+			{\Xoffa/\frea/below/above/0/a, \Xoffb/\freb/above/below/0/b, \Xoffc/\frec/below/above/1/c}
 			{
 				%%%% Rechnung %%%% 
 				\pgfkeys{/pgf/fpu=true,/pgf/fpu/output format=fixed}
@@ -5247,9 +5322,8 @@
 				
 				%%%% Plot %%%%
 				\pgfkeys{/pgf/fpu=false}
-				%% Achsen, Referenzpfeil und Caption %%
-				\draw[->] (\Xoff-0.3,\Yoff) -- (\Xoff+1.8,\Yoff) node[anchor= north west] {Re}; % X-Achse
-				\draw[->] (\Xoff,\Yoff-0.5) -- (\Xoff,\Yoff+2.5) node[anchor=south east] {Im}; % Y-Achse 
+				%% Label a),b),c) %%
+				\node at (\Xoff,2.2cm) {\Label)};
 				%Referenzpfeil
 				\draw[-{Latex[length=2mm]}, color=\FarbeStrom,  thick]
 				(\Xoff, \Yoff-\RefStep) -- (\Xoff+1.5,\Yoff-\RefStep) node[anchor= north] {$\mzeiger{i}\;$};
@@ -5278,7 +5352,102 @@
 	\end{flushright}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}\frametitle{Clicker - Zeigerdiagramm L/C}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Clicker_Zeigerdiagramm_LC}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[
+			Zeiger/.style={-{Latex[length=2mm]}, blue, thick},					   	   %Style der komplexen Zeiger	 
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\USpitzeL{1.4};		%Länge von U_L
+			\def\USpitzeC{1.8};		%Länge von U_C
+			\def\ISpitzeL{1.2};		%Länge von I_L
+			\def\ISpitzeC{0.7};		%Länge von I_C
+			\def\Phi{35};			%Winkel zwischen I_L und U_C
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-0.1,0); 	%Startpunkt der x-Achse (Re-Achse)
+			\coordinate (xEnd) 	   at (2.0,0);  	%Endpunkt der x-Achse (Im-Achse)
+			\coordinate (yStart)   at (0,-0.1);  	%Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0,1.5);  	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Achsen 
+			\draw[Achsenpfeil] (xStart) -- (xEnd) node[at end, below]{$\operatorname{Re}$}; %x-Achse 
+			\draw[Achsenpfeil] (yStart) -- (yEnd) node[at end, left] {$j\operatorname{Im}$};%y-Achse
+			\node[anchor=north east] at (Ursprung) {$0$}; 									%Beschriftnug des Urpsrungs 
+			
+			% Plotten der Zeiger 
+			%U_C
+			\draw[Zeiger] (Ursprung) --++ (0:\USpitzeC)
+				node[pos=0.6, below] {$\underline{\hat{u}}_C$};
+			%U_L
+			\draw[Zeiger] (Ursprung) --++ (\Phi+90:\USpitzeL)
+				node[pos=0.5, left] {$\underline{\hat{u}}_L$};
+			%I_C
+			\draw[Zeiger, red] (Ursprung) -- (90:\ISpitzeC)
+				node[pos=0.7, right] {$\underline{\hat{i}}_C$};
+			%I_L
+			\draw[Zeiger, red] (Ursprung) -- (\Phi:\ISpitzeL)
+				node[at end, right] {$\underline{\hat{i}}_L$};
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}\frametitle{Clicker - Zeigerdiagramm}	
+	\begin{flushright}
+		%-----------------------------------------------------------------------------------------------------------------%
+		\tikzsetnextfilename{Clicker_Zeigerdiagramm}
+		\begin{tikzpicture}
+			%Verschiedene Styles definieren:
+			[		
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},  %Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					   	 	   %Style der komplexen Zeiger	 
+			Achsenpfeil/.style={->},												   %Style des Achsenpfeils 
+			]
+			% Verschiedene Variabeln definieren:
+			\def\Zeiger{1.4};		%Länge der Zeiger
+			\def\Phi{45};			%Winkel zwischen x-Achse und Zeiger 
+			
+			% Definieren von verschiedenen Koordinaten
+			\coordinate (xStart)   at (-1.0,0); 	%Startpunkt der x-Achse (Re-Achse)
+			\coordinate (xEnd) 	   at (1.5,0);  	%Endpunkt der x-Achse (Im-Achse)
+			\coordinate (yStart)   at (0,-1.5);  	%Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0,1.5);  	%Endpunkt der y-Achse 
+			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
+			
+			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% Achsen 
+			\draw[Achsenpfeil] (xStart) -- (xEnd); %x-Achse 
+			\draw[Achsenpfeil] (yStart) -- (yEnd); %y-Achse
+ 
+			% Plotten der Zeiger 
+			%Zeiger blau
+			\draw[Zeiger, blue] (Ursprung) --++ (\Phi:\Zeiger)
+				node(tmp1) [HelpNode]{};
+			%Zeiger rot
+			\draw[Zeiger, red]  (Ursprung) --++ (-\Phi:\Zeiger)
+				node(tmp2) [HelpNode]{};
+				
+			% Hilfslinien 
+			\draw[densely dashed] (tmp1) -- (tmp2);
+			\draw[densely dashed] (tmp1 -| Ursprung) -- (tmp1);
+			\draw[densely dashed] (tmp2 -| Ursprung) -- (tmp2);
+
+		\end{tikzpicture}
+		%-----------------------------------------------------------------------------------------------------------------&
+	\end{flushright}	
+\end{frame}
 
 
 
