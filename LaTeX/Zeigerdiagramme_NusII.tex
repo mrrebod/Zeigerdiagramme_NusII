@@ -322,7 +322,7 @@
 		\draw [name intersections={of=i1 and xAchse, name=interi1}, very thin]
 			(interi1-3) -- ++(-90:0.5cm) node(HNode1)[HelpNode]{};	%Plotted Hilfslinie und genereirt Hilfsnode am Ende
 		\draw [name intersections={of=i2 and xAchse, name=interi2}, very thin]
-			(interi2-2) -- ++(-90:0.5cm) node(HNode2)[HelpNode]{};	%Plotted Hilfslinie und genereirt Hilfsnode am End	
+			(interi2-2) -- ++(-90:0.5cm) node(HNode2)[HelpNode]{};	%Plotted Hilfslinie und genereirt Hilfsnode am Ende	
 		\draw[Phasenpfeil] ($(0,0.1cm)+(HNode2)$) -- ($(0,0.1cm)+(HNode1)$)
 			node[below, near end]{$\varphi_2$};						%Plotted Pfeil mit Beschriftung
 			
@@ -3331,16 +3331,16 @@
 			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
 			]
 			% Verschiedene Variabeln definieren:
-			\def\USpitze{1.8};	  %Länge von Spannungszeiger
+			\def\USpitze{2.2};	  %Länge von Spannungszeiger
 			\def\OssRad{3.0};	  %Radius des Ossanna Kreises
 			
 			% Definieren von verschiedenen Koordinaten
 			\coordinate (Ursprung) at (0,0);		%Definieren des Ursprungs
-			\coordinate (OssMitte) at (2.0cm,0.4cm);    %Mittelpunkt des Ossanna Kreises
+			\coordinate (OssMitte) at (2.0cm,0.3cm);%Mittelpunkt des Ossanna Kreises
 			\coordinate (xStart)   at (-0.1cm,0);  	%Startpunkt der x-Achse (wt-Achse)
 			\coordinate (xEnd) 	   at (4.0cm,0);   	%Endpunkt der x-Achse (wt-Achse)
-			\coordinate (yStart)   at (0cm,-1.0cm); %Startpunkt der y-Achse
-			\coordinate (yEnd) 	   at (0cm,2.0cm);  %Endpunkt der y-Achse
+			\coordinate (yStart)   at (0cm,-1.5cm); %Startpunkt der y-Achse
+			\coordinate (yEnd) 	   at (0cm,2.5cm);  %Endpunkt der y-Achse
 			
 			%%%%%%%%%%%%%%%%%%%%%%%%%% Zeigerdiagramm %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			%Achsen 
@@ -3349,8 +3349,89 @@
 			
 			%Ossanna Kreis  
 			\node[circle, draw, minimum size=\OssRad cm] (Ossanna) at (OssMitte) {};
+			
+			%Koordinaten von P_0, P_inf und P_A auf Ossannakreis
+			\coordinate (P0) 	at (Ossanna.185);
+			\coordinate (Pinf)  at (Ossanna.25);
+			\coordinate (PA) 	at (Ossanna.50);
+			
+			%Mechanische Leistungslinie
+			\draw[color=green!60!black, name path=MechLinie] (P0) -- (PA)
+				node[above, scale=0.5, sloped, pos=0.7] {Mechanische Leistungslinie};
+			%Drehmomentlinie
+			\draw[color=green!60!black, name path=DrehLinie] (P0) -- (Pinf)
+				node[below, scale=0.5, sloped, pos=0.6] {Drehmomentlinie};
+			
+			%Kreise bei P_0, P_inf, P_A
+			\draw[fill=white](P0) 	circle (1pt);
+			\draw[fill=white](Pinf) circle (1pt)
+				node[right, scale=0.8]{$P_\infty$, $s=\infty$};
+			\draw[fill=white](PA) 	circle (1pt)
+				node[right, scale=0.8]{$P_A$, $s=1$};
+				
+			% Beschriftung von Bremse 
+			\node[right, scale=0.8] at (Ossanna.37) {Bremse};
+			
+			% Beschriftung von Generator 
+			\node[right, scale=0.8] at (0,-1.2cm) {Generator};
+			
+			%Strompfeile
+			% Werden mit Hilfe der Tangente gezeichnet.
+			% I1,N,G
+			\draw[Zeiger,red] (Ursprung) coordinate (a) -- (tangent cs:node=Ossanna, point={(a)}, solution=1)
+				node[pos=0.8, scale=0.8, left]{$\hat{\underline{i}}_{1,N,G}$}
+				node[HelpNode](Ipng){};
+			% I1,N
+			\draw[Zeiger,red] (Ursprung) coordinate (a) -- (tangent cs:node=Ossanna, point={(a)}, solution=2)
+				node[pos=0.8, scale=0.8, left]{$\hat{\underline{i}}_{1,N}$}
+				node[pos=1.1, scale=0.8, left, black]{$P_N$}
+				node[HelpNode](Ipn){};
+			
+			%Spannungszeiger 
+			\draw[Zeiger, blue] (Ursprung) -- (90:\USpitze)
+				node[pos=1.0, right] {$\hat{\underline{u}}_1$}
+				node[pos=0.8, right, black, scale=0.8] {Motor};
+				
+			% Hilfspfade zur Bestimmung der Schnittpunkte
+			% von Generatorstrom und Linien
+			\path[name path=helppathG] (Ipng) -- (Ipng |- 0,2);
+			% von Motorstrom und Linien
+			\path[name path=helppathM] (Ipn)  -- (Ipn |- 0,-1);
+			% von Punkt P_A und Linien
+			\path[name path=helppathPA] (PA)  -- (PA |- 0,-1);
+			
+			%Bestimmen des Schnittpunktes mit der mechanischen Leistungslinie
+			\draw [name intersections={of=helppathG and MechLinie, name=interGM}, gray, fill=gray]
+				(interGM-1) -- (Ipng)
+				(interGM-1) circle (1pt);
+			%Bestimmen des Schnittpunktes mit der Drehmomentlinie	
+			\draw [name intersections={of=helppathG and DrehLinie, name=interGD}, gray, fill=gray]
+				(interGD-1) circle (1pt);
+			
+			%Hilfslinien....
+			\draw[gray] (interGM-1) -- ++(0.2,0);
+			\draw[gray] (interGD-1) -- ++(0.6,0);
+			\draw[gray] (Ipng) 		-- ++(1.0,0);
+			
+			%P_Mech
+			\draw[{Latex[length=1mm]}-{Latex[length=1mm]}, gray] ($(Ipng) + (0.2,0)$) -- ($(interGM-1) + (0.2,0)$)
+				node[pos=0.4, below, sloped, scale=0.8]{$P_{mech}$};
+			%M_G
+			\draw[{Latex[length=1mm]}-{Latex[length=1mm]}, gray] ($(Ipng) + (0.6,0)$) -- ($(interGD-1) + (0.6,0)$)
+				node[pos=0.4, below, sloped, scale=0.8]{$M_G$};
+			%P_el
+			\draw[{Latex[length=1mm]}-{Latex[length=1mm]}, gray] ($(Ipng) + (1.0,0)$) -- ($(Ipng |- 0,0) + (1.0,0)$)
+				node[pos=0.5, below, sloped, scale=0.8]{$P_{el}$};			
+			%M_N
+			\draw [name intersections={of=helppathM and DrehLinie, name=interMD}, gray]
+				(interMD-1) -- (Ipn)
+				node[pos=0.6, scale=0.8, right]{$M_N$};
 		
-			\draw (Ursprung) -- (Ossanna.120);
+			%M_N
+			\draw [name intersections={of=helppathPA and DrehLinie, name=interPAD}, gray]
+				(interPAD-1) -- (PA)
+				node[pos=0.35, scale=0.8, left]{$M_A$};
+
 			
 %			% Plotten der Hilfslinie
 %			\draw[HelpLine] (Ursprung) -- ++(0:\ISpitze) node[HelpNode] (xEnd){};

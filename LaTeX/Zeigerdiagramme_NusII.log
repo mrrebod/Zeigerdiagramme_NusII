@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  2 DEC 2019 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  9 DEC 2019 17:51
 entering extended mode
 **./Zeigerdiagramme_NusII.tex
 (Zeigerdiagramme_NusII.tex
@@ -2188,7 +2188,7 @@ igerdiagramme_NusII}\input{Zeigerdiagramme_NusII}")...executed.
 
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3390.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3471.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2202,7 +2202,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 e. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3456.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3537.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2216,7 +2216,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 te. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3520.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3601.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2230,7 +2230,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Scheinleistung_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3637.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3718.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2246,7 +2246,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ==
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3742.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3823.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2261,7 +2261,7 @@ eistungskompensation_I_d.pdf>]
 =
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3794.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3875.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2275,7 +2275,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ==
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3855.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3936.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2293,7 +2293,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 =====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4034.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4115.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2311,7 +2311,7 @@ system_d.pdf>]
 
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4195.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4276.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2326,7 +2326,7 @@ gMitOhneSternpunkt_b.pdf>]
 ===== Image 'LaTeXfigs/DreiVierleitersystemBeispiel_I_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4285.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4366.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2345,7 +2345,7 @@ systemBeispiel_I_b.pdf>]
 
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4464.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4545.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2360,7 +2360,7 @@ rsystemBeispiel_II_b.pdf> <./LaTeXfigs/DreiVierleitersystemBeispiel_II_c.pdf>]
 ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4578.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4659.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2376,7 +2376,7 @@ te. ======
 te. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4727.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4808.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2390,7 +2390,7 @@ stungsberechnungBeiDreieckschaltung_II_c.pdf>]
 ===== Image 'LaTeXfigs/ErzeugungDrehfeld_II_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4781.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4862.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2403,7 +2403,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/ErzeugungDrehfeld_III_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4877.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4958.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2416,7 +2416,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/ParasitaereEffekteBeiSpulen_I_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4924.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5005.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2430,7 +2430,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 =====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4971.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5052.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2443,7 +2443,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/BeschaltungEinerQuelleMitLast_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5023.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5104.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2457,7 +2457,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 . ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5105.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5186.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2470,7 +2470,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/FourierreihenSpektralform_a' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5160.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5241.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2484,7 +2484,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 . ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5215.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5296.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2498,7 +2498,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ate. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5264.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5345.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2512,7 +2512,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5353.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5434.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2525,7 +2525,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Clicker_Zeigerdiagramm_LC' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5403.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5484.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2538,7 +2538,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Clicker_Zeigerdiagramm' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5450.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5531.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2557,11 +2557,11 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `Zeigerdiagramme_NusII.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5454.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5454.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5535.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5535.
  (Zeigerdiagramme_NusII.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5454.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5454.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5535.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5535.
 
 Package rerunfilecheck Info: File `Zeigerdiagramme_NusII.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -2585,9 +2585,9 @@ ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marco/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marc
 o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/
 Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Zeigerdiagramme_NusII.pdf (52 pages, 820699 bytes).
+Output written on Zeigerdiagramme_NusII.pdf (52 pages, 827373 bytes).
 PDF statistics:
- 1469 PDF objects out of 1728 (max. 8388607)
+ 1484 PDF objects out of 1728 (max. 8388607)
  105 named destinations out of 1000 (max. 500000)
  38863 words of extra memory for PDF output out of 42996 (max. 10000000)
 
