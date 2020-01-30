@@ -52,27 +52,37 @@ Nützliche Befehle:
 ----------------------------------------------------------------
 Beschrifte den Winkel zwischen zwei Pfeilen:
 ----------------------------------------------------------------
-\path (A) -- (B) -- (C) pic[<Sytle des Pfeiles>] {angle = A--B--C};
+\path (A) -- (B) -- (C) pic[<Style des Pfeiles>] {angle = A--B--C};
 
 Die drei Koordinaten des path definieren den Winkel, welcher 
 beschriftet werden soll. Beim pic muss angegen werden, 
 dass es sich um ein angle handelt. Die Koordinaten müssen
-ebenfalls nochmals übergeben werden. Die grösse des Bogens,
+ebenfalls nochmals übergeben werden. Die Grösse des Bogens,
 Art des Bogens, Beschriftung, Position der Beschriftung, etc.
-wird alles im [<Sytle>] definiert.
+wird alles im [<Style>] definiert.
 
 Benötigte uspackage: \usetikzlibrary{angles}
 Quelle: pgfmanual.pdf; Kapitel: 2.22; Seite: 48
 ----------------------------------------------------------------
 
 ----------------------------------------------------------------
-Plotten einen Sinus oder Cosinus
+Plotten eines Sinus oder Cosinus
 ----------------------------------------------------------------
-........
-
-
-
-
+\begin{tikzpicture}
+	%Verschiedene Styles definieren:
+	[
+	 SinusPlot/.style={domain=-80:360, samples=100, variable=\t, thick},	  %Options for sinus plot
+	]
+	
+	%Definieren von Konstanten:
+	\def\Ueins{1cm};		%Amplitude der Spannung U1
+	\def\PhiE{25};			%Phasenverschiebung von U1 
+	\def\LenSca{140};		%Die Länge des Sinusplot wird: (max_domain - min_domain) / LenSca; in [cm]
+	
+	% Harmonishce Funktionen plotten:
+	\draw[SinusPlot, color=blue, name path=u1] plot (\t/\LenSca,{\Ueins*sin(\t+\PhiE)});	%Plot u1 = U1*sin(wt+phi1)
+	
+\end{tikzpicture}
 ----------------------------------------------------------------
 
 ----------------------------------------------------------------
@@ -99,12 +109,4 @@ Folgend ein Beispiel mit einer Sinusfunktion und der X-Achse:
    
 Benötigte uspackage: \usetikzlibrary{intersections}
 Quelle: pgfmanual.pdf; Kapitel: 13.3.2; Seite: 141
-----------------------------------------------------------------
-
-
-
-
-
-
-
- 
+---------------------------------------------------------------- 

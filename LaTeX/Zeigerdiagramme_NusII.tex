@@ -1,47 +1,8 @@
 \documentclass[8pt, aspectratio=43]{beamer}
 
 \usepackage{HPE_Lecture}
-%\usetikzlibrary{arrows.meta} %In HPE_Lecture.sty eingefügt! (Tikz - Bilder in LaTeX)
-\usepackage{ifthen} %usepackage um eine if-Verzweigung zu benutzen
 \usepackage{tikz}
-\usetikzlibrary{angles, calc, positioning, intersections, topaths, decorations, shapes}
-
-%Booleans um nicht alles immer kompilieren zu müssen...
-\newboolean{ZeigerdiagrammI}
-\setboolean{ZeigerdiagrammI}{true}
-\newboolean{ZeigerdiagrammII}
-\setboolean{ZeigerdiagrammII}{true}
-\newboolean{ZeigerdiagrammIII}
-\setboolean{ZeigerdiagrammIII}{true}
-\newboolean{ZeigerdiagrammIV}
-\setboolean{ZeigerdiagrammIV}{true}
-\newboolean{WiderstandImWechselstromkreis}
-\setboolean{WiderstandImWechselstromkreis}{true}
-\newboolean{InduktivitaetImWechselstromkreis}
-\setboolean{InduktivitaetImWechselstromkreis}{true}
-\newboolean{KondensatorImWechselstromkreis}
-\setboolean{KondensatorImWechselstromkreis}{true}
-\newboolean{KonstruktionEinesZeigerdiagramms}
-\setboolean{KonstruktionEinesZeigerdiagramms}{true}
-\newboolean{GrundbegriffeDerKomplexenRechnung}
-\setboolean{GrundbegriffeDerKomplexenRechnung}{true}
-\newboolean{RechenOperationenMitKomplexenZahlen}
-\setboolean{RechenOperationenMitKomplexenZahlen}{true}
-\newboolean{KomplexeWechselstromrechnung}
-\setboolean{KomplexeWechselstromrechnung}{true}
-\newboolean{ZeigerFuerKomplexeWechselstromrechnung}
-\setboolean{ZeigerFuerKomplexeWechselstromrechnung}{true}
-\newboolean{StromSpannungsbeziehungInduktivitaeten}
-\setboolean{StromSpannungsbeziehungInduktivitaeten}{true}
-\newboolean{StromSpannungsbeziehungImBildbereich}
-\setboolean{StromSpannungsbeziehungImBildbereich}{true}
-\newboolean{KomplexeWechselstromrechnungBeispielII}
-\setboolean{KomplexeWechselstromrechnungBeispielII}{true}
-\newboolean{StromSpannungsUndWiderstandsDiagramm}
-\setboolean{StromSpannungsUndWiderstandsDiagramm}{true}
-\newboolean{RLCSerienschwingkreis}
-\setboolean{RLCSerienschwingkreis}{true}
-
+\usetikzlibrary{angles, calc, positioning, intersections, topaths, decorations, shapes, arrows.meta}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
@@ -55,11 +16,12 @@
 
 \begin{frame}\frametitle{Zeigerdiagramm I}
 
-\ifZeigerdiagrammI{
 	
 \begin{flushright}
 		\tikzsetnextfilename{Zeigerdiagramm_I_a}
 		\begin{tikzpicture}
+			%In der folgenden eckigen Klammer können verschiedene Styles definiert werden,
+			%welche dann in diesem tikzpicture verwendet werden können.
 			[
 			Spannungspfeil/.style={-{Latex[length=2mm]},thick, blue},						%Definiert den Sytle der Strompfeile
 			SinusPlot/.style={domain=0:360, samples=100, variable=\t, thick, color=blue},	%Options for sinus plot	
@@ -267,14 +229,12 @@
 		\end{tikzpicture}
 		
 \end{flushright}
-}\fi
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Zeigerdiagramm II}
 
-\ifZeigerdiagrammII{
 	
 \begin{flushright}
 	\tikzsetnextfilename{Zeigerdiagramm_II_a}
@@ -441,14 +401,13 @@
 	\end{tikzpicture}
 		
 \end{flushright}
-}\fi
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Zeigerdiagramm III}
 
-\ifZeigerdiagrammIII{
 
 \begin{flushright}
 	
@@ -637,8 +596,6 @@
 	\end{tikzpicture}
 	%-----------------------------------------------------------------------------------------------------------------%	
 \end{flushright}
-
-}\fi
  	
 \end{frame}
 
@@ -646,7 +603,6 @@
 
 \begin{frame}\frametitle{Zeigerdiagramm IV}
 
-\ifZeigerdiagrammIV{
 	
 \begin{flushright}
 	
@@ -828,15 +784,12 @@
 	\end{tikzpicture}
 \end{flushright}	
 
-}\fi
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Widerstand im Wechselstromkreis}
 
-\ifWiderstandImWechselstromkreis{
 	
 	\begin{flushright}
 		
@@ -902,8 +855,6 @@
 		%-----------------------------------------------------------------------------------------------------------------%	
 		
 	\end{flushright}
-	
-}\fi
 
 \end{frame}
 
@@ -911,7 +862,6 @@
 
 \begin{frame}\frametitle{Induktivität im Wechselstromkreis}
 
-\ifInduktivitaetImWechselstromkreis{
 	
 	\begin{flushright}
 		
@@ -996,16 +946,12 @@
 		%-----------------------------------------------------------------------------------------------------------------%	
 		
 	\end{flushright}
-	
-}\fi
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Kondensator im Wechselstromkreis}
-
-\ifKondensatorImWechselstromkreis{
 	
 	\begin{flushright}
 		
@@ -1090,16 +1036,12 @@
 		%-----------------------------------------------------------------------------------------------------------------%	
 		
 	\end{flushright}
-	
-}\fi
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Beispiel - Konstruktion eines Zeigerdiagramms}
-
-\ifKonstruktionEinesZeigerdiagramms{
 	
 	
 	\begin{flushright}
@@ -1149,15 +1091,11 @@
 		%-----------------------------------------------------------------------------------------------------------------%		 	
 	\end{flushright}
 
-}\fi
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Grundbegriffe der komplexen Rechnung}
-
-\ifGrundbegriffeDerKomplexenRechnung{
 		
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
@@ -1216,16 +1154,12 @@
 		%------------------------------------------------------------------------------	-----------------------------------%	
 
 	\end{flushright}
-	
-}\fi
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Rechenoperationen mit komplexen Zahlen}
-
-\ifRechenOperationenMitKomplexenZahlen{
 	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
@@ -1459,14 +1393,13 @@
 		%------------------------------------------------------------------------------	-----------------------------------%
 			
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Komplexe Wechselstromrechnung}
-
-\ifKomplexeWechselstromrechnung{	
+	
 	\begin{flushright}
 		%------------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{KomplexeWechselstromrechnung_a}
@@ -1525,14 +1458,13 @@
 		\end{tikzpicture}
 		%------------------------------------------------------------------------------	-----------------------------------%	
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Zeiger für komplexe Wechselstromrechnung}
-
-\ifZeigerFuerKomplexeWechselstromrechnung{	
+	
 	\begin{flushright}
 		%------------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{ZeigerFuerKomplexeWechselstromrechnung_a}
@@ -1698,15 +1630,14 @@
 				node[anchor=east, scale=\BeschScale] {$\omega t_2$}; 
 		\end{tikzpicture}	
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Strom-Spannungsbeziehung für Induktivität}
-
-\ifStromSpannungsbeziehungInduktivitaeten{	
+	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{StromSpannungsbeziehungInduktivitaet_a}
@@ -1825,14 +1756,13 @@
 				node[at end, anchor=north, fill=white]{$\omega$};	
 		\end{tikzpicture}	
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Strom-Spannungsbeziehung im Bildbereich}
-
-\ifStromSpannungsbeziehungImBildbereich{	
+	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{StromSpannungsbeziehungImBildbereich_a}
@@ -1899,14 +1829,13 @@
 				pic[Winkelpfeil, {Latex[length=1mm]}-] {angle = tmp2--Ursprung--tmp1};	
 		\end{tikzpicture}	
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Komplexe Wechselstromrechnung - Beispiel II}
-
-\ifKomplexeWechselstromrechnungBeispielII{	
+	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{KomplexeWechselstromrechnungBeispiel_II}
@@ -1963,14 +1892,13 @@
 			\node[anchor=west, align=left] at ($(yEnd) + (0.3cm,0)$) {zufällig:\\ $\varphi = \varphi_u \rightarrow \varphi_i = 0$};	
 		\end{tikzpicture}	
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{Strom-Spannungs- und Widerstands Diagramm}
-
-\ifStromSpannungsUndWiderstandsDiagramm{	
+	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{StromSpannungsUndWiderstandsDiagramm_b}
@@ -2081,15 +2009,14 @@
 			%\node[anchor=west, align=left] at ($(yEnd) + (0.3cm,0)$) {zufällig:\\ $\varphi = \varphi_u \rightarrow \varphi_i = 0$};	
 		\end{tikzpicture}	
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}\frametitle{RLC-Serienschwingkreis}
-
-\ifRLCSerienschwingkreis{	
+	
 	\begin{flushright}
 		%-----------------------------------------------------------------------------------------------------------------%
 		\tikzsetnextfilename{RLCSerienschwingkreis_b}  
@@ -2201,7 +2128,7 @@
 			\end{tikzpicture}
 			%-----------------------------------------------------------------------------------------------------------------%	
 	\end{flushright}	
-}\fi
+
 \end{frame}
 
 
@@ -3324,11 +3251,11 @@
 		\begin{tikzpicture}
 			%Verschiedene Styles definieren:
 			[
-			Achsenpfeil/.style={->},												  %Style des Achsenpfeils
-			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
-			Zeiger/.style={-{Latex[length=2mm]}, thick},					          %Style der komplexen Zeiger
-			Winkelpfeil/.style={draw, -{Latex[length=1mm]}, angle radius = 9mm},	  %Style der Winkelpfeil 
-			HelpLine/.style={densely dashed, very thin}								  %Hilfslinie
+			Achsenpfeil/.style={->},												  			%Style des Achsenpfeils
+			HelpNode/.style={at end, inner sep=0pt, outer sep=0pt, minimum size=0pt},			%Options für Hilfs-Node (z.B. am Ende eines Zeigers)
+			Zeiger/.style={-{Latex[length=2mm]}, thick},					          			%Style der komplexen Zeiger
+			Winkelpfeil/.style={draw, {Latex[length=1mm]}-{Latex[length=1mm]}, angle radius = 9mm}, %Style der Winkelpfeil 
+			HelpLine/.style={densely dashed, very thin}								 			%Hilfslinie
 			]
 			% Verschiedene Variabeln definieren:
 			\def\USpitze{2.2};	  %Länge von Spannungszeiger
@@ -3348,7 +3275,7 @@
 			\draw[Achsenpfeil] (yStart) -- (yEnd) node[at end, right] {$\operatorname{Re}$};%y-Achse
 			
 			%Ossanna Kreis  
-			\node[circle, draw, minimum size=\OssRad cm] (Ossanna) at (OssMitte) {};
+			\node[circle, draw, minimum size=\OssRad cm, name path=Ossannakreis] (Ossanna) at (OssMitte) {};
 			
 			%Koordinaten von P_0, P_inf und P_A auf Ossannakreis
 			\coordinate (P0) 	at (Ossanna.185);
@@ -3360,17 +3287,26 @@
 				node[above, scale=0.5, sloped, pos=0.7] {Mechanische Leistungslinie};
 			%Drehmomentlinie
 			\draw[color=green!60!black, name path=DrehLinie] (P0) -- (Pinf)
-				node[below, scale=0.5, sloped, pos=0.6] {Drehmomentlinie};
-			
+				node[below, scale=0.5, sloped, pos=0.6] {Drehmomentlinie}
+				node [midway, scale=0.5, pos=0.8, black] {$\diagdown\!\!\diagdown$}; %Parallel line indicators
+			%Parallele zu Drehmomentlinie
+			\draw[color=green!60!black, name path=DrehlinieParallel] ([yshift=1.28cm]$(P0)!0.5cm!(Pinf)$) -- ([yshift=1.28cm]$(P0)!2.0cm!(Pinf)$)
+				node [midway, scale=0.5, pos=0.8, black] {$\diagdown\!\!\diagdown$}; %Parallel line indicators
+				
 			%Kreise bei P_0, P_inf, P_A
-			\draw[fill=white](P0) 	circle (1pt);
+			%P_0
+			\draw[fill=white](P0) 	circle (1pt)
+				node[left, scale=0.8]{$P_0$}
+				node[anchor=north west, scale=0.8, inner xsep=0.05cm, inner ysep=0cm]{$s=0$};
+			%P_inf
 			\draw[fill=white](Pinf) circle (1pt)
 				node[right, scale=0.8]{$P_\infty$, $s=\infty$};
+			%P_A
 			\draw[fill=white](PA) 	circle (1pt)
-				node[right, scale=0.8]{$P_A$, $s=1$};
+				node[anchor=south west, scale=0.8]{$P_A$, $s=1$};
 				
 			% Beschriftung von Bremse 
-			\node[right, scale=0.8] at (Ossanna.37) {Bremse};
+			\node[right, scale=0.8] at (Ossanna.39) {Bremse};
 			
 			% Beschriftung von Generator 
 			\node[right, scale=0.8] at (0,-1.2cm) {Generator};
@@ -3390,7 +3326,8 @@
 			%Spannungszeiger 
 			\draw[Zeiger, blue] (Ursprung) -- (90:\USpitze)
 				node[pos=1.0, right] {$\hat{\underline{u}}_1$}
-				node[pos=0.8, right, black, scale=0.8] {Motor};
+				node[pos=0.8, right, black, scale=0.8] {Motor}
+				node[HelpNode](U1){};
 				
 			% Hilfspfade zur Bestimmung der Schnittpunkte
 			% von Generatorstrom und Linien
@@ -3407,6 +3344,12 @@
 			%Bestimmen des Schnittpunktes mit der Drehmomentlinie	
 			\draw [name intersections={of=helppathG and DrehLinie, name=interGD}, gray, fill=gray]
 				(interGD-1) circle (1pt);
+			%Bestimme Schnittpunkt von Paralleler Drehmomentlinie und Ossannakreis
+			\draw [name intersections={of=DrehlinieParallel and Ossannakreis, name=interDO}, gray, fill=gray]
+				(interDO-1) circle (1pt)
+				node[above, black, scale=0.8](PK) {$P_K$};
+			%Hilfspfad für Mk Linie
+			\path[name path=helppathPK] (PK)  -- (PK |- 0,-1);
 			
 			%Hilfslinien....
 			\draw[gray] (interGM-1) -- ++(0.2,0);
@@ -3426,45 +3369,18 @@
 			\draw [name intersections={of=helppathM and DrehLinie, name=interMD}, gray]
 				(interMD-1) -- (Ipn)
 				node[pos=0.6, scale=0.8, right]{$M_N$};
-		
-			%M_N
+			%M_A
 			\draw [name intersections={of=helppathPA and DrehLinie, name=interPAD}, gray]
 				(interPAD-1) -- (PA)
 				node[pos=0.35, scale=0.8, left]{$M_A$};
-
+			%M_K
+			\draw [name intersections={of=helppathPK and DrehLinie, name=interPKD}, gray]
+				(interPKD-1) -- (PK)
+				node[pos=0.6, scale=0.8, left]{$M_K$};
 			
-%			% Plotten der Hilfslinie
-%			\draw[HelpLine] (Ursprung) -- ++(0:\ISpitze) node[HelpNode] (xEnd){};
-%			% Plotten der Zeiger
-%			%Stromzeiger: 
-%			\draw[Zeiger, red] (Ursprung) -- ++(\PhiI:\ISpitze)
-%			node[at end, below] {$\underline{\hat{i}}$}
-%			node(tmp1) [HelpNode]{}; 
-%			%Spannungszeiger u*cos(phi):
-%			\draw[Zeiger, blue] (Ursprung) -- ++(\PhiI:\Ucos)
-%			node(tmp2) [HelpNode]{};
-%			%Spannungszeiger u*sin(phi): 
-%			\draw[Zeiger, blue] (tmp2) -- ++(\PhiI+90:\Usin)
-%			node[midway, right] {$\hat{u}\sin\varphi$}
-%			node(tmp3) [HelpNode]{};
-%			%Spannungszeiger u: 
-%			\draw[Zeiger, blue] (Ursprung) -- (tmp3)
-%			node[midway, left] {$\underline{\hat{u}}$}
-%			node(tmp4) [HelpNode]{};				
-%			% Winkel Beschriftung
-%			%Phi i:
-%			\path (xEnd) -- (Ursprung) -- (tmp1)
-%			pic[Winkelpfeil, angle radius=8.0mm, pic text=$\varphi_i$, angle eccentricity=1.2] {angle=xEnd--Ursprung--tmp1};
-%			%Phi u:
-%			\path (xEnd) -- (Ursprung) -- (tmp4)
-%			pic[Winkelpfeil, angle radius=3.0mm, pic text=$\varphi_u$, angle eccentricity=1.5] {angle=xEnd--Ursprung--tmp4};
-%			%Phi:
-%			\path (tmp1) -- (Ursprung) -- (tmp4)
-%			pic[Winkelpfeil, angle radius=7.0mm, pic text=$\varphi$, angle eccentricity=1.2] {angle=tmp1--Ursprung--tmp4};
-%			% Beschriftung:
-%			\node[anchor=west, gray, scale=0.8] at ($(tmp4) + (0.2cm,0)$) {$\varphi=\varphi_u-\varphi_i$};	
-%			\node[anchor=north west, blue] (BeschUcos) at ($(Ursprung) + (0.5cm,0)$) {$\hat{u}\cos\varphi$};
-%			\draw[thin, blue] (BeschUcos.west) -- ++(90:0.35cm);
+			%Winkelbeschriftung phi
+			\path (Ipn) -- (Ursprung) -- (U1)
+				pic[Winkelpfeil, angle radius=6.0mm, pic text=$\varphi$, angle eccentricity=0.7] {angle=Ipn--Ursprung--U1};
 		\end{tikzpicture}
 		%----------------------------------------------------------------------------------------------------------------%	
 	\end{flushright}	
@@ -5530,7 +5446,4 @@
 	\end{flushright}	
 \end{frame}
 
-
-
 \end{document}
-

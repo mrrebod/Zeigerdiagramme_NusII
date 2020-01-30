@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  9 DEC 2019 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.9.29)  30 JAN 2020 16:04
 entering extended mode
 **./Zeigerdiagramme_NusII.tex
 (Zeigerdiagramme_NusII.tex
@@ -1284,14 +1284,6 @@ File: tikzlibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 flibraryplotmarks.code.tex"
 File: pgflibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )))
-("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
-flibraryarrows.meta.code.tex"
-File: pgflibraryarrows.meta.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfarrowinset=\dimen324
-\pgfarrowlength=\dimen325
-\pgfarrowwidth=\dimen326
-\pgfarrowlinewidth=\dimen327
-)
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\ti
 kzlibrarypgfplots.external.code.tex"
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlayer/
@@ -1309,16 +1301,16 @@ Package: textpos 2019/04/15 v1.9.1
 Package: textpos 2019/04/15 1.9.1, absolute positioning of text on the page
 \TP@textbox=\box68
 \TP@holdbox=\box69
-\TPHorizModule=\dimen328
-\TPVertModule=\dimen329
-\TP@margin=\dimen330
-\TP@absmargin=\dimen331
+\TPHorizModule=\dimen324
+\TPVertModule=\dimen325
+\TP@margin=\dimen326
+\TP@absmargin=\dimen327
 Grid set 16 x 16 = 22.7622pt x 17.07166pt
-\TPboxrulesize=\dimen332
-\TP@ox=\dimen333
-\TP@oy=\dimen334
+\TPboxrulesize=\dimen328
+\TP@ox=\dimen329
+\TP@oy=\dimen330
 \TP@tbargs=\toks59
-\TP@prevdepth=\dimen335
+\TP@prevdepth=\dimen331
 TextBlockOrigin set to 0pt x 0pt
 )
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/everypage\everypag
@@ -1334,8 +1326,8 @@ Package: pgfpages 2011/01/05 ver 0.02
 \pgf@currentshipout=\count199
 \pgf@cpn=\count266
 \pgf@shipoutnextto=\count267
-\pgfphysicalheight=\dimen336
-\pgfphysicalwidth=\dimen337
+\pgfphysicalheight=\dimen332
+\pgfphysicalwidth=\dimen333
 \pgfpages@shipoutbox=\box70
 ))
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
@@ -1423,30 +1415,38 @@ File: pgflibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 \pgfnodepartsevenbox=\box88
 \pgfnodepartsixbox=\box89
 \pgfnodepartfivebox=\box90
-))) (Zeigerdiagramme_NusII.aux)
+)))
+("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
+flibraryarrows.meta.code.tex"
+File: pgflibraryarrows.meta.code.tex 2019/08/03 v3.1.4b (3.1.4b)
+\pgfarrowinset=\dimen334
+\pgfarrowlength=\dimen335
+\pgfarrowwidth=\dimen336
+\pgfarrowlinewidth=\dimen337
+) (Zeigerdiagramme_NusII.aux)
 \openout1 = `Zeigerdiagramme_NusII.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 13.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.40002pt on input line 52.
+(Font)              scaled to size 6.40002pt on input line 13.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1514,7 +1514,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box92
-Package hyperref Info: Link coloring OFF on input line 52.
+Package hyperref Info: Link coloring OFF on input line 13.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
 ty"
@@ -1526,78 +1526,78 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count275
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
  (Zeigerdiagramme_NusII.out) (Zeigerdiagramme_NusII.out)
 \@outlinefile=\write5
 \openout5 = `Zeigerdiagramme_NusII.out'.
 
 \symnumbers=\mathgroup11
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 52.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 13.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 52
+(Font)              `pureletters' in the math version `normal' on input line 13
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/mathkerncmss/m/sl --> T1/ptm/m/it on input line 52.
+(Font)                  OT1/mathkerncmss/m/sl --> T1/ptm/m/it on input line 13.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 52.
+(Font)              `pureletters' in the math version `bold' on input line 13.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/m/it on input line 52
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/m/it on input line 13
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/ztmcm/m/n --> T1/ptm/m/n on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 52.
+(Font)                  OT1/ztmcm/m/n --> T1/ptm/m/n on input line 13.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 52.
+(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 52.
+(Font)                  OT1/ptm/bx/n --> T1/ptm/bx/n on input line 13.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 52.
+(Font)                  OT1/cmss/m/n --> T1/phv/m/n on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 52.
+(Font)                  OT1/cmss/bx/n --> T1/phv/m/n on input line 13.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 52.
+(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 52.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 52.
+(Font)                  OT1/ptm/m/it --> T1/ptm/m/it on input line 13.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 52.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 52.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 13.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 52.
+(Font)                  T1/ptm/m/n --> T1/ptm/bx/n on input line 13.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 52.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/ztmcm/m/n --> T1/ptm/bx/n on input line 52.
+(Font)                  OT1/ztmcm/m/n --> T1/ptm/bx/n on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 52.
+(Font)                  T1/ptm/bx/n --> T1/ptm/bx/n on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 52.
+(Font)                  T1/phv/m/n --> T1/phv/bx/n on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 52.
+(Font)                  T1/ptm/m/it --> T1/ptm/bx/it on input line 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 52.
-LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 52.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 13.
+LaTeX Font Info:    Redeclaring symbol font `boldpureletters' on input line 13.
 
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `normal' on input lin
-e 52.
+e 13.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `norma
 l'
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 5
-2.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 1
+3.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
 (Font)              `boldpureletters' in the math version `bold' on input line 
-52.
+13.
 LaTeX Font Info:    Overwriting symbol font `boldpureletters' in version `bold'
 
-(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 5
-2.
+(Font)                  OT1/mathkerncmss/bx/sl --> T1/ptm/bx/it on input line 1
+3.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/translator\transla
 tor-basic-dictionary-English.dict"
@@ -1623,7 +1623,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tor-theorem-dictionary-English.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 52.
+LaTeX Info: Redefining \microtypecontext on input line 13.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -1649,25 +1649,25 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 (Zeigerdiagramme_NusII.nav)
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.00002pt on input line 52.
+(Font)              scaled to size 4.00002pt on input line 13.
 
-Overfull \hbox (1.11195pt too wide) in paragraph at lines 52--52
+Overfull \hbox (1.11195pt too wide) in paragraph at lines 13--13
 [][]  
  []
 
 ===== Image 'LaTeXfigs/Zeigerdiagramm_I_a' is up-to-date. ======
 ===== Image 'LaTeXfigs/Zeigerdiagramm_I_b' is up-to-date. ======
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.76003pt on input line 271.
+(Font)              scaled to size 8.76003pt on input line 232.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.82405pt on input line 271.
+(Font)              scaled to size 13.82405pt on input line 232.
 <HPE_background.pdf, id=14, 364.19562pt x 273.14546pt>
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 271.
+Package pdftex.def Info: HPE_background.pdf  used on input line 232.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 3.20001pt on input line 271.
+(Font)              scaled to size 3.20001pt on input line 232.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [][] 
@@ -1682,7 +1682,7 @@ round.pdf> <./LaTeXfigs/Zeigerdiagramm_I_a.pdf> <./LaTeXfigs/Zeigerdiagramm_I_b
 ===== Image 'LaTeXfigs/Zeigerdiagramm_II_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 445.
+Package pdftex.def Info: HPE_background.pdf  used on input line 405.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1696,7 +1696,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Zeigerdiagramm_III_e' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 643.
+Package pdftex.def Info: HPE_background.pdf  used on input line 600.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1712,7 +1712,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Zeigerdiagramm_IV_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 833.
+Package pdftex.def Info: HPE_background.pdf  used on input line 787.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1727,7 +1727,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/WiderstandImWechselstromkreis_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 908.
+Package pdftex.def Info: HPE_background.pdf  used on input line 859.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1744,7 +1744,7 @@ hselstromkreis_c.pdf>]
 =
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1002.
+Package pdftex.def Info: HPE_background.pdf  used on input line 950.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1759,7 +1759,7 @@ tImWechselstromkreis_c.pdf>]
 ===== Image 'LaTeXfigs/KondensatorImWechselstromkreis_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1096.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1040.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1774,7 +1774,7 @@ echselstromkreis_c.pdf>]
 =
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1154.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1094.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1788,7 +1788,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ==
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1222.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1158.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1808,7 +1808,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1463.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1397.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1823,7 +1823,7 @@ len_c.pdf> <./LaTeXfigs/RechenOperationenMitKomplexenZahlen_d.pdf>]
 ===== Image 'LaTeXfigs/KomplexeWechselstromrechnung_a' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1529.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1462.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1839,7 +1839,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
  ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1702.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1634.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1856,7 +1856,7 @@ FuerKomplexeWechselstromrechnung_b.pdf>]
 =====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1829.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1760.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1873,7 +1873,7 @@ nnungsbeziehungInduktivitaet_b.pdf>]
 =====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1903.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1833.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1888,7 +1888,7 @@ nnungsbeziehungImBildbereich_b.pdf>]
 ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 1967.
+Package pdftex.def Info: HPE_background.pdf  used on input line 1896.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1904,7 +1904,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 =====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2085.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2013.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1919,7 +1919,7 @@ nnungsUndWiderstandsDiagramm_c.pdf>]
 ===== Image 'LaTeXfigs/RLCSerienschwingkreis_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2205.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2132.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1934,7 +1934,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ate. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2253.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2180.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1948,7 +1948,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Parallelschwingkreis_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2371.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2298.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1963,7 +1963,7 @@ df>]
 e. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2418.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2345.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1977,7 +1977,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2565.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2492.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -1990,7 +1990,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/SerienVsParallelschwingkreis_I' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2666.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2593.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2004,7 +2004,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ==
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2726.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2653.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2018,8 +2018,8 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===
 ===== Image 'LaTeXfigs/ImpedanzRLReihenschalungLwvariabel_c' is up-to-date. ===
 ===
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 28
-36.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 27
+63.
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ztmcm.fd
 "
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
@@ -2028,22 +2028,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 28
-36.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 27
+63.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omlztmcm.fd
 "
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 28
-36.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 27
+63.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omsztmcm.fd
 "
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 28
-36.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 27
+63.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omxztmcm.fd
 "
@@ -2057,36 +2057,36 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 fg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 2836
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 2763
 .
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2836.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2763.
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\mt-ptm.c
 fg"
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2836.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2763.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2836.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 2836.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2763.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 2763.
 
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2836.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2763.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2836.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2763.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2836.
-LaTeX Font Info:    Try loading font information for U+esint on input line 2836
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2763.
+LaTeX Font Info:    Try loading font information for U+esint on input line 2763
 .
 
 ("C:\Users\Marco\AppData\Local\Programs\MiKTeX 2.9\tex/latex/esint\uesint.fd"
@@ -2094,7 +2094,7 @@ File: uesint.fd
 )
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2836.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2763.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2111,7 +2111,7 @@ ReihenschalungLwvariabel_c.pdf>]
  ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 2963.
+Package pdftex.def Info: HPE_background.pdf  used on input line 2890.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2127,24 +2127,24 @@ date. ======
 ===== Image 'LaTeXfigs/Admittanz_RL_Reihenschaltung_RundW_variabel_c' is up-to-
 date. ======
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3217.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3144.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3217.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3144.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3217.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3144.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 3217.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 3144.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <6> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 3217.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 3144.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 3217.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 3144.
 ===== Image 'LaTeXfigs/Admittanz_RL_Reihenschaltung_RundW_variabel_e' is up-to-
 date. ======
 ===== Image 'LaTeXfigs/Admittanz_RL_Reihenschaltung_RundW_variabel_f' is up-to-
 date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3217.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3144.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2161,7 +2161,7 @@ ndW_variabel_f.pdf>]
  ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3316.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3243.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2171,24 +2171,11 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 [27
 
  <./LaTeXfigs/OrtskurvenVonKompliziertenNetzwerken_I_b.pdf>]
-\openout3 = `LaTeXfigs/AsynchronmaschineOrtskurveStatorstrom.md5'.
-
-\openout3 = `Zeigerdiagramme_NusII.auxlock'.
-
-
-===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
-n-error -interaction=batchmode -jobname "LaTeXfigs/AsynchronmaschineOrtskurveSt
-atorstrom" "\def\tikzexternalrealjob{Zeigerdiagramme_NusII}\input{Zeigerdiagram
-me_NusII}"' ========
-runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
- "LaTeXfigs/AsynchronmaschineOrtskurveStatorstrom" "\def\tikzexternalrealjob{Ze
-igerdiagramme_NusII}\input{Zeigerdiagramme_NusII}")...executed.
-
-\openout3 = `Zeigerdiagramme_NusII.auxlock'.
-
+===== Image 'LaTeXfigs/AsynchronmaschineOrtskurveStatorstrom' is up-to-date. ==
+====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3471.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3387.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2202,7 +2189,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 e. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3537.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3453.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2216,7 +2203,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 te. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3601.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3517.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2230,7 +2217,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Scheinleistung_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3718.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3634.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2246,7 +2233,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ==
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3823.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3739.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2261,7 +2248,7 @@ eistungskompensation_I_d.pdf>]
 =
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3875.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3791.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2275,7 +2262,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ==
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 3936.
+Package pdftex.def Info: HPE_background.pdf  used on input line 3852.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2293,7 +2280,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 =====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4115.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4031.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2311,7 +2298,7 @@ system_d.pdf>]
 
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4276.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4192.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2326,7 +2313,7 @@ gMitOhneSternpunkt_b.pdf>]
 ===== Image 'LaTeXfigs/DreiVierleitersystemBeispiel_I_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4366.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4282.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2345,7 +2332,7 @@ systemBeispiel_I_b.pdf>]
 
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4545.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4461.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2360,7 +2347,7 @@ rsystemBeispiel_II_b.pdf> <./LaTeXfigs/DreiVierleitersystemBeispiel_II_c.pdf>]
 ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4659.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4575.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2376,7 +2363,7 @@ te. ======
 te. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4808.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4724.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2390,7 +2377,7 @@ stungsberechnungBeiDreieckschaltung_II_c.pdf>]
 ===== Image 'LaTeXfigs/ErzeugungDrehfeld_II_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4862.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4778.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2403,7 +2390,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/ErzeugungDrehfeld_III_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 4958.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4874.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2416,7 +2403,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/ParasitaereEffekteBeiSpulen_I_b' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5005.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4921.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2430,7 +2417,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 =====
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5052.
+Package pdftex.def Info: HPE_background.pdf  used on input line 4968.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2443,7 +2430,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/BeschaltungEinerQuelleMitLast_c' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5104.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5020.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2457,7 +2444,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 . ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5186.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5102.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2470,7 +2457,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/FourierreihenSpektralform_a' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5241.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5157.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2484,7 +2471,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 . ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5296.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5212.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2498,7 +2485,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ate. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5345.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5261.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2512,7 +2499,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5434.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5350.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2525,7 +2512,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Clicker_Zeigerdiagramm_LC' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5484.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5400.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2538,7 +2525,7 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 ===== Image 'LaTeXfigs/Clicker_Zeigerdiagramm' is up-to-date. ======
 File: HPE_background.pdf Graphic file (type pdf)
 <use HPE_background.pdf>
-Package pdftex.def Info: HPE_background.pdf  used on input line 5531.
+Package pdftex.def Info: HPE_background.pdf  used on input line 5447.
 (pdftex.def)             Requested size: 364.19536pt x 273.14896pt.
 
 Overfull \hbox (1.11195pt too wide) has occurred while \output is active
@@ -2557,37 +2544,39 @@ Overfull \hbox (1.11195pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `Zeigerdiagramme_NusII.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5535.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5535.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5449.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5449.
  (Zeigerdiagramme_NusII.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5535.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5535.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5449.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5449.
 
 Package rerunfilecheck Info: File `Zeigerdiagramme_NusII.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39619 strings out of 492895
- 938289 string characters out of 3123735
- 1230945 words of memory out of 3000000
- 42471 multiletter control sequences out of 15000+200000
+ 39565 strings out of 492895
+ 936573 string characters out of 3123735
+ 1230529 words of memory out of 3000000
+ 42417 multiletter control sequences out of 15000+200000
  68926 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 82i,15n,131p,853b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 82i,15n,131p,797b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmex10.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmmi10.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marco/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marco/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Marco/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marco/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Marc
-o/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/
-Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Zeigerdiagramme_NusII.pdf (52 pages, 827373 bytes).
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users
+/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C
+:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb
+><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.
+pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utm
+r8a.pfb><C:/Users/Marco/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on Zeigerdiagramme_NusII.pdf (52 pages, 831180 bytes).
 PDF statistics:
- 1484 PDF objects out of 1728 (max. 8388607)
+ 1493 PDF objects out of 1728 (max. 8388607)
  105 named destinations out of 1000 (max. 500000)
  38863 words of extra memory for PDF output out of 42996 (max. 10000000)
 
